@@ -15,7 +15,9 @@ class CreateOrderPlateTable extends Migration
     {
         Schema::create('order_plate', function (Blueprint $table) {
             $table->integer('id_plate');
+            $table->foreign('id_plate')->references("id")->on("plates");
             $table->integer('id_order');
+            $table->foreign('id_order')->references("id")->on("orders");
             $table->integer('quantity');
         });
     }

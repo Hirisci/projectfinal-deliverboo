@@ -21,6 +21,7 @@ class CreatePlatesTable extends Migration
             $table->float('price');
             $table->boolean('is_visible');
             $table->integer('id_user');
+            $table->foreign('id_user')->references("id")->on("users");
             $table->string('img');
         });
     }

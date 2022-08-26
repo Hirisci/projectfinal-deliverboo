@@ -31,4 +31,9 @@ class Plate extends Model
     {
         return 'slug';
     }
+
+    /**
+     * Relation pivo order plate
+     */
+   
 }
