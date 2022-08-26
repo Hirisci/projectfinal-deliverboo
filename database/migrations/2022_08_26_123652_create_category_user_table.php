@@ -14,10 +14,9 @@ class CreateCategoryUserTable extends Migration
     public function up()
     {
         Schema::create('category_user', function (Blueprint $table) {
-            $table->integer('id_user');
-            $table->foreign('id')->references('id_user')->on('users');
-            $table->integer('id_category');
-            $table->foreign('id')->references('id_category')->on('categories');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            
         });
     }
 
@@ -28,6 +27,9 @@ class CreateCategoryUserTable extends Migration
      */
     public function down()
     {
+        
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('category_user');
+        Schema::enableForeignKeyConstraints();
     }
 }

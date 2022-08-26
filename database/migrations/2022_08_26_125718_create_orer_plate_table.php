@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOrderPlateTable extends Migration
+class CreateOrerPlateTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,8 @@ class CreateOrderPlateTable extends Migration
     public function up()
     {
         Schema::create('order_plate', function (Blueprint $table) {
-            $table->integer('id_plate');
-            $table->foreign('id_plate')->references("id")->on("plates");
-            $table->integer('id_order');
-            $table->foreign('id_order')->references("id")->on("orders");
-            $table->integer('quantity');
+            $table->foreignId('plate_id')->constrained()->onDelete('cascade');
+            $table->foreignId('order_id')->constrained()->onDelete('cascade');
         });
     }
 
@@ -29,6 +26,9 @@ class CreateOrderPlateTable extends Migration
      */
     public function down()
     {
+        
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('order_plate');
+        Schema::enableForeignKeyConstraints();
     }
 }

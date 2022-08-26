@@ -20,9 +20,9 @@ class Category extends Model
             ->saveSlugsTo('slug');
     }
 
-    public function categories(){
-        return $this->belongsToMany('App\User');
-    }
+    // public function categories(){
+    //     return $this->belongsToMany('App\User');
+    // }
 
         /**
      * Get the route key for the model.

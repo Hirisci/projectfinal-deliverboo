@@ -35,12 +35,14 @@ class Plate extends Model
     /**
      * Relation pivo order plate
      */
+
     public function users()
     {
         return $this->hasMany('app/User');
     }
-    public function orders()
-    {
-        return $this->belongsToMany('app/Order');
-    }
+    
+    // public function orders()
+    // {
+    //     return $this->belongsToMany('app/Order');
+    // }
 }

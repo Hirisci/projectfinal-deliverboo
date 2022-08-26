@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePlatesTable extends Migration
+class CreateTablePlate extends Migration
 {
     /**
      * Run the migrations.
@@ -14,15 +14,15 @@ class CreatePlatesTable extends Migration
     public function up()
     {
         Schema::create('plates', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('slug'); // Field name same as your `saveSlugsTo`
+            $table->id();
+            $table->string('name',50);
             $table->string('description');
-            $table->float('price');
-            $table->boolean('is_visible');
-            $table->integer('id_user');
-            $table->foreign('id_user')->references("id")->on("users");
+            $table->double('price', 5, 2);
+            $table->boolean('is_visible')->default(true);
             $table->string('img');
+            $table->string('slug');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -33,6 +33,8 @@ class CreatePlatesTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('plates');
+        Schema::enableForeignKeyConstraints();
     }
 }
