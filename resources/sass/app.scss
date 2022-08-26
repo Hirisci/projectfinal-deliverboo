@@ -1,8 +1,9 @@
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import "config/reset.scss"; // Variables
+@import "config/spacing.scss"; // Variables
+@import "config/typography.scss"; // Variables
+@import "config/variable.scss"; // Variables
 
-// Variables
-@import "variables";
+//componets
+@import "partials/dashboard.scss"; // Bootstrap
 
-// Bootstrap
 @import "~bootstrap/scss/bootstrap";
