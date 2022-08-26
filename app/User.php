@@ -56,8 +56,4 @@ class User extends Authenticatable
     public function categories() {
         return $this->belongsTo('App/category');
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> features-model-users
