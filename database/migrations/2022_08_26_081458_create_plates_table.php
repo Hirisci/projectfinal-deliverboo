@@ -16,6 +16,7 @@ class CreatePlatesTable extends Migration
         Schema::create('plates', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('slug'); // Field name same as your `saveSlugsTo`
             $table->string('description');
             $table->float('price');
             $table->boolean('is_visible');
