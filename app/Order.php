@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class OrderModel extends Model
+class Order extends Model
 {
 
-//     public function plate()
-//     {
-//         return $this->BelongTo('App\Plate');
-//     }
+    public function plate()
+    {
+        return $this->belongsToMany('App\Plate');
+    }
 }
 
 

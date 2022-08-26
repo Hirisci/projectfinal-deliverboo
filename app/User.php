@@ -53,7 +53,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // public function categories() {
-    //     return $this->belongsTo('App/category');
-    // }
+    public function categories() {
+        return $this->belongsToMany('App/Category');
+    }
+
+    public function users()
+    {
+        return $this->hasMany('app/Plate');
+    }
 }
