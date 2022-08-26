@@ -33,12 +33,12 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                    {{-- <ul class="navbar-nav mr-auto">
                         <a class="px-3"href="{{route('admin.posts.index')}}">Post</a>
                         <a class="px-3"href="{{route('admin.category.index')}}">Category</a>
                         <a class="px-3"href="{{route('admin.tags.index')}}">Tag</a>
                         
-                    </ul>
+                    </ul> --}}
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
