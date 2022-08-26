@@ -16,6 +16,7 @@ class CreateOrerPlateTable extends Migration
         Schema::create('order_plate', function (Blueprint $table) {
             $table->foreignId('plate_id')->constrained()->onDelete('cascade');
             $table->foreignId('order_id')->constrained()->onDelete('cascade');
+            $table->integer('quantity');
         });
     }
 
