@@ -15,7 +15,9 @@ class CreateCategoryUserTable extends Migration
     {
         Schema::create('category_user', function (Blueprint $table) {
             $table->integer('id_user');
+            $table->foreign('id')->references('id_user')->on('users');
             $table->integer('id_category');
+            $table->foreign('id')->references('id_category')->on('categories');
         });
     }
 
