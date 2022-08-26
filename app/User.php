@@ -5,11 +5,27 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use HasSlug;
 
+    protected $guarded = ['slug'];
+
+    public function getSlugOptions() : SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('name')
+            ->saveSlugsTo('slug');
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
     /**
      * The attributes that are mass assignable.
      *
