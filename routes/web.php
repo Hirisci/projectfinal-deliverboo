@@ -28,6 +28,7 @@ Route::middleware('auth')
     ->prefix('admin') //prefisso rotta
     ->group(function() { // creo gruppo che richiama /admin/home che richiama il controller
         Route::get('/home', 'HomeController@index')->name('home');
+        Route::resource('user', 'UserController');
 });
 
 
