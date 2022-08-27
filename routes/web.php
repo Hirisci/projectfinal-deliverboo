@@ -29,6 +29,7 @@ Route::middleware('auth')
     ->group(function() { // creo gruppo che richiama /admin/home che richiama il controller
         Route::get('/home', 'HomeController@index')->name('home');
         Route::resource('category', 'CategoryController');
+        Route::resource('user', 'UserController');
 });
 
 
