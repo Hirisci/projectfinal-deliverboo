@@ -30,6 +30,7 @@ Route::middleware('auth')
         Route::get('/home', 'HomeController@index')->name('home');
         Route::resource('category', 'CategoryController');
         Route::resource('user', 'UserController');
+        Route::resource('plate', 'PlateController');
 });
 
 
