@@ -10,9 +10,9 @@
                 <form action="{{route('admin.category.store')}}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label for="title">Nome Categoria</label>
-                        <input type="text" class="form-control" id="title" name="title">
-                        @error('title')
+                        <label for="name">Nome Categoria</label>
+                        <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
+                        @error('name')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>

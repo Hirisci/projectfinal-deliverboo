@@ -39,18 +39,19 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
         //validazione dati
-        $request->validate([
-            'name' => 'required | string | max:50'
-        ]);
+        // $request->validate([
+        //     'name' => 'required | string | max:50'
+        // ]);
         //prendo i dati dal request e creo la nuova categoria
         $data = $request->all();
         $newCategory = new Category();
         $newCategory->fill($data);
-        $newCategory->slug = Str::of($newCategory->title)->slug('-');
+        $newCategory->slug = $this->getSlug($data['name']);
         $newCategory->save();
         //reindirizzo a un altra pagina
+        return redirect()->route('admin.category.show', $newCategory->id);
     }
 
     /**
@@ -96,5 +97,18 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function getSlug($name)
+    {
+        $slug = Str::of($name)->slug('-');
+        $count = 1;
+
+        while(Category::where('slug' , $slug)->first() ){
+            $slug = Str::of($name)->slug('-') . "-{$count}";
+            $count++;
+        }
+
+        return $slug;
     }
 }
