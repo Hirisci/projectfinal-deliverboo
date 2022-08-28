@@ -16,13 +16,18 @@
                   </tr>
                 </thead>
                 <tbody>
+                    <div class="div mb-3">
+                        <a href="{{route('admin.category.create')}}" type="button" class="btn btn-success">Crea nuova categoria</a>
+                    </div>
                     @foreach ($categories as $category)
                         <tr>
                             <td>{{$category->id}}</td>
                             <td>{{$category->name}}</td>
                             {{-- azioni --}}
                             <td>
-                                <a href="{{route('admin.category.show', $category->id)}}"type="button" class="btn btn-primary">VIsualizza</a>
+                                <a href="{{route('admin.category.show', $category->id)}}" class="btn btn-primary">Visualizza</a>
+                                <a href="{{route('admin.category.edit', $category->id)}}" class="btn btn-warning">Modifica</a>
+                                <a href="{{route('admin.category.destroy', $category->id)}}" class="btn btn-danger">Elimina</a>
                             </td> 
                         </tr>
                     @endforeach
