@@ -17,9 +17,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('categories', [
-            'categories' => $categories
-        ]);
+        return view('admin.category.index', compact('categories'));
     }
 
     /**
@@ -41,9 +39,9 @@ class CategoryController extends Controller
     public function store(Request $request)
     {   
         //validazione dati
-        // $request->validate([
-        //     'name' => 'required | string | max:50'
-        // ]);
+        $request->validate([
+            'name' => 'required | string | max:50'
+        ]);
         //prendo i dati dal request e creo la nuova categoria
         $data = $request->all();
         $newCategory = new Category();
@@ -60,9 +58,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $category)
     {
-        //
+        return view('admin.category.show', compact('category'));
     }
 
     /**
