@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Category;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -39,7 +40,17 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validazione dati
+        $request->validate([
+            'name' => 'required | string | max:50'
+        ]);
+        //prendo i dati dal request e creo la nuova categoria
+        $data = $request->all();
+        $newCategory = new Category();
+        $newCategory->fill($data);
+        $newCategory->slug = Str::of($newCategory->title)->slug('-');
+        $newCategory->save();
+        //reindirizzo a un altra pagina
     }
 
     /**
