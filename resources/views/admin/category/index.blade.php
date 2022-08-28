@@ -10,7 +10,7 @@
             <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">ID</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Azioni</th>
                   </tr>
@@ -27,7 +27,11 @@
                             <td>
                                 <a href="{{route('admin.category.show', $category->id)}}" class="btn btn-primary">Visualizza</a>
                                 <a href="{{route('admin.category.edit', $category->id)}}" class="btn btn-warning">Modifica</a>
-                                <a href="{{route('admin.category.destroy', $category->id)}}" class="btn btn-danger">Elimina</a>
+                                <form action="{{route('admin.category.destroy' , $category->id )}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Elimina</button>
+                                </form>
                             </td> 
                         </tr>
                     @endforeach
