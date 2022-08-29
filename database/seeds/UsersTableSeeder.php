@@ -34,6 +34,24 @@ class UsersTableSeeder extends Seeder
                 "password" => "$2y$10\$vPsht5Ye8dWukO9K4qyx3.6KXfGxjQ0S9MGP9zjA0.k.c2tJJItXW",
                 "vat" => "1234"
             ],
+            [
+                "name" => "Pizzeria Toto",
+                "address" => "Amerigo Vespucci, 2, 20032 Cormano MI",
+                "img" => "https://cdn.website.dish.co/media/67/1f/3459567/Pizzeria-da-Toto-14E99E06-EF7C-48A0-B68A-EE7DD1322FEA.jpg",
+                "logo" => "https://i.pinimg.com/originals/3e/cb/a8/3ecba88bff841698cef03d71220adaf6.jpg",
+                "email" => "test2@mail.com",
+                "password" => "$2y$10\$vPsht5Ye8dWukO9K4qyx3.6KXfGxjQ0S9MGP9zjA0.k.c2tJJItXW",
+                "vat" => "1234"
+            ],
+            [
+                "name" => "KFC",
+                "address" => "Via Bombreis, 2, 20123 Napoli NA",
+                "img" => "https://wine.pambianconews.com/wp-content/uploads/sites/15/2022/02/KFC-Dalmine-drive.jpeg",
+                "logo" => "https://www.romaest.cc/fileadmin/user_upload/GLOBAL/brand_stores/logos/kfc.jpg",
+                "email" => "test3@mail.com",
+                "password" => "$2y$10\$vPsht5Ye8dWukO9K4qyx3.6KXfGxjQ0S9MGP9zjA0.k.c2tJJItXW",
+                "vat" => "1234"
+            ],
         ];
 
         foreach($restaurants as $restaurant){
