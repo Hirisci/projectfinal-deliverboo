@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Plate;
 use Illuminate\Http\Request;
+use App\Plate;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
@@ -63,9 +63,9 @@ class PlateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Plate $plate)
     {
-        //
+        return view('admin.plate.show', compact('plate'));
     }
 
     /**
@@ -74,9 +74,9 @@ class PlateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Plate $plate)
     {
-        //
+        return view('admin.plate.edit', compact('plate'));
     }
 
     /**
@@ -86,9 +86,20 @@ class PlateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Plate $plate)
     {
-        //
+        //validazione
+        $request->validate([
+            'name' => 'required | string | max:50'
+        ]);
+        //aggiornamento
+        $data = $request->all();
+        if( $plate->name != $data['name']){
+            $plate->slug = $this->getSlug($data['name']);
+        }
+        $plate->update($data);
+        //redirect
+        return redirect()->route('admin.plate.index');
     }
 
     /**
@@ -97,9 +108,10 @@ class PlateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Plate $plate)
     {
-        //
+        $plate->delete();
+        return redirect()->route('admin.plate.index');
     }
 
     private function getSlug($name)

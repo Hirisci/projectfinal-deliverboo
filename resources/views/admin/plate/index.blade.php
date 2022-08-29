@@ -25,9 +25,9 @@
                             <td>{{$plate->name}}</td>
                             {{-- azioni --}}
                             <td>
-                                <a href="{{route('admin.plate.show', $plate->id)}}" class="btn btn-primary">Visualizza</a>
-                                <a href="{{route('admin.plate.edit', $plate->id)}}" class="btn btn-warning">Modifica</a>
-                                <form action="{{route('admin.plate.destroy' , $plate->id )}}" method="POST">
+                                <a href="{{route('admin.plate.show', $plate)}}" class="btn btn-primary">Visualizza</a>
+                                <a href="{{route('admin.plate.edit', $plate)}}" class="btn btn-warning">Modifica</a>
+                                <form action="{{route('admin.plate.destroy' , $plate )}}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Elimina</button>

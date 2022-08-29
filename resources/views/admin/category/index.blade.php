@@ -25,8 +25,8 @@
                             <td>{{$category->name}}</td>
                             {{-- azioni --}}
                             <td>
-                                <a href="{{route('admin.category.show', $category->id)}}" class="btn btn-primary">Visualizza</a>
-                                <a href="{{route('admin.category.edit', $category->id)}}" class="btn btn-warning">Modifica</a>
+                                <a href="{{route('admin.category.show', $category)}}" class="btn btn-primary">Visualizza</a>
+                                <a href="{{route('admin.category.edit', $category)}}" class="btn btn-warning">Modifica</a>
                                 <form action="{{route('admin.category.destroy' , $category->id )}}" method="POST">
                                     @csrf
                                     @method('DELETE')
