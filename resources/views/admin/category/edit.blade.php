@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
-@section('content')
+@section('menu')
     <div class="container">
         <div class="card">
             <div class="card-header">
@@ -23,3 +23,4 @@
         </div>
     </div>
 @endsection
+
