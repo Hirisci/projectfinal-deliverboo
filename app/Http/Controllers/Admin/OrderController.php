@@ -19,8 +19,10 @@ class OrderController extends Controller
      */
     public function index()
     {
+        $plate = Plate::all();
+        $user = User::all();
         $order = Order::all();
-        return view('admin.order.index', compact('order'));
+        return view('admin.order.index', compact('order', 'user', 'plate'));
         
     }
 
@@ -48,7 +50,7 @@ class OrderController extends Controller
         $newOrder->slug = $this->getSlug($data['name']);
         $newOrder->save();
         //reindirizzo a un altra pagina
-        return redirect()->route('admin.category.index', $newCategory->id);
+        return redirect()->route('admin.order.index', $newOrder->id);
     }
 
     /**
@@ -59,7 +61,10 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-         return view('admin.order.show');
+        $plate = Plate::all();
+        $user = User::all();
+        $order = Order::all();
+        return view('admin.order.show');
     }
 
     /**

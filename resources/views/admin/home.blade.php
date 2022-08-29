@@ -12,7 +12,6 @@
                         <th scope="col">Nome Locale</th>
                         <th scope="col">Indirizzo</th>
                         <th scope="col">Azioni</th>
-                        <th scope="col"><button class="btn btn-light"><a href="{{route('admin.order.index')}}">visualizza Ordini</a></button></th>
                     </tr>
                 </thead>
                 <tbody>
