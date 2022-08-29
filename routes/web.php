@@ -31,6 +31,7 @@ Route::middleware('auth')
         Route::resource('category', 'CategoryController');
         Route::resource('user', 'UserController');
         Route::resource('plate', 'PlateController');
+        Route::resource('order', 'OrderController');
 });
 
 

@@ -9,13 +9,15 @@
             <ul>
                 <li><a href="{{route('admin.user.index')}}">Visualizza ristorante</a></li>
                 <li><a href="{{route('admin.user.create')}}">Modifica dati ristorante</a></li>
-            </ul>
-            
+            </ul>          
             <li>Piatti</li>
             <ul>
                 <li><a href="{{route('admin.user.index')}}">Visualizza piatti</a></li>
                 <li><a href="{{route('admin.user.create')}}">Aggiungi piatti</a></li>
             </ul>
+            <li>Aggiungi piatto</li>
+            <li>Statistiche vendita</li>
+            <li><button class="btn btn-light"><a href="{{route('admin.order.index')}}">visualizza Ordini</a></button></li>
         </ul>
     </div>
     <div class="menu-dx">
