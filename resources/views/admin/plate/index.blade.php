@@ -12,6 +12,7 @@
                   <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nome</th>
+                    <th scope="col">Prezzo</th>
                     <th scope="col">Azioni</th>
                   </tr>
                 </thead>
@@ -23,6 +24,7 @@
                         <tr>
                             <td>{{$plate->id}}</td>
                             <td>{{$plate->name}}</td>
+                            <td>{{$plate->price}} €</td>
                             {{-- azioni --}}
                             <td>
                                 <a href="{{route('admin.plate.show', $plate)}}" class="btn btn-primary">Visualizza</a>

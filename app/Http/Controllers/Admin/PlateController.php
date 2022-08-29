@@ -44,7 +44,7 @@ class PlateController extends Controller
         $request->validate([
             'name' => 'required | string | max:50',
             'description' => 'required | string | max:200',
-            'price' => 'required | numeric | max:5'
+            'price' => 'required | numeric '
         ]);
         //prendo i dati dal request e creo la nuova categoria
         $data = $request->all();
@@ -52,6 +52,7 @@ class PlateController extends Controller
         $newPlate->fill($data);
         $newPlate->slug = $this->getSlug($data['name']);
         $newPlate->user_id = Auth::user()->id;
+        $newPlate->is_visible = isset($newPlate->is_visible);
         $newPlate->save();
         //reindirizzo a un altra pagina
         return redirect()->route('admin.plate.index');
@@ -97,6 +98,9 @@ class PlateController extends Controller
         if( $plate->name != $data['name']){
             $plate->slug = $this->getSlug($data['name']);
         }
+        // dd(isset($plate->is_visible));
+        // $plate->is_visible = $plate->is_visible;
+        $plate->is_visible = (isset($data['is_visible']) ? true : false);
         $plate->update($data);
         //redirect
         return redirect()->route('admin.plate.index');
