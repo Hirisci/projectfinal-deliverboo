@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 use App\User;
+use App\Category;
 
 class UsersTableSeeder extends Seeder
 {
@@ -31,7 +33,8 @@ class UsersTableSeeder extends Seeder
                 "img" => "https://canaledieci.it/wp-content/uploads/2022/02/MC-CAFE-MC-DONALDS-ASSUNZIONI.jpg",
                 "logo" => "https://i.pinimg.com/originals/3e/cb/a8/3ecba88bff841698cef03d71220adaf6.jpg",
                 "email" => "test1@mail.com",
-                "password" => "$2y$10\$vPsht5Ye8dWukO9K4qyx3.6KXfGxjQ0S9MGP9zjA0.k.c2tJJItXW",
+                "password" => "test1111",
+                "categories" => ["5"],
                 "vat" => "1234"
             ],
             [
@@ -40,7 +43,8 @@ class UsersTableSeeder extends Seeder
                 "img" => "https://cdn.website.dish.co/media/67/1f/3459567/Pizzeria-da-Toto-14E99E06-EF7C-48A0-B68A-EE7DD1322FEA.jpg",
                 "logo" => "https://i.pinimg.com/originals/3e/cb/a8/3ecba88bff841698cef03d71220adaf6.jpg",
                 "email" => "test2@mail.com",
-                "password" => "$2y$10\$vPsht5Ye8dWukO9K4qyx3.6KXfGxjQ0S9MGP9zjA0.k.c2tJJItXW",
+                "password" => "test1111",
+                "categories" => ["4",'1'],
                 "vat" => "1234"
             ],
             [
@@ -49,7 +53,18 @@ class UsersTableSeeder extends Seeder
                 "img" => "https://wine.pambianconews.com/wp-content/uploads/sites/15/2022/02/KFC-Dalmine-drive.jpeg",
                 "logo" => "https://www.romaest.cc/fileadmin/user_upload/GLOBAL/brand_stores/logos/kfc.jpg",
                 "email" => "test3@mail.com",
-                "password" => "$2y$10\$vPsht5Ye8dWukO9K4qyx3.6KXfGxjQ0S9MGP9zjA0.k.c2tJJItXW",
+                "password" => "test1111",
+                "categories" => ["5"],
+                "vat" => "1234"
+            ],
+            [
+                "name" => "POKESCUSE",
+                "address" => "Via Mazzin, 2, 20123 Milano MI",
+                "img" => "https://blog.giallozafferano.it/dulcisinforno/wp-content/uploads/2021/06/Poke-bowl-ricetta-7893.jpg",
+                "logo" => "https://www.romaest.cc/fileadmin/user_upload/GLOBAL/brand_stores/logos/kfc.jpg",
+                "email" => "test4@mail.com",
+                "password" => "test1111",
+                "categories" => ["2","3"],
                 "vat" => "1234"
             ],
         ];
@@ -60,9 +75,10 @@ class UsersTableSeeder extends Seeder
             $newUser->address = $restaurant['address'];
             $newUser->img = $restaurant['img'];
             $newUser->email = $restaurant['email'];
-            $newUser->password = $restaurant['password'];
+            $newUser->password = Hash::make($restaurant['password']);
             $newUser->vat = $restaurant['vat'];
             $newUser->save();
+
         }
     }
 }
