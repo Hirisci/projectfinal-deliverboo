@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Plate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Str;
 
 class PlateController extends Controller
 {
@@ -38,11 +40,11 @@ class PlateController extends Controller
     public function store(Request $request)
     {
         //validazione dati
-        $request->validate([
-            'name' => 'required | string | max:50',
-            'description' => 'required | string | max:200',
-            'price' => 'required | numeric | max:5'
-        ]);
+        // $request->validate([
+        //     'name' => 'required | string | max:50',
+        //     'description' => 'required | string | max:200',
+        //     'price' => 'required | numeric | max:5'
+        // ]);
         //prendo i dati dal request e creo la nuova categoria
         $data = $request->all();
         $newPlate = new Plate();
@@ -96,5 +98,18 @@ class PlateController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function getSlug($name)
+    {
+        $slug = Str::of($name)->slug('-');
+        $count = 1;
+
+        while(Plate::where('slug' , $slug)->first() ){
+            $slug = Str::of($name)->slug('-') . "-{$count}";
+            $count++;
+        }
+
+        return $slug;
     }
 }

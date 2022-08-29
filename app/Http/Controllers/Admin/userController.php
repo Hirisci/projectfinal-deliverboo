@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -97,7 +99,7 @@ class UserController extends Controller
         $slug = Str::of($name)->slug('-');
         $count = 1;
 
-        while(Category::where('slug' , $slug)->first() ){
+        while(User::where('slug' , $slug)->first() ){
             $slug = Str::of($name)->slug('-') . "-{$count}";
             $count++;
         }
