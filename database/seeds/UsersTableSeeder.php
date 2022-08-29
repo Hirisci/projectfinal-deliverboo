@@ -35,7 +35,7 @@ class UsersTableSeeder extends Seeder
                 "email" => "test1@mail.com",
                 "password" => "test1111",
                 "categories" => ["5"],
-                "vat" => "1234"
+                "vat" => "12345678901"
             ],
             [
                 "name" => "Pizzeria Toto",
@@ -45,7 +45,7 @@ class UsersTableSeeder extends Seeder
                 "email" => "test2@mail.com",
                 "password" => "test1111",
                 "categories" => ["4",'1'],
-                "vat" => "1234"
+                "vat" => "12345678901"
             ],
             [
                 "name" => "KFC",
@@ -55,7 +55,7 @@ class UsersTableSeeder extends Seeder
                 "email" => "test3@mail.com",
                 "password" => "test1111",
                 "categories" => ["5"],
-                "vat" => "1234"
+                "vat" => "12345678901"
             ],
             [
                 "name" => "POKESCUSE",
@@ -65,7 +65,16 @@ class UsersTableSeeder extends Seeder
                 "email" => "test4@mail.com",
                 "password" => "test1111",
                 "categories" => ["2","3"],
-                "vat" => "1234"
+                "vat" => "12345678901"
+            ],
+            [
+                "name" => "Burgez",
+                "address" => "Corso di Porta Ticinese, 14, 20123 Milano MI",
+                "img" => "https://citynews-romatoday.stgy.ovh/~media/original-hi/6397732467681/burgez-hamburger-patatine-2.jpg",
+                "logo" => "https://uploads-ssl.webflow.com/5f5f9253a89fff35ab6eac67/5fa58f6bb63ce9450b799f15_logo-burgez-single-w.png",
+                "email" => "test5@mail.com",
+                "password" => "test1111",
+                "vat" => "22060101051"
             ],
         ];
 
