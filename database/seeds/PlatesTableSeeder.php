@@ -19,7 +19,7 @@ class PlatesTableSeeder extends Seeder
                 "description" => "test",
                 "price" => "8.50",
                 "is_visible" => "true",
-                "user_id" => '1'
+                "restaurant_id" => '1'
             ],
             [
                 "name" => "Gran Crispy McBacon Menu",
@@ -27,7 +27,7 @@ class PlatesTableSeeder extends Seeder
                 "description" => "Chi ama il Crispy McBacon® ne prenderebbe volentieri un altro e un altro e un altro e un altro ancora. Per questo c’è il Gran Crispy McBacon®: carne 100% bovina da allevamenti italiani, croccante bacon 100% da pancetta italiana, formaggio e l'inconfondibile salsa Crispy. Come il classico, ma ancora più grande.",
                 "price" => "9.00",
                 "is_visible" => "true",
-                "user_id" => '1'
+                "restaurant_id" => '1'
             ],
             [
                 "name" => "Crispy McWrap Menu",
@@ -35,7 +35,7 @@ class PlatesTableSeeder extends Seeder
                 "description" => "Carne 100% bovina da allevamenti italiani, croccante bacon 100% da pancetta italiana, formaggio e l’inconfondibile salsa, avvolti in una fragrante tortilla.",
                 "price" => "8.80",
                 "is_visible" => "true",
-                "user_id" => '1'
+                "restaurant_id" => '1'
             ],
             [
                 "name" => "L'affumicato Menu",
@@ -43,7 +43,7 @@ class PlatesTableSeeder extends Seeder
                 "description" => "Appetitoso, con un gusto che ti sorprende. Ti basterà assaggiare L’Affumicato per farti conquistare dai suoi ingredienti: scamorza affumicata con latte italiano, salsa ai peperoni grigliati e l’immancabile 100% petto di pollo italiano.",
                 "price" => "7.90",
                 "is_visible" => "true",
-                "user_id" => '1'
+                "restaurant_id" => '1'
             ],
             [
                 "name" => "My Selection Chicken Asiago Menu",
@@ -51,7 +51,7 @@ class PlatesTableSeeder extends Seeder
                 "description" => "100% petto di pollo italiano avvolto in una croccante panatura, Asiago DOP, bacon croccante, salsa con olive taggiasche & formaggio e pane EVO con semi di sesamo.",
                 "price" => "10.60",
                 "is_visible" => "true",
-                "user_id" => '1'
+                "restaurant_id" => '1'
             ],
             [
                 "name" => "Filet-o-fish Menu",
@@ -59,7 +59,7 @@ class PlatesTableSeeder extends Seeder
                 "description" => "A volte per sorprendere bastano tre semplici ingredienti: merluzzo impanato, formaggio, salsa tartara. Il risultato? Un Grande Classico che unisce il sapore del mare al gusto unico di McDonald’s.",
                 "price" => "5.00",
                 "is_visible" => "true",
-                "user_id" => '1'
+                "restaurant_id" => '1'
             ],
         ];
 
@@ -69,7 +69,7 @@ class PlatesTableSeeder extends Seeder
             $newPlate->description = $plate['description'];
             $newPlate->price = $plate['price'];
             $newPlate->img = $plate['image'];
-            $newPlate->user_id = $plate['user_id'];
+            $newPlate->restaurant_id = $plate['restaurant_id'];
             $newPlate->save();
 
         }
