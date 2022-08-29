@@ -19,7 +19,6 @@ class PlateController extends Controller
     public function index()
     {
         $plates = Plate::where('user_id', '=' , Auth::user()->id)->get();
-        dump($plates, Auth::user()->id);
         return view('admin.plate.index', compact('plates'));
     }
 
