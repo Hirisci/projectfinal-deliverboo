@@ -98,8 +98,6 @@ class PlateController extends Controller
         if( $plate->name != $data['name']){
             $plate->slug = $this->getSlug($data['name']);
         }
-        // dd(isset($plate->is_visible));
-        // $plate->is_visible = $plate->is_visible;
         $plate->is_visible = (isset($data['is_visible']) ? true : false);
         $plate->update($data);
         //redirect
