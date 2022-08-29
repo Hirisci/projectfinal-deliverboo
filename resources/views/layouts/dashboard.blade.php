@@ -6,8 +6,16 @@
     <div class="menu-sx">
         <ul>
             <li>Account</li>
-            <li>Aggiungi piatto</li>
-            <li>Statistiche vendita</li>
+            <ul>
+                <li><a href="{{route('admin.user.index')}}">Visualizza ristorante</a></li>
+                <li><a href="{{route('admin.user.create')}}">Modifica dati ristorante</a></li>
+            </ul>
+            
+            <li>Piatti</li>
+            <ul>
+                <li><a href="{{route('admin.user.index')}}">Visualizza piatti</a></li>
+                <li><a href="{{route('admin.user.create')}}">Aggiungi piatti</a></li>
+            </ul>
         </ul>
     </div>
     <div class="menu-dx">
