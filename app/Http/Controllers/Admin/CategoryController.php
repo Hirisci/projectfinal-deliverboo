@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Category;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -16,9 +18,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('categories', [
-            'categories' => $categories
-        ]);
+        return view('admin.category.index', compact('categories'));
     }
 
     /**
@@ -28,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.create');
     }
 
     /**
@@ -38,8 +38,19 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        //validazione dati
+        $request->validate([
+            'name' => 'required | string | max:50'
+        ]);
+        //prendo i dati dal request e creo la nuova categoria
+        $data = $request->all();
+        $newCategory = new Category();
+        $newCategory->fill($data);
+        $newCategory->slug = $this->getSlug($data['name']);
+        $newCategory->save();
+        //reindirizzo a un altra pagina
+        return redirect()->route('admin.category.index', $newCategory->id);
     }
 
     /**
@@ -48,9 +59,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $category)
     {
-        //
+        return view('admin.category.show', compact('category'));
     }
 
     /**
@@ -59,9 +70,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        return view('admin.category.edit', compact('category'));
     }
 
     /**
@@ -71,9 +82,20 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+        //validazione
+        $request->validate([
+            'name' => 'required | string | max:50'
+        ]);
+        //aggiornamento
+        $data = $request->all();
+        if( $category->name != $data['name']){
+            $category->slug = $this->getSlug($data['name']);
+        }
+        $category->update($data);
+        //redirect
+        return redirect()->route('admin.category.index');
     }
 
     /**
@@ -82,8 +104,23 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        return redirect()->route('admin.category.index');
+    }
+
+    private function getSlug($name)
+    {
+        $slug = Str::of($name)->slug('-');
+        $count = 1;
+
+        while(Category::where('slug' , $slug)->first() ){
+            $slug = Str::of($name)->slug('-') . "-{$count}";
+            $count++;
+        }
+
+        return $slug;
     }
 }
