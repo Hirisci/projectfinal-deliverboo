@@ -12,8 +12,8 @@
             </ul>          
             <li>Piatti</li>
             <ul>
-                <li><a href="{{route('admin.user.index')}}">Visualizza piatti</a></li>
-                <li><a href="{{route('admin.user.create')}}">Aggiungi piatti</a></li>
+                <li><a href="{{route('admin.plate.index')}}">Visualizza piatti</a></li>
+                <li><a href="{{route('admin.plate.create')}}">Aggiungi piatti</a></li>
             </ul>
             <li>Aggiungi piatto</li>
             <li>Statistiche vendita</li>
