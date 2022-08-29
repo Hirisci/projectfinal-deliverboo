@@ -1,12 +1,13 @@
 @extends('layouts.dashboard')
 
 @section('menu')
+   
     <div class="card">
         <div class="card-header">
             <h1>Riepilogo Locale</h1>
         </div>
         <div class="card-body">
-            <table class="table table-striped">
+            {{-- <table class="table table-striped">
                 <thead> 
                     <tr>
                         <th scope="col">Nome Locale</th>
@@ -26,7 +27,9 @@
                         <a href="#"type="button" class="btn btn-warning">Edit</a>
                     </td>
                 </tbody>
-            </table>
+            </table> --}}
+
+            home.blade.php
         </div>
     </div>
 @endsection
