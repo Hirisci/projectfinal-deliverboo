@@ -7,7 +7,7 @@
                 <h1>Modifica categoria:{{$category->name}}</h1>
             </div>
             <div class="card-body">
-                <form action="{{route('admin.category.update', $category->id)}}" method="POST">
+                <form action="{{route('admin.category.update', $category)}}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="form-group">

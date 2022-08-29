@@ -47,7 +47,6 @@ class CategoryController extends Controller
         $data = $request->all();
         $newCategory = new Category();
         $newCategory->fill($data);
-        $newCategory->slug = $this->getSlug($data['name']);
         $newCategory->save();
         //reindirizzo a un altra pagina
         return redirect()->route('admin.category.index', $newCategory->id);
@@ -90,9 +89,6 @@ class CategoryController extends Controller
         ]);
         //aggiornamento
         $data = $request->all();
-        if( $category->name != $data['name']){
-            $category->slug = $this->getSlug($data['name']);
-        }
         $category->update($data);
         //redirect
         return redirect()->route('admin.category.index');
@@ -109,18 +105,5 @@ class CategoryController extends Controller
         $category->delete();
 
         return redirect()->route('admin.category.index');
-    }
-
-    private function getSlug($name)
-    {
-        $slug = Str::of($name)->slug('-');
-        $count = 1;
-
-        while(Category::where('slug' , $slug)->first() ){
-            $slug = Str::of($name)->slug('-') . "-{$count}";
-            $count++;
-        }
-
-        return $slug;
     }
 }
