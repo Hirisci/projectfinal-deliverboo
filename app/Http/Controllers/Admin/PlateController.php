@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\User;
-use Illuminate\Support\Facades\Auth;
+use App\Plate;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
-class UserController extends Controller
+class PlateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user= Auth::user();
-        return view('admin.user.index', compact('user'));
+        $plates = Plate::all();
+        return view('admin.plate.index', compact('plates'));
     }
 
     /**
@@ -29,7 +29,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
+        return view('admin.plate.create');
     }
 
     /**
@@ -41,14 +41,20 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //validazione dati
-        //prendo i dati dal request e creo il nuovo locale
+        $request->validate([
+            'name' => 'required | string | max:50',
+            'description' => 'required | string | max:200',
+            'price' => 'required | numeric | max:5'
+        ]);
+        //prendo i dati dal request e creo la nuova categoria
         $data = $request->all();
-        $newUser = new User();
-        $newUser->fill($data);
-        $newUser->slug = $this->getSlug($data['user']);
-        $newUser->save();
-        //reindirizzo alla pagina home con riepilogo locale
-        return redirect()->route('admin.home', $newUser->id);
+        $newPlate = new Plate();
+        $newPlate->fill($data);
+        $newPlate->slug = $this->getSlug($data['name']);
+        $newPlate->user_id = Auth::user()->id;
+        $newPlate->save();
+        //reindirizzo a un altra pagina
+        return redirect()->route('admin.plate.index');
     }
 
     /**
@@ -57,9 +63,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Plate $plate)
     {
-        //
+        return view('admin.plate.show', compact('plate'));
     }
 
     /**
@@ -68,9 +74,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Plate $plate)
     {
-        //
+        return view('admin.plate.edit', compact('plate'));
     }
 
     /**
@@ -80,9 +86,20 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Plate $plate)
     {
-        //
+        //validazione
+        $request->validate([
+            'name' => 'required | string | max:50'
+        ]);
+        //aggiornamento
+        $data = $request->all();
+        if( $plate->name != $data['name']){
+            $plate->slug = $this->getSlug($data['name']);
+        }
+        $plate->update($data);
+        //redirect
+        return redirect()->route('admin.plate.index');
     }
 
     /**
@@ -91,9 +108,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Plate $plate)
     {
-        //
+        $plate->delete();
+        return redirect()->route('admin.plate.index');
     }
 
     private function getSlug($name)
@@ -101,7 +119,7 @@ class UserController extends Controller
         $slug = Str::of($name)->slug('-');
         $count = 1;
 
-        while(User::where('slug' , $slug)->first() ){
+        while(Plate::where('slug' , $slug)->first() ){
             $slug = Str::of($name)->slug('-') . "-{$count}";
             $count++;
         }

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <h1>Lista Categorie</h1>
+            <h1>Lista Piatti</h1>
         </div>
         <div class="card-body">
             <table class="table table-striped">
@@ -17,17 +17,17 @@
                 </thead>
                 <tbody>
                     <div class="div mb-3">
-                        <a href="{{route('admin.category.create')}}" type="button" class="btn btn-success">Crea nuova categoria</a>
+                        <a href="{{route('admin.plate.create')}}" type="button" class="btn btn-success">Crea nuovo piatto</a>
                     </div>
-                    @foreach ($categories as $category)
+                    @foreach ($plates as $plate)
                         <tr>
-                            <td>{{$category->id}}</td>
-                            <td>{{$category->name}}</td>
+                            <td>{{$plate->id}}</td>
+                            <td>{{$plate->name}}</td>
                             {{-- azioni --}}
                             <td>
-                                <a href="{{route('admin.category.show', $category)}}" class="btn btn-primary">Visualizza</a>
-                                <a href="{{route('admin.category.edit', $category)}}" class="btn btn-warning">Modifica</a>
-                                <form action="{{route('admin.category.destroy' , $category->id )}}" method="POST">
+                                <a href="{{route('admin.plate.show', $plate)}}" class="btn btn-primary">Visualizza</a>
+                                <a href="{{route('admin.plate.edit', $plate)}}" class="btn btn-warning">Modifica</a>
+                                <form action="{{route('admin.plate.destroy' , $plate )}}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Elimina</button>
