@@ -18,7 +18,7 @@
                         <label for="price">Prezzo</label>
                         <input type="number" class="form-control" id="price" name="price" value="{{old('price', $plate->price)}}">
                         <label class="form-check-label" for="is_visible">Pubblica</label>
-                        <input type="checkbox" class="form-check-input @error('is_visible') is-invalid @enderror" id="is_visible" name="is_visible" {{old('is_visible', $plate->is_visible) ? 'checked' : ''}}>
+                        <input type="checkbox" class="form-check-input @error('is_visible') is-invalid @enderror" id="is_visible" name="is_visible" value="1" {{old('is_visible', $plate->is_visible) ? 'checked="checked"' : ''}}>
                     </div>
                     <button type="submit" class="btn btn-warning">Modifica</button>
                 </form>
