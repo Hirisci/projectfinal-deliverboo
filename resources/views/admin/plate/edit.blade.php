@@ -12,17 +12,17 @@
                     @method('PUT')
                     <div class="form-group">
                         <label for="name">Nome Piatto</label>
-                        <input type="text" class="form-control" id="name" name="name" value="{{old('name', $plate->name)}}">
+                        <input type="text" class="form-control" id="name" name="name" value="{{old('name', $plate->name)}}" required>
                         @error('name')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                         <label for="description">Descrizione Piatto</label>
-                        <input type="text" class="form-control" id="description" name="description" value="{{old('description', $plate->description)}}">
+                        <input type="text" class="form-control" id="description" name="description" value="{{old('description', $plate->description)}}" required>
                         @error('description')
                                 <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                         <label for="price">Prezzo</label>
-                        <input type="text" class="form-control" id="price" name="price" value="{{old('price', $plate->price)}}">
+                        <input type="text" class="form-control" id="price" name="price" value="{{old('price', $plate->price)}}" required pattern="[0-9]+">
                         @error('price')
                                 <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
