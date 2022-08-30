@@ -95,9 +95,7 @@ class PlateController extends Controller
         ]);
         //aggiornamento
         $data = $request->all();
-        if( $plate->name != $data['name']){
-            $plate->slug = $this->getSlug($data['name']);
-        }
+
         $plate->is_visible = (isset($data['is_visible']) ? true : false);
         $plate->update($data);
         //redirect
@@ -116,16 +114,5 @@ class PlateController extends Controller
         return redirect()->route('admin.plate.index');
     }
 
-    private function getSlug($name)
-    {
-        $slug = Str::of($name)->slug('-');
-        $count = 1;
 
-        while(Plate::where('slug' , $slug)->first() ){
-            $slug = Str::of($name)->slug('-') . "-{$count}";
-            $count++;
-        }
-
-        return $slug;
-    }
 }
