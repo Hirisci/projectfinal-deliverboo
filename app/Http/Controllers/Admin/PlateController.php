@@ -91,7 +91,9 @@ class PlateController extends Controller
     {
         //validazione
         $request->validate([
-            'name' => 'required | string | max:50'
+            'name' => 'required | string | max:50',
+            'description' => 'required | string | max:200',
+            'price' => 'required | numeric '
         ]);
         //aggiornamento
         $data = $request->all();

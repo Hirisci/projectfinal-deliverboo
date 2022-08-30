@@ -41,10 +41,10 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="image">Immagine Locale</label>
+                        <label for="img">Immagine Locale</label>
                         {{-- da cambiare input type --}}
-                        <input type="text" class="form-control" id="image" name="image" value="{{old('image')}}">
-                        @error('image')
+                        <input type="text" class="form-control" id="img" name="img" value="{{old('img')}}">
+                        @error('img')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
