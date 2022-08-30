@@ -45,8 +45,8 @@ class PlateController extends Controller
         //validazione dati
         $request->validate([
             'name' => 'required | string | max:50',
-            'description' => 'required | string | max:200',
-            'price' => 'required | numeric '
+            'description' => 'required | string | max:400',
+            'price' => 'required | numeric | gt:0'
         ]);
         //prendo i dati dal request e creo la nuova categoria
         $data = $request->all();
@@ -109,7 +109,9 @@ class PlateController extends Controller
         
         //validazione
         $request->validate([
-            'name' => 'required | string | max:50'
+            'name' => 'required | string | max:50',
+            'description' => 'required | string | max:400',
+            'price' => 'required | numeric | gt:0'
         ]);
         //aggiornamento
         $data = $request->all();
