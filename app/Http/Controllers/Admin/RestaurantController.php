@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Restaurant;
 use App\User;
+use Facade\Ignition\DumpRecorder\Dump;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Str;
 
-class UserController extends Controller
+class RestaurantController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +19,12 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        $restaurant = Restaurant::all()->where('user_id',$user->id);
+  
+        $categories = $user->restaurant->categories;
+        
+        return(view('admin.restaurant.index', compact('restaurant', 'categories')));
     }
 
     /**
@@ -39,14 +45,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //validazione dati
-        //prendo i dati dal request e creo il nuovo locale
-        $data = $request->all();
-        $newUser = new User();
-        $newUser->fill($data);
-        $newUser->save();
-        //reindirizzo alla pagina home con riepilogo locale
-        return redirect()->route('admin.home', $newUser->id);
+        //
     }
 
     /**
@@ -57,7 +56,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -66,9 +65,13 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        $user = Auth::user();
+        $restaurant = Restaurant::all()->where('user_id',$user->id)->first();
+        $categories = Category::all();
+        $categories_active = $user->restaurant->categories->map(function ($tag) { return $tag->id;})->toArray();
+        return view('admin.restaurant.edit', compact('restaurant', 'categories', 'categories_active'));
     }
 
     /**
@@ -78,9 +81,15 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Restaurant $restaurant)
     {
-        //
+        // validazione
+
+        $newRestaurant = $request->all();
+        $restaurant->update($newRestaurant);
+        
+
+        return redirect()->route('admin.restaurant.index');
     }
 
     /**
@@ -93,5 +102,4 @@ class UserController extends Controller
     {
         //
     }
-
 }

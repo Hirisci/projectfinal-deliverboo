@@ -6,10 +6,11 @@ use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
 
-class Plate extends Model
+class Restaurant extends Model
 {
     protected $guarded =['slug'];
 
+    
     use HasSlug;
 
     /**
@@ -18,7 +19,7 @@ class Plate extends Model
     public function getSlugOptions() : SlugOptions
     {
         return SlugOptions::create()
-            ->generateSlugsFrom(['name', 'id'])
+            ->generateSlugsFrom('name')
             ->saveSlugsTo('slug');
     }
 
@@ -32,17 +33,16 @@ class Plate extends Model
         return 'slug';
     }
 
-    /**
-     * Relation pivo order plate
-     */
-
-    public function orders()
-    {
-        return $this->belongsToMany('App\Order');
+    public function categories() {
+        return $this->belongsToMany('App\Category');
     }
 
-    public function restaurant()
+    public function plates()
     {
-        return $this->belongsTo('App\Restaurant');
+        return $this->hasMany('App\Plate');
+    }
+
+    public function user(){
+        return $this->belongsTo('App\User');
     }
 }
