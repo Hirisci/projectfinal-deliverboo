@@ -8,7 +8,7 @@
             <li>Account</li>
             <ul>
                 <li><a href="{{route('admin.restaurant.index')}}">Visualizza ristorante</a></li>
-                {{-- <li><a href="{{route('admin.restaurant.create')}}">Modifica dati ristorante</a></li> --}}
+                <li><a href="{{route('admin.restaurant.edit', Auth::user())}}">Modifica dati ristorante</a></li>
             </ul>
             
             <li>Piatti</li>
