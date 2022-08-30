@@ -3,13 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Restaurant;
 use Illuminate\Http\Request;
-use App\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Str;
 
-class UserController extends Controller
+class RestaurantController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +16,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user()->id;
+        $restaurant = Restaurant::all()->where('user_id',$user);
+        return(view('admin.restaurant.index', compact('restaurant')));
     }
 
     /**
@@ -39,14 +39,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //validazione dati
-        //prendo i dati dal request e creo il nuovo locale
-        $data = $request->all();
-        $newUser = new User();
-        $newUser->fill($data);
-        $newUser->save();
-        //reindirizzo alla pagina home con riepilogo locale
-        return redirect()->route('admin.home', $newUser->id);
+        //
     }
 
     /**
@@ -57,7 +50,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -93,5 +86,4 @@ class UserController extends Controller
     {
         //
     }
-
 }
