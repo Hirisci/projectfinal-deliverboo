@@ -1,4 +1,5 @@
 @extends('layouts.dashboard')
+@dump($categories)
 @section('menu')
     <div class="container">
         <div class="card">
@@ -24,9 +25,12 @@
                         <label for="name">Segli img</label>
                         <p>da implementare</p>
                         
+                        @foreach ($categories as $category)
+                            <input type="checkbox" name="category" id="$category->id">
+                            <label class="form-check-label" for="{{$category->name}}">{{$category->name}}</label>
+                        @endforeach
 
-                        {{-- <label class="form-check-label" for="is_visible">Pubblica</label>
-                        <input type="checkbox" class="form-check-input @error('is_visible') is-invalid @enderror" id="is_visible" name="is_visible" value="1" {{old('is_visible', $restaurant->is_visible) ? 'checked="checked"' : ''}}> --}}
+                        
                     </div>
                     <button type="submit" class="btn btn-warning">Modifica</button>
                 </form>

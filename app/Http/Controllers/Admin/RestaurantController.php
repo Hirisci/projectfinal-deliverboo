@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use App\Http\Controllers\Controller;
 use App\Restaurant;
 use App\User;
@@ -20,7 +21,9 @@ class RestaurantController extends Controller
     {
         $user = Auth::user()->id;
         $restaurant = Restaurant::all()->where('user_id',$user);
-        return(view('admin.restaurant.index', compact('restaurant')));
+        $list = $restaurant->categories;
+        
+        return(view('admin.restaurant.index', compact('restaurant', 'list')));
     }
 
     /**
@@ -65,7 +68,8 @@ class RestaurantController extends Controller
     {
         $user = Auth::user()->id;
         $restaurant = Restaurant::all()->where('user_id',$user)->first();
-        return view('admin.restaurant.edit', compact('restaurant'));
+        $categories = Category::all();
+        return view('admin.restaurant.edit', compact('restaurant', 'categories'));
     }
 
     /**
