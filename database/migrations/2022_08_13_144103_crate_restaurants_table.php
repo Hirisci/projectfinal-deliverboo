@@ -21,6 +21,7 @@ class CrateRestaurantsTable extends Migration
             $table->string('address')->nullable();
             $table->string('img')->nullable();
             $table->integer('vat')->nullable();
+            $table->timestamps();
         });
         
     }

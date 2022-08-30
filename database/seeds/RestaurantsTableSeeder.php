@@ -50,8 +50,8 @@ class RestaurantsTableSeeder extends Seeder
 
         foreach($restaurants as $restaurant){
             $newRestaurants = new Restaurant();
-            $newRestaurants->name = $restaurant['address'];
-            $newRestaurants->address = $restaurant['img'];
+            $newRestaurants->name = $restaurant['name'];
+            $newRestaurants->address = $restaurant['address'];
             $newRestaurants->img = $restaurant['img'];
             $newRestaurants->vat = $restaurant['vat'];
             $newRestaurants->user_id = $restaurant['user_id'];
