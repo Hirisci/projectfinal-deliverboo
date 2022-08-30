@@ -18,11 +18,6 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('name')->nullable();
-            $table->string('slug'); // Field name same as your `saveSlugsTo`
-            $table->string('address')->nullable();
-            $table->string('img')->nullable();
-            $table->string('vat')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -61,47 +61,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
-                            
-                            <div class="col-md-6">
-                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
-                                
-                                @error('address')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
                         
-                        <div class="form-group row">
-                            <label for="vat" class="col-md-4 col-form-label text-md-right">{{ __('Partita IVA') }}</label>
-                            
-                            <div class="col-md-6">
-                                <input id="vat" type="text" class="form-control @error('vat') is-invalid @enderror" name="vat" value="{{ old('vat') }}" required autocomplete="vat" autofocus>
-                                
-                                @error('vat')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-                        
-                        <div class="form-group row">
-                            <label for="img" class="col-md-4 col-form-label text-md-right">{{ __('Restaurant Image (URL)') }}</label>
-                            
-                            <div class="col-md-6">
-                                <input id="img" type="text" class="form-control @error('img') is-invalid @enderror" name="img" value="{{ old('img') }}" required autocomplete="img" autofocus>
-                                
-                                @error('img')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

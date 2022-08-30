@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Plate;
+use App\Restaurant;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,8 @@ class PlateController extends Controller
      */
     public function index()
     {
-        $plates = Plate::where('user_id', '=' , Auth::user()->id)->get();
+        $user = Auth::user();
+        $plates = $user->restaurant->plates;
         return view('admin.plate.index', compact('plates'));
     }
 
@@ -50,9 +52,11 @@ class PlateController extends Controller
         $data = $request->all();
         $newPlate = new Plate();
         $newPlate->fill($data);
-        $newPlate->slug = $this->getSlug($data['name']);
-        $newPlate->user_id = Auth::user()->id;
         $newPlate->is_visible = isset($newPlate->is_visible);
+
+        // associo il piatto al ristorante
+        $newPlate->restaurant_id = Auth::id();
+
         $newPlate->save();
         //reindirizzo a un altra pagina
         return redirect()->route('admin.plate.index');
@@ -66,6 +70,11 @@ class PlateController extends Controller
      */
     public function show(Plate $plate)
     {
+        // controllo per impedire modifica di piatti di altri ristoranti
+        if($plate->restaurant_id !== Auth::id()){
+            abort(403);  //403 per mostrare un errore di permessi
+        }
+
         return view('admin.plate.show', compact('plate'));
     }
 
@@ -76,7 +85,11 @@ class PlateController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Plate $plate)
-    {
+    {   
+        // controllo per impedire modifica di piatti di altri ristoranti
+        if($plate->restaurant_id !== Auth::id()){
+            abort(403);  //403 per mostrare un errore di permessi
+        }
         return view('admin.plate.edit', compact('plate'));
     }
 
@@ -89,15 +102,18 @@ class PlateController extends Controller
      */
     public function update(Request $request, Plate $plate)
     {
+        // controllo per impedire modifica di piatti di altri ristoranti
+        if($plate->restaurant_id !== Auth::id()){
+            abort(403);  //403 per mostrare un errore di permessi
+        }
+        
         //validazione
         $request->validate([
             'name' => 'required | string | max:50'
         ]);
         //aggiornamento
         $data = $request->all();
-        if( $plate->name != $data['name']){
-            $plate->slug = $this->getSlug($data['name']);
-        }
+
         $plate->is_visible = (isset($data['is_visible']) ? true : false);
         $plate->update($data);
         //redirect
@@ -112,20 +128,14 @@ class PlateController extends Controller
      */
     public function destroy(Plate $plate)
     {
+        // controllo per impedire modifica di piatti di altri ristoranti
+        if($plate->restaurant_id !== Auth::id()){
+            abort(403);  //403 per mostrare un errore di permessi
+        }
+        
         $plate->delete();
         return redirect()->route('admin.plate.index');
     }
 
-    private function getSlug($name)
-    {
-        $slug = Str::of($name)->slug('-');
-        $count = 1;
 
-        while(Plate::where('slug' , $slug)->first() ){
-            $slug = Str::of($name)->slug('-') . "-{$count}";
-            $count++;
-        }
-
-        return $slug;
-    }
 }

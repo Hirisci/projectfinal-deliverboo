@@ -34,7 +34,7 @@ class Category extends Model
     }
     
 
-    public function Users(){
-        return $this->belongsToMany('App\User');
+    public function Restaurants(){
+        return $this->belongsToMany('App\Restaurant');
     }
 }
