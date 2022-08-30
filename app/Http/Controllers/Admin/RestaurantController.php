@@ -20,8 +20,9 @@ class RestaurantController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $restaurant = Restaurant::all()->where('user_id',$user);
-        $categories = $restaurant->categories;
+        $restaurant = Restaurant::all()->where('user_id',$user->id);
+  
+        $categories = $user->restaurant->categories;
         
         return(view('admin.restaurant.index', compact('restaurant', 'categories')));
     }
@@ -66,10 +67,11 @@ class RestaurantController extends Controller
      */
     public function edit(User $user)
     {
-        $user = Auth::user()->id;
-        $restaurant = Restaurant::all()->where('user_id',$user)->first();
+        $user = Auth::user();
+        $restaurant = Restaurant::all()->where('user_id',$user->id)->first();
         $categories = Category::all();
-        return view('admin.restaurant.edit', compact('restaurant', 'categories'));
+        $categories_active = $user->restaurant->categories->map(function ($tag) { return $tag->id;})->toArray();
+        return view('admin.restaurant.edit', compact('restaurant', 'categories', 'categories_active'));
     }
 
     /**
@@ -85,6 +87,7 @@ class RestaurantController extends Controller
 
         $newRestaurant = $request->all();
         $restaurant->update($newRestaurant);
+        
 
         return redirect()->route('admin.restaurant.index');
     }

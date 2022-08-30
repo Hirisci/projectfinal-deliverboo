@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@dump($categories)
+@dump($categories_active)
 @section('menu')
     <div class="container">
         <div class="card">
@@ -26,8 +26,10 @@
                         <p>da implementare</p>
                         
                         @foreach ($categories as $category)
-                            <input type="checkbox" name="category" id="$category->id">
-                            <label class="form-check-label" for="{{$category->name}}">{{$category->name}}</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="{{$category->slug}}" value="{{$category->id}}" name="categories_active[]" {{in_array($category->id, old('categories_active', $categories_active)) ? 'checked' : ''}}>
+                            <label class="form-check-label" for="{{$category->slug}}">{{$category->name}}</label>
+                        </div>
                         @endforeach
 
                         

@@ -1,7 +1,7 @@
 
 
 @extends('layouts.dashboard')
-@dump($restaurant)
+@dump($restaurant, $categories)
 @section('menu')
 <div class="container">
     <div class="card">
@@ -22,10 +22,15 @@
                     <div class="name col-2">{{$item->id}}</div>
                     <div class="name col-2">{{$item->vat}}</div>
                     <div class="name col-2">{{$item->address}}</div>
-                    <p>categorie</p>
-                    {{-- @foreach ($categories as $category)
-                        {{$category}}
-                    @endforeach --}}
+                    
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p>categorie</p>
+                        @foreach ($categories as $category)
+                        {{$category->name}}
+                        @endforeach
+                    </div>
                 </div>
             @endforeach              
              
