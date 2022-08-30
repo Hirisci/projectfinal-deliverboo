@@ -1,5 +1,4 @@
 @extends('layouts.dashboard')
-@dump($restaurant)
 @section('menu')
     <div class="container">
         <div class="card">
