@@ -14,10 +14,10 @@ class RestaurantController extends Controller
 {
     private $validation = [
         'name' => 'nullable|string|max:255',
+        'img' => 'nullable|image|max:1200',
         'vat' => 'nullable|numeric|max:11|min:11',
         'address' => 'nullable|string|max:255',
         'categories_active' => 'nullable|exists:categories,id',
-        //'image' => 'nullable|image|max:500'
     ];
     /**
      * Display a listing of the resource.
