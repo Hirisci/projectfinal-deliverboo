@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Auth;
 
 class PlateController extends Controller
 {
+    private $validation = [
+        'name' => 'required | string | max:50',
+        'description' => 'required | string | max:400',
+        'price' => 'required | numeric | gt:0'
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -43,11 +48,7 @@ class PlateController extends Controller
     public function store(Request $request)
     {
         //validazione dati
-        $request->validate([
-            'name' => 'required | string | max:50',
-            'description' => 'required | string | max:400',
-            'price' => 'required | numeric | gt:0'
-        ]);
+        $data = $request->validate($this->validation);
         //prendo i dati dal request e creo la nuova categoria
         $data = $request->all();
         $newPlate = new Plate();
@@ -108,11 +109,7 @@ class PlateController extends Controller
         }
         
         //validazione
-        $request->validate([
-            'name' => 'required | string | max:50',
-            'description' => 'required | string | max:400',
-            'price' => 'required | numeric | gt:0'
-        ]);
+        $data = $request->validate($this->validation);
         //aggiornamento
         $data = $request->all();
 

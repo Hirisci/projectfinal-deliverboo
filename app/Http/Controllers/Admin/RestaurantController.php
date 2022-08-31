@@ -91,7 +91,7 @@ class RestaurantController extends Controller
     public function update(Request $request, Restaurant $restaurant)
     {
         // validazione
-        //$data = $request->validate($this->validation);
+        $data = $request->validate($this->validation);
         // update del vecchi ristorante
         $newRestaurant = $request->all();
         $restaurant->update($newRestaurant);
