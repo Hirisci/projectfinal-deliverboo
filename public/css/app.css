@@ -11226,8 +11226,12 @@ small {
 ----------------------*/
 
 .btn-main {
-  border-radius: 25%;
+  border-radius: 1.1rem;
   background-color: var(--primary-purple);
+  padding: 0.625rem 0.925rem;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .menu {

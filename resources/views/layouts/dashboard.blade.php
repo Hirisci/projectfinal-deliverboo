@@ -3,6 +3,7 @@
 @section('content')
 <div class="container menu">
     
+    {{-- menu sinistro della darshboard --}}
     <div class="menu-sx">
         <ul class="py-4">
             <div class="section-title-container">
@@ -33,6 +34,7 @@
             
         </ul>
     </div>
+    {{-- menu destro della dashboard --}}
     <div class="menu-dx">
         @yield('menu')
     </div>
