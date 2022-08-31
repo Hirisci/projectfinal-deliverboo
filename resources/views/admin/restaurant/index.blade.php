@@ -7,15 +7,22 @@
     <div class="card">
         <div class="card-header">
             <h1>Lista Piatti</h1>
-        </div>       
-            <div class="row">
-                <div class="name col-2">nome locale</div>
-                <div class="name col-2">slug</div>
-                <div class="name col-2">id</div>
-                <div class="name col-2">partita IVA</div>
-                <div class="name col-2">address</div>
-            </div>
-            @foreach ($restaurant as $item)
+        </div>   
+            @foreach ($restaurant as $item)    
+                <div class="row">
+                    <div class="div">
+                        {{-- qua vado a inserire immagine del locale --}}
+                        <img src="{{ asset('storage/' . $item->img)}}" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="name col-2">nome locale</div>
+                    <div class="name col-2">slug</div>
+                    <div class="name col-2">id</div>
+                    <div class="name col-2">partita IVA</div>
+                    <div class="name col-2">address</div>
+                </div>
+            
                 <div class="row">
                     <div class="name col-2">{{$item->name}}</div>
                     <div class="name col-2">{{$item->slug}}</div>

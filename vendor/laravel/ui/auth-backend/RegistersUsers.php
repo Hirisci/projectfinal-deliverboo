@@ -7,6 +7,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Schema;
 
 trait RegistersUsers
@@ -68,8 +69,13 @@ trait RegistersUsers
         $user= Auth::user();
         $newRestaurant = request()->only('name','address','img','vat');
         $newRestaurant['user_id'] = $user->id;
+
+        //modifica path immagine
+        if(isset($newRestaurant['img'])){
+            $newRestaurant['img'] = Storage::put('upload/ImgRestaurant', $newRestaurant['img']);
+        };
+
         Restaurant::create($newRestaurant);
-        dd($newRestaurant);
         //test
     }
 }
