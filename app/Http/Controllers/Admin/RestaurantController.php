@@ -74,6 +74,7 @@ class RestaurantController extends Controller
     public function edit(User $user)
     {
         $user = Auth::user();        
+        $restaurant = Restaurant::all()->where('user_id',$user->id)->first();
         $categories = Category::all();
         $categories_active = $user->restaurant->categories->map(function ($tag) { return $tag->id;})->toArray();
         return view('admin.restaurant.edit', compact('restaurant', 'categories', 'categories_active'));
