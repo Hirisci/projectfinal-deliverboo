@@ -24,20 +24,7 @@ class PlateController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        // Primo ingresso senza ristorante
-        $restaurant = Restaurant::all()->where('user_id',$user->id)->first();
-        if(!$restaurant){
-            $newRestaurant = new Restaurant();
-            $newRestaurant->user_id = $user->id;
-            $newRestaurant->name = null;
-            $newRestaurant->vat = null;
-            $newRestaurant->img = null;
-            $newRestaurant->address = null;
-            $newRestaurant->save();
-            $restaurant = Restaurant::all()->where('user_id',$user->id)->first();
-        }
-        
+        $user = Auth::user();            
         $plates = $user->restaurant->plates;
         return view('admin.plate.index', compact('plates'));
     }

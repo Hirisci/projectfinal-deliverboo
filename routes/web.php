@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\RestaurantController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,6 +29,7 @@ Route::middleware('auth')
     ->prefix('admin') //prefisso rotta
     ->group(function() { // creo gruppo che richiama /admin/home che richiama il controller
         Route::get('/home', 'HomeController@index')->name('home');
+        Route::get('restaurant', 'RestaurantController@create')->name('afterRegister');
         Route::resource('category', 'CategoryController');
         Route::resource('user', 'UserController');
         Route::resource('plate', 'PlateController');
