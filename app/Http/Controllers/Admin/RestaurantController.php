@@ -9,15 +9,16 @@ use App\User;
 use Facade\Ignition\DumpRecorder\Dump;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class RestaurantController extends Controller
 {
     private $validation = [
         'name' => 'nullable|string|max:255',
+        'img' => 'nullable|file|max:1200',
         'vat' => 'nullable|numeric|max:11|min:11',
         'address' => 'nullable|string|max:255',
         'categories_active' => 'nullable|exists:categories,id',
-        //'image' => 'nullable|image|max:500'
     ];
     /**
      * Display a listing of the resource.
@@ -42,6 +43,7 @@ class RestaurantController extends Controller
         }
 
         $categories = $user->restaurant->categories;
+        
         return(view('admin.restaurant.index', compact('restaurant', 'categories')));
     }
 
@@ -85,7 +87,7 @@ class RestaurantController extends Controller
      */
     public function edit(User $user)
     {
-        $user = Auth::user();
+        $user = Auth::user();        
         $restaurant = Restaurant::all()->where('user_id',$user->id)->first();
         $categories = Category::all();
         $categories_active = $user->restaurant->categories->map(function ($tag) { return $tag->id;})->toArray();
@@ -105,6 +107,12 @@ class RestaurantController extends Controller
         $data = $request->validate($this->validation);
         // update del vecchi ristorante
         $newRestaurant = $request->all();
+
+        //modifica path immagine
+        if(isset($newRestaurant['img'])){
+            $newRestaurant['img'] = Storage::put('upload/ImgRestaurant', $newRestaurant['img']);
+        };
+
         $restaurant->update($newRestaurant);
         // aggiornamento delle sezioni del ristorante 
         $category = $request->categories_active;

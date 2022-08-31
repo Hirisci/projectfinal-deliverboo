@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Restaurant extends Model
 {
-    protected $guarded =['slug'];
+    protected $guarded =['slug', 'image'];
 
     
     use HasSlug;
