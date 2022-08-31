@@ -20,7 +20,7 @@ class CrateRestaurantsTable extends Migration
             $table->string('slug'); // Field name same as your `saveSlugsTo`
             $table->string('address')->nullable();
             $table->string('img')->nullable();
-            $table->integer('vat')->nullable();
+            $table->string('vat')->nullable();
             $table->timestamps();
         });
         

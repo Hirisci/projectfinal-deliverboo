@@ -16,9 +16,6 @@
                   </tr>
                 </thead>
                 <tbody>
-                    <div class="div mb-3">
-                        <a href="{{route('admin.category.create')}}" type="button" class="btn btn-success">Crea nuova categoria</a>
-                    </div>
                     @foreach ($categories as $category)
                         <tr>
                             <td>{{$category->id}}</td>
@@ -26,12 +23,6 @@
                             {{-- azioni --}}
                             <td>
                                 <a href="{{route('admin.category.show', $category)}}" class="btn btn-primary">Visualizza</a>
-                                <a href="{{route('admin.category.edit', $category)}}" class="btn btn-warning">Modifica</a>
-                                <form action="{{route('admin.category.destroy' , $category )}}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Elimina</button>
-                                </form>
                             </td> 
                         </tr>
                     @endforeach

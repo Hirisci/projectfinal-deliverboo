@@ -12,6 +12,13 @@ use Illuminate\Support\Facades\Auth;
 
 class RestaurantController extends Controller
 {
+    private $validation = [
+        'name' => 'nullable|string|max:255',
+        'vat' => 'nullable|numeric|max:11|min:11',
+        'address' => 'nullable|string|max:255',
+        'categories_active' => 'nullable|exists:categories,id',
+        //'image' => 'nullable|image|max:500'
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -108,11 +115,13 @@ class RestaurantController extends Controller
     public function update(Request $request, Restaurant $restaurant)
     {
         // validazione
-
+        $data = $request->validate($this->validation);
+        // update del vecchi ristorante
         $newRestaurant = $request->all();
         $restaurant->update($newRestaurant);
-        
-
+        // aggiornamento delle sezioni del ristorante 
+        $category = $request->categories_active;
+        $restaurant->categories()->sync($category);
         return redirect()->route('admin.restaurant.index');
     }
 

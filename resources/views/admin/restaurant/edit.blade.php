@@ -16,7 +16,7 @@
                         <input type="text" class="form-control" id="name" name="name" value="{{old('name', $restaurant->name)}}">
 
                         <label for="name">Partita Iva</label>
-                        <input type="text" class="form-control" id="vat" name="vat" value="{{old('vat', $restaurant->vat)}}">
+                        <input type="text" class="form-control" id="vat" name="vat" value="{{old('vat', $restaurant->vat)}}" pattern="[0-9]+" maxlength="11" minlength="11">
 
                         <label for="name">Indirizzo</label>
                         <input type="text" class="form-control" id="address" name="address" value="{{old('address', $restaurant->address)}}">
