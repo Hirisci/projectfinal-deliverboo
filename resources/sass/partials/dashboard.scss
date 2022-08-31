@@ -2,9 +2,17 @@
     display: flex;
     justify-content: space-around;
     gap: 3rem;
+    
 
     &-sx {
         width: 33%;
+        border-radius: 5%;
+        padding: 1.25rem;
+        background-color: var(--secondary-purple);
+        .section-title{
+            background-color: var(--primary-purple);
+            color: white;
+        }
     }
     &-dx {
         flex-grow: 1;

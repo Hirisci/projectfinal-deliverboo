@@ -5,7 +5,7 @@
     
     <div class="menu-sx">
         <ul>
-            <li>Account</li>
+            <li class="section-title">Account</li>
             <ul>
                 <li><a href="{{route('admin.restaurant.index')}}">Visualizza ristorante</a></li>
                 <li><a href="{{route('admin.restaurant.edit', Auth::user())}}">Modifica dati ristorante</a></li>

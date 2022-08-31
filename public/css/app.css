@@ -239,6 +239,27 @@ small {
   --space-unit: 1rem;
 }
 
+:root {
+  /*------------------------------
+      LAYOUT COLORS
+  ------------------------------*/
+  --primary-purple: #9667E0;
+  --secondary-purple: #D4BBFC;
+  --primary-gray: #BEBDBD;
+  /*------------------------------
+      CATEGORY COLORS
+  ------------------------------*/
+}
+
+/*---------------------
+    MAIN BUTTONS
+----------------------*/
+
+.btn-main {
+  border-radius: 25%;
+  background-color: var(--primary-purple);
+}
+
 .menu {
   display: flex;
   justify-content: space-around;
@@ -247,6 +268,14 @@ small {
 
 .menu-sx {
   width: 33%;
+  border-radius: 5%;
+  padding: 1.25rem;
+  background-color: var(--secondary-purple);
+}
+
+.menu-sx .section-title {
+  background-color: var(--primary-purple);
+  color: white;
 }
 
 .menu-dx {
