@@ -13,9 +13,8 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <style>
-        img{
-            width: 3rem;
-            
+           img{
+            width: 3rem;  
         }
     </style>
     <body>
