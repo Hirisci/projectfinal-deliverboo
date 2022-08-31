@@ -7,6 +7,8 @@ use App\Providers\RouteServiceProvider;
 use App\Restaurant;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -73,5 +75,14 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
 
         ]);
+    }
+
+    protected function registered(Request $request, $user)
+    {
+        $user= Auth::user();
+        $newRestaurant = request()->only('name','address','img','vat');
+        $newRestaurant['user_id'] = $user->id;
+        Restaurant::create($newRestaurant);
+        //test
     }
 }

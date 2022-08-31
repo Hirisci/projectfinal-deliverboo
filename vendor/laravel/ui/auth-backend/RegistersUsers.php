@@ -65,11 +65,6 @@ trait RegistersUsers
      */
     protected function registered(Request $request, $user)
     {
-        $user= Auth::user();
-        $newRestaurant = request()->only('name','address','img','vat');
-        $newRestaurant['user_id'] = $user->id;
-        Restaurant::create($newRestaurant);
-        dd($newRestaurant);
-        //test
+       //
     }
 }
