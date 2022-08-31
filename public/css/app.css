@@ -11238,7 +11238,7 @@ small {
 }
 
 .menu-sx {
-  width: 33%;
+  width: 25%;
   border-radius: 1.5rem;
   background-color: var(--secondary-purple);
 }
@@ -11250,6 +11250,8 @@ small {
 .menu-sx ul li a {
   color: inherit;
   text-decoration: none;
+  opacity: 0.8;
+  font-weight: 600;
 }
 
 .menu-sx .section-title-container {
@@ -11260,17 +11262,25 @@ small {
   background-color: var(--primary-purple);
   color: white;
   padding: 0.3125rem;
-  width: 60%;
+  width: 80%;
 }
 
 .menu-sx .section-title-container .triangle-element {
   width: 2.0656rem;
   background-color: var(--primary-purple);
   transform: skewX(45deg);
-  margin-left: -17px;
+  margin-left: -16.8px;
 }
 
 .menu-dx {
   flex-grow: 1;
+}
+
+/*------------------
+    EFFECTS
+------------------*/
+
+.menu-sx ul li:hover a {
+  opacity: 1;
 }
 
