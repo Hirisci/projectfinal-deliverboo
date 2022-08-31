@@ -32,7 +32,7 @@
                                 <form action="{{route('admin.plate.destroy' , $plate )}}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Elimina</button>
+                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Vuoi davvero eliminare?')">Elimina</button>
                                 </form>
                             </td> 
                         </tr>
