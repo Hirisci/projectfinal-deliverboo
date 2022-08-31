@@ -1,3 +1,4 @@
+@import "~bootstrap/scss/bootstrap";
 @import "config/reset.scss"; // Variables
 @import "config/spacing.scss"; // Variables
 @import "config/typography.scss"; // Variables
@@ -8,4 +9,3 @@
 //componets
 @import "partials/dashboard.scss"; // Bootstrap
 
-@import "~bootstrap/scss/bootstrap";
