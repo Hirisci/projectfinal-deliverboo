@@ -11233,12 +11233,13 @@ small {
 .menu {
   display: flex;
   justify-content: space-around;
+  align-items: flex-start;
   gap: 3rem;
 }
 
 .menu-sx {
   width: 33%;
-  border-radius: 5%;
+  border-radius: 1.5rem;
   background-color: var(--secondary-purple);
 }
 
