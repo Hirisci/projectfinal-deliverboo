@@ -17,7 +17,7 @@
                 <li><a href="{{route('admin.plate.create')}}">Aggiungi piatti</a></li>
             </ul>
             <li>Statistiche vendita</li>
-            <li><button class="btn btn-light"><a href="{{route('admin.order.index')}}">visualizza Ordini</a></button></li>
+            <li><a href="{{route('admin.order.index')}}">visualizza Ordini</a></li>
         </ul>
     </div>
     <div class="menu-dx">
