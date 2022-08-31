@@ -101,7 +101,7 @@
                             <label for="img" class="col-md-4 col-form-label text-md-right">{{ __('Restaurant Image (URL)') }}</label>
                             
                             <div class="col-md-6">
-                                <input id="img" type="file" class="form-control-file @error('img') is-invalid @enderror" name="img" value="{{ old('img') }}" autocomplete="img" autofocus>
+                                <input id="img" type="file" class="form-control-file @error('img') is-invalid @enderror" name="img" value="{{ old('img') }}">
                                 
                                 @error('img')
                                 <span class="invalid-feedback" role="alert">
