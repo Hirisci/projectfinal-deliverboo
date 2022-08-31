@@ -89,6 +89,9 @@ class RestaurantController extends Controller
         $restaurant->update($newRestaurant);
         
 
+        // aggiornamento delle sezioni del ristorante 
+        $category = $request->categories_active;
+        $restaurant->categories()->sync($category);
         return redirect()->route('admin.restaurant.index');
     }
 
