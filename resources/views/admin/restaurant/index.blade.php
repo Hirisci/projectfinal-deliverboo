@@ -1,7 +1,6 @@
 
 
 @extends('layouts.dashboard')
-@dump($restaurant, $categories)
 @section('menu')
 <div class="container">
     <div class="card">
@@ -9,11 +8,9 @@
             <h1>Lista Piatti</h1>
         </div>   
             @foreach ($restaurant as $item)    
-                <div class="row">
-                    <div class="div">
-                        {{-- qua vado a inserire immagine del locale --}}
-                        <img src="{{ asset('storage/' . $item->img)}}" alt="">
-                    </div>
+                <div class="row col-2 mt-3 mb-3">
+                    {{-- qua vado a inserire immagine del locale --}}
+                    <img src="{{ asset('storage/' . $item->img)}}" alt="" width="150">
                 </div>
                 <div class="row">
                     <div class="name col-2">nome locale</div>

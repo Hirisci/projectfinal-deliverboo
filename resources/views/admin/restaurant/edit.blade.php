@@ -1,5 +1,4 @@
 @extends('layouts.dashboard')
-@dump($categories_active)
 @section('menu')
     <div class="container">
         <div class="card">
@@ -7,8 +6,8 @@
                 <h1>Modifica Informazioni Ristorante</h1>
             </div>
             <div class="card-body">
-
-                <form action="{{route('admin.restaurant.update', $restaurant)}}" method="POST">
+                
+                <form action="{{route('admin.restaurant.update', $restaurant)}}" method="POST" enctype='multipart/form-data'>
                     @csrf
                     @method('PUT')
                     <div class="form-group">
@@ -21,9 +20,14 @@
                         <label for="name">Indirizzo</label>
                         <input type="text" class="form-control" id="address" name="address" value="{{old('address', $restaurant->address)}}">
 
-                        
-                        <label for="name">Segli img</label>
-                        <p>da implementare</p>
+                        <img class="d-block mt-3 mb-3" src="{{ asset('storage/' . $restaurant->img) }}" width="150">
+                        <label for="img" class="col-form-label">Scegli Immagine da Modificare</label>
+                        <input id="img" type="file" class="form-control-file @error('img') is-invalid @enderror" name="img" value="{{ asset('storage/' . $restaurant->img) }}">
+                        @error('img')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                         
                         @foreach ($categories as $category)
                         <div class="form-check form-check-inline">

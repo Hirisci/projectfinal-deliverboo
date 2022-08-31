@@ -9,12 +9,13 @@ use App\User;
 use Facade\Ignition\DumpRecorder\Dump;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class RestaurantController extends Controller
 {
     private $validation = [
         'name' => 'nullable|string|max:255',
-        'img' => 'nullable|image|max:1200',
+        'img' => 'nullable|file|max:1200',
         'vat' => 'nullable|numeric|max:11|min:11',
         'address' => 'nullable|string|max:255',
         'categories_active' => 'nullable|exists:categories,id',
@@ -93,6 +94,12 @@ class RestaurantController extends Controller
         $data = $request->validate($this->validation);
         // update del vecchi ristorante
         $newRestaurant = $request->all();
+
+        //modifica path immagine
+        if(isset($newRestaurant['img'])){
+            $newRestaurant['img'] = Storage::put('upload/ImgRestaurant', $newRestaurant['img']);
+        };
+
         $restaurant->update($newRestaurant);
         // aggiornamento delle sezioni del ristorante 
         $category = $request->categories_active;
