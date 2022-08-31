@@ -103,6 +103,13 @@
                             </div>
                         </div>
 
+                        @foreach ($categories as $category)
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="{{$category->slug}}" value="{{$category->id}}" name="categories_active[]" >
+                            <label class="form-check-label" for="{{$category->slug}}">{{$category->name}}</label>
+                        </div>
+                        @endforeach
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

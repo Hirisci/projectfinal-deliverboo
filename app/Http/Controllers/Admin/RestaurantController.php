@@ -27,7 +27,20 @@ class RestaurantController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $restaurant = Restaurant::all()->where('user_id',$user->id);       
+        $restaurant = Restaurant::all()->where('user_id',$user->id);
+        
+      // Primo ingresso senza ristorante
+        if(!$restaurant){
+            $newRestaurant = new Restaurant();
+            $newRestaurant->user_id = $user->id;
+            $newRestaurant->name = null;
+            $newRestaurant->vat = null;
+            $newRestaurant->img = null;
+            $newRestaurant->address = null;
+            $newRestaurant->save();
+            $restaurant = Restaurant::all()->where('user_id',$user->id)->first();
+        }
+
         $categories = $user->restaurant->categories;
         return(view('admin.restaurant.index', compact('restaurant', 'categories')));
     }
@@ -72,7 +85,8 @@ class RestaurantController extends Controller
      */
     public function edit(User $user)
     {
-        $user = Auth::user();        
+        $user = Auth::user();
+        $restaurant = Restaurant::all()->where('user_id',$user->id)->first();
         $categories = Category::all();
         $categories_active = $user->restaurant->categories->map(function ($tag) { return $tag->id;})->toArray();
         return view('admin.restaurant.edit', compact('restaurant', 'categories', 'categories_active'));

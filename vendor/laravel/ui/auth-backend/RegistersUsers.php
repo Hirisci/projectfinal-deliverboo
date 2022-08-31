@@ -2,10 +2,12 @@
 
 namespace Illuminate\Foundation\Auth;
 
+use App\Category;
 use App\Restaurant;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Composer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
 
@@ -20,7 +22,8 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
-        return view('auth.register');
+        $categories = Category::all();
+        return view('auth.register', compact('categories'));
     }
 
     /**
@@ -65,10 +68,14 @@ trait RegistersUsers
      */
     protected function registered(Request $request, $user)
     {
+        // creo recor nel DB ristorante legato al account
         $user= Auth::user();
         $newRestaurant = request()->only('name','address','img','vat');
         $newRestaurant['user_id'] = $user->id;
+        
         Restaurant::create($newRestaurant);
-        //test
+        // aggiungo relazioni al record
+        $category = $request->categories_active;
+        $restorant= $user->restaurant->categories()->sync($category);        
     }
 }
