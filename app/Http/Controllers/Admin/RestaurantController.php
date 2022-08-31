@@ -29,6 +29,7 @@ class RestaurantController extends Controller
         $user = Auth::user();
         $restaurant = Restaurant::all()->where('user_id',$user->id);       
         $categories = $user->restaurant->categories;
+        
         return(view('admin.restaurant.index', compact('restaurant', 'categories')));
     }
 
