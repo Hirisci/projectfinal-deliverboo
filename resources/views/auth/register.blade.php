@@ -1,6 +1,40 @@
-@extends('layouts.app')
+@extends('layouts.login')
 
-@section('content')
+{{-- sezione della nav bar  --}}
+@section('nav-bar')
+    <div class="container-nav mb-3  p-2 d-flex align-items-center justify-content-between"> 
+        {{-- logo del sito --}}
+        <a href="{{url('/')}}">
+            <img src="https://icones.pro/wp-content/uploads/2021/06/symbole-github-violet.png" alt="logo provvisorio">
+        </a>
+        
+        <!-- Right Side Of Navbar -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Authentication Links -->
+            @guest
+                    @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="btn-main" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                    @endif
+                @else
+                    <div >
+                        <a class="btn-main" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                @endguest
+        </ul>
+    </div>
+@endsection
+
+@section('form')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

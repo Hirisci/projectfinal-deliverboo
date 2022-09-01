@@ -11252,6 +11252,11 @@ small {
   text-decoration: none;
 }
 
+a.btn-main:hover {
+  color: black;
+  text-decoration: none;
+}
+
 .menu {
   display: flex;
   justify-content: space-around;
