@@ -89,7 +89,7 @@
             <div class="card register-card ">
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" class="d-flex flex-column align-items-center">
+                    <form method="POST" action="{{ route('register') }}" class="d-flex flex-column align-items-center" enctype='multipart/form-data'>
                         @csrf
 
                         <div class="form-group  row align-items-center">
