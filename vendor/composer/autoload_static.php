@@ -462,6 +462,7 @@ class ComposerStaticInita572989df1515bb050a362a6b40f65b1
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Admin\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CategoryController.php',
         'App\\Http\\Controllers\\Admin\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/HomeController.php',
+        'App\\Http\\Controllers\\Admin\\OrderController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/OrderController.php',
         'App\\Http\\Controllers\\Admin\\PlateController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PlateController.php',
         'App\\Http\\Controllers\\Admin\\RestaurantController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/RestaurantController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
