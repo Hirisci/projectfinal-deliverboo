@@ -17,7 +17,7 @@ class PlateController extends Controller
         'name' => 'required | string | max:50',
         'img' => 'nullable|file|mimes:png,jpg,jpeg,svg,webp',
         'description' => 'required | string | max:400',
-        'price' => 'required | numeric | gt:0'
+        'price' => 'required | string | regex:/^\d*\.?\d*$/ | max:999'
     ];
     /**
      * Display a listing of the resource.
