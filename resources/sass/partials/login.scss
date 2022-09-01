@@ -1,6 +1,8 @@
 .login-main{
-    height: 100%;
-    margin-top: 11.5%;
+    height: calc(100vh - 87px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     svg{
         width: 100%;
     }
@@ -18,10 +20,24 @@
         }
         label{
             font-weight: bold;
-            line-height: 1rem;
         }
         input{
             border-radius: 1rem;
         }
     }
+}
+
+.register-card{
+    background-color: var(--secondary-purple);
+    border-radius: 1.25rem;
+    .card-body{
+        padding: 2rem 0;
+        input{
+        border-radius: 1rem;
+        }
+        label{
+            font-weight: bold;
+        }
+    }
+    
 }

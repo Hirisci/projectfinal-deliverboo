@@ -11235,7 +11235,7 @@ small {
 
 .background {
   width: 100%;
-  height: 100vh;
+  min-height: 100%;
   background-image: -webkit-linear-gradient(140deg, white 50%, var(--primary-purple) 50%);
 }
 
@@ -11312,8 +11312,10 @@ a.btn-main:hover {
 }
 
 .login-main {
-  height: 100%;
-  margin-top: 11.5%;
+  height: calc(100vh - 87px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-main svg {
@@ -11338,10 +11340,26 @@ a.btn-main:hover {
 
 .login-card .card-body label {
   font-weight: bold;
-  line-height: 1rem;
 }
 
 .login-card .card-body input {
   border-radius: 1rem;
+}
+
+.register-card {
+  background-color: var(--secondary-purple);
+  border-radius: 1.25rem;
+}
+
+.register-card .card-body {
+  padding: 2rem 0;
+}
+
+.register-card .card-body input {
+  border-radius: 1rem;
+}
+
+.register-card .card-body label {
+  font-weight: bold;
 }
 
