@@ -1,3 +1,6 @@
 *
 !.gitignore
-!kfc.jpg
+!upload/
+!default/
+!default/*.*
+
