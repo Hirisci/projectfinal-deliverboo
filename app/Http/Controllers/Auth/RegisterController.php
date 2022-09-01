@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -79,10 +80,19 @@ class RegisterController extends Controller
 
     protected function registered(Request $request, $user)
     {
-        $user= Auth::user();
-        $newRestaurant = request()->only('name','address','img','vat');
-        $newRestaurant['user_id'] = $user->id;
-        Restaurant::create($newRestaurant);
-        //test
+          // creo record nel DB ristorante legato al account
+          $user= Auth::user();
+          $newRestaurant = request()->only('name','address','img','vat');
+          $newRestaurant['user_id'] = $user->id;
+  
+          //modifica path immagine
+          if(isset($newRestaurant['img'])){
+              $newRestaurant['img'] = Storage::put('upload/ImgRestaurant', $newRestaurant['img']);
+          };
+  
+          Restaurant::create($newRestaurant);
+          // aggiungo relazioni al record
+          $category = $request->categories_active;
+          $restaurant= $user->restaurant->categories()->sync($category);      
     }
 }
