@@ -69,6 +69,6 @@ trait RegistersUsers
      */
     protected function registered(Request $request, $user)
     {
-        //       
+        // 
     }
 }
