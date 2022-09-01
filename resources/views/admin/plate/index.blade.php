@@ -24,11 +24,11 @@
                     @foreach ($plates as $plate)
                         <tr>
                             <td>{{$plate->id}}</td>
-                            <td>{{$plate->name}}</td>
-                            <td>{{$plate->price}} €</td>
-                            <td>{{$plate->is_visible ? 'Yes' : 'False'}}</td>
+                            <td class="col-3">{{$plate->name}}</td>
+                            <td class="col-2">{{$plate->price}} €</td>
+                            <td class="col-1">{{$plate->is_visible ? 'Yes' : 'False'}}</td>
                             {{-- azioni --}}
-                            <td>
+                            <td class="col-5">
                                 <a href="{{route('admin.plate.show', $plate)}}" class="btn btn-primary">Visualizza</a>
                                 <a href="{{route('admin.plate.edit', $plate)}}" class="btn btn-warning">Modifica</a>
                                 <form action="{{route('admin.plate.destroy' , $plate )}}" method="POST">
