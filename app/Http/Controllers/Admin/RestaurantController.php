@@ -15,8 +15,8 @@ class RestaurantController extends Controller
 {
     private $validation = [
         'name' => 'nullable|string|max:255',
-        'img' => 'nullable|file|max:1200',
-        'vat' => 'nullable|numeric|max:11|min:11',
+        'img' => 'nullable|file|mimes:png,jpg,jpeg,svg,webp',
+        'vat' => 'nullable|string|max:11|min:11',
         'address' => 'nullable|string|max:255',
         'categories_active' => 'nullable|exists:categories,id',
     ];
@@ -29,21 +29,7 @@ class RestaurantController extends Controller
     {
         $user = Auth::user();
         $restaurant = Restaurant::all()->where('user_id',$user->id);
-        
-      // Primo ingresso senza ristorante
-        if(!$restaurant){
-            $newRestaurant = new Restaurant();
-            $newRestaurant->user_id = $user->id;
-            $newRestaurant->name = null;
-            $newRestaurant->vat = null;
-            $newRestaurant->img = null;
-            $newRestaurant->address = null;
-            $newRestaurant->save();
-            $restaurant = Restaurant::all()->where('user_id',$user->id)->first();
-        }
-
-        $categories = $user->restaurant->categories;
-        
+        $categories = $user->restaurant->categories;        
         return(view('admin.restaurant.index', compact('restaurant', 'categories')));
     }
 

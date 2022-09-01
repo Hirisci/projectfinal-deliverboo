@@ -16,7 +16,7 @@ class RestaurantsTableSeeder extends Seeder
             [
                 "name" => "McDonald's",
                 "address" => "Passaggio Duomo, 2, 20123 Milano MI",
-                "img" => "https://canaledieci.it/wp-content/uploads/2022/02/MC-CAFE-MC-DONALDS-ASSUNZIONI.jpg",
+                "img" => "upload/ImgRestaurant/LlzO7jOR7tGmDJ0nNKyDPEvBmXiXwzedMQ1x8LmG.webp",
                 "logo" => "https://i.pinimg.com/originals/3e/cb/a8/3ecba88bff841698cef03d71220adaf6.jpg",
                 "vat" => "1234",
                 "user_id" => "1",
@@ -24,7 +24,7 @@ class RestaurantsTableSeeder extends Seeder
             [
                 "name" => "Pizzeria Toto",
                 "address" => "Amerigo Vespucci, 2, 20032 Cormano MI",
-                "img" => "https://cdn.website.dish.co/media/67/1f/3459567/Pizzeria-da-Toto-14E99E06-EF7C-48A0-B68A-EE7DD1322FEA.jpg",
+                "img" => "upload/ImgRestaurant/LlzO7jOR7tGmDJ0nNKyDPEvBmXiXwzedMQ1x8LmG.webp",
                 "logo" => "https://i.pinimg.com/originals/3e/cb/a8/3ecba88bff841698cef03d71220adaf6.jpg",
                 "vat" => "1234",
                 "user_id" => "2",
