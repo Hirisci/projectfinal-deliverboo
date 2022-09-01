@@ -11,7 +11,7 @@
                     @csrf
                     @method('PUT')
                     <div class="form-group">
-                        <label for="name">Nome Ristorante</label>
+                        <label for="name">Nome Ristorante *</label>
                         <input type="text" class="form-control" id="name" name="name" value="{{old('name', $restaurant->name)}}" required>
 
                         <label for="name">Partita Iva</label>

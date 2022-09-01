@@ -11,17 +11,17 @@
                     @csrf
                     @method('PUT')
                     <div class="form-group">
-                        <label for="name">Nome Piatto</label>
+                        <label for="name">Nome Piatto *</label>
                         <input type="text" class="form-control" id="name" name="name" value="{{old('name', $plate->name)}}" required>
                         @error('name')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
-                        <label for="description">Descrizione Piatto</label>
+                        <label for="description">Descrizione Piatto *</label>
                         <input type="text" class="form-control" id="description" name="description" value="{{old('description', $plate->description)}}" required>
                         @error('description')
                                 <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
-                        <label for="price">Prezzo</label>
+                        <label for="price">Prezzo *</label>
                         <input type="number" class="form-control" id="price" name="price" value="{{old('price', $plate->price)}}" required step="0.01">
                         @error('price')
                                 <div class="alert alert-danger">{{ $message }}</div>
