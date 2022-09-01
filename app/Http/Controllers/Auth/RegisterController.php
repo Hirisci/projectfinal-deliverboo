@@ -80,7 +80,7 @@ class RegisterController extends Controller
 
     protected function registered(Request $request, $user)
     {
-        // creo recor nel DB ristorante legato al account
+        // creo record nel DB ristorante legato al account
         $user= Auth::user();
         $newRestaurant = request()->only('name','address','img','vat');
         $newRestaurant['user_id'] = $user->id;
@@ -93,6 +93,6 @@ class RegisterController extends Controller
         Restaurant::create($newRestaurant);
         // aggiungo relazioni al record
         $category = $request->categories_active;
-        $restorant= $user->restaurant->categories()->sync($category);        
+        $restaurant= $user->restaurant->categories()->sync($category);        
     }
 }
