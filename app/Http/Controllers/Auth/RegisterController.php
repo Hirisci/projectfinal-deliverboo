@@ -58,7 +58,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'address' => ['nullable', 'string', 'numeric'],
-            'vat' => ['nullable', 'string', 'min:11', 'max:11'],
+            'vat' => ['nullable', 'string', 'min:11', 'max:11', 'regex:/^[0-9]+$/'],
             'img' => ['nullable', 'file', 'max:500', 'mimes:png,jpg,jpeg,svg,webp'],
         ]);
     }
