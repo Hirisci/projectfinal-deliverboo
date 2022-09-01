@@ -13,7 +13,7 @@ class PlatesTableSeeder extends Seeder
     public function run()
     {
         $plates = [
-            // KFC MENU
+            // MC MENU
             [
                 "name" => "Big Mac Menu",
                 "image" => "default/ImgPlates/MC/big-mac.png",
@@ -62,9 +62,50 @@ class PlatesTableSeeder extends Seeder
                 "is_visible" => "true",
                 "restaurant_id" => '1'
             ],
+            // PIZZERIA TOTO'
+            [
+                "name" => "Pizza Margherita",
+                "image" => "default/ImgPlates",
+                "description" => "Pizza Margherita",
+                "price" => "5.50",
+                "is_visible" => "true",
+                "restaurant_id" => '2'
+            ],
+            [
+                "name" => "Pizza Patate e Wurstel",
+                "image" => "default/ImgPlates",
+                "description" => "Pizza Patate e Wurstel",
+                "price" => "7.50",
+                "is_visible" => "true",
+                "restaurant_id" => '2'
+            ],
+            [
+                "name" => "Pizza Rucola e Grana",
+                "image" => "default/ImgPlates",
+                "description" => "Pizza Rucola e Grana",
+                "price" => "7.80",
+                "is_visible" => "true",
+                "restaurant_id" => '2'
+            ],
             [
                 "name" => "Spaghetti amatriciana",
-                "image" => "https://www.melarossa.it/wp-content/uploads/2021/04/bucatini-all-amatriciana.jpg",
+                "image" => "default/ImgPlates",
+                "description" => "Un piatto dal gusto pieno ed appagante. La sua squisita bontà nasce da ingredienti semplici e di ottima qualità, che si sposano bene nel colore, nel profumo e nel gusto; tanto da diventare fiore all’occhiello anche di grandi chef, per la gioia dei nostri palati.",
+                "price" => "7.00",
+                "is_visible" => "true",
+                "restaurant_id" => '2'
+            ],
+            [
+                "name" => "Spaghetti Carbonara",
+                "image" => "default/ImgPlates",
+                "description" => "Un piatto dal gusto pieno ed appagante. La sua squisita bontà nasce da ingredienti semplici e di ottima qualità, che si sposano bene nel colore, nel profumo e nel gusto; tanto da diventare fiore all’occhiello anche di grandi chef, per la gioia dei nostri palati.",
+                "price" => "7.00",
+                "is_visible" => "true",
+                "restaurant_id" => '2'
+            ],
+            [
+                "name" => "Spaghetti amatriciana",
+                "image" => "default/ImgPlates",
                 "description" => "Un piatto dal gusto pieno ed appagante. La sua squisita bontà nasce da ingredienti semplici e di ottima qualità, che si sposano bene nel colore, nel profumo e nel gusto; tanto da diventare fiore all’occhiello anche di grandi chef, per la gioia dei nostri palati.",
                 "price" => "7.00",
                 "is_visible" => "true",
