@@ -16,7 +16,7 @@ class RestaurantsTableSeeder extends Seeder
             [
                 "name" => "McDonald's",
                 "address" => "Passaggio Duomo, 2, 20123 Milano MI",
-                "img" => "public/default/mc.webp",
+                "img" => "default/mc.webp",
                 "logo" => "https://i.pinimg.com/originals/3e/cb/a8/3ecba88bff841698cef03d71220adaf6.jpg",
                 "vat" => "12345678910",
                 "user_id" => "1",
@@ -24,7 +24,7 @@ class RestaurantsTableSeeder extends Seeder
             [
                 "name" => "Pizzeria Toto",
                 "address" => "Amerigo Vespucci, 2, 20032 Cormano MI",
-                "img" => "public/default/toto.jpg",
+                "img" => "default/toto.jpg",
                 "logo" => "https://i.pinimg.com/originals/3e/cb/a8/3ecba88bff841698cef03d71220adaf6.jpg",
                 "vat" => "12345678911",
                 "user_id" => "2",
@@ -32,7 +32,7 @@ class RestaurantsTableSeeder extends Seeder
             [
                 "name" => "KFC",
                 "address" => "Via Bombreis, 2, 20123 Napoli NA",
-                "img" => "public/default/kfc.jpg",
+                "img" => "default/kfc.jpg",
                 "logo" => "https://www.romaest.cc/fileadmin/user_upload/GLOBAL/brand_stores/logos/kfc.jpg",
                 "vat" => "12345678912",
                 "user_id" => "3",
@@ -40,7 +40,7 @@ class RestaurantsTableSeeder extends Seeder
             [
                 "name" => "POKESCUSE",
                 "address" => "Via Mazzin, 2, 20123 Milano MI",
-                "img" => "public/default/kfc.jpg",
+                "img" => "default/kfc.jpg",
                 "logo" => "https://www.romaest.cc/fileadmin/user_upload/GLOBAL/brand_stores/logos/kfc.jpg",
                 "vat" => "12345678913",
                 "user_id" => "4",
