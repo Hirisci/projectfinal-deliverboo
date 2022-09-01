@@ -66,16 +66,6 @@ trait RegistersUsers
      */
     protected function registered(Request $request, $user)
     {
-        $user= Auth::user();
-        $newRestaurant = request()->only('name','address','img','vat');
-        $newRestaurant['user_id'] = $user->id;
-
-        //modifica path immagine
-        if(isset($newRestaurant['img'])){
-            $newRestaurant['img'] = Storage::put('upload/ImgRestaurant', $newRestaurant['img']);
-        };
-
-        Restaurant::create($newRestaurant);
-        //test
+      //
     }
 }
