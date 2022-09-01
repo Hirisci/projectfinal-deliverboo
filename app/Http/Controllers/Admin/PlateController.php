@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Plate;
 use App\Restaurant;
+use App\Traits\ValidationDoubleName;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Storage;
 
 class PlateController extends Controller
 {
+    use ValidationDoubleName;
+    
     private $validation = [
         'name' => 'required | string | max:50',
         'img' => 'nullable|file|mimes:png,jpg,jpeg,svg,webp',
@@ -37,7 +40,7 @@ class PlateController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
         return view('admin.plate.create');
     }
 
@@ -55,6 +58,9 @@ class PlateController extends Controller
         $data = $request->all();
         $newPlate = new Plate();
         $newPlate->fill($data);
+        //controllo nome doppio piatto nel ristorante
+       
+        $this->validationDoubleNameRecord($newPlate, Auth::user());
         $newPlate->is_visible = isset($newPlate->is_visible);
 
         //modifica path immagine
@@ -118,6 +124,11 @@ class PlateController extends Controller
         //validazione
         $data = $request->validate($this->validation);
         //aggiornamento
+
+        $newPlate = new Plate;
+        $newPlate->fill($data);
+        $this->validationDoubleNameRecordUpdate($newPlate, $plate, Auth::user());
+
         $newPlate = $request->all();
 
         //modifica path immagine
@@ -125,8 +136,9 @@ class PlateController extends Controller
             $newPlate['img'] = Storage::put('upload/ImgPLates', $newPlate['img']);
         };
 
-        $plate->update($newPlate);
         $plate->is_visible = (isset($data['is_visible']) ? true : false);
+        
+        $plate->update($newPlate);
         
         //redirect
         return redirect()->route('admin.plate.index');
