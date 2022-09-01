@@ -57,6 +57,11 @@ class PlateController extends Controller
         $newPlate->fill($data);
         $newPlate->is_visible = isset($newPlate->is_visible);
 
+        //modifica path immagine
+        if(isset($newPlate['img'])){
+            $newPlate['img'] = Storage::put('upload/ImgPlates', $newPlate['img']);
+        };
+
         // associo il piatto al ristorante
         $newPlate->restaurant_id = Auth::id();
 
@@ -113,15 +118,16 @@ class PlateController extends Controller
         //validazione
         $data = $request->validate($this->validation);
         //aggiornamento
-        $data = $request->all();
+        $newPlate = $request->all();
 
         //modifica path immagine
-        if(isset($data['img'])){
-            $data['img'] = Storage::put('upload/ImgRestaurant', $data['img']);
+        if(isset($newPlate['img'])){
+            $newPlate['img'] = Storage::put('upload/ImgPLates', $newPlate['img']);
         };
 
+        $plate->update($newPlate);
         $plate->is_visible = (isset($data['is_visible']) ? true : false);
-        $plate->update($data);
+        
         //redirect
         return redirect()->route('admin.plate.index');
     }
