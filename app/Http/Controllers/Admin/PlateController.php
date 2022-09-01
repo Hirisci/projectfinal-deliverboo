@@ -9,6 +9,7 @@ use App\Restaurant;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PlateController extends Controller
 {
@@ -113,6 +114,11 @@ class PlateController extends Controller
         $data = $request->validate($this->validation);
         //aggiornamento
         $data = $request->all();
+
+        //modifica path immagine
+        if(isset($data['img'])){
+            $data['img'] = Storage::put('upload/ImgRestaurant', $data['img']);
+        };
 
         $plate->is_visible = (isset($data['is_visible']) ? true : false);
         $plate->update($data);
