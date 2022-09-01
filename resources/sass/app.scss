@@ -1,9 +1,13 @@
+@import "~bootstrap/scss/bootstrap";
 @import "config/reset.scss"; // Variables
 @import "config/spacing.scss"; // Variables
 @import "config/typography.scss"; // Variables
 @import "config/variable.scss"; // Variables
+@import "config/colors";//Variables
+@import "config/container";//Variables
+@import "config/buttons"; //Components
 
 //componets
 @import "partials/dashboard.scss"; // Bootstrap
+@import "partials/login.scss"
 
-@import "~bootstrap/scss/bootstrap";

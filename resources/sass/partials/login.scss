@@ -1,0 +1,43 @@
+.login-main{
+    height: calc(100vh - 87px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg{
+        width: 100%;
+    }
+}
+
+.login-card{
+    background-color: var(--secondary-purple);
+    border-radius: 1.25rem;
+    max-width: 28.125rem;
+    .card-body{
+        padding: 8rem 0;
+        width: 70%;
+        #email, #password{
+            width: 12.5rem;
+        }
+        label{
+            font-weight: bold;
+        }
+        input{
+            border-radius: 1rem;
+        }
+    }
+}
+
+.register-card{
+    background-color: var(--secondary-purple);
+    border-radius: 1.25rem;
+    .card-body{
+        padding: 2rem 0;
+        input{
+        border-radius: 1rem;
+        }
+        label{
+            font-weight: bold;
+        }
+    }
+    
+}
