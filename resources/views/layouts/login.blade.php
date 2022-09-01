@@ -18,46 +18,16 @@
         }
     </style>
     <body>
-       <div class="background">
+       <div class="background ">
            <div id="app">
+            {{-- nav bar  --}}
                <nav>
-                   <div class="container mb-3  p-2 d-flex align-items-center justify-content-between"> 
-                       {{-- logo del sito --}}
-                       <a href="{{url('/')}}">
-                           <img src="https://icones.pro/wp-content/uploads/2021/06/symbole-github-violet.png" alt="logo provvisorio">
-                       </a>
-                       
-                       <!-- Right Side Of Navbar -->
-                       <ul class="navbar-nav ml-auto">
-                           <!-- Authentication Links -->
-                           @guest
-                                   <li class="nav-item">
-                                       <a class="btn-main" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                   </li>
-                                   @if (Route::has('register'))
-                                       <li class="nav-item">
-                                           <a class="btn-main" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                       </li>
-                                   @endif
-                               @else
-                                   <div >
-                                       <a class="btn-main" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                       document.getElementById('logout-form').submit();">
-                                           {{ __('Logout') }}
-                                       </a>
-       
-                                       <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                           @csrf
-                                       </form>
-                                   </div>
-                               @endguest
-                       </ul>
-                   </div>
+                   @yield('nav-bar')
                </nav>
            </div>
+           {{-- parte principale del form --}}
            <div>
-               <main>
+               <main class="login-main">
                    @yield('form')
                </main>
            </div>

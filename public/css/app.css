@@ -11199,6 +11199,7 @@ small {
   ╚════════════════════════════╝*/
   /* width */
   --wdt-container-xl: 80rem;
+  --wdt-container-xxl: 110rem;
   /* height */
   --hgt-item: 4rem;
   --hgt-item-lg: 4.5rem;
@@ -11227,10 +11228,15 @@ small {
   z-index: 1;
 }
 
+.container-nav {
+  max-width: var(--wdt-container-xxl);
+  margin: auto;
+}
+
 .background {
   width: 100%;
   height: 100vh;
-  background-color: var(--primary-purple);
+  background-image: -webkit-linear-gradient(140deg, white 50%, var(--primary-purple) 50%);
 }
 
 /*---------------------
@@ -11300,6 +11306,15 @@ small {
   opacity: 1;
 }
 
+.login-main {
+  height: 100%;
+  margin-top: 11.5%;
+}
+
+.login-main svg {
+  width: 100%;
+}
+
 .login-card {
   background-color: var(--secondary-purple);
   border-radius: 1.25rem;
@@ -11311,13 +11326,14 @@ small {
   width: 70%;
 }
 
-.login-card .card-body label {
-  font-weight: bold;
-}
-
 .login-card .card-body #email,
 .login-card .card-body #password {
   width: 12.5rem;
+}
+
+.login-card .card-body label {
+  font-weight: bold;
+  line-height: 1rem;
 }
 
 .login-card .card-body input {

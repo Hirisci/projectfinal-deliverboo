@@ -1,3 +1,11 @@
+.login-main{
+    height: 100%;
+    margin-top: 11.5%;
+    svg{
+        width: 100%;
+    }
+}
+
 .login-card{
     background-color: var(--secondary-purple);
     border-radius: 1.25rem;
@@ -5,11 +13,12 @@
     .card-body{
         padding: 8rem 0;
         width: 70%;
-        label{
-            font-weight: bold;
-        }
         #email, #password{
             width: 12.5rem;
+        }
+        label{
+            font-weight: bold;
+            line-height: 1rem;
         }
         input{
             border-radius: 1rem;
