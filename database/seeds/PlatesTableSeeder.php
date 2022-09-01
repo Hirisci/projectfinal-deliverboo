@@ -64,50 +64,50 @@ class PlatesTableSeeder extends Seeder
             ],
             // PIZZERIA TOTO'
             [
-                "name" => "Pizza Margherita",
-                "image" => "default/ImgPlates",
+                "name" => "Pizza margherita",
+                "image" => "default/ImgPlates/PIZZERIA-TOTO/margherita.jpg",
                 "description" => "Pizza Margherita",
                 "price" => "5.50",
                 "is_visible" => "true",
                 "restaurant_id" => '2'
             ],
             [
-                "name" => "Pizza Patate e Wurstel",
-                "image" => "default/ImgPlates",
+                "name" => "Pizza patate e wurstel",
+                "image" => "default/ImgPlates/PIZZERIA-TOTO/patate-wurstel.jpg",
                 "description" => "Pizza Patate e Wurstel",
                 "price" => "7.50",
                 "is_visible" => "true",
                 "restaurant_id" => '2'
             ],
             [
-                "name" => "Pizza Rucola e Grana",
-                "image" => "default/ImgPlates",
+                "name" => "Pizza rucola e grana",
+                "image" => "default/ImgPlates/PIZZERIA-TOTO/rucola.jpg",
                 "description" => "Pizza Rucola e Grana",
                 "price" => "7.80",
                 "is_visible" => "true",
                 "restaurant_id" => '2'
             ],
             [
-                "name" => "Spaghetti amatriciana",
-                "image" => "default/ImgPlates",
-                "description" => "Un piatto dal gusto pieno ed appagante. La sua squisita bontà nasce da ingredienti semplici e di ottima qualità, che si sposano bene nel colore, nel profumo e nel gusto; tanto da diventare fiore all’occhiello anche di grandi chef, per la gioia dei nostri palati.",
+                "name" => "Pizza ai 4 formaggi",
+                "image" => "default/ImgPlates/PIZZERIA-TOTO/4-formaggi.jpg",
+                "description" => "Pizza ai 4 formaggi",
                 "price" => "7.00",
                 "is_visible" => "true",
                 "restaurant_id" => '2'
             ],
             [
-                "name" => "Spaghetti Carbonara",
-                "image" => "default/ImgPlates",
-                "description" => "Un piatto dal gusto pieno ed appagante. La sua squisita bontà nasce da ingredienti semplici e di ottima qualità, che si sposano bene nel colore, nel profumo e nel gusto; tanto da diventare fiore all’occhiello anche di grandi chef, per la gioia dei nostri palati.",
-                "price" => "7.00",
+                "name" => "Pizza radicchio e salsiccia",
+                "image" => "default/ImgPlates/PIZZERIA-TOTO/radicchio-salsiccia.jpg",
+                "description" => "Pizza radicchio e salsiccia",
+                "price" => "8.70",
                 "is_visible" => "true",
                 "restaurant_id" => '2'
             ],
             [
-                "name" => "Spaghetti amatriciana",
-                "image" => "default/ImgPlates",
-                "description" => "Un piatto dal gusto pieno ed appagante. La sua squisita bontà nasce da ingredienti semplici e di ottima qualità, che si sposano bene nel colore, nel profumo e nel gusto; tanto da diventare fiore all’occhiello anche di grandi chef, per la gioia dei nostri palati.",
-                "price" => "7.00",
+                "name" => "Pizza tonno e cipolla",
+                "image" => "default/ImgPlates/PIZZERIA-TOTO/tonno-cipolla.jpg",
+                "description" => "Pizza tonno e cipolla",
+                "price" => "7.80",
                 "is_visible" => "true",
                 "restaurant_id" => '2'
             ],
