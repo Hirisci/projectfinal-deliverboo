@@ -37,9 +37,9 @@
                         </span>
                         @enderror
                         
-                        <div class="mt-3">
+                        <div class="form-group form-check mt-3">
+                            <input type="checkbox" class="form-check-input @error('is_visible') is-invalid @enderror" id="is_visible" name="is_visible" value="1" {{old('is_visible', $plate->is_visible) ? 'checked="checked"' : ''}}>
                             <label class="form-check-label" for="is_visible">Pubblica</label>
-                            <input type="checkbox" class="form-check-input ml-2 @error('is_visible') is-invalid @enderror" id="is_visible" name="is_visible" value="1" {{old('is_visible', $plate->is_visible) ? 'checked="checked"' : ''}}>
                             @error('is_visible')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror

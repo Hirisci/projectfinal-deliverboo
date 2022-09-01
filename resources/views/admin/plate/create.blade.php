@@ -30,6 +30,18 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+
+                {{-- Upload plate image --}}
+                <label for="img" class="col-form-label text-md-right">Carica Immagine del Piatto</label>
+                            
+                    <input id="img" type="file" class="form-control-file mb-2 @error('img') is-invalid @enderror" name="img" value="{{ old('img') }}">
+                    
+                    @error('img')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+
                 <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input @error('is_visible') is-invalid @enderror" id="is_visible" name="is_visible" {{old('is_visible') ? 'checked' : ''}}>
                     <label class="form-check-label" for="is_visible">Pubblica</label>
