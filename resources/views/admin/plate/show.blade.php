@@ -12,6 +12,10 @@
                     <h4>Nome Piatto: {{$plate->name}}</h4>
                     <h4>Descrizione Piatto: {{$plate->description}}</h4>
                     <h4>Costo Piatto: {{$plate->price}}€</h4>
+
+                    {{-- Show plate image --}}
+                    <img class="d-block mt-3 mb-3" src="{{ asset('storage/' . $plate->img) }}" width="150">
+
                     <h4>È visibile: {{$plate->is_visible ? 'True' : 'False'}}</h4>
                 </tbody>
               </table>
