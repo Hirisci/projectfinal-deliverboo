@@ -7,7 +7,7 @@
                 <h1>Modifica Piatto:{{$plate->name}}</h1>
             </div>
             <div class="card-body">
-                <form action="{{route('admin.plate.update', $plate)}}" method="POST">
+                <form action="{{route('admin.plate.update', $plate)}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="form-group">

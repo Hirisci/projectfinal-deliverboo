@@ -14,6 +14,7 @@ class PlateController extends Controller
 {
     private $validation = [
         'name' => 'required | string | max:50',
+        'img' => 'nullable|file|mimes:png,jpg,jpeg,svg,webp',
         'description' => 'required | string | max:400',
         'price' => 'required | numeric | gt:0'
     ];

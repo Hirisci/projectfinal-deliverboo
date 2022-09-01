@@ -7,7 +7,7 @@
             <h1>Creazione Piatto</h1>
         </div>
         <div class="card-body">
-            <form action="{{route('admin.plate.store')}}" method="POST">
+            <form action="{{route('admin.plate.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="title">Nome Piatto</label>
