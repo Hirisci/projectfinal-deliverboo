@@ -11224,6 +11224,7 @@ small {
 .container {
   max-width: var(--wdt-container-xl);
   margin: auto;
+  z-index: 1;
 }
 
 .background {
@@ -11297,5 +11298,29 @@ small {
 
 .menu-sx ul li:hover a {
   opacity: 1;
+}
+
+.login-card {
+  background-color: var(--secondary-purple);
+  border-radius: 1.25rem;
+  max-width: 28.125rem;
+}
+
+.login-card .card-body {
+  padding: 8rem 0;
+  width: 70%;
+}
+
+.login-card .card-body label {
+  font-weight: bold;
+}
+
+.login-card .card-body #email,
+.login-card .card-body #password {
+  width: 12.5rem;
+}
+
+.login-card .card-body input {
+  border-radius: 1rem;
 }
 
