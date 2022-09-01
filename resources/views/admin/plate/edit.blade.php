@@ -7,7 +7,7 @@
                 <h1>Modifica Piatto:{{$plate->name}}</h1>
             </div>
             <div class="card-body">
-                <form action="{{route('admin.plate.update', $plate)}}" method="POST">
+                <form action="{{route('admin.plate.update', $plate)}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
@@ -26,11 +26,24 @@
                         @error('price')
                                 <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
-                        <label class="form-check-label" for="is_visible">Pubblica</label>
-                        <input type="checkbox" class="form-check-input @error('is_visible') is-invalid @enderror" id="is_visible" name="is_visible" value="1" {{old('is_visible', $plate->is_visible) ? 'checked="checked"' : ''}}>
-                        @error('is_visible')
-                            <div class="alert alert-danger">{{ $message }}</div>
+
+                        {{-- Edit plate image --}}
+                        <img class="d-block mt-3 mb-3" src="{{ asset('storage/' . $plate->img) }}" width="150">
+                        <label for="img" class="col-form-label mb-2">Scegli Immagine da Modificare</label>
+                        <input id="img" type="file" class="form-control-file @error('img') is-invalid @enderror" name="img" value="{{ asset('storage/' . $plate->img) }}">
+                        @error('img')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
+                        
+                        <div class="form-group form-check mt-3">
+                            <input type="checkbox" class="form-check-input @error('is_visible') is-invalid @enderror" id="is_visible" name="is_visible" value="1" {{old('is_visible', $plate->is_visible) ? 'checked="checked"' : ''}}>
+                            <label class="form-check-label" for="is_visible">Pubblica</label>
+                            @error('is_visible')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-warning">Modifica</button>
                 </form>

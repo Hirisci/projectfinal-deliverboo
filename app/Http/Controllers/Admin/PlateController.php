@@ -9,11 +9,13 @@ use App\Restaurant;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PlateController extends Controller
 {
     private $validation = [
         'name' => 'required | string | max:50',
+        'img' => 'nullable|file|mimes:png,jpg,jpeg,svg,webp',
         'description' => 'required | string | max:400',
         'price' => 'required | numeric | gt:0'
     ];
@@ -54,6 +56,11 @@ class PlateController extends Controller
         $newPlate = new Plate();
         $newPlate->fill($data);
         $newPlate->is_visible = isset($newPlate->is_visible);
+
+        //modifica path immagine
+        if(isset($newPlate['img'])){
+            $newPlate['img'] = Storage::put('upload/ImgPlates', $newPlate['img']);
+        };
 
         // associo il piatto al ristorante
         $newPlate->restaurant_id = Auth::id();
@@ -111,10 +118,16 @@ class PlateController extends Controller
         //validazione
         $data = $request->validate($this->validation);
         //aggiornamento
-        $data = $request->all();
+        $newPlate = $request->all();
 
+        //modifica path immagine
+        if(isset($newPlate['img'])){
+            $newPlate['img'] = Storage::put('upload/ImgPLates', $newPlate['img']);
+        };
+
+        $plate->update($newPlate);
         $plate->is_visible = (isset($data['is_visible']) ? true : false);
-        $plate->update($data);
+        
         //redirect
         return redirect()->route('admin.plate.index');
     }

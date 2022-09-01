@@ -30,7 +30,7 @@
                         @enderror
                         
                         @foreach ($categories as $category)
-                        <div class="form-check form-check-inline">
+                        <div class="form-check form-check-inline mt-3">
                             <input class="form-check-input" type="checkbox" id="{{$category->slug}}" value="{{$category->id}}" name="categories_active[]" {{in_array($category->id, old('categories_active', $categories_active)) ? 'checked' : ''}}>
                             <label class="form-check-label" for="{{$category->slug}}">{{$category->name}}</label>
                         </div>
