@@ -23,7 +23,7 @@ class PlatesTableSeeder extends Seeder
             ],
             [
                 "name" => "Gran Crispy McBacon Menu",
-                "image" => "https://www.mcdonalds.it/sites/default/files/styles/product_isolated_preview/public/bundle/menu-gran-crispy-mcbacon--hero-isolated_1.png?itok=h2nJj5qe",
+                "image" => "https://www.mcdonalds.it/sites/default/files/styles/product_isolated_preview/public/bundle/menu-gran-crispy-mcbacon--hero-isolated_1.png?itok=h3nJj5qe",
                 "description" => "Chi ama il Crispy McBacon® ne prenderebbe volentieri un altro e un altro e un altro e un altro ancora. Per questo c’è il Gran Crispy McBacon®: carne 100% bovina da allevamenti italiani, croccante bacon 100% da pancetta italiana, formaggio e l'inconfondibile salsa Crispy. Come il classico, ma ancora più grande.",
                 "price" => "9.00",
                 "is_visible" => "true",
@@ -68,6 +68,55 @@ class PlatesTableSeeder extends Seeder
                 "price" => "7.00",
                 "is_visible" => "true",
                 "restaurant_id" => '2'
+            ],
+            // kfc
+            [
+                "name" => "Menu Tender Cripsy",
+                "image" => "default/ImgPlates/kfc-menu.jpg",
+                "description" => "Menu con un contorno a scelta, una bibita e 4 Tender Crispy, filetti di pollo, croccanti fuori e tenerissimi dentro, serviti con una salsa a scelta.",
+                "price" => "9.90",
+                "is_visible" => "true",
+                "restaurant_id" => '3'
+            ],
+            [
+                "name" => "Menu Tender Original Recipe",
+                "image" => "default/ImgPlates/kfc-menu.jpg",
+                "description" => "Menu con un contorno e una bibita a scelta e 4 Tender Original Recipe, teneri filetti preparati seguendo la ricetta originale del Colonnello Sanders.",
+                "price" => "9.90",
+                "is_visible" => "true",
+                "restaurant_id" => '3'
+            ],
+            [
+                "name" => "Menu COB OR",
+                "image" => "default/ImgPlates/kfc-menu.jpg",
+                "description" => "Menu con un contorno a scelta, una bibita e 2 pezzi di irresistibile pollo con osso - Chicken On the Bones - cucinato secondo la ricetta segreta del Colonnello Sanders, con le 11 erbe e spezie.",
+                "price" => "8.50",
+                "is_visible" => "true",
+                "restaurant_id" => '3'
+            ],
+            [
+                "name" => "Menu bucket 2 Tender Crispy, 2 Tender OR",
+                "image" => "default/ImgPlates/kfc-menu.jpg",
+                "description" => "Un menu bucket con 2 croccantissimi Tender Crispy e 2 Tender Original Recipe, con bibita e contorno a scelta, pensato per una persona, così finalmente puoi tenerlo tutto per te!",
+                "price" => "10.10",
+                "is_visible" => "true",
+                "restaurant_id" => '3'
+            ],
+            [
+                "name" => "Menu Bucket 2 Tender Crispy, 3 Hot Wings",
+                "image" => "default/ImgPlates/kfc-menu.jpg",
+                "description" => "Un menu bucket con 2 tender Crispy e 3 Hot Wings, bibita e contorno a scelta. Questo puoi averlo tutto per te, è pensato per una persona!",
+                "price" => "10.10",
+                "is_visible" => "true",
+                "restaurant_id" => '3'
+            ],
+            [
+                "name" => "Menu Bucket 10 Tender crispy",
+                "image" => "default/ImgPlates/kfc-menu.jpg",
+                "description" => "Menu con contorni e bibite per 2 persone e un Bucket con 10 Tender Crispy, filetti di pollo teneri dentro croccanti fuori. Condividerlo non sarà facile!",
+                "price" => "19.90",
+                "is_visible" => "true",
+                "restaurant_id" => '3'
             ],
         ];
 
