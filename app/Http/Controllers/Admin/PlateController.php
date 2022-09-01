@@ -59,7 +59,8 @@ class PlateController extends Controller
         $newPlate = new Plate();
         $newPlate->fill($data);
         //controllo nome doppio piatto nel ristorante
-        $this->verifyAndSaveName($newPlate, Auth::user());
+       
+        $this->validationDoubleNameRecord($newPlate, Auth::user());
         $newPlate->is_visible = isset($newPlate->is_visible);
 
         //modifica path immagine
@@ -123,6 +124,11 @@ class PlateController extends Controller
         //validazione
         $data = $request->validate($this->validation);
         //aggiornamento
+
+        $newPlate = new Plate;
+        $newPlate->fill($data);
+        $this->validationDoubleNameRecordUpdate($newPlate, $plate, Auth::user());
+
         $newPlate = $request->all();
 
         //modifica path immagine
@@ -130,8 +136,9 @@ class PlateController extends Controller
             $newPlate['img'] = Storage::put('upload/ImgPLates', $newPlate['img']);
         };
 
-        $plate->update($newPlate);
         $plate->is_visible = (isset($data['is_visible']) ? true : false);
+        
+        $plate->update($newPlate);
         
         //redirect
         return redirect()->route('admin.plate.index');
