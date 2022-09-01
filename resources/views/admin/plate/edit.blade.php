@@ -22,7 +22,7 @@
                                 <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                         <label for="price">Prezzo *</label>
-                        <input type="number" class="form-control" id="price" name="price" value="{{old('price', $plate->price)}}" required step="0.01">
+                        <input type="number" class="form-control" id="price" name="price" value="{{old('price', number_format($plate->price, 2))}}" required step="0.01">
                         @error('price')
                                 <div class="alert alert-danger">{{ $message }}</div>
                         @enderror

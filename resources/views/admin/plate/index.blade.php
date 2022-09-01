@@ -25,7 +25,7 @@
                         <tr>
                             <td>{{$plate->id}}</td>
                             <td class="col-3">{{$plate->name}}</td>
-                            <td class="col-2">{{$plate->price}} €</td>
+                            <td class="col-2">{{number_format($plate->price, 2)}} €</td>
                             <td class="col-1">{{$plate->is_visible ? 'Yes' : 'False'}}</td>
                             {{-- azioni --}}
                             <td class="col-5">
