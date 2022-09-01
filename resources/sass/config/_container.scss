@@ -10,8 +10,21 @@
 }
 
 .background{
-    width: 100%;
-    min-height: 100%;
-    background-image: -webkit-linear-gradient(140deg, white 50%, var(--primary-purple)  50%);
+    width: 100vw;
+    height: 100vh;
+    background-color: #fbfaff;
+    position: relative;
+    // background-image: -webkit-linear-gradient(140deg, white 50%, var(--primary-purple)  50%);
+    &::after{
+        content: ' ';
+        border-top: 100vh solid var(--primary-purple);
+        border-right: 77vw solid transparent;
+        width: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
 }
 

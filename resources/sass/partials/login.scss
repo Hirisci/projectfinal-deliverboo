@@ -16,7 +16,7 @@
         padding: 8rem 0;
         width: 70%;
         #email, #password{
-            width: 12.5rem;
+            width: 100%;
         }
         label{
             font-weight: bold;
@@ -31,13 +31,30 @@
     background-color: var(--secondary-purple);
     border-radius: 1.25rem;
     .card-body{
-        padding: 2rem 0;
-        input{
-        border-radius: 1rem;
+        padding: 4rem 0;
+        min-width: 100%;
+        #email, #password{
+            width: 100%;
         }
         label{
             font-weight: bold;
+            word-wrap: none;
         }
-    }
-    
+        input{
+            border-radius: 1rem;
+            width: 100%;
+        }
+        .form-group.row{
+            width: 80%;
+        }
+        .form-check-label{
+            min-width: 100%;
+            word-wrap: none;
+        }
+    } 
+}
+
+#app{
+    position: relative;
+    z-index: 11;
 }

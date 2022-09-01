@@ -11234,9 +11234,22 @@ small {
 }
 
 .background {
-  width: 100%;
-  min-height: 100%;
-  background-image: -webkit-linear-gradient(140deg, white 50%, var(--primary-purple) 50%);
+  width: 100vw;
+  height: 100vh;
+  background-color: #fbfaff;
+  position: relative;
+}
+
+.background::after {
+  content: " ";
+  border-top: 100vh solid var(--primary-purple);
+  border-right: 77vw solid transparent;
+  width: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
 
 /*---------------------
@@ -11335,7 +11348,7 @@ a.btn-main:hover {
 
 .login-card .card-body #email,
 .login-card .card-body #password {
-  width: 12.5rem;
+  width: 100%;
 }
 
 .login-card .card-body label {
@@ -11352,14 +11365,36 @@ a.btn-main:hover {
 }
 
 .register-card .card-body {
-  padding: 2rem 0;
+  padding: 4rem 0;
+  min-width: 100%;
 }
 
-.register-card .card-body input {
-  border-radius: 1rem;
+.register-card .card-body #email,
+.register-card .card-body #password {
+  width: 100%;
 }
 
 .register-card .card-body label {
   font-weight: bold;
+  word-wrap: none;
+}
+
+.register-card .card-body input {
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.register-card .card-body .form-group.row {
+  width: 80%;
+}
+
+.register-card .card-body .form-check-label {
+  min-width: 100%;
+  word-wrap: none;
+}
+
+#app {
+  position: relative;
+  z-index: 11;
 }
 

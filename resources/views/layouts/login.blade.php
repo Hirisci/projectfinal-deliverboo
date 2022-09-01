@@ -24,12 +24,12 @@
                <nav>
                    @yield('nav-bar')
                </nav>
-           </div>
-           {{-- parte principale del form --}}
-           <div>
-               <main class="login-main">
-                   @yield('form')
-               </main>
+               {{-- parte principale del form --}}
+               <div>
+                   <main class="login-main">
+                       @yield('form')
+                   </main>
+               </div>
            </div>
        </div>
         
