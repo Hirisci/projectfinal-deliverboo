@@ -79,7 +79,7 @@
                             <label for="vat" class="col-md-4 col-form-label text-md-right">{{ __('Partita IVA') }}</label>
                             
                             <div class="col-md-6">
-                                <input id="vat" type="text" class="form-control @error('vat') is-invalid @enderror" name="vat" value="{{ old('vat') }}" autocomplete="vat" autofocus>
+                                <input id="vat" type="text" class="form-control @error('vat') is-invalid @enderror" name="vat" value="{{ old('vat') }}" autocomplete="vat" autofocus maxlength="11" minlength="11" pattern="[0-9]+">
                                 
                                 @error('vat')
                                 <span class="invalid-feedback" role="alert">

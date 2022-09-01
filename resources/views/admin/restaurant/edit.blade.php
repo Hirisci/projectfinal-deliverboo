@@ -12,7 +12,7 @@
                     @method('PUT')
                     <div class="form-group">
                         <label for="name">Nome Ristorante</label>
-                        <input type="text" class="form-control" id="name" name="name" value="{{old('name', $restaurant->name)}}">
+                        <input type="text" class="form-control" id="name" name="name" value="{{old('name', $restaurant->name)}}" required>
 
                         <label for="name">Partita Iva</label>
                         <input type="text" class="form-control" id="vat" name="vat" value="{{old('vat', $restaurant->vat)}}" pattern="[0-9]+" maxlength="11" minlength="11">
