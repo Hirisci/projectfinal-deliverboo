@@ -4,3 +4,18 @@
 !default/
 !default/*.*
 
+!default/ImgPlates/
+!default/ImgPlates/KFC/
+!default/ImgPlates/KFC/*.*
+
+!default/ImgPlates/MC/
+!default/ImgPlates/MC/*.*
+
+!default/ImgPlates/PIZZERIA-TOTO/
+!default/ImgPlates/PIZZERIA-TOTO/*.*
+
+!default/ImgPlates/POKE/
+!default/ImgPlates/POKE/*.*
+
+!default/ImgRestaurant/
+!default/ImgRestaurant/*.*
