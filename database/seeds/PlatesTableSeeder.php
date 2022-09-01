@@ -160,6 +160,55 @@ class PlatesTableSeeder extends Seeder
                 "is_visible" => "true",
                 "restaurant_id" => '3'
             ],
+            // POKE
+            [
+                "name" => "Sunny Salmon",
+                "image" => "default/ImgPlates/POKE/sunny.jpg",
+                "description" => "Riso Bianco, Juicy Salmon, Avocado, Edamame, Cavolo Rosso, Salsa Speciale, Crema di Avocado, Sesamo",
+                "price" => "9.95",
+                "is_visible" => "true",
+                "restaurant_id" => '4'
+            ],
+            [
+                "name" => "Spicy Tuna",
+                "image" => "default/ImgPlates/POKE/spicy-tuna.jpg",
+                "description" => "Riso Bianco, Tonno, Goma Wakame, Cavolo Rosso, Carote, Cetrioli, Salsa Ponzu, Salsa Spicy Peanuts, Jalapeño, Cipolla Croccante, Tobiko, Sesamo",
+                "price" => "11.95",
+                "is_visible" => "true",
+                "restaurant_id" => '4'
+            ],
+            [
+                "name" => "Roast Beef",
+                "image" => "default/ImgPlates/POKE/roast-beef.jpg",
+                "description" => "Riso Integrale, Roast Beef all'inglese, Pomodorini, Avocado, Germogli di Soia, Feta, Aromatic Ginger Oil, House Tartar, Mandorle, Sesamo",
+                "price" => "11.95",
+                "is_visible" => "true",
+                "restaurant_id" => '4'
+            ],
+            [
+                "name" => "Chicken",
+                "image" => "default/ImgPlates/POKE/chicken.jpg",
+                "description" => "Riso Bianco, Pollo Teriyaki e Zenzero, Zucchine, Pomodorini, Cavolo Rosso, Salsa Teriyaki, Salsa Spicy Mayo, Cipollotto, Mandorle, Sesamo",
+                "price" => "9.95",
+                "is_visible" => "true",
+                "restaurant_id" => '4'
+            ],
+            [
+                "name" => "Vegan",
+                "image" => "default/ImgPlates/POKE/vegan.jpg",
+                "description" => "Quinoa e Cauliflower, Tofu Grigliato Bio, Ceci, Carote, Avocado, Salsa teriyaki, Patata Dolce Croccante, Sesamo",
+                "price" => "11.95",
+                "is_visible" => "true",
+                "restaurant_id" => '4'
+            ],
+            [
+                "name" => "Seasonal Special - Summer Bowl",
+                "image" => "default/ImgPlates/POKE/special.jpg",
+                "description" => "Riso Basmati, Pollo Teriyaki e Zenzero, Avocado, Pomodorini, Edamame, Olio d’oliva, Avo Mayo, Sesamo",
+                "price" => "10.95",
+                "is_visible" => "true",
+                "restaurant_id" => '4'
+            ],
         ];
 
         foreach($plates as $plate){
