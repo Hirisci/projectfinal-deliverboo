@@ -12944,6 +12944,16 @@ small,
   text-decoration: none;
 }
 
+.btn-circle {
+  display: block;
+  aspect-ratio: 1/1;
+  padding: 0.4rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 a.btn-main:hover {
   color: black;
   text-decoration: none;
@@ -13190,6 +13200,12 @@ a:hover {
 .container.plate .cards {
   position: relative;
   height: calc(85vh - 2rem);
+}
+
+.container.plate .cards .icon {
+  display: block;
+  aspect-ratio: 1/1;
+  width: 1rem;
 }
 
 .container.plate .cards-product {

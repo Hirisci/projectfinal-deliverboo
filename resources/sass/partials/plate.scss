@@ -2,7 +2,11 @@
     .cards {
         position: relative;
         height: calc(85vh - 2rem);
-
+        .icon {
+            display: block;
+            aspect-ratio: 1/1;
+            width: 1rem;
+        }
         &-product {
             height: 10rem;
         }
