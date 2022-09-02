@@ -11204,6 +11204,8 @@ small {
   --hgt-item: 4rem;
   --hgt-item-lg: 4.5rem;
   --hgt-item-sm: 2.5rem;
+  /* border radius */
+  --border-radius: 1.5rem;
   /*╔════════════════════════════╗
               GUTTERS
   ╚════════════════════════════╝*/
@@ -11214,10 +11216,11 @@ small {
   /*------------------------------
       LAYOUT COLORS
   ------------------------------*/
-  --primary-purple: #9667E0;
-  --secondary-purple: #D4BBFC;
-  --tertiary-color: #FBFAFF;
-  --primary-gray: #BEBDBD;
+  --primary-purple: #9667e0;
+  --secondary-purple: #d4bbfc;
+  --tertiary-purple: #fbfaff;
+  --tertiary-purple-opacity: #fbfaff88;
+  --primary-gray: #bebdbd;
   /*------------------------------
       CATEGORY COLORS
   ------------------------------*/
@@ -11272,7 +11275,7 @@ a.btn-main:hover {
 }
 
 body {
-  background-color: var(--tertiary-color);
+  background-color: var(--tertiary-purple);
 }
 
 .menu {
@@ -11284,7 +11287,7 @@ body {
 
 .menu-sx {
   width: 25%;
-  border-radius: 1.5rem;
+  border-radius: var(--border-radius);
   background-color: var(--secondary-purple);
 }
 
@@ -11319,7 +11322,7 @@ body {
 
 .menu-dx {
   width: 25%;
-  border-radius: 1.5rem;
+  border-radius: var(--border-radius);
   background-color: var(--secondary-purple);
   min-height: 50vh;
   flex-grow: 1;
@@ -11331,10 +11334,6 @@ body {
 
 .menu-sx ul li:hover a {
   opacity: 1;
-}
-
-.card {
-  background-color: var(--primary-purple);
 }
 
 .login-main {
@@ -11409,5 +11408,58 @@ body {
 #app {
   position: relative;
   z-index: 11;
+}
+
+.container.restaurant .cards {
+  position: relative;
+}
+
+.container.restaurant .cards-header {
+  padding: var(--p-sm) var(--p-lg);
+  position: relative;
+  z-index: 1;
+  color: var(--tertiary-purple);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  background-color: var(--primary-purple);
+  border-radius: var(--border-radius);
+}
+
+.container.restaurant .cards-body {
+  position: relative;
+  top: -2.5rem;
+  overflow: hidden;
+  margin: 0 var(--m-lg);
+  background-color: var(--tertiary-purple-opacity);
+  border: 1px solid var(--primary-purple);
+  border-radius: var(--border-radius);
+}
+
+.container.restaurant .cards-postcard {
+  padding: 0;
+}
+
+.container.restaurant .cards-postcard-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1/1;
+  width: 100%;
+}
+
+.container.restaurant .cards-info {
+  padding: var(--p-md);
+  padding-top: 4rem;
+}
+
+.container.restaurant .cards .img-edit {
+  aspect-ratio: 1/1;
+  width: 10rem;
+}
+
+.container.restaurant .cards-categories-pillow {
+  background-color: var(--tertiary-purple);
+  color: var(--primary-purple);
+  border-radius: var(--border-radius);
+  font-weight: bold;
 }
 

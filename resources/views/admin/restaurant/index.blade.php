@@ -3,43 +3,38 @@
 @extends('layouts.dashboard')
 @section('menu')
 <div class="container restaurant">
-    <div class="card">
-        <div class="">
-            <h1>Il tuo ristorante</h1>
-        </div>   
-            @foreach ($restaurant as $item)    
-                <div class="row col-2 mt-3 mb-3">
-                    {{-- qua vado a inserire immagine del locale --}}
-                    <img src="{{ asset('storage/' . $item->img)}}" alt="" width="150">
-                </div>
-                <div class="row">
-                    <div class="name col-2">nome locale</div>
-                    <div class="name col-2">slug</div>
-                    <div class="name col-2">id</div>
-                    <div class="name col-2">partita IVA</div>
-                    <div class="name col-2">address</div>
-                </div>
-            
-                <div class="row">
-                    <div class="name col-2">{{$item->name}}</div>
-                    <div class="name col-2">{{$item->slug}}</div>
-                    <div class="name col-2">{{$item->id}}</div>
-                    <div class="name col-2">{{$item->vat}}</div>
-                    <div class="name col-2">{{$item->address}}</div>
-                    
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <p>categorie</p>
-                        @foreach ($categories as $category)
+    @foreach ($restaurant as $item)    
+        <div class="cards">
+            <div class="cards-header d-flex align-items-center justify-content-between">
+                <h1>{{$item->name}}</h1>
+                <div class="cards-categories d-flex">
+                    @foreach ($categories as $category)
+                    <div class="cards-categories-pillow mx-2 px-3 py-1">
                         {{$category->name}}
-                        @endforeach
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+            <div class="cards-body d-flex justify-content-between"> 
+                <div class="row col-4 cards-postcard ">
+                    {{-- qua vado a inserire immagine del locale --}}
+                    <img src="{{ asset('storage/' . $item->img)}}" class="cards-postcard-img"  >
+                </div>
+                <div class="cards-info col-8 ">
+                    <div>
+                        <p>Partita IVA</p>
+                        <p>{{$item->vat}}</p>
+                    </div>
+                    <div class="mt-3">
+                        <p>Indirizzo</p>                        
+                        <p>{{$item->address}}</p>
                     </div>
                 </div>
-            @endforeach              
-             
-        </div>
-    </div>
+                
+            </div>
+        </div> 
+    @endforeach              
 </div>
+
 @endsection
 

@@ -6,7 +6,7 @@
 
     &-sx {
         width: 25%;
-        border-radius: 1.5rem;
+        border-radius: var(--border-radius);
         background-color: var(--secondary-purple);
         ul {
             li {
@@ -37,7 +37,7 @@
     }
     &-dx {
         width: 25%;
-        border-radius: 1.5rem;
+        border-radius: var(--border-radius);
         background-color: var(--secondary-purple);
         min-height: 50vh;
         flex-grow: 1;
@@ -55,8 +55,4 @@
             }
         }
     }
-}
-
-.card{
-    background-color: var(--primary-purple);
 }
