@@ -1,14 +1,16 @@
 <template>
   <main>
-    <RestaurantsSection/>
+    <router-view></router-view>
   </main>
 </template>
 
 <script>
-import RestaurantsSection from '../sections/RestaurantsSection.vue';
+
 export default {
     name: "BaseMain",
-    components: { RestaurantsSection }
+    components: { 
+      
+    }
 }
 </script>
 

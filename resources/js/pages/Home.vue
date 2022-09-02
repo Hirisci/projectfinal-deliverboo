@@ -1,10 +1,15 @@
 <template>
-  <h1>Home page</h1>
+  <RestaurantsSection/>
 </template>
 
 <script>
+import RestaurantsSection from '../components/sections/RestaurantsSection.vue';
+
 export default {
-    name:'Home'
+    name: "Home",
+    components: { 
+      RestaurantsSection
+    },
 }
 </script>
 
