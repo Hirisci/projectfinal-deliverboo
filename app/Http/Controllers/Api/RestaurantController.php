@@ -12,7 +12,7 @@ class RestaurantController extends Controller
     // definisco metodo per leggere tutti i ristoranti
     public function index() {
 
-        $restaurants = Restaurant::all();
+        $restaurants = Restaurant::all()->with('Restaurant->Category');
 
         // prendo tutti i ristoranti e li restituisco in json
         return response()->json($restaurants);
