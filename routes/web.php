@@ -19,9 +19,9 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 // Back-office area pubblica
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Back-office area privata
 Route::middleware('auth')
