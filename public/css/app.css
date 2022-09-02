@@ -11216,6 +11216,7 @@ small {
   ------------------------------*/
   --primary-purple: #9667E0;
   --secondary-purple: #D4BBFC;
+  --tertiary-color: #FBFAFF;
   --primary-gray: #BEBDBD;
   /*------------------------------
       CATEGORY COLORS
@@ -11268,6 +11269,10 @@ small {
 a.btn-main:hover {
   color: black;
   text-decoration: none;
+}
+
+body {
+  background-color: var(--tertiary-color);
 }
 
 .menu {
@@ -11326,6 +11331,10 @@ a.btn-main:hover {
 
 .menu-sx ul li:hover a {
   opacity: 1;
+}
+
+.card {
+  background-color: var(--primary-purple);
 }
 
 .login-main {

@@ -2,10 +2,10 @@
 
 @extends('layouts.dashboard')
 @section('menu')
-<div class="container">
+<div class="container restaurant">
     <div class="card">
-        <div class="card-header">
-            <h1>Lista Piatti</h1>
+        <div class="">
+            <h1>Il tuo ristorante</h1>
         </div>   
             @foreach ($restaurant as $item)    
                 <div class="row col-2 mt-3 mb-3">
