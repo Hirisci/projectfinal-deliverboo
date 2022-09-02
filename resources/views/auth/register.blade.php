@@ -166,7 +166,7 @@
                             </div>
 
                             <div class="">
-                                <h6 class="mb-4">Seleziona tra le seguenti categorie:</h6>
+                                <h6 class="mb-2">Seleziona tra le seguenti categorie:</h6>
                                 
                                     @foreach ($categories as $category)
                                     <div class="form-check form-check-inline">

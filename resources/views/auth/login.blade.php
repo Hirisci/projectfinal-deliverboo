@@ -126,11 +126,11 @@
                             </div>
     
                             <div class="form-group row">
-                                <div class="col-md-6 offset-md-6">
+                                <div class="col-12 d-flex justify-content-end">
                                     <div class="form-check form-check-inline ">
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
     
-                                        <label class="form-check-label" for="remember">
+                                        <label class="form-check-label pt-1" for="remember">
                                             {{ __('Remember Me') }}
                                         </label>
                                     </div>
@@ -146,12 +146,11 @@
                                         </a>
                                     @endif
                                 </div>
-                                <div class="col-12 px-4">
-                                    <div class="row d-flex flex-column align-items-end ">
-                                        <button type="submit" class="btn-main">
-                                            {{ __('Login') }}
-                                        </button>
-                                    </div>   
+                                <div class="col-12 px-4 d-flex justify-content-end ">
+                                    
+                                    <button type="submit" class="btn-main">
+                                        {{ __('Login') }}
+                                    </button>
                                 </div>               
                             </div>
                         </form>
