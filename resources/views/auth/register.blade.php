@@ -92,10 +92,10 @@
                     <form method="POST" action="{{ route('register') }}" class="d-flex flex-column align-items-center" enctype='multipart/form-data'>
                         @csrf
 
-                        <div class="form-group  row align-items-center">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }} *</label>
+                        <div class="form-group  row align-items-center gap-3">
 
-                            <div class="col-md-8">
+                            <div class="d-flex">
+                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }} *</label>
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
@@ -104,12 +104,9 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
-
-                        <div class="form-group  row align-items-center">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }} *</label>
-
-                            <div class="col-md-8">
+                        
+                            <div class="d-flex align-content-center">
+                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }} *</label>
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
@@ -118,34 +115,25 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
-
-                        <div class="form-group  row align-items-center">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }} *</label>
-
-                            <div class="col-md-8">
+                        
+                            
+                            <div class="d-flex align-content-center">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }} *</label>
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" minlength="8">
-
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                        </div>
-
-                        <div class="form-group  row align-items-center">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }} *</label>
-
-                            <div class="col-md-8">
+                            
+                            <div class="d-flex align-content-center">
+                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }} *</label>
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" minlength="8">
                             </div>
-                        </div>
-
-                        <div class="form-group  row align-items-center">
-                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
                             
-                            <div class="col-md-8">
+                            <div class="d-flex align-content-center">
+                                <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
                                 <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" autocomplete="address" autofocus>
                                 
                                 @error('address')
@@ -154,12 +142,9 @@
                                 </span>
                                 @enderror
                             </div>
-                        </div>
-                        
-                        <div class="form-group  row align-items-center">
-                            <label for="vat" class="col-md-4 col-form-label text-md-right">{{ __('Partita IVA') }}</label>
                             
-                            <div class="col-md-8">
+                            <div class="d-flex align-content-center">
+                                <label for="vat" class="col-md-4 col-form-label text-md-right">{{ __('Partita IVA') }}</label>
                                 <input id="vat" type="text" class="form-control @error('vat') is-invalid @enderror" name="vat" value="{{ old('vat') }}" autocomplete="vat" autofocus maxlength="11" minlength="11" pattern="[0-9]+">
                                 
                                 @error('vat')
@@ -168,12 +153,9 @@
                                 </span>
                                 @enderror
                             </div>
-                        </div>
-                        
-                        <div class="form-group  row align-items-center">
-                            <label for="img" class="col-md-4 col-form-label text-md-right">{{ __('Restaurant Image (URL)') }}</label>
                             
-                            <div class="col-md-8">
+                            <div class="d-flex align-content-center">
+                                <label for="img" class="col-md-4 col-form-label text-md-right">{{ __('Restaurant Image (URL)') }}</label>
                                 <input id="img" type="file" class="form-control-file @error('img') is-invalid @enderror" name="img" value="{{ old('img') }}">
                                 
                                 @error('img')
@@ -182,22 +164,20 @@
                                 </span>
                                 @enderror
                             </div>
-                        </div>
-                        <div class="form-group  row mt-4">
-                            <h6 class="mb-4">Seleziona tra le seguenti categorie:</h6>
-                            <div class="col-12 flex-wrap ">
-                                @foreach ($categories as $category)
-                                    <div class="form-check form-check-inline ">
+
+                            <div class="">
+                                <h6 class="mb-4">Seleziona tra le seguenti categorie:</h6>
+                                <div class="col-12 flex-wrap ">
+                                    @foreach ($categories as $category)
+                                    <div class="form-check form-check-inline align-middle  ">
                                         <input class="form-check-input" type="checkbox" id="{{$category->slug}}" value="{{$category->id}}" name="categories_active[]" >
                                         <label class="form-check-label" for="{{$category->slug}}">{{$category->name}}</label>
                                     </div>
-                                @endforeach
+                                    @endforeach
+                                </div>
+                                
                             </div>
-                            
-                        </div>
-                        
-
-                        <div class="form-group row mb-0 mt-4">
+                     
                             <div class="col-md-12 d-flex flex-row-reverse">
                                 <button type="submit" class="btn-main">
                                     {{ __('Register') }}

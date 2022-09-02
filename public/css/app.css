@@ -13080,7 +13080,6 @@ body {
 
 .register-card .card-body input {
   border-radius: 1rem;
-  width: 100%;
 }
 
 .register-card .card-body .form-group.row {
@@ -13171,5 +13170,58 @@ body {
   background-color: var(--tertiary-purple-opacity);
   border: 1px solid var(--primary-purple);
   border-radius: var(--border-radius);
+}
+
+.container.plate .cards {
+  position: relative;
+}
+
+.container.plate .cards-header {
+  padding: var(--p-sm) var(--p-lg);
+  position: relative;
+  z-index: 1;
+  color: var(--tertiary-purple);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  background-color: var(--primary-purple);
+  border-radius: var(--border-radius);
+}
+
+.container.plate .cards-body {
+  position: relative;
+  top: -2.5rem;
+  overflow: hidden;
+  margin: 0 var(--m-lg);
+  background-color: var(--tertiary-purple-opacity);
+  border: 1px solid var(--primary-purple);
+  border-radius: var(--border-radius);
+}
+
+.container.plate .cards-postcard {
+  padding: 0;
+}
+
+.container.plate .cards-postcard-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1/1;
+  width: 100%;
+}
+
+.container.plate .cards-info {
+  padding: var(--p-md);
+  padding-top: 4rem;
+}
+
+.container.plate .cards .img-edit {
+  aspect-ratio: 1/1;
+  width: 10rem;
+}
+
+.container.plate .cards-categories-pillow {
+  background-color: var(--tertiary-purple);
+  color: var(--primary-purple);
+  border-radius: var(--border-radius);
+  font-weight: bold;
 }
 

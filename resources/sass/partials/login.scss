@@ -1,60 +1,61 @@
-.login-main{
+.login-main {
     height: calc(100vh - 87px);
     display: flex;
     align-items: center;
     justify-content: center;
-    svg{
+    svg {
         width: 100%;
     }
 }
 
-.login-card{
+.login-card {
     background-color: var(--secondary-purple);
     border-radius: 1.25rem;
     max-width: 28.125rem;
-    .card-body{
+    .card-body {
         padding: 8rem 0;
         width: 70%;
-        #email, #password{
+        #email,
+        #password {
             width: 100%;
         }
-        label{
+        label {
             font-weight: bold;
         }
-        input{
+        input {
             border-radius: 1rem;
         }
     }
 }
 
-.register-card{
+.register-card {
     background-color: var(--secondary-purple);
     border-radius: 1.25rem;
-    .card-body{
+    .card-body {
         padding: 4rem 0;
         min-width: 100%;
-        #email, #password{
+        #email,
+        #password {
             width: 100%;
         }
-        label{
+        label {
             font-weight: bold;
             word-wrap: none;
         }
-        input{
+        input {
             border-radius: 1rem;
-            width: 100%;
         }
-        .form-group.row{
+        .form-group.row {
             width: 80%;
         }
-        .form-check-label{
+        .form-check-label {
             min-width: 100%;
             word-wrap: none;
         }
-    } 
+    }
 }
 
-#app{
+#app {
     position: relative;
     z-index: 11;
 }

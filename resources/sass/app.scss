@@ -3,8 +3,8 @@
 @import "config/spacing.scss"; // Variables
 @import "config/typography.scss"; // Variables
 @import "config/variable.scss"; // Variables
-@import "config/colors";//Variables
-@import "config/container";//Variables
+@import "config/colors"; //Variables
+@import "config/container"; //Variables
 @import "config/buttons"; //Components
 @import "config/general";
 
@@ -13,4 +13,4 @@
 @import "partials/login.scss";
 @import "partials/restaurant.scss";
 @import "partials/order.scss";
-
+@import "partials/plate.scss";
