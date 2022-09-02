@@ -13014,6 +13014,14 @@ body {
   padding: 7px 0;
 }
 
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: var(--primary-purple);
+}
+
 .login-main {
   height: calc(100vh - 87px);
   display: flex;
