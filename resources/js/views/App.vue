@@ -1,6 +1,11 @@
 <template>
   <div>
     <h1>Le mucche fanno Mu, Gianluca fa "io al pomeriggio dormo"</h1>
+    <ul>
+      <li v-for="restaurant in restaurants" :key="restaurant.slug">
+        {{restaurant.name}}
+      </li>
+    </ul>
   </div>
 </template>
 
