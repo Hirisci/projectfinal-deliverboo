@@ -3,42 +3,43 @@
     justify-content: space-around;
     align-items: flex-start;
     gap: 3rem;
-    
 
     &-sx {
         width: 25%;
         border-radius: 1.5rem;
         background-color: var(--secondary-purple);
-        ul{
-            li{
+        ul {
+            li {
                 line-height: 1.75rem;
-                a{
+                a {
                     color: inherit;
                     text-decoration: none;
                     opacity: 0.8;
                     font-weight: 600;
                 }
-                
             }
         }
-       .section-title-container{
-        display: flex;
-            .section-title{
+        .section-title-container {
+            display: flex;
+            .section-title {
                 background-color: var(--primary-purple);
                 color: white;
-                padding: .3125rem;
+                padding: 0.3125rem;
                 width: 80%;
             }
-            .triangle-element{
-               width: 2.0656rem;
+            .triangle-element {
+                width: 2.0656rem;
                 background-color: var(--primary-purple);
                 transform: skewX(45deg);
                 margin-left: -16.8px;
             }
-       }
-       
+        }
     }
     &-dx {
+        width: 25%;
+        border-radius: 1.5rem;
+        background-color: var(--secondary-purple);
+        min-height: 50vh;
         flex-grow: 1;
     }
 }
@@ -46,13 +47,12 @@
 /*------------------
     EFFECTS
 ------------------*/
-.menu-sx{
-    ul{
-        li:hover{
-            a{
-                opacity: 1;  
+.menu-sx {
+    ul {
+        li:hover {
+            a {
+                opacity: 1;
             }
-
         }
     }
 }

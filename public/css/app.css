@@ -11313,6 +11313,10 @@ a.btn-main:hover {
 }
 
 .menu-dx {
+  width: 25%;
+  border-radius: 1.5rem;
+  background-color: var(--secondary-purple);
+  min-height: 50vh;
   flex-grow: 1;
 }
 

@@ -35,7 +35,7 @@
         </ul>
     </div>
     {{-- menu destro della dashboard --}}
-    <div class="menu-dx">
+    <div class="menu-dx py-4">
         @yield('menu')
     </div>
 
