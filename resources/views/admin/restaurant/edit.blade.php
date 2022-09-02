@@ -10,23 +10,26 @@
                     @csrf
                     @method('PUT')
                     <div class="form-group">
-                        <div class="my-3">
-                            <label for="name">Nome Ristorante*</label>
+                        <div class="my-3 mb-3">
+                            <label class="mb-1" for="name">Nome Ristorante*</label>
                             <input type="text" class="form-control" id="name" name="name" value="{{old('name', $restaurant->name)}}" required>
                         </div>
-                        <div class="my-3">
-                            <label for="name">Partita Iva</label>
+                        <div class="my-3 mb-3">
+                            <label class="mb-1" for="name">Partita Iva</label>
                             <input type="text" class="form-control" id="vat" name="vat" value="{{old('vat', $restaurant->vat)}}" pattern="[0-9]+" maxlength="11" minlength="11">
                         </div>
-                        <div class="my-3">
-                            <label for="name">Indirizzo</label>
+                        <div class="my-3 mb-3">
+                            <label class="mb-1" class="mb-1" for="name">Indirizzo</label>
                             <input type="text" class="form-control" id="address" name="address" value="{{old('address', $restaurant->address)}}">
                         </div>
-                        <div class="my-3 d-flex">
-                            <img src="{{ asset('storage/' . $restaurant->img) }}" class="img-edit">
-                            <div class="ml-3">
-                                <label for="img" class="col-form-label">Scegli Immagine da Modificare</label>
-                                <input id="img" type="file" class="form-control-file @error('img') is-invalid @enderror" name="img" value="{{ asset('storage/' . $restaurant->img) }}">
+                        <div class="my-3 mb-3  row">
+                            <div class="col-3">
+
+                                <img src="{{ asset('storage/' . $restaurant->img) }}" class="img-edit">
+                            </div>
+                            <div class="col-9">
+                                <label for="img" class="formFile mb-1" >Scegli Immagine da Modificare</label>
+                                <input id="img" type="file" class="form-control" @error('img') is-invalid @enderror" name="img" value="{{ asset('storage/' . $restaurant->img) }}">
                                 @error('img')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
