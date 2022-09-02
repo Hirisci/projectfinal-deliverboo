@@ -1,32 +1,22 @@
 <template>
   <div>
-    <h1>Le mucche fanno Mu, Gianluca fa "io al pomeriggio dormo"</h1>
-    <ul>
-      <li v-for="restaurant in restaurants" :key="restaurant.slug">
-        {{restaurant.name}}
-      </li>
-    </ul>
+    <BaseHeader/>
+    <BaseMain/>
+    <BaseFooter/>
   </div>
 </template>
 
 <script>
-import Axios from 'axios';
+import BaseHeader from '../components/macro/BaseHeader.vue';
+import BaseMain from '../components/macro/BaseMain.vue';
+import BaseFooter from '../components/macro/BaseFooter.vue';
 
 export default {
-    name: 'App',
-    data() {
-      return {
-        restaurants: []
-      };
-    },
-    created() {
-      axios.get('http://localhost:8000/api/restaurant')
-      .then((response) => {
-        this.restaurants = response.data;
-      })
-      .catch((e) => {
-        console.log(e);
-      })
+    name: "App",
+    components: { 
+      BaseHeader, 
+      BaseMain, 
+      BaseFooter 
     },
 }
 </script>

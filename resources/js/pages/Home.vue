@@ -1,10 +1,10 @@
 <template>
-  <h1>Dai Cazzo Gianluca</h1>
+  <h1>Home page</h1>
 </template>
 
 <script>
 export default {
-    name:'BaseHeader',
+    name:'Home'
 }
 </script>
 
