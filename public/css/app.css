@@ -13023,6 +13023,10 @@ body {
   opacity: 1;
 }
 
+.file-padding {
+  padding: 7px 0;
+}
+
 .login-main {
   height: calc(100vh - 87px);
   display: flex;

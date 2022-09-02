@@ -156,7 +156,7 @@
                             
                             <div class="d-flex align-content-center">
                                 <label for="img" class="col-md-4 col-form-label text-md-right">{{ __('Restaurant Image (URL)') }}</label>
-                                <input id="img" type="file" class="form-control-file @error('img') is-invalid @enderror" name="img" value="{{ old('img') }}">
+                                <input id="img" type="file" class="form-control-file file-padding @error('img') is-invalid @enderror" name="img" value="{{ old('img') }}">
                                 
                                 @error('img')
                                 <span class="invalid-feedback" role="alert">
@@ -170,7 +170,7 @@
                                 
                                     @foreach ($categories as $category)
                                     <div class="form-check form-check-inline">
-                                        <div>
+                                        <div class="d-flex align-items-center">
                                             <input class="form-check-input" type="checkbox" id="{{$category->slug}}" value="{{$category->id}}" name="categories_active[]" >
                                             <label class="form-check-label" for="{{$category->slug}}">{{$category->name}}</label>
                                         </div>
