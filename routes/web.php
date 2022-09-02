@@ -15,14 +15,15 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+// Back-office area pubblica auth
 Auth::routes();
 
+// Back-office area pubblica
 Route::get('/', function () {
     return view('welcome');
 });
 
-
-
+// Back-office area privata
 Route::middleware('auth')
     ->namespace('Admin') //tutti i controller saranno dentro al namespace Admin
     ->name('admin.') //nome della rotta
@@ -37,9 +38,7 @@ Route::middleware('auth')
         Route::resource('order', 'OrderController');
 });
 
-
-// Route::get(
-//     "{any?}",
-//     function(){
-//         return view('guest.home');}
-// )->where("any",".*");
+// Front office
+Route::get("{any?}", function() {
+        return view('guest.home');
+})->where("any",".*");
