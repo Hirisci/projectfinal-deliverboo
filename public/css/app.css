@@ -12895,6 +12895,8 @@ small,
   --tertiary-purple: #fbfaff;
   --tertiary-purple-opacity: #fbfaff88;
   --primary-gray: #bebdbd;
+  --edit-color: #fd7e14;
+  --delete-color: rgb(160, 4, 4);
   /*------------------------------
       CATEGORY COLORS
   ------------------------------*/
@@ -12931,12 +12933,11 @@ small,
 }
 
 /*---------------------
-    MAIN BUTTONS
-----------------------*/
+        MAIN BUTTONS
+    ----------------------*/
 
 .btn-main {
   border-radius: 1.1rem;
-  background-color: var(--primary-purple);
   padding: 0.625rem 0.925rem;
   color: white;
   font-weight: bold;
@@ -12946,6 +12947,18 @@ small,
 a.btn-main:hover {
   color: black;
   text-decoration: none;
+}
+
+.btn-purple {
+  background-color: var(--primary-purple);
+}
+
+.btn-edit {
+  background-color: var(--edit-color);
+}
+
+.btn-delete {
+  background-color: var(--delete-color);
 }
 
 body {

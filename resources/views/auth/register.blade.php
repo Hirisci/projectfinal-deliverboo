@@ -14,12 +14,12 @@
             @guest
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="btn-main" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="btn-main btn-purple" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                     @endif
                 @else
                     <div >
-                        <a class="btn-main" href="{{ route('logout') }}"
+                        <a class="btn-main btn-purple" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
@@ -155,8 +155,8 @@
                             </div>
                             
                             <div class="d-flex align-content-center">
-                                <label for="img" class="col-md-4 col-form-label text-md-right">{{ __('Restaurant Image (URL)') }}</label>
-                                <input id="img" type="file" class="form-control-file file-padding @error('img') is-invalid @enderror" name="img" value="{{ old('img') }}">
+                                <label for="img" class="formFile col-md-4 col-form-label text-md-right">{{ __('Immagine Ristorante') }}</label>
+                                <input id="img" type="file" class="form-control  @error('img') is-invalid @enderror" name="img" value="{{ old('img') }}">
                                 
                                 @error('img')
                                 <span class="invalid-feedback" role="alert">
@@ -183,7 +183,7 @@
                             </div>
                      
                             <div class="col-md-12 d-flex flex-row-reverse">
-                                <button type="submit" class="btn-main">
+                                <button type="submit" class="btn-main btn-purple">
                                     {{ __('Register') }}
                                 </button>
                             </div>

@@ -14,12 +14,12 @@
             @guest
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="btn-main" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="btn-main btn-purple" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                     @endif
                 @else
                     <div >
-                        <a class="btn-main" href="{{ route('logout') }}"
+                        <a class="btn-main btn-purple" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
@@ -148,7 +148,7 @@
                                 </div>
                                 <div class="col-12 px-4 d-flex justify-content-end ">
                                     
-                                    <button type="submit" class="btn-main">
+                                    <button type="submit" class="btn-main btn-purple">
                                         {{ __('Login') }}
                                     </button>
                                 </div>               

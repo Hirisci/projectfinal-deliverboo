@@ -40,12 +40,13 @@
                         @foreach ($categories as $category)
                         <div class="form-check form-check-inline mt-2">
                             <input class="form-check-input" type="checkbox" id="{{$category->slug}}" value="{{$category->id}}" name="categories_active[]" {{in_array($category->id, old('categories_active', $categories_active)) ? 'checked' : ''}}>
-                            <label class="form-check-label" for="{{$category->slug}}">{{$category->name}}</label>
+                            <label class="form-check-label pt-1" for="{{$category->slug}}">{{$category->name}}</label>
                         </div>
                         @endforeach
                     </div>
-                    
-                    <button type="submit" class="btn btn-warning">Modifica</button>
+                    <div class="col-12 px-4 d-flex justify-content-end ">
+                        <button type="submit" class="btn-main btn-edit">Modifica</button>
+                    </div>
                 </form>
             </div>
         </div>

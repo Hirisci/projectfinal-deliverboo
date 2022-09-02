@@ -28,12 +28,12 @@
                 @if (Route::has('login'))
                     <div class="top-right links">
                         @auth
-                            <a  class="btn-main" href="{{ route('admin.home') }}">Home</a>
+                            <a  class="btn-main btn-purle" href="{{ route('admin.home') }}">Home</a>
                             @else
-                                <a class="btn-main mx-3" href="{{ route('login') }}">Login</a>
+                                <a class="btn-main btn-purle mx-3" href="{{ route('login') }}">Login</a>
 
                             @if (Route::has('register'))
-                                <a class="btn-main" href="{{ route('register') }}">Register</a>
+                                <a class="btn-main btn-purle" href="{{ route('register') }}">Register</a>
                             @endif
                         @endauth
                     </div>
