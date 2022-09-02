@@ -167,14 +167,18 @@
 
                             <div class="">
                                 <h6 class="mb-4">Seleziona tra le seguenti categorie:</h6>
-                                <div class="col-12 d-flex ">
+                                
                                     @foreach ($categories as $category)
+                                    <div class="form-check form-check-inline">
                                         <div>
-                                            <input class="" type="checkbox" id="{{$category->slug}}" value="{{$category->id}}" name="categories_active[]" >
-                                            <label class="" for="{{$category->slug}}">{{$category->name}}</label>
+                                            <input class="form-check-input" type="checkbox" id="{{$category->slug}}" value="{{$category->id}}" name="categories_active[]" >
+                                            <label class="form-check-label" for="{{$category->slug}}">{{$category->name}}</label>
                                         </div>
+                                    </div>
                                     @endforeach
-                                </div>
+                                        
+                                       
+                                
                                 
                             </div>
                      
