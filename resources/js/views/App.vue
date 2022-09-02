@@ -5,8 +5,24 @@
 </template>
 
 <script>
+import Axios from 'axios';
+
 export default {
     name: 'App',
+    data() {
+      return {
+        restaurants: []
+      };
+    },
+    created() {
+      axios.get('http://localhost:8000/api/restaurant')
+      .then((response) => {
+        this.restaurants = response.data;
+      })
+      .catch((e) => {
+        console.log(e);
+      })
+    },
 }
 </script>
 
