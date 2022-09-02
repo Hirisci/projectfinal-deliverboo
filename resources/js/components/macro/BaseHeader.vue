@@ -26,7 +26,7 @@ export default {
 
 <style lang="scss" scoped>
   header{
-    background-color: var(--primary-purple);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(150,103,224,1) 50%);
     padding-bottom: 3.125rem;
     
     .header-top{
@@ -36,7 +36,7 @@ export default {
       padding: 1.25rem;
       .header-top-logo{
         img{
-          width: 6.25rem;
+          width: 8rem;
         }
       }
     }

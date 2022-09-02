@@ -2059,7 +2059,7 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("button", {
-    staticClass: "basic-button"
+    staticClass: "basic-button btn-main btn-purple"
   }, [_vm._v(" " + _vm._s(_vm.buttonText) + " ")]);
 };
 
@@ -2290,7 +2290,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "header[data-v-8a2cb668] {\n  background-color: var(--primary-purple);\n  padding-bottom: 3.125rem;\n}\nheader .header-top[data-v-8a2cb668] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1.25rem;\n}\nheader .header-top .header-top-logo img[data-v-8a2cb668] {\n  width: 6.25rem;\n}\nheader .header-bottom[data-v-8a2cb668] {\n  display: flex;\n}\nheader .header-bottom img[data-v-8a2cb668] {\n  width: 40%;\n}", ""]);
+exports.push([module.i, "header[data-v-8a2cb668] {\n  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(150, 103, 224) 50%);\n  padding-bottom: 3.125rem;\n}\nheader .header-top[data-v-8a2cb668] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1.25rem;\n}\nheader .header-top .header-top-logo img[data-v-8a2cb668] {\n  width: 8rem;\n}\nheader .header-bottom[data-v-8a2cb668] {\n  display: flex;\n}\nheader .header-bottom img[data-v-8a2cb668] {\n  width: 40%;\n}", ""]);
 
 // exports
 
