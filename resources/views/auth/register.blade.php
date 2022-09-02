@@ -170,10 +170,8 @@
                                 
                                     @foreach ($categories as $category)
                                     <div class="form-check form-check-inline">
-                                        
-                                            <input class="form-check-input" type="checkbox" id="{{$category->slug}}" value="{{$category->id}}" name="categories_active[]" >
-                                            <label class="form-check-label pt-1" for="{{$category->slug}}">{{$category->name}}</label>
-                                        
+                                        <input class="form-check-input" type="checkbox" id="{{$category->slug}}" value="{{$category->id}}" name="categories_active[]" >
+                                        <label class="form-check-label pt-1" for="{{$category->slug}}">{{$category->name}}</label>
                                     </div>
                                     @endforeach
                                         
