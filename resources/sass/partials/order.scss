@@ -1,0 +1,22 @@
+.container.order{
+    .cards {
+        position: relative;
+        &-header {
+            padding: var(--p-sm) var(--p-lg);
+            position: relative;
+            z-index: 1;
+            color: var(--tertiary-purple);
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            background-color: var(--primary-purple);
+            border-radius: var(--border-radius);
+        }
+        &-body {
+            overflow: hidden;
+            margin: 0 var(--m-lg);
+            background-color: var(--tertiary-purple-opacity);
+            border: 1px solid var(--primary-purple);
+            border-radius: var(--border-radius);
+        }
+    }
+}

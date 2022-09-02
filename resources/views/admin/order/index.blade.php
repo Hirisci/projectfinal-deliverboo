@@ -1,12 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
-@section('content')
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
+@section('menu')
+    <div class="container order">
+        <div class="cards">
+            <div class="cards-header">
                 <h1>Lista Ordini</h1>
             </div>
-            <div class="card-body">
+            <div class="cards-body d-flex justify-content-between">
                 <table class="table table-striped">
                     <thead>
                         ordine n°:
