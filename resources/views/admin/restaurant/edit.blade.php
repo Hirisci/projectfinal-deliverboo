@@ -25,7 +25,6 @@
                         </div>
                         <div class="my-3 mb-3  row">
                             <div class="col-3">
-
                                 <img src="{{ asset('storage/' . $restaurant->img) }}" class="img-edit">
                             </div>
                             <div class="col-9">
@@ -35,8 +34,8 @@
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
+                                @enderror
                             </div>
-                            @enderror
                         </div>      
                     </div>   
                     <div class="my-3">
