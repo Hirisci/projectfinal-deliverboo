@@ -10,6 +10,7 @@
                     @csrf
                     @method('PUT')
                     <div class="form-group">
+                        
                         <div class="my-3 mb-3">
                             <label class="mb-1" for="name">Nome Ristorante*</label>
                             <input type="text" class="form-control" id="name" name="name" value="{{old('name', $restaurant->name)}}" required>

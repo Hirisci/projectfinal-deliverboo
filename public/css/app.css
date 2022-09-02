@@ -13011,7 +13011,8 @@ body {
   width: 25%;
   border-radius: var(--border-radius);
   background-color: var(--secondary-purple);
-  min-height: 50vh;
+  height: 85vh;
+  overflow: hidden;
   flex-grow: 1;
 }
 
@@ -13188,6 +13189,11 @@ a:hover {
 
 .container.plate .cards {
   position: relative;
+  height: calc(85vh - 2rem);
+}
+
+.container.plate .cards-product {
+  height: 10rem;
 }
 
 .container.plate .cards-header {
@@ -13209,6 +13215,7 @@ a:hover {
   background-color: var(--tertiary-purple-opacity);
   border: 1px solid var(--primary-purple);
   border-radius: var(--border-radius);
+  height: 95%;
 }
 
 .container.plate .cards-postcard {
@@ -13227,9 +13234,21 @@ a:hover {
   padding-top: 4rem;
 }
 
+.container.plate .cards-display {
+  overflow: scroll;
+  height: 100%;
+  padding-bottom: 4rem;
+}
+
 .container.plate .cards .img-edit {
   aspect-ratio: 1/1;
   width: 10rem;
+}
+
+.container.plate .cards .description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-overflow: "...";
 }
 
 .container.plate .cards-categories-pillow {

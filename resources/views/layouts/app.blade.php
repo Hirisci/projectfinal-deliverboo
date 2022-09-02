@@ -22,7 +22,7 @@
 <body>
     <div id="app">
         <nav>
-            <div class="container my-3 d-flex align-items-center justify-content-between"> 
+            <div class="container d-flex align-items-center justify-content-between"> 
                 {{-- logo del sito --}}
                 <a href="{{url('/')}}">
                     <img src="{{ asset('storage/' . "default/logo/logo-primary.png")}}" alt="logo fighissimo">
@@ -57,7 +57,7 @@
             </div>
         </nav>
     </div>
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>      
     </div>
