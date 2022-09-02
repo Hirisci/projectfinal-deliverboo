@@ -1,0 +1,50 @@
+.container.plate {
+    .cards {
+        position: relative;
+        &-header {
+            padding: var(--p-sm) var(--p-lg);
+            position: relative;
+            z-index: 1;
+            color: var(--tertiary-purple);
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            background-color: var(--primary-purple);
+            border-radius: var(--border-radius);
+        }
+        &-body {
+            position: relative;
+            top: -2.5rem;
+            overflow: hidden;
+            margin: 0 var(--m-lg);
+            background-color: var(--tertiary-purple-opacity);
+            border: 1px solid var(--primary-purple);
+            border-radius: var(--border-radius);
+        }
+        &-postcard {
+            padding: 0;
+            &-img {
+                object-fit: cover;
+                aspect-ratio: 1/1;
+                width: 100%;
+            }
+        }
+        &-info {
+            padding: var(--p-md);
+            padding-top: 4rem;
+        }
+
+        .img-edit {
+            aspect-ratio: 1/1;
+            width: 10rem;
+        }
+
+        &-categories {
+            &-pillow {
+                background-color: var(--tertiary-purple);
+                color: var(--primary-purple);
+                border-radius: var(--border-radius);
+                font-weight: bold;
+            }
+        }
+    }
+}
