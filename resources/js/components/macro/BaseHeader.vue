@@ -2,7 +2,7 @@
   <header>
     <div class="header-top">
       <div class="header-top-logo">
-        <img src="../imgs/logo white.png" alt="">
+        <img src="../imgs/logo-white.png" alt="">
       </div>
       <div class="header-top-login-button">
         <ABasicButton :button-text="'Login'"/>

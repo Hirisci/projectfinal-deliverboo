@@ -2136,7 +2136,7 @@ var staticRenderFns = [function () {
     staticClass: "header-top-logo"
   }, [_c("img", {
     attrs: {
-      src: __webpack_require__(/*! ../imgs/logo white.png */ "./resources/js/components/imgs/logo white.png"),
+      src: __webpack_require__(/*! ../imgs/logo-white.png */ "./resources/js/components/imgs/logo-white.png"),
       alt: ""
     }
   })]);
@@ -18728,14 +18728,14 @@ module.exports = "/images/hamburger.png?8df3d89112d77bf236de3709c958c7a2";
 
 /***/ }),
 
-/***/ "./resources/js/components/imgs/logo white.png":
+/***/ "./resources/js/components/imgs/logo-white.png":
 /*!*****************************************************!*\
-  !*** ./resources/js/components/imgs/logo white.png ***!
+  !*** ./resources/js/components/imgs/logo-white.png ***!
   \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/logo white.png?16933b020697e02c2bcf3b6f3f9c7631";
+module.exports = "/images/logo-white.png?16933b020697e02c2bcf3b6f3f9c7631";
 
 /***/ }),
 
