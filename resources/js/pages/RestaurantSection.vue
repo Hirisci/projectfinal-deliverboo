@@ -1,0 +1,71 @@
+<template>
+  <div class="restaurant-section">
+    <div class="restaurant-section-header">
+      <div class="restaurant-section-header-bottom-left">
+        <ARestaurantCard :description="'Prova'" :name="'McDonalds'" :img="'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png'"/>
+      </div>
+    </div>
+    <div class="restaurant-section-menu">
+      <ATitleCard :title="'Menù'" />
+      <div class="restaurant-section-menu-plates">
+        <MPlateCard v-for="plate in plates" :key="plate.id" :img="plate.img" :name="plate.name" :description="plate.description"/>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import ARestaurantCard from '../components/atoms/ARestaurantCard.vue';
+import ATitleCard from '../components/atoms/ATitleCard.vue';
+import MPlateCard from '../components/molecules/MPlateCard.vue';
+export default {
+    name: "RestaurantSection",
+    components: { ARestaurantCard, ATitleCard, MPlateCard },
+    data() {
+        return {
+            plates: []
+        };
+    },
+    created() {
+        axios.get("http://localhost:8000/api/plate")
+            .then((response) => {
+            this.plates = response.data;
+        })
+            .catch((e) => {
+            console.log(e);
+        });
+    },
+}
+</script>
+
+<style lang="scss" scoped>
+.restaurant-section{
+  max-width: 1200px;
+  margin: auto;
+  .restaurant-section-header{
+    background-image: URL(https://salerno.occhionotizie.it/wp-content/uploads/sites/2/2020/10/mcdonalds-fast-food-shutterstock.jpg);
+    min-height: 20vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    .restaurant-section-header-bottom-left{
+      position: absolute;
+      left: 5%;
+      bottom: 5%;
+    }
+  }
+  .restaurant-section-menu{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    .restaurant-section-menu-plates{
+      display: flex;
+      flex-flow: column;
+      gap: 10px;
+    }
+  }
+}
+</style>

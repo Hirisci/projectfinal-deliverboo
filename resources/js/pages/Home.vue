@@ -1,15 +1,17 @@
 <template>
-  <RestaurantsSection/>
+  <div class="home">
+    <BaseMain />
+  </div>
 </template>
 
 <script>
-import RestaurantsSection from '../components/sections/RestaurantsSection.vue';
+import BaseMain from '../components/macro/BaseMain.vue';
 
 export default {
     name: "Home",
-    components: { 
-      RestaurantsSection
-    },
+    components: {
+    BaseMain
+},
 }
 </script>
 

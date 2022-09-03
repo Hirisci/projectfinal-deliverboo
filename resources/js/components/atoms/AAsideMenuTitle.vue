@@ -14,5 +14,23 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.section-title-container{
+  display: flex;
+  .section-title{
+    background-color: var(--primary-purple);
+    color: white;
+    padding: 0.3125rem;
+    width: 80%;
+    h6{
+      text-transform: uppercase;
+    }
+  }
+  .triangle-element{
+    width: 2.0656rem;
+    background-color: var(--primary-purple);
+    transform: skewX(45deg);
+    margin-left: -16.8px;
+  }
+}
 </style>
