@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="app">
     <BaseHeader/>
-    <BaseMain/>
+    <router-view />
     <BaseFooter/>
   </div>
 </template>
@@ -23,5 +23,10 @@ export default {
 
 <style lang="scss">
 @import "../../sass/app";
+
+.app{
+  width: 100vw;
+  overflow: hidden;
+}
 
 </style>
