@@ -1,7 +1,7 @@
 <template>
   <main>
     <router-view></router-view>
-    <AAsideMenuTitle/>
+    <AAsideMenuTitle :title="'testo'"/>
   </main>
 </template>
 
