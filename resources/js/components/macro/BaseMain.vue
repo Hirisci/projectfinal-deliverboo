@@ -1,16 +1,18 @@
 <template>
   <main>
     <router-view></router-view>
+    <AAsideMenuTitle/>
   </main>
 </template>
 
 <script>
+import AAsideMenuTitle from '../atoms/AAsideMenuTitle.vue';
 
 export default {
     name: "BaseMain",
-    components: { 
-      
-    }
+    components: {
+    AAsideMenuTitle
+}
 }
 </script>
 
