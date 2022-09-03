@@ -22,6 +22,9 @@ export default {
     color: white;
     padding: 0.3125rem;
     width: 80%;
+    h6{
+      text-transform: uppercase;
+    }
   }
   .triangle-element{
     width: 2.0656rem;

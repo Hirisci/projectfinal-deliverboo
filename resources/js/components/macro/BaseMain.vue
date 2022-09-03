@@ -1,17 +1,17 @@
 <template>
   <main>
     <router-view></router-view>
-    <AAsideMenuTitle :title="'Test'"/>
+    <OAsideMenu />
   </main>
 </template>
 
 <script>
-import AAsideMenuTitle from '../atoms/AAsideMenuTitle.vue';
+import OAsideMenu from '../organism/OAsideMenu.vue';
 
 export default {
     name: "BaseMain",
     components: {
-    AAsideMenuTitle
+    OAsideMenu
 }
 }
 </script>
