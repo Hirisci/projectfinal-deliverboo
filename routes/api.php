@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('restaurant', 'Api\RestaurantController@index');
 Route::get('category', 'Api\CategoryController@index');
+Route::get('plate', 'Api\PlateController@index');

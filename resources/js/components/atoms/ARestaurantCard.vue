@@ -4,8 +4,8 @@
       <img :src="img" alt="Restaurant Image">
     </div>
     <div class="restaurant-card-text">
-      <div class="restaurant-card-text-title">
-         <h4> {{title}} </h4>
+      <div class="restaurant-card-text-name">
+         <h4> {{name}} </h4>
       </div>
       <div class="restaurant-card-text-stars">
         <!-- TO IMPLEMENT -->
@@ -22,7 +22,7 @@ export default {
   name: 'ARestaurantCard',
   props: {
     img: Image,
-    title: String,
+    name: String,
     description: String,
   }
 }
@@ -32,9 +32,10 @@ export default {
   .restaurant-card{
     display: flex;
     align-items: center;
-    background-color: (var(--primary-purple), 0.5);
+    background-color: hsla(263, 66%, 64%, .6);
     border-radius: 20px;
     padding: 10px;
+    gap: 10px;
     .restaurant-card-img img{
       width: 100px;
       height: 70px;
