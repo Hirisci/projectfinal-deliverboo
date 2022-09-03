@@ -1,16 +1,14 @@
 <template>
   <main>
-    <router-view></router-view>
+    <router-view />
   </main>
 </template>
 
 <script>
-import OAsideMenu from '../organism/OAsideMenu.vue';
 
 export default {
     name: "BaseMain",
     components: {
-    OAsideMenu
 }
 }
 </script>
