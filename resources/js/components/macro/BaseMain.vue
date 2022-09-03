@@ -1,7 +1,6 @@
 <template>
   <main>
     <router-view></router-view>
-    <OAsideMenu />
   </main>
 </template>
 

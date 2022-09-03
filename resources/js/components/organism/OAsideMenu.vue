@@ -70,6 +70,7 @@ export default {
     .aside-menu-categories{
         .aside-menu-categories-list{
             display: flex;
+            flex-flow: row wrap;
             gap: 10px;
         }
     }

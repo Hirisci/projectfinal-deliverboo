@@ -2272,7 +2272,7 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("main", [_c("router-view"), _vm._v(" "), _c("OAsideMenu")], 1);
+  return _c("main", [_c("router-view")], 1);
 };
 
 var staticRenderFns = [];
@@ -2567,7 +2567,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".aside-menu[data-v-3fb89fec] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  display: flex;\n  flex-flow: column;\n  gap: 10px;\n  padding: 20px 0px;\n}\n.aside-menu .aside-menu-categories .aside-menu-categories-list[data-v-3fb89fec] {\n  display: flex;\n  gap: 10px;\n}\n.aside-menu .aside-menu-filters .aside-menu-filters-container[data-v-3fb89fec] {\n  display: flex;\n  flex-flow: column;\n  gap: 5px;\n}", ""]);
+exports.push([module.i, ".aside-menu[data-v-3fb89fec] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  display: flex;\n  flex-flow: column;\n  gap: 10px;\n  padding: 20px 0px;\n}\n.aside-menu .aside-menu-categories .aside-menu-categories-list[data-v-3fb89fec] {\n  display: flex;\n  flex-flow: row wrap;\n  gap: 10px;\n}\n.aside-menu .aside-menu-filters .aside-menu-filters-container[data-v-3fb89fec] {\n  display: flex;\n  flex-flow: column;\n  gap: 5px;\n}", ""]);
 
 // exports
 
