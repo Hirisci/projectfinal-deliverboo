@@ -1,5 +1,5 @@
  <template>
-  <button class="basic-button btn-main btn-purple"> {{buttonText}} </button>
+  <button class="basic-button btn-main btn-purple" :onclick="route"> {{buttonText}} </button>
  </template>
  
  <script>
