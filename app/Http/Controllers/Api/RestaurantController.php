@@ -17,4 +17,12 @@ class RestaurantController extends Controller
         // prendo tutti i ristoranti e li restituisco in json
         return response()->json($restaurants);
     }
+
+    public function show($slug) {
+
+        $restaurant = Restaurant::where('slug', $slug)->first();
+
+        // prendo tutti i ristoranti e li restituisco in json
+        return response()->json($restaurant);
+    }
 }
