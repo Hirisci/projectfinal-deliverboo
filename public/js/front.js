@@ -2129,11 +2129,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'MRestaurantCard',
   props: {
-    name: String,
-    description: String,
-    category: String,
-    image: String,
-    id: String,
+    restaurant: Object,
     slug: String
   }
 });
@@ -2586,11 +2582,8 @@ var render = function render() {
       key: restaurant.slug,
       staticClass: "col-1",
       attrs: {
-        category: restaurant.category,
-        image: restaurant.image,
-        description: restaurant.description,
-        name: restaurant.name,
-        slug: restaurant.slug
+        slug: restaurant.slug,
+        restaurant: restaurant
       }
     });
   }), 1)]);
@@ -2719,7 +2712,12 @@ var render = function render() {
 
   return _c("div", {
     staticClass: "restaurant-card"
-  }, [_c("router-link", {
+  }, [_c("img", {
+    attrs: {
+      src: "storage/".concat(_vm.restaurant.img),
+      alt: ""
+    }
+  }), _vm._v(" "), _c("router-link", {
     attrs: {
       to: {
         name: "restaurant",
@@ -2740,9 +2738,9 @@ var render = function render() {
     staticClass: "restaurant-card-right-bottom"
   }, [_c("span", {
     staticClass: "restaurant-card-right-bottom-description"
-  }, [_vm._v(" " + _vm._s(_vm.description) + " ")]), _vm._v(" "), _c("span", {
+  }, [_vm._v(" " + _vm._s(_vm.restaurant.description) + " ")]), _vm._v(" "), _c("span", {
     staticClass: "restaurant-card-right-bottom-name"
-  }, [_vm._v(" " + _vm._s(_vm.name) + " ")])])])])])], 1);
+  }, [_vm._v(" " + _vm._s(_vm.restaurant.name) + " ")])])])])])], 1);
 };
 
 var staticRenderFns = [];
@@ -3215,7 +3213,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".restaurant-card[data-v-77c4db06] {\n  background-image: url(https://salerno.occhionotizie.it/wp-content/uploads/sites/2/2020/10/mcdonalds-fast-food-shutterstock.jpg);\n  background-size: cover;\n  border-radius: 20px;\n  min-width: 300px;\n  min-height: 130px;\n  position: relative;\n  overflow: hidden;\n}\n.restaurant-card .overlay[data-v-77c4db06] {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  background-color: hsla(263deg, 66%, 64%, 0.6);\n  transform: skewX(-30deg) translateX(50%);\n}\n.restaurant-card .overlay-text[data-v-77c4db06] {\n  position: absolute;\n  right: 5%;\n  bottom: 10%;\n}\n.restaurant-card .overlay-text .restaurant-card-right-bottom[data-v-77c4db06] {\n  color: white;\n}\n.restaurant-card .overlay-text .restaurant-card-right-bottom .restaurant-card-right-bottom-description[data-v-77c4db06] {\n  font-size: 0.7rem;\n}\n.restaurant-card .overlay-text .restaurant-card-right-bottom .restaurant-card-right-bottom-name[data-v-77c4db06] {\n  text-transform: uppercase;\n  font-weight: 700;\n}", ""]);
+exports.push([module.i, "img[data-v-77c4db06] {\n  width: 300px;\n  height: 135px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.restaurant-card[data-v-77c4db06] {\n  border-radius: 20px;\n  min-width: 300px;\n  min-height: 130px;\n  height: 135px;\n  position: relative;\n  overflow: hidden;\n}\n.restaurant-card .overlay[data-v-77c4db06] {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  background-color: hsla(263deg, 66%, 64%, 0.6);\n  transform: skewX(-30deg) translateX(50%);\n}\n.restaurant-card .overlay-text[data-v-77c4db06] {\n  position: absolute;\n  right: 5%;\n  bottom: 10%;\n}\n.restaurant-card .overlay-text .restaurant-card-right-bottom[data-v-77c4db06] {\n  color: white;\n}\n.restaurant-card .overlay-text .restaurant-card-right-bottom .restaurant-card-right-bottom-description[data-v-77c4db06] {\n  font-size: 0.7rem;\n  color: red;\n}\n.restaurant-card .overlay-text .restaurant-card-right-bottom .restaurant-card-right-bottom-name[data-v-77c4db06] {\n  text-transform: uppercase;\n  font-weight: 700;\n}", ""]);
 
 // exports
 
