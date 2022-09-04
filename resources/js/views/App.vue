@@ -25,8 +25,7 @@ export default {
 @import "../../sass/app";
 
 .app{
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 }
-
 </style>
