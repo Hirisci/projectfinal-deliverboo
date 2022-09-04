@@ -23,7 +23,6 @@ class RestaurantController extends Controller
 
         $restaurant = Restaurant::where('slug', $slug)->first();
         $category = Category::all();
-        dd($restaurant, $category);
 
         // prendo tutti i ristoranti e li restituisco in json
         return response()->json($restaurant);
