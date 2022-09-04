@@ -1966,8 +1966,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ARestaurantCard',
-  props: {
-    img: Image
+  props: {// img: Image,
   },
   data: function data() {
     return {
@@ -2410,7 +2409,7 @@ var render = function render() {
     staticClass: "restaurant-card-img"
   }, [_c("img", {
     attrs: {
-      src: _vm.restaurant.img,
+      src: "/storage/".concat(_vm.restaurant.img),
       alt: "Restaurant Image"
     }
   })]), _vm._v(" "), _c("div", {

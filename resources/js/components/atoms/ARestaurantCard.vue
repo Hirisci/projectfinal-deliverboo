@@ -1,7 +1,7 @@
 <template>
   <div class="restaurant-card">
     <div class="restaurant-card-img">
-      <img :src="restaurant.img" alt="Restaurant Image">
+      <img :src="`/storage/${restaurant.img}`" alt="Restaurant Image">
     </div>
     <div class="restaurant-card-text">
       <div class="restaurant-card-text-name">
@@ -21,7 +21,7 @@
 export default {
   name: 'ARestaurantCard',
   props: {
-    img: Image,
+    // img: Image,
   },
   data() {
     return {
