@@ -2514,7 +2514,7 @@ var render = function render() {
     staticClass: "header-top-login-button"
   }, [_c("a", {
     attrs: {
-      href: "#"
+      href: "/admin/home"
     }
   }, [_c("ABasicButton", {
     attrs: {

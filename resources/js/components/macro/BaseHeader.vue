@@ -5,7 +5,7 @@
         <img src="../imgs/logo-white.png" alt="">
       </div>
       <div class="header-top-login-button">
-        <a href="#"><ABasicButton :button-text="'Login'"/></a>
+        <a href="/admin/home"><ABasicButton :button-text="'Login'"/></a>
       </div>
     </div>
     <div class="header-bottom">
