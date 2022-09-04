@@ -5,7 +5,7 @@
     <div class="container-nav mb-3  p-2 d-flex align-items-center justify-content-between"> 
         {{-- logo del sito --}}
         <a href="{{url('/')}}">
-            <img src="https://icones.pro/wp-content/uploads/2021/06/symbole-github-violet.png" alt="logo provvisorio">
+            <img src="https://i.ibb.co/jZzKwm7/immagine-purple-secondary.png" alt="immagine-purple-secondary">
         </a>
         
         <!-- Right Side Of Navbar -->

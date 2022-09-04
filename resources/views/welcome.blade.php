@@ -22,7 +22,7 @@
         <nav>    
             <div class="container my-3 d-flex align-items-center justify-content-between">
                 {{-- logo del sito --}}
-                <img src="https://icones.pro/wp-content/uploads/2021/06/symbole-github-violet.png" alt="logo provvisorio">
+                <img src='app_path()."/../resources/js/components/imgs/logo-purple.png"' alt="no logo">
                 
                 {{-- tasti di sinistra --}}
                 @if (Route::has('login'))

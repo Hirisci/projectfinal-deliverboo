@@ -5,7 +5,7 @@
         <img src="../imgs/logo-white.png" alt="">
       </div>
       <div class="header-top-login-button">
-        <ABasicButton :button-text="'Login'"/>
+        <router-link class="spacing" to="/login"><ABasicButton :button-text="'Login'"/></router-link>
       </div>
     </div>
     <div class="header-bottom">
