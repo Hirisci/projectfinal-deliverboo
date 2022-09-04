@@ -1967,9 +1967,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ARestaurantCard',
   props: {
-    img: Image,
-    name: String,
-    description: String
+    img: Image
+  },
+  data: function data() {
+    return {
+      restaurant: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get("/api/restaurant/".concat(this.$route.params.slug)).then(function (response) {
+      _this.restaurant = response.data;
+    });
   }
 });
 
@@ -2398,20 +2408,20 @@ var render = function render() {
     staticClass: "restaurant-card-img"
   }, [_c("img", {
     attrs: {
-      src: _vm.img,
+      src: _vm.restaurant.img,
       alt: "Restaurant Image"
     }
   })]), _vm._v(" "), _c("div", {
     staticClass: "restaurant-card-text"
   }, [_c("div", {
     staticClass: "restaurant-card-text-name"
-  }, [_c("h4", [_vm._v(" " + _vm._s(_vm.name) + " ")])]), _vm._v(" "), _c("div", {
+  }, [_c("h4", [_vm._v(" " + _vm._s(_vm.restaurant.name) + " ")])]), _vm._v(" "), _c("div", {
     staticClass: "restaurant-card-text-stars"
   }), _vm._v(" "), _c("div", {
     staticClass: "restaurant-card-text-description"
   }, [_c("span", {
     staticClass: "restaurant-card-text-description-span"
-  }, [_vm._v(" " + _vm._s(_vm.description) + " ")])])])]);
+  }, [_vm._v(" " + _vm._s(_vm.restaurant.address) + " ")])])])]);
 };
 
 var staticRenderFns = [];
@@ -2932,13 +2942,7 @@ var render = function render() {
     staticClass: "restaurant-section-header"
   }, [_c("div", {
     staticClass: "restaurant-section-header-bottom-left"
-  }, [_c("ARestaurantCard", {
-    attrs: {
-      description: "Prova",
-      name: "McDonalds",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png"
-    }
-  })], 1)]), _vm._v(" "), _c("div", {
+  }, [_c("ARestaurantCard")], 1)]), _vm._v(" "), _c("div", {
     staticClass: "restaurant-section-shop"
   }, [_c("div", {
     staticClass: "restaurant-section-shop-menu col-8"
@@ -21294,7 +21298,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: "home",
     component: _pages_Home__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
-    path: "/restaurant",
+    path: "/restaurant/:slug",
     name: "restaurant",
     component: _pages_RestaurantSection__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
@@ -21402,7 +21406,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\giaki\Desktop\Boolean\Project\FinalProject-Deliveboo\projectfinal-deliverboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\berto\Desktop\Classe#63\Esame\projectfinal-deliverboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

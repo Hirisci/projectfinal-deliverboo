@@ -2,7 +2,7 @@
     <div class="restaurant-section">
       <div class="restaurant-section-header">
         <div class="restaurant-section-header-bottom-left">
-          <ARestaurantCard :description="'Prova'" :name="'McDonalds'" :img="'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png'"/>
+          <ARestaurantCard />
         </div>
       </div>
       <div class="restaurant-section-shop">

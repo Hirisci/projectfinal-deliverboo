@@ -1,17 +1,17 @@
 <template>
   <div class="restaurant-card">
     <div class="restaurant-card-img">
-      <img :src="img" alt="Restaurant Image">
+      <img :src="restaurant.img" alt="Restaurant Image">
     </div>
     <div class="restaurant-card-text">
       <div class="restaurant-card-text-name">
-         <h4> {{name}} </h4>
+         <h4> {{restaurant.name}} </h4>
       </div>
       <div class="restaurant-card-text-stars">
         <!-- TO IMPLEMENT -->
       </div>
       <div class="restaurant-card-text-description">
-        <span class="restaurant-card-text-description-span"> {{description}} </span>
+        <span class="restaurant-card-text-description-span"> {{restaurant.address}} </span>
       </div>
     </div>
   </div>
@@ -22,9 +22,18 @@ export default {
   name: 'ARestaurantCard',
   props: {
     img: Image,
-    name: String,
-    description: String,
-  }
+  },
+  data() {
+    return {
+      restaurant: []
+    }
+  },
+  created() {
+        axios.get(`/api/restaurant/${this.$route.params.slug}`)
+            .then((response) => {
+            this.restaurant = response.data;
+        })
+  },
 }
 </script>
 
