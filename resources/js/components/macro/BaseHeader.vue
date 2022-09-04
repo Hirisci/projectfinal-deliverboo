@@ -5,7 +5,7 @@
         <img src="../imgs/logo-white.png" alt="">
       </div>
       <div class="header-top-login-button">
-        <ABasicButton :button-text="'Login'"/>
+        <a href="admin/home"><ABasicButton :button-text="'Login'"/></a>
       </div>
     </div>
     <div class="header-bottom">
@@ -45,6 +45,9 @@ export default {
       img{
         width: 40%;
       }
+    }
+    a {
+      text-decoration: none;
     }
   }
 </style>
