@@ -1,26 +1,32 @@
 <template>
-  <div class="restaurant-section">
-    <div class="restaurant-section-header">
-      <div class="restaurant-section-header-bottom-left">
-        <ARestaurantCard :description="'Prova'" :name="'McDonalds'" :img="'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png'"/>
+    <div class="restaurant-section">
+      <div class="restaurant-section-header">
+        <div class="restaurant-section-header-bottom-left">
+          <ARestaurantCard :description="'Prova'" :name="'McDonalds'" :img="'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png'"/>
+        </div>
+      </div>
+      <div class="restaurant-section-shop">
+        <div class="restaurant-section-shop-menu col-8">
+          <ATitleCard :title="'Menù'" />
+          <div class="restaurant-section-shop-menu-plates">
+            <MPlateCard v-for="plate in plates" :key="plate.id" :img="plate.img" :name="plate.name" :description="plate.description"/>
+          </div>
+        </div>
+        <div class="restaurant-section-shop-cart col-4">
+          <MCart />
+        </div>
       </div>
     </div>
-    <div class="restaurant-section-menu">
-      <ATitleCard :title="'Menù'" />
-      <div class="restaurant-section-menu-plates">
-        <MPlateCard v-for="plate in plates" :key="plate.id" :img="plate.img" :name="plate.name" :description="plate.description"/>
-      </div>
-    </div>
-  </div>
 </template>
 
 <script>
 import ARestaurantCard from '../components/atoms/ARestaurantCard.vue';
 import ATitleCard from '../components/atoms/ATitleCard.vue';
 import MPlateCard from '../components/molecules/MPlateCard.vue';
+import MCart from '../components/molecules/MCart.vue';
 export default {
     name: "RestaurantSection",
-    components: { ARestaurantCard, ATitleCard, MPlateCard },
+    components: { ARestaurantCard, ATitleCard, MPlateCard, MCart },
     data() {
         return {
             plates: []
@@ -55,16 +61,22 @@ export default {
       bottom: 5%;
     }
   }
-  .restaurant-section-menu{
+  .restaurant-section-shop{
     display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    padding: 20px;
-    gap: 20px;
-    .restaurant-section-menu-plates{
+    .restaurant-section-shop-menu{
       display: flex;
-      flex-flow: column;
-      gap: 10px;
+      flex-flow: column nowrap;
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
+      .restaurant-section-shop-menu-plates{
+        display: flex;
+        flex-flow: column;
+        gap: 10px;
+      }
+    }
+    .restaurant-section-shop-cart{
+      padding: 20px;
     }
   }
 }

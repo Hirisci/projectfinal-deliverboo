@@ -22,7 +22,7 @@ export default {
         justify-content: center;
         border-radius: 30px;
         width: 50%;
-        padding: 5px;
+        padding: 10px;
         font-weight: 700;
         text-transform: uppercase;
     }
