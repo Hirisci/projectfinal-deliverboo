@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Restaurant;
 use App\Category;
+use App\Plate;
 
 class RestaurantController extends Controller
 {
@@ -23,7 +24,6 @@ class RestaurantController extends Controller
 
         $restaurant = Restaurant::where('slug', $slug)->first();
         $category = Category::all();
-
         // prendo tutti i ristoranti e li restituisco in json
         return response()->json($restaurant);
     }
