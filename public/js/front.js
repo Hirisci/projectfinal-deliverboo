@@ -2133,7 +2133,9 @@ __webpack_require__.r(__webpack_exports__);
     name: String,
     description: String,
     category: String,
-    image: String
+    image: String,
+    id: String,
+    slug: String
   }
 });
 
@@ -2584,7 +2586,8 @@ var render = function render() {
         category: restaurant.category,
         image: restaurant.image,
         description: restaurant.description,
-        name: restaurant.name
+        name: restaurant.name,
+        slug: restaurant.slug
       }
     });
   }), 1)]);
@@ -2727,7 +2730,16 @@ var render = function render() {
     staticClass: "restaurant-card-right-bottom-description"
   }, [_vm._v(" " + _vm._s(_vm.description) + " ")]), _vm._v(" "), _c("span", {
     staticClass: "restaurant-card-right-bottom-name"
-  }, [_vm._v(" " + _vm._s(_vm.name) + " ")])])])])]);
+  }, [_vm._v(" " + _vm._s(_vm.name) + " ")]), _vm._v(" "), _c("router-link", {
+    attrs: {
+      to: {
+        name: "restaurant",
+        params: {
+          slug: _vm.slug
+        }
+      }
+    }
+  }, [_vm._v("Here")])], 1)])])]);
 };
 
 var staticRenderFns = [];

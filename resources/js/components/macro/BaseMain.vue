@@ -5,7 +5,7 @@
     </div>
     <div class="col-9 home-right m-3">
       <MRestaurantCard class="col-1" v-for="restaurant in restaurants" :key="restaurant.slug" :category="restaurant.category" :image="restaurant.image"
-      :description="restaurant.description" :name="restaurant.name"/>
+      :description="restaurant.description" :name="restaurant.name" :slug="restaurant.slug"/>
     </div>
   </main>
 </template>
