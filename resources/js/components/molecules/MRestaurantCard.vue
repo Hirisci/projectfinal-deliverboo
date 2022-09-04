@@ -1,16 +1,17 @@
 <template>
     <div class="restaurant-card">
-      <div class="overlay"></div>
-      <div class="overlay-text">
-        <div class="restaurant-card-right">
-            <div class="restaurant-card-right-top"></div>
-            <div class="restaurant-card-right-bottom">
-              <span class="restaurant-card-right-bottom-description"> {{description}} </span>
-              <span class="restaurant-card-right-bottom-name"> {{name}} </span>
-              <router-link :to="{ name: 'restaurant', params: { slug: slug } }">Here</router-link>
+      <router-link :to="{ name: 'restaurant', params: { slug: slug } }">
+        <div class="overlay"></div>
+        <div class="overlay-text">
+          <div class="restaurant-card-right">
+              <div class="restaurant-card-right-top"></div>
+              <div class="restaurant-card-right-bottom">
+                <span class="restaurant-card-right-bottom-description"> {{description}} </span>
+                <span class="restaurant-card-right-bottom-name"> {{name}} </span>
+              </div>
             </div>
-          </div>
-      </div>
+        </div>
+      </router-link>
     </div>
 </template>
 

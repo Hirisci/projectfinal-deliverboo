@@ -2720,6 +2720,15 @@ var render = function render() {
 
   return _c("div", {
     staticClass: "restaurant-card"
+  }, [_c("router-link", {
+    attrs: {
+      to: {
+        name: "restaurant",
+        params: {
+          slug: _vm.slug
+        }
+      }
+    }
   }, [_c("div", {
     staticClass: "overlay"
   }), _vm._v(" "), _c("div", {
@@ -2734,16 +2743,7 @@ var render = function render() {
     staticClass: "restaurant-card-right-bottom-description"
   }, [_vm._v(" " + _vm._s(_vm.description) + " ")]), _vm._v(" "), _c("span", {
     staticClass: "restaurant-card-right-bottom-name"
-  }, [_vm._v(" " + _vm._s(_vm.name) + " ")]), _vm._v(" "), _c("router-link", {
-    attrs: {
-      to: {
-        name: "restaurant",
-        params: {
-          slug: _vm.slug
-        }
-      }
-    }
-  }, [_vm._v("Here")])], 1)])])]);
+  }, [_vm._v(" " + _vm._s(_vm.name) + " ")])])])])])], 1);
 };
 
 var staticRenderFns = [];
