@@ -7,13 +7,15 @@
         :key="plate.id"
         :quantity="plate.quantity"
         :name="plate.name"
-        :price="plate.price"
+        :price="plate.price.toFixed(2)"
       />
     </div>
     <div class="cart-total">
       <div class="cart-total-price">
         <span class="cart-total-price-title">Totale</span>
-        <span class="cart-total-price-value">{{ price }}20 €</span>
+        <span class="cart-total-price-value"
+          >{{ this.amountCart.toFixed(2) }}€</span
+        >
       </div>
     </div>
   </div>
@@ -27,6 +29,15 @@ export default {
   components: { ATitleCard, ACartItem },
   props: {
     cart: Array,
+  },
+  computed: {
+    amountCart() {
+      let somma = 0;
+      this.cart.forEach((element) => {
+        somma += element.price * element.quantity;
+      });
+      return somma;
+    },
   },
 };
 </script>

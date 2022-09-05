@@ -9,14 +9,14 @@
             <AAsideMenuTitle :title="plate.name" />
           </div>
           <div class="plate-card-left-text-description-price">
-            <p class="price-value">{{ plate.price }} €</p>
+            <p class="price-value">{{ plate.price.toFixed(2) }} €</p>
           </div>
         </div>
         <span class="plate-card-left-text-description">
           {{ plate.description }}
         </span>
         <div class="add-to-cart-container">
-          <button class="btn-main" @click="send">Add To Cart</button>
+          <button class="btn-main btn-purple" @click="send">Add To Cart</button>
         </div>
       </div>
     </div>
