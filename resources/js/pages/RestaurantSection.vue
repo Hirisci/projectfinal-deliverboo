@@ -2,9 +2,11 @@
   <div class="restaurant-section">
     <div class="restaurant-section-header">
       <img :src="`/storage/${restaurant.img}`" alt="/">
-      <div class="restaurant-section-header-bottom-left">
-        <ARestaurantCard />
-      </div>
+        <div class="container">
+            <div class="restaurant-section-header-bottom-left">
+              <ARestaurantCard />
+            </div>
+        </div> 
     </div>
     <div class="restaurant-section-shop">
       <div class="restaurant-section-shop-menu col-8">
@@ -66,15 +68,15 @@ export default {
   .restaurant-section-header{
     position: relative;
     img{
-      min-height: 30vh;
       height: 30vh;
       width: 100%;
       object-fit: cover;
     }
     .restaurant-section-header-bottom-left{
       position: absolute;
-      left: 5%;
       bottom: 5%;
+      width: 20rem;
+      margin: auto;
     }
   }
   .restaurant-section-shop{

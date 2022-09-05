@@ -5,11 +5,15 @@
         <img :src="`/storage/${img}`" alt="Plate">
         <div class="plate-card-left-text">
             <div class="plate-card-left-text-nameAndPrice">
-                <AAsideMenuTitle :title="name" class="title"/>
-                <span class="plate-card-left-text-description-price"> {{price}} € </span>
+                <div class="title">
+                    <AAsideMenuTitle :title="name" /> 
+                </div>
+                <div class="plate-card-left-text-description-price">
+                    <p> {{price}} € </p>
+                </div>               
             </div>
             <span class="plate-card-left-text-description"> {{description}} </span>
-            <button class="btn-main"> Add To Cart</button>
+            <div class="add-to-cart-container"><button class="btn-main"> Add To Cart</button></div>
         </div>
     </div>
   </div>
@@ -35,8 +39,11 @@ export default {
     border-radius: 20px;
     display: flex;
     position: relative;
+    opacity: 0.9;
+    min-height: 10.5rem;
+    min-width: 47.5rem;
     &:hover{
-        background-color: red;
+        opacity: 1;
     }
     &-left{
         display: flex;
@@ -57,7 +64,7 @@ export default {
                 align-items: center;
                 justify-content: space-between;
                 .title{
-                    width: 100%;
+                    min-width: 90%;
                 }
             }
             &-description{
@@ -68,7 +75,14 @@ export default {
                 background-color: white;
                 color: var(--primary-purple);
                 font-weight: bolder;
-                width: 15%;
+                height: 100%;
+                min-width: 8%;
+                padding: 4px 0px 4px 4px ;
+                border-radius: 0 15px 0 0;
+            }
+            .add-to-cart-container{
+                margin-left: auto;
+                padding: 5px;
             }
         }
     }

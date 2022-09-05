@@ -2783,21 +2783,29 @@ var render = function render() {
     staticClass: "plate-card-left-text"
   }, [_c("div", {
     staticClass: "plate-card-left-text-nameAndPrice"
+  }, [_c("div", {
+    staticClass: "title"
   }, [_c("AAsideMenuTitle", {
-    staticClass: "title",
     attrs: {
       title: _vm.name
     }
-  }), _vm._v(" "), _c("span", {
+  })], 1), _vm._v(" "), _c("div", {
     staticClass: "plate-card-left-text-description-price"
-  }, [_vm._v(" " + _vm._s(_vm.price) + " € ")])], 1), _vm._v(" "), _c("span", {
+  }, [_c("p", [_vm._v(" " + _vm._s(_vm.price) + " € ")])])]), _vm._v(" "), _c("span", {
     staticClass: "plate-card-left-text-description"
-  }, [_vm._v(" " + _vm._s(_vm.description) + " ")]), _vm._v(" "), _c("button", {
-    staticClass: "btn-main"
-  }, [_vm._v(" Add To Cart")])])])]);
+  }, [_vm._v(" " + _vm._s(_vm.description) + " ")]), _vm._v(" "), _vm._m(0)])])]);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "add-to-cart-container"
+  }, [_c("button", {
+    staticClass: "btn-main"
+  }, [_vm._v(" Add To Cart")])]);
+}];
 render._withStripped = true;
 
 
@@ -3054,8 +3062,10 @@ var render = function render() {
       alt: "/"
     }
   }), _vm._v(" "), _c("div", {
+    staticClass: "container"
+  }, [_c("div", {
     staticClass: "restaurant-section-header-bottom-left"
-  }, [_c("ARestaurantCard")], 1)]), _vm._v(" "), _c("div", {
+  }, [_c("ARestaurantCard")], 1)])]), _vm._v(" "), _c("div", {
     staticClass: "restaurant-section-shop"
   }, [_c("div", {
     staticClass: "restaurant-section-shop-menu col-8"
@@ -3219,7 +3229,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".restaurant-card[data-v-97b40bf4] {\n  display: flex;\n  align-items: center;\n  background-color: hsla(263deg, 66%, 64%, 0.6);\n  border-radius: 20px;\n  padding: 10px;\n  gap: 10px;\n}\n.restaurant-card .restaurant-card-img img[data-v-97b40bf4] {\n  width: 100px;\n  height: 70px;\n}\n.restaurant-card .restaurant-card-text[data-v-97b40bf4] {\n  color: white;\n}\n.restaurant-card .restaurant-card-text .restaurant-card-text-description .restaurant-card-text-description-span[data-v-97b40bf4] {\n  font-size: 0.7rem;\n}", ""]);
+exports.push([module.i, ".restaurant-card[data-v-97b40bf4] {\n  display: flex;\n  align-items: center;\n  background-color: hsla(263deg, 66%, 64%, 0.6);\n  border-radius: 20px;\n  padding: 10px;\n  gap: 10px;\n}\n.restaurant-card .restaurant-card-img img[data-v-97b40bf4] {\n  width: 110px;\n  height: 70px;\n  border-radius: 0.625rem;\n}\n.restaurant-card .restaurant-card-text[data-v-97b40bf4] {\n  color: white;\n}\n.restaurant-card .restaurant-card-text .restaurant-card-text-description .restaurant-card-text-description-span[data-v-97b40bf4] {\n  font-size: 0.7rem;\n}", ""]);
 
 // exports
 
@@ -3314,7 +3324,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".plate-card[data-v-b2f80d34] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  display: flex;\n  position: relative;\n}\n.plate-card[data-v-b2f80d34]:hover {\n  background-color: red;\n}\n.plate-card-left[data-v-b2f80d34] {\n  display: flex;\n  width: 100%;\n}\n.plate-card-left img[data-v-b2f80d34] {\n  width: 200px;\n  aspect-ratio: 16/9;\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n}\n.plate-card-left-text[data-v-b2f80d34] {\n  display: flex;\n  flex-flow: column;\n  width: 100%;\n}\n.plate-card-left-text-nameAndPrice[data-v-b2f80d34] {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.plate-card-left-text-nameAndPrice .title[data-v-b2f80d34] {\n  width: 100%;\n}\n.plate-card-left-text-description[data-v-b2f80d34] {\n  padding: 20px;\n}\n.plate-card-left-text-description-price[data-v-b2f80d34] {\n  align-self: center;\n  background-color: white;\n  color: var(--primary-purple);\n  font-weight: bolder;\n  width: 15%;\n}", ""]);
+exports.push([module.i, ".plate-card[data-v-b2f80d34] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  display: flex;\n  position: relative;\n  opacity: 0.9;\n  min-height: 10.5rem;\n  min-width: 47.5rem;\n}\n.plate-card[data-v-b2f80d34]:hover {\n  opacity: 1;\n}\n.plate-card-left[data-v-b2f80d34] {\n  display: flex;\n  width: 100%;\n}\n.plate-card-left img[data-v-b2f80d34] {\n  width: 200px;\n  aspect-ratio: 16/9;\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n}\n.plate-card-left-text[data-v-b2f80d34] {\n  display: flex;\n  flex-flow: column;\n  width: 100%;\n}\n.plate-card-left-text-nameAndPrice[data-v-b2f80d34] {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.plate-card-left-text-nameAndPrice .title[data-v-b2f80d34] {\n  min-width: 90%;\n}\n.plate-card-left-text-description[data-v-b2f80d34] {\n  padding: 20px;\n}\n.plate-card-left-text-description-price[data-v-b2f80d34] {\n  align-self: center;\n  background-color: white;\n  color: var(--primary-purple);\n  font-weight: bolder;\n  height: 100%;\n  min-width: 8%;\n  padding: 4px 0px 4px 4px;\n  border-radius: 0 15px 0 0;\n}\n.plate-card-left-text .add-to-cart-container[data-v-b2f80d34] {\n  margin-left: auto;\n  padding: 5px;\n}", ""]);
 
 // exports
 
@@ -3390,7 +3400,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".restaurant-section[data-v-5fd922af] {\n  margin: auto;\n}\n.restaurant-section .restaurant-section-header[data-v-5fd922af] {\n  position: relative;\n}\n.restaurant-section .restaurant-section-header img[data-v-5fd922af] {\n  min-height: 30vh;\n  height: 30vh;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.restaurant-section .restaurant-section-header .restaurant-section-header-bottom-left[data-v-5fd922af] {\n  position: absolute;\n  left: 5%;\n  bottom: 5%;\n}\n.restaurant-section .restaurant-section-shop[data-v-5fd922af] {\n  display: flex;\n  max-width: 1200px;\n  margin: auto;\n}\n.restaurant-section .restaurant-section-shop .restaurant-section-shop-menu[data-v-5fd922af] {\n  display: flex;\n  flex-flow: column nowrap;\n  align-items: center;\n  padding: 20px;\n  gap: 20px;\n}\n.restaurant-section .restaurant-section-shop .restaurant-section-shop-menu .restaurant-section-shop-menu-plates[data-v-5fd922af] {\n  display: flex;\n  flex-flow: column;\n  gap: 10px;\n}\n.restaurant-section .restaurant-section-shop .restaurant-section-shop-cart[data-v-5fd922af] {\n  padding: 20px;\n}", ""]);
+exports.push([module.i, ".restaurant-section[data-v-5fd922af] {\n  margin: auto;\n}\n.restaurant-section .restaurant-section-header[data-v-5fd922af] {\n  position: relative;\n}\n.restaurant-section .restaurant-section-header img[data-v-5fd922af] {\n  height: 30vh;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.restaurant-section .restaurant-section-header .restaurant-section-header-bottom-left[data-v-5fd922af] {\n  position: absolute;\n  bottom: 5%;\n  width: 20rem;\n  margin: auto;\n}\n.restaurant-section .restaurant-section-shop[data-v-5fd922af] {\n  display: flex;\n  max-width: 1200px;\n  margin: auto;\n}\n.restaurant-section .restaurant-section-shop .restaurant-section-shop-menu[data-v-5fd922af] {\n  display: flex;\n  flex-flow: column nowrap;\n  align-items: center;\n  padding: 20px;\n  gap: 20px;\n}\n.restaurant-section .restaurant-section-shop .restaurant-section-shop-menu .restaurant-section-shop-menu-plates[data-v-5fd922af] {\n  display: flex;\n  flex-flow: column;\n  gap: 10px;\n}\n.restaurant-section .restaurant-section-shop .restaurant-section-shop-cart[data-v-5fd922af] {\n  padding: 20px;\n}", ""]);
 
 // exports
 
@@ -21656,7 +21666,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\giaki\Desktop\Boolean\Project\FinalProject-Deliveboo\projectfinal-deliverboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Gustavo\Documents\Corso-Boolean\Esercizi\Mese-6\Settimana 1\projectfinal-deliverboo-1\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
