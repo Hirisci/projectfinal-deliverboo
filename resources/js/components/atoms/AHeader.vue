@@ -1,11 +1,11 @@
 <template>
     <header>
-        <div class="header-logo">
-        <a href="">
+        <div class="header-logo ">
+        <a href="/" class="px-3">
             <img src="../imgs/logo-white.png" alt="">
         </a>
       </div>
-      <div class="header-login-button">
+      <div class="header-login-button px-3">
         <a href="/admin/home" class="btn-main">LOGIN</a>
       </div>
     </header>

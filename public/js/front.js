@@ -2478,8 +2478,9 @@ var staticRenderFns = [function () {
   return _c("header", [_c("div", {
     staticClass: "header-logo"
   }, [_c("a", {
+    staticClass: "px-3",
     attrs: {
-      href: ""
+      href: "/"
     }
   }, [_c("img", {
     attrs: {
@@ -2487,7 +2488,7 @@ var staticRenderFns = [function () {
       alt: ""
     }
   })])]), _vm._v(" "), _c("div", {
-    staticClass: "header-login-button"
+    staticClass: "header-login-button px-3"
   }, [_c("a", {
     staticClass: "btn-main",
     attrs: {
