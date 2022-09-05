@@ -2,7 +2,7 @@
   <div class="plate-card">
     <div class="overlay"></div>
     <div class="plate-card-left">
-        <img :src="img" alt="Plate">
+        <img :src="`/storage/${img}`" alt="Plate">
         <div class="plate-card-left-text">
             <span class="plate-card-left-text-name"> {{name}} </span>
             <span class="plate-card-left-text-description"> {{description}} </span>
