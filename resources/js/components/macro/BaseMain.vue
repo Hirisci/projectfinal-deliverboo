@@ -6,6 +6,7 @@
     <div class="col-9 home-right py-3">
       <MRestaurantCard class="col-1" v-for="restaurant in restaurants" :key="restaurant.slug" :slug="restaurant.slug" :restaurant="restaurant"/>
     </div>
+    <router-link :to="{ name: 'checkout'}"> Test pagina di checkout</router-link>
   </main>
 </template>
 

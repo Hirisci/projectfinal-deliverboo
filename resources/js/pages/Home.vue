@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <BaseMain />
+      <router-link :to="{ name: 'checkout'}"> Test pagina di checkout</router-link>
   </div>
 </template>
 
