@@ -9,7 +9,7 @@
                     <AAsideMenuTitle :title="name" /> 
                 </div>
                 <div class="plate-card-left-text-description-price">
-                    <p> {{price}} € </p>
+                    <p class="price-value"> {{price}} € </p>
                 </div>               
             </div>
             <span class="plate-card-left-text-description"> {{description}} </span>
@@ -39,11 +39,10 @@ export default {
     border-radius: 20px;
     display: flex;
     position: relative;
-    opacity: 0.9;
     min-height: 10.5rem;
     min-width: 47.5rem;
     &:hover{
-        opacity: 1;
+        background-color: #b285fa;
     }
     &-left{
         display: flex;
@@ -64,7 +63,7 @@ export default {
                 align-items: center;
                 justify-content: space-between;
                 .title{
-                    min-width: 90%;
+                    min-width: 88%;
                 }
             }
             &-description{
@@ -76,9 +75,13 @@ export default {
                 color: var(--primary-purple);
                 font-weight: bolder;
                 height: 100%;
-                min-width: 8%;
-                padding: 4px 0px 4px 4px ;
-                border-radius: 0 15px 0 0;
+                min-width: 10%;
+                padding: 5px ;
+                border-radius: 0 15px 0 10px;
+                .price-value{
+                    width: fit-content;
+                    margin: auto;
+                }
             }
             .add-to-cart-container{
                 margin-left: auto;

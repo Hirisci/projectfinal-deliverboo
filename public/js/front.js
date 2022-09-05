@@ -2791,7 +2791,9 @@ var render = function render() {
     }
   })], 1), _vm._v(" "), _c("div", {
     staticClass: "plate-card-left-text-description-price"
-  }, [_c("p", [_vm._v(" " + _vm._s(_vm.price) + " € ")])])]), _vm._v(" "), _c("span", {
+  }, [_c("p", {
+    staticClass: "price-value"
+  }, [_vm._v(" " + _vm._s(_vm.price) + " € ")])])]), _vm._v(" "), _c("span", {
     staticClass: "plate-card-left-text-description"
   }, [_vm._v(" " + _vm._s(_vm.description) + " ")]), _vm._v(" "), _vm._m(0)])])]);
 };
@@ -3324,7 +3326,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".plate-card[data-v-b2f80d34] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  display: flex;\n  position: relative;\n  opacity: 0.9;\n  min-height: 10.5rem;\n  min-width: 47.5rem;\n}\n.plate-card[data-v-b2f80d34]:hover {\n  opacity: 1;\n}\n.plate-card-left[data-v-b2f80d34] {\n  display: flex;\n  width: 100%;\n}\n.plate-card-left img[data-v-b2f80d34] {\n  width: 200px;\n  aspect-ratio: 16/9;\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n}\n.plate-card-left-text[data-v-b2f80d34] {\n  display: flex;\n  flex-flow: column;\n  width: 100%;\n}\n.plate-card-left-text-nameAndPrice[data-v-b2f80d34] {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.plate-card-left-text-nameAndPrice .title[data-v-b2f80d34] {\n  min-width: 90%;\n}\n.plate-card-left-text-description[data-v-b2f80d34] {\n  padding: 20px;\n}\n.plate-card-left-text-description-price[data-v-b2f80d34] {\n  align-self: center;\n  background-color: white;\n  color: var(--primary-purple);\n  font-weight: bolder;\n  height: 100%;\n  min-width: 8%;\n  padding: 4px 0px 4px 4px;\n  border-radius: 0 15px 0 0;\n}\n.plate-card-left-text .add-to-cart-container[data-v-b2f80d34] {\n  margin-left: auto;\n  padding: 5px;\n}", ""]);
+exports.push([module.i, ".plate-card[data-v-b2f80d34] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  display: flex;\n  position: relative;\n  min-height: 10.5rem;\n  min-width: 47.5rem;\n}\n.plate-card[data-v-b2f80d34]:hover {\n  background-color: #b285fa;\n}\n.plate-card-left[data-v-b2f80d34] {\n  display: flex;\n  width: 100%;\n}\n.plate-card-left img[data-v-b2f80d34] {\n  width: 200px;\n  aspect-ratio: 16/9;\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n}\n.plate-card-left-text[data-v-b2f80d34] {\n  display: flex;\n  flex-flow: column;\n  width: 100%;\n}\n.plate-card-left-text-nameAndPrice[data-v-b2f80d34] {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.plate-card-left-text-nameAndPrice .title[data-v-b2f80d34] {\n  min-width: 88%;\n}\n.plate-card-left-text-description[data-v-b2f80d34] {\n  padding: 20px;\n}\n.plate-card-left-text-description-price[data-v-b2f80d34] {\n  align-self: center;\n  background-color: white;\n  color: var(--primary-purple);\n  font-weight: bolder;\n  height: 100%;\n  min-width: 10%;\n  padding: 5px;\n  border-radius: 0 15px 0 10px;\n}\n.plate-card-left-text-description-price .price-value[data-v-b2f80d34] {\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  margin: auto;\n}\n.plate-card-left-text .add-to-cart-container[data-v-b2f80d34] {\n  margin-left: auto;\n  padding: 5px;\n}", ""]);
 
 // exports
 
