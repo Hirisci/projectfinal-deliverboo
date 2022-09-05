@@ -9,13 +9,14 @@
       <div class="restaurant-section-shop-menu col-8">
         <ATitleCard :title="'Menù'" />
         <div class="restaurant-section-shop-menu-plates">
-          <MPlateCard
-            v-for="plate in plates"
-            :key="plate.id"
-            :img="plate.img"
-            :name="plate.name"
-            :description="plate.description"
-          />
+          <div v-for="plate in plates" :key="plate.id">
+            <MPlateCard
+              :img="plate.img"
+              :name="plate.name"
+              :description="plate.description"
+            />
+            <button v-on:click="test">Greet</button>
+          </div>
         </div>
       </div>
       <div class="restaurant-section-shop-cart col-4">
@@ -36,6 +37,8 @@ export default {
   data() {
     return {
       plates: [],
+      restaurant: [],
+      cart: [],
     };
   },
   created() {
@@ -47,6 +50,23 @@ export default {
       .catch((e) => {
         console.log(e);
       });
+
+    axios.get(`/api/restaurant/${this.$route.params.slug}`).then((response) => {
+      this.restaurant = response.data;
+    });
+  },
+  methods: {
+    createCart() {
+      let order = JSON.stringify(this.cart);
+      localStorage.setItem("cart", order);
+    },
+    test: function (event) {
+      alert("Hello " + event.target.id + "!");
+    },
+  },
+  mounted() {
+    this.createCart();
+    console.log(localStorage.get());
   },
 };
 </script>
