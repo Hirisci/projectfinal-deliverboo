@@ -21,4 +21,4 @@ Route::get('plate', 'Api\PlateController@index');
 
 //Orders
 Route::get('orders/generate', 'Api\OrderController@generate');
-Route::get('orders/make-payment', 'Api\OrderController@makePayment');
+Route::post('orders/make-payment', 'Api\OrderController@makePayment');
