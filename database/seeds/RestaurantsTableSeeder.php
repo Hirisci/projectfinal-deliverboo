@@ -20,6 +20,7 @@ class RestaurantsTableSeeder extends Seeder
                 "logo" => "https://i.pinimg.com/originals/3e/cb/a8/3ecba88bff841698cef03d71220adaf6.jpg",
                 "vat" => "12345678910",
                 "user_id" => "1",
+                "category" =>  ['5'],
             ],
             [
                 "name" => "Pizzeria Toto",
@@ -28,6 +29,7 @@ class RestaurantsTableSeeder extends Seeder
                 "logo" => "https://i.pinimg.com/originals/3e/cb/a8/3ecba88bff841698cef03d71220adaf6.jpg",
                 "vat" => "12345678911",
                 "user_id" => "2",
+                "category" => ['4','1'],
             ],
             [
                 "name" => "KFC",
@@ -36,6 +38,7 @@ class RestaurantsTableSeeder extends Seeder
                 "logo" => "https://www.romaest.cc/fileadmin/user_upload/GLOBAL/brand_stores/logos/kfc.jpg",
                 "vat" => "12345678912",
                 "user_id" => "3",
+                "category" => ['5'],
             ],
             [
                 "name" => "POKESCUSE",
@@ -44,6 +47,7 @@ class RestaurantsTableSeeder extends Seeder
                 "logo" => "https://www.romaest.cc/fileadmin/user_upload/GLOBAL/brand_stores/logos/kfc.jpg",
                 "vat" => "12345678913",
                 "user_id" => "4",
+                "category" => ['3','2'],
             ],
         ];
 
@@ -56,6 +60,7 @@ class RestaurantsTableSeeder extends Seeder
             $newRestaurants->vat = $restaurant['vat'];
             $newRestaurants->user_id = $restaurant['user_id'];
             $newRestaurants->save();
+            $newRestaurants->categories()->sync($restaurant['category']);
         }
 
 

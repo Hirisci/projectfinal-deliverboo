@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\PlateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,3 +19,4 @@ Route::get('restaurant', 'Api\RestaurantController@index');
 Route::get('restaurant/{slug}', 'Api\RestaurantController@show');
 Route::get('category', 'Api\CategoryController@index');
 Route::get('plate', 'Api\PlateController@index');
+Route::get('plate/{slug}/menu', 'Api\PlateController@show' );
