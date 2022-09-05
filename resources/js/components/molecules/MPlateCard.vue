@@ -5,15 +5,19 @@
       <img :src="`/storage/${plate.img}`" alt="Plate" />
       <div class="plate-card-left-text">
         <div class="plate-card-left-text-nameAndPrice">
-          <AAsideMenuTitle :title="plate.name" class="title" />
-          <span class="plate-card-left-text-description-price">
-            {{ plate.price }} €
-          </span>
+          <div class="title">
+            <AAsideMenuTitle :title="plate.name" />
+          </div>
+          <div class="plate-card-left-text-description-price">
+            <p class="price-value">{{ plate.price }} €</p>
+          </div>
         </div>
         <span class="plate-card-left-text-description">
           {{ plate.description }}
         </span>
-        <button class="btn-main" @click="send">Add To Cart</button>
+        <div class="add-to-cart-container">
+          <button class="btn-main" @click="send">Add To Cart</button>
+        </div>
       </div>
     </div>
   </div>
@@ -44,8 +48,10 @@ export default {
   border-radius: 20px;
   display: flex;
   position: relative;
+  min-height: 10.5rem;
+  min-width: 47.5rem;
   &:hover {
-    background-color: red;
+    background-color: #b285fa;
   }
   &-left {
     display: flex;
@@ -66,7 +72,7 @@ export default {
         align-items: center;
         justify-content: space-between;
         .title {
-          width: 100%;
+          min-width: 88%;
         }
       }
       &-description {
@@ -77,9 +83,30 @@ export default {
         background-color: white;
         color: var(--primary-purple);
         font-weight: bolder;
-        width: 15%;
+        height: 100%;
+        min-width: 10%;
+        padding: 5px;
+        border-radius: 0 15px 0 10px;
+        .price-value {
+          width: fit-content;
+          margin: auto;
+        }
+      }
+      .add-to-cart-container {
+        margin-left: auto;
+        padding: 5px;
       }
     }
   }
+}
+
+// Effetto hover della card
+.plate-card:hover {
+  transform: scale(1.07);
+}
+
+// Effetto hover della card
+.plate-card:hover {
+  transform: scale(1.07);
 }
 </style>

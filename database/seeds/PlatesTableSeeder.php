@@ -17,7 +17,7 @@ class PlatesTableSeeder extends Seeder
             [
                 "name" => "Big Mac Menu",
                 "image" => "default/ImgPlates/MC/big-mac.png",
-                "description" => "test",
+                "description" => "Goditi il Big Mac® in un McMenu® Large con patatine grandi accompagnate da acqua o bevanda a scelta da 0,5L o Tropicana 100% spremuta d’arancia da 250ml. Oppure in un McMenu® Small, con patatine medie o con insalata verde con pomodori, accompagnati da acqua o bevanda a scelta da 0,4L o Tropicana 100% spremuta d’arancia da 250ml.",
                 "price" => "8.50",
                 "is_visible" => "true",
                 "restaurant_id" => '1'

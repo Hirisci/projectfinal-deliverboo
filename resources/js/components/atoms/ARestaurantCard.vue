@@ -43,8 +43,9 @@ export default {
     padding: 10px;
     gap: 10px;
     .restaurant-card-img img{
-      width: 100px;
+      width: 110px;
       height: 70px;
+      border-radius: .625rem;
     }
     .restaurant-card-text{
       color: white;

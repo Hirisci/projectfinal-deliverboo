@@ -2,8 +2,10 @@
   <div class="restaurant-section">
     <div class="restaurant-section-header">
       <img :src="`/storage/${restaurant.img}`" alt="/" />
-      <div class="restaurant-section-header-bottom-left">
-        <ARestaurantCard />
+      <div class="container">
+        <div class="restaurant-section-header-bottom-left">
+          <ARestaurantCard />
+        </div>
       </div>
     </div>
     <div class="restaurant-section-shop">
@@ -110,8 +112,9 @@ export default {
     }
     .restaurant-section-header-bottom-left {
       position: absolute;
-      left: 5%;
       bottom: 5%;
+      width: 20rem;
+      margin: auto;
     }
   }
   .restaurant-section-shop {
