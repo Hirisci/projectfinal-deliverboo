@@ -6,6 +6,7 @@
         <div class="plate-card-left-text">
             <span class="plate-card-left-text-name"> {{name}} </span>
             <span class="plate-card-left-text-description"> {{description}} </span>
+            <span> {{price}} € </span>
         </div>
     </div>
   </div>
@@ -18,6 +19,7 @@ export default {
         img: String,
         name: String,
         description: String,
+        price: String,
     }
 }
 </script>

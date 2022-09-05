@@ -15,6 +15,7 @@
             :img="plate.img"
             :name="plate.name"
             :description="plate.description"
+            :price="plate.price"
           />
         </div>
       </div>
