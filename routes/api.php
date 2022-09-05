@@ -18,3 +18,7 @@ Route::get('restaurant', 'Api\RestaurantController@index');
 Route::get('restaurant/{slug}', 'Api\RestaurantController@show');
 Route::get('category', 'Api\CategoryController@index');
 Route::get('plate', 'Api\PlateController@index');
+
+//Orders
+Route::get('orders/generate', 'Api\OrderController@generate');
+Route::get('orders/make-payment', 'Api\OrderController@makePayment');
