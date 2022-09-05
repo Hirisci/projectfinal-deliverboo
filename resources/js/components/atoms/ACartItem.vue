@@ -2,7 +2,7 @@
   <div class="cart-item">
     <div class="cart-item-left">
         <div class="cart-item-delete">
-            <button class="cart-item-delete-btn btn"> - </button>
+            <button class="cart-item-delete-btn"> - </button>
         </div>
         <div class="cart-item-left-info">
             <div class="cart-item-quantity">
@@ -34,11 +34,17 @@ export default {
 
 <style lang="scss" scoped>
 .cart-item{
+
     background-color: var(--secondary-purple);
     border-radius: 20px;
     display: flex;
     width: 100%;
     justify-content: space-between;
+    overflow: hidden;
+
+    .cart-item-left{
+        width: 100%;
+    }
     .cart-item-left, .cart-item-right{
         display: flex;
         gap: 10px;
@@ -47,29 +53,37 @@ export default {
             color: white;
             text-transform: uppercase;
             font-weight: 700;
-            font-size: .9375rem;
+            font-size: .8125rem;
             word-wrap: wrap;
+        }
+
+        .cart-item-quantity{
+            width: 30%;
+        }
+        .card-item-name{
+            width: 60%;
         }
         .cart-item-quantity, .cart-item-price{
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: white;
-            width: 40px;
-            height: 40px;
+            padding: 0.3125rem 1rem;
             position: relative;
-            border-radius: 50%;
+            border-radius: 1rem;
         }
         .cart-item-delete{
+            margin-left: -2.125rem;
             height: 100%;
             .cart-item-delete-btn{
                 border-top-right-radius: 0;
                 border-bottom-right-radius: 0;
                 height: 100%;
+                width: 2rem;
                 color: white;
                 background-color: hsl(0, 100%, 45%);
                 &:hover{
-                    background-color: hsl(0, 100%, 35%);
+                    cursor: pointer;
                 }
             }
         }
@@ -84,11 +98,16 @@ export default {
         align-items: center;
     }
     .cart-item-right{
+        width: 30%;
         background-color: var(--primary-purple);
-        border-top-right-radius: 1.25rem;
-        border-bottom-right-radius: 1.25rem;
         padding-left: .3125rem;
         padding-right: .3125rem;
     }
 }
+
+.cart-item:hover .cart-item-delete{
+    margin-left: 0;
+}
+
+
 </style>
