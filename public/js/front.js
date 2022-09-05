@@ -3143,7 +3143,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "header[data-v-8a2cb668] {\n  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(150, 103, 224) 50%);\n  height: 20vh;\n}\nheader .header-top[data-v-8a2cb668] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1.25rem;\n}\nheader .header-top .header-top-logo img[data-v-8a2cb668] {\n  width: 8rem;\n}\nheader .header-bottom[data-v-8a2cb668] {\n  height: 100%;\n  display: flex;\n  justify-content: space-between;\n  transform: translateY(7%);\n}\nheader .header-bottom .header-bottom-center[data-v-8a2cb668], header .header-bottom .header-bottom-right[data-v-8a2cb668] {\n  transform: translateX(50%);\n}\nheader .header-bottom img[data-v-8a2cb668] {\n  height: 10vh;\n}\nheader a[data-v-8a2cb668] {\n  text-decoration: none;\n}", ""]);
+exports.push([module.i, "header[data-v-8a2cb668] {\n  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(150, 103, 224) 50%);\n  height: 20vh;\n}\nheader .header-top[data-v-8a2cb668] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 2vh;\n}\nheader .header-top .header-top-logo img[data-v-8a2cb668] {\n  width: 128px;\n}\nheader .header-bottom[data-v-8a2cb668] {\n  display: flex;\n  justify-content: space-between;\n}\nheader .header-bottom .header-bottom-center[data-v-8a2cb668], header .header-bottom .header-bottom-right[data-v-8a2cb668] {\n  transform: translateX(50%);\n}\nheader .header-bottom img[data-v-8a2cb668] {\n  height: 10vh;\n}\nheader a[data-v-8a2cb668] {\n  text-decoration: none;\n}", ""]);
 
 // exports
 

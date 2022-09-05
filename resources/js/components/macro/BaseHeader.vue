@@ -39,18 +39,16 @@ export default {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.25rem;
+      padding: 2vh;
       .header-top-logo{
         img{
-          width: 8rem;
+          width: 128px;
         }
       }
     }
     .header-bottom{
-      height: 100%;
       display: flex;
       justify-content: space-between;
-      transform: translateY(7%);
       .header-bottom-center, .header-bottom-right{
         transform: translateX(50%);
       }
