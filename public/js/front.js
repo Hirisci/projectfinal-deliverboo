@@ -2069,18 +2069,42 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     filterRestaurants: function filterRestaurants() {
-      // `this` points to the vm instance
-      return this.restaurants;
-    },
-    created: function created() {
       var _this = this;
 
-      axios.get("http://localhost:8000/api/restaurant").then(function (response) {
-        _this.restaurants = response.data;
-      })["catch"](function (e) {
-        console.log(e);
-      });
+      var array = [];
+
+      if (this.filterCategory.length === 0) {
+        return this.restaurants;
+      } else {
+        array = [];
+        this.restaurants.forEach(function (item) {
+          console.log(item.name);
+          item.categories.forEach(function (elem) {
+            console.log(elem.name);
+
+            if (_this.filterCategory.includes(elem.name)) {
+              console.log(elem.name, "é incluso");
+
+              if (!array.includes(item)) {
+                array.push(item);
+              }
+            } else {
+              console.log(elem.name, "é non incluso");
+            }
+          });
+        });
+        return array;
+      }
     }
+  },
+  created: function created() {
+    var _this2 = this;
+
+    axios.get("http://localhost:8000/api/restaurant").then(function (response) {
+      _this2.restaurants = response.data;
+    })["catch"](function (e) {
+      console.log(e);
+    });
   }
 });
 

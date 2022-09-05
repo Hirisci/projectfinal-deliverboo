@@ -38,19 +38,39 @@ export default {
   },
   computed: {
     filterRestaurants: function () {
-      // `this` points to the vm instance
-      return this.restaurants;
-    },
-    created() {
-      axios
-        .get("http://localhost:8000/api/restaurant")
-        .then((response) => {
-          this.restaurants = response.data;
-        })
-        .catch((e) => {
-          console.log(e);
+      let array = [];
+      if (this.filterCategory.length === 0) {
+        return this.restaurants;
+      } else {
+        array = [];
+        this.restaurants.forEach((item) => {
+          console.log(item.name);
+          item.categories.forEach((elem) => {
+            console.log(elem.name);
+            if (this.filterCategory.includes(elem.name)) {
+              console.log(elem.name, "é incluso");
+              if (!array.includes(item)) {
+                array.push(item);
+              }
+            } else {
+              console.log(elem.name, "é non incluso");
+            }
+          });
         });
+        return array;
+      }
     },
+  },
+
+  created() {
+    axios
+      .get("http://localhost:8000/api/restaurant")
+      .then((response) => {
+        this.restaurants = response.data;
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   },
 };
 </script>
