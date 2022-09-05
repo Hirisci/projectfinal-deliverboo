@@ -90,4 +90,9 @@ export default {
         }
     }
 }
+
+// Effetto hover della card 
+.plate-card:hover{
+    transform: scale(1.07);
+}
 </style>
