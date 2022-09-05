@@ -9,9 +9,15 @@
       </div>
     </div>
     <div class="header-bottom">
-      <img src="../imgs/sushi.png" alt="">
-      <img src="../imgs/hamburger.png" alt="">
-      <img src="../imgs/pizza.png" alt="">
+      <div class="header-bottom-left">
+        <img src="../imgs/sushi.png" alt="">
+      </div>
+      <div class="header-bottom-center">
+        <img src="../imgs/hamburger.png" alt="">
+      </div>
+      <div class="header-bottom-right">
+        <img src="../imgs/pizza.png" alt="">
+      </div>
     </div>
   </header>
 </template>
@@ -27,7 +33,7 @@ export default {
 <style lang="scss" scoped>
   header{
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(150,103,224,1) 50%);
-    padding-bottom: 3.125rem;
+    height: 20vh;
     
     .header-top{
       display: flex;
@@ -41,9 +47,15 @@ export default {
       }
     }
     .header-bottom{
+      height: 100%;
       display: flex;
+      justify-content: space-between;
+      transform: translateY(7%);
+      .header-bottom-center, .header-bottom-right{
+        transform: translateX(50%);
+      }
       img{
-        width: 40%;
+        height: 10vh;
       }
     }
     a {
