@@ -14,12 +14,12 @@
             @guest
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="btn-main" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="btn-main btn-purple" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                     @endif
                 @else
                     <div >
-                        <a class="btn-main" href="{{ route('logout') }}"
+                        <a class="btn-main btn-purple" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
@@ -126,11 +126,11 @@
                             </div>
     
                             <div class="form-group row">
-                                <div class="col-md-6 offset-md-6">
+                                <div class="col-12 d-flex justify-content-end">
                                     <div class="form-check form-check-inline ">
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
     
-                                        <label class="form-check-label" for="remember">
+                                        <label class="form-check-label pt-1" for="remember">
                                             {{ __('Remember Me') }}
                                         </label>
                                     </div>
@@ -146,12 +146,11 @@
                                         </a>
                                     @endif
                                 </div>
-                                <div class="col-12 px-4">
-                                    <div class="row d-flex flex-column align-items-end ">
-                                        <button type="submit" class="btn-main">
-                                            {{ __('Login') }}
-                                        </button>
-                                    </div>   
+                                <div class="col-12 px-4 d-flex justify-content-end ">
+                                    
+                                    <button type="submit" class="btn-main btn-purple">
+                                        {{ __('Login') }}
+                                    </button>
                                 </div>               
                             </div>
                         </form>

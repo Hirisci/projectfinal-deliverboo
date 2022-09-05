@@ -22,7 +22,7 @@
 <body>
     <div id="app">
         <nav>
-            <div class="container my-3 d-flex align-items-center justify-content-between"> 
+            <div class="container d-flex align-items-center justify-content-between"> 
                 {{-- logo del sito --}}
                 <a href="{{url('/')}}">
                     <img src="{{ asset('storage/' . "default/logo/logo-primary.png")}}" alt="logo fighissimo">
@@ -33,16 +33,16 @@
                     <!-- Authentication Links -->
                     @guest
                             <li class="nav-item">
-                                <a class="btn-main" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="btn-main btn-purple" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="btn-main" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="btn-main btn-purple" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
                             <div >
-                                <a class="btn-main" href="{{ route('logout') }}"
+                                <a class="btn-main btn-purple" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
@@ -57,7 +57,7 @@
             </div>
         </nav>
     </div>
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>      
     </div>

@@ -39,7 +39,8 @@
         width: 25%;
         border-radius: var(--border-radius);
         background-color: var(--secondary-purple);
-        min-height: 50vh;
+        height: 85vh;
+        overflow: hidden;
         flex-grow: 1;
     }
 }
@@ -59,4 +60,11 @@
 
 .file-padding {
     padding: 7px 0;
+}
+
+a {
+    color: inherit;
+    &:hover {
+        color: var(--primary-purple);
+    }
 }

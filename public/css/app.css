@@ -12895,6 +12895,8 @@ small,
   --tertiary-purple: #fbfaff;
   --tertiary-purple-opacity: #fbfaff88;
   --primary-gray: #bebdbd;
+  --edit-color: #fd7e14;
+  --delete-color: rgb(160, 4, 4);
   /*------------------------------
       CATEGORY COLORS
   ------------------------------*/
@@ -12931,21 +12933,42 @@ small,
 }
 
 /*---------------------
-    MAIN BUTTONS
-----------------------*/
+        MAIN BUTTONS
+    ----------------------*/
 
 .btn-main {
   border-radius: 1.1rem;
-  background-color: var(--primary-purple);
   padding: 0.625rem 0.925rem;
   color: white;
   font-weight: bold;
   text-decoration: none;
 }
 
+.btn-circle {
+  display: block;
+  aspect-ratio: 1/1;
+  padding: 0.4rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 a.btn-main:hover {
   color: black;
   text-decoration: none;
+}
+
+.btn-purple {
+  background-color: var(--primary-purple);
+}
+
+.btn-edit {
+  background-color: var(--edit-color);
+}
+
+.btn-delete {
+  background-color: var(--delete-color);
 }
 
 body {
@@ -12998,7 +13021,8 @@ body {
   width: 25%;
   border-radius: var(--border-radius);
   background-color: var(--secondary-purple);
-  min-height: 50vh;
+  height: 85vh;
+  overflow: hidden;
   flex-grow: 1;
 }
 
@@ -13012,6 +13036,14 @@ body {
 
 .file-padding {
   padding: 7px 0;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: var(--primary-purple);
 }
 
 .login-main {
@@ -13129,8 +13161,10 @@ body {
 }
 
 .container.restaurant .cards .img-edit {
+  -o-object-fit: cover;
+     object-fit: cover;
   aspect-ratio: 1/1;
-  width: 10rem;
+  width: 100%;
 }
 
 .container.restaurant .cards-categories-pillow {
@@ -13165,6 +13199,17 @@ body {
 
 .container.plate .cards {
   position: relative;
+  height: calc(85vh - 2rem);
+}
+
+.container.plate .cards .icon {
+  display: block;
+  aspect-ratio: 1/1;
+  width: 1rem;
+}
+
+.container.plate .cards-product {
+  height: 10rem;
 }
 
 .container.plate .cards-header {
@@ -13186,6 +13231,7 @@ body {
   background-color: var(--tertiary-purple-opacity);
   border: 1px solid var(--primary-purple);
   border-radius: var(--border-radius);
+  height: 95%;
 }
 
 .container.plate .cards-postcard {
@@ -13204,9 +13250,21 @@ body {
   padding-top: 4rem;
 }
 
+.container.plate .cards-display {
+  overflow: scroll;
+  height: 100%;
+  padding-bottom: 4rem;
+}
+
 .container.plate .cards .img-edit {
   aspect-ratio: 1/1;
   width: 10rem;
+}
+
+.container.plate .cards .description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-overflow: "...";
 }
 
 .container.plate .cards-categories-pillow {
