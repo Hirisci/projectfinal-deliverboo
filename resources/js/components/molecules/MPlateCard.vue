@@ -13,7 +13,7 @@
         <span class="plate-card-left-text-description">
           {{ plate.description }}
         </span>
-        <button class="btn-main" v-on:click.prevent="greet">Add To Cart</button>
+        <button class="btn-main" @click="send">Add To Cart</button>
       </div>
     </div>
   </div>
@@ -23,22 +23,17 @@
 import AAsideMenuTitle from "../atoms/AAsideMenuTitle.vue";
 export default {
   name: "MPlateCard",
-  data: {
-    name: "test",
-  },
   props: {
     plate: Object,
   },
   components: { AAsideMenuTitle },
   methods: {
-    greet: function (event) {
-      // `this` inside methods points to the Vue instance
-      alert("Hello " + this.name + "!");
-      // `event` is the native DOM event
-      if (event) {
-        alert(event.target.tagName);
-      }
+    send() {
+      this.$emit("event-name", this.plate);
     },
+    //function () {
+    //console.log("hai premuto il bottone", this.plate);
+    //   this.$emit("addPlate", this.plate);
   },
 };
 </script>

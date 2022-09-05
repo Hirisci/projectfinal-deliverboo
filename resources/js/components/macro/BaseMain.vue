@@ -10,6 +10,7 @@
         :key="restaurant.slug"
         :slug="restaurant.slug"
         :restaurant="restaurant"
+        @event-name="checkOrder"
       />
     </div>
   </main>
@@ -35,6 +36,9 @@ export default {
     updateFilterCheck: function (value) {
       this.filterCategory = value;
     },
+    checkOrder(arg) {
+      console.log(arg, "controlliamo ristornate");
+    },
   },
   computed: {
     filterRestaurants: function () {
@@ -44,16 +48,12 @@ export default {
       } else {
         array = [];
         this.restaurants.forEach((item) => {
-          console.log(item.name);
           item.categories.forEach((elem) => {
-            console.log(elem.name);
             if (this.filterCategory.includes(elem.name)) {
-              console.log(elem.name, "é incluso");
               if (!array.includes(item)) {
                 array.push(item);
               }
             } else {
-              console.log(elem.name, "é non incluso");
             }
           });
         });
@@ -76,15 +76,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  main{
+main {
+  display: flex;
+  margin: auto;
+  max-width: 1200px;
+  gap: 20px;
+  .home-right {
     display: flex;
-    margin: auto;
-    max-width: 1200px;
-    gap: 20px;
-    .home-right{
-      display: flex;
-      flex-flow: row wrap;
-      gap: 10px;
-    }
+    flex-flow: row wrap;
+    gap: 10px;
   }
+}
 </style>

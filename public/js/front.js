@@ -2078,6 +2078,9 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     updateFilterCheck: function updateFilterCheck(value) {
       this.filterCategory = value;
+    },
+    checkOrder: function checkOrder(arg) {
+      console.log(arg, "controlliamo ristornate");
     }
   },
   computed: {
@@ -2091,19 +2094,12 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         array = [];
         this.restaurants.forEach(function (item) {
-          console.log(item.name);
           item.categories.forEach(function (elem) {
-            console.log(elem.name);
-
             if (_this.filterCategory.includes(elem.name)) {
-              console.log(elem.name, "é incluso");
-
               if (!array.includes(item)) {
                 array.push(item);
               }
-            } else {
-              console.log(elem.name, "é non incluso");
-            }
+            } else {}
           });
         });
         return array;
@@ -2159,9 +2155,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "MPlateCard",
-  data: {
-    name: "test"
-  },
   props: {
     plate: Object
   },
@@ -2169,14 +2162,12 @@ __webpack_require__.r(__webpack_exports__);
     AAsideMenuTitle: _atoms_AAsideMenuTitle_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   methods: {
-    greet: function greet(event) {
-      // `this` inside methods points to the Vue instance
-      alert("Hello " + this.name + "!"); // `event` is the native DOM event
+    send: function send() {
+      this.$emit("event-name", this.plate);
+    } //function () {
+    //console.log("hai premuto il bottone", this.plate);
+    //   this.$emit("addPlate", this.plate);
 
-      if (event) {
-        alert(event.target.tagName);
-      }
-    }
   }
 });
 
@@ -2192,10 +2183,15 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'MRestaurantCard',
+  name: "MRestaurantCard",
   props: {
     restaurant: Object,
     slug: String
+  },
+  methods: {
+    send: function send() {
+      this.$emit("event-name", this.plate);
+    }
   }
 });
 
@@ -2314,16 +2310,23 @@ __webpack_require__.r(__webpack_exports__);
   },
   watch: {
     cart: function cart() {
-      localStorage.setItem("order", this.cart);
+      localStorage.setItem("order", JSON.stringify(this.cart));
+    },
+    restaurant: function restaurant() {
+      localStorage.setItem("restaurant", JSON.stringify(this.restaurant));
     }
   },
   methods: {
+    addPlate: function addPlate(arg) {
+      this.cart.push(arg);
+    },
+    checkRestaurant: function checkRestaurant() {},
     createCart: function createCart() {
       localStorage.setItem("order", this.cart);
-    },
-    addPlate: function addPlate(plate) {
-      this.cart.push(plate);
     }
+  },
+  mounted: function mounted() {
+    this.checkRestaurant();
   },
   created: function created() {
     var _this = this;
@@ -2338,7 +2341,7 @@ __webpack_require__.r(__webpack_exports__);
     })["catch"](function (e) {
       console.log(e);
     });
-    this.createCart();
+    localStorage.clear();
   }
 });
 
@@ -2710,6 +2713,9 @@ var render = function render() {
       attrs: {
         slug: restaurant.slug,
         restaurant: restaurant
+      },
+      on: {
+        "event-name": _vm.checkOrder
       }
     });
   }), 1)]);
@@ -2822,10 +2828,7 @@ var render = function render() {
   }, [_vm._v("\n        " + _vm._s(_vm.plate.description) + "\n      ")]), _vm._v(" "), _c("button", {
     staticClass: "btn-main",
     on: {
-      click: function click($event) {
-        $event.preventDefault();
-        return _vm.greet.apply(null, arguments);
-      }
+      click: _vm.send
     }
   }, [_vm._v("Add To Cart")])])])]);
 };
@@ -2853,12 +2856,7 @@ var render = function render() {
 
   return _c("div", {
     staticClass: "restaurant-card"
-  }, [_c("img", {
-    attrs: {
-      src: "storage/".concat(_vm.restaurant.img),
-      alt: ""
-    }
-  }), _vm._v(" "), _c("router-link", {
+  }, [_c("router-link", {
     attrs: {
       to: {
         name: "restaurant",
@@ -2867,7 +2865,15 @@ var render = function render() {
         }
       }
     }
-  }, [_c("div", {
+  }, [_c("img", {
+    attrs: {
+      src: "storage/".concat(_vm.restaurant.img),
+      alt: ""
+    },
+    on: {
+      click: _vm.send
+    }
+  }), _vm._v(" "), _c("div", {
     staticClass: "overlay"
   }), _vm._v(" "), _c("div", {
     staticClass: "overlay-text"
@@ -2879,9 +2885,9 @@ var render = function render() {
     staticClass: "restaurant-card-right-bottom"
   }, [_c("span", {
     staticClass: "restaurant-card-right-bottom-description"
-  }, [_vm._v(" " + _vm._s(_vm.restaurant.description) + " ")]), _vm._v(" "), _c("span", {
+  }, [_vm._v("\n            " + _vm._s(_vm.restaurant.description) + "\n          ")]), _vm._v(" "), _c("span", {
     staticClass: "restaurant-card-right-bottom-name"
-  }, [_vm._v(" " + _vm._s(_vm.restaurant.name) + " ")])])])])])], 1);
+  }, [_vm._v("\n            " + _vm._s(_vm.restaurant.name) + "\n          ")])])])])])], 1);
 };
 
 var staticRenderFns = [];
@@ -3105,9 +3111,7 @@ var render = function render() {
         plate: plate
       },
       on: {
-        click: function click($event) {
-          return _vm.addCart(plate);
-        }
+        "event-name": _vm.addPlate
       }
     });
   }), 1)], 1), _vm._v(" "), _c("div", {

@@ -14,7 +14,7 @@
             v-for="plate in plates"
             :key="plate.id"
             :plate="plate"
-            @click="addCart(plate)"
+            @event-name="addPlate"
           />
         </div>
       </div>
@@ -43,16 +43,23 @@ export default {
   },
   watch: {
     cart: function () {
-      localStorage.setItem("order", this.cart);
+      localStorage.setItem("order", JSON.stringify(this.cart));
+    },
+    restaurant: function () {
+      localStorage.setItem("restaurant", JSON.stringify(this.restaurant));
     },
   },
   methods: {
+    addPlate(arg) {
+      this.cart.push(arg);
+    },
+    checkRestaurant() {},
     createCart() {
       localStorage.setItem("order", this.cart);
     },
-    addPlate(plate) {
-      this.cart.push(plate);
-    },
+  },
+  mounted() {
+    this.checkRestaurant();
   },
   created() {
     axios
@@ -73,7 +80,7 @@ export default {
         console.log(e);
       });
 
-    this.createCart();
+    localStorage.clear();
   },
 };
 </script>
