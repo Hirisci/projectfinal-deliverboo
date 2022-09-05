@@ -16,7 +16,7 @@
             :name="category.name"
             :value="category.name"
             v-model="filterCategory"
-            @change="check(filterCategory)"
+            @change="updateCheckFilter()"
           />
           <label :for="category.name"> {{ category.name }} </label>
         </li>
@@ -57,9 +57,8 @@ export default {
     };
   },
   methods: {
-    check: function (value) {
-      console.log(this.filterCategory, value);
-      this.$emit("$updateFilterCategory", value);
+    updateCheckFilter: function () {
+      this.$emit("updateCheckFilter", this.filterCategory);
     },
   },
   created() {

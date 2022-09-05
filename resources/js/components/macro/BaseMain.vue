@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="col-3 home-left py-3">
-      <OAsideMenu @change="updateFilterCategory" />
+      <OAsideMenu @updateCheckFilter="updateFilterCheck" />
     </div>
     <div class="col-9 home-right m-3">
       <MRestaurantCard
@@ -32,8 +32,7 @@ export default {
     };
   },
   methods: {
-    updateFilterCategory: function (value) {
-      console.log("entrato nel padre");
+    updateFilterCheck: function (value) {
       this.filterCategory = value;
     },
   },

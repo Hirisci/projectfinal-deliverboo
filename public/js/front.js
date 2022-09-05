@@ -2063,8 +2063,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    updateFilterCategory: function updateFilterCategory(value) {
-      console.log("entrato nel padre");
+    updateFilterCheck: function updateFilterCheck(value) {
       this.filterCategory = value;
     }
   },
@@ -2173,9 +2172,8 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    check: function check(value) {
-      console.log(this.filterCategory, value);
-      this.$emit("$updateFilterCategory", value);
+    updateCheckFilter: function updateCheckFilter() {
+      this.$emit("updateCheckFilter", this.filterCategory);
     }
   },
   created: function created() {
@@ -2598,7 +2596,7 @@ var render = function render() {
     staticClass: "col-3 home-left py-3"
   }, [_c("OAsideMenu", {
     on: {
-      change: _vm.updateFilterCategory
+      updateCheckFilter: _vm.updateFilterCheck
     }
   })], 1), _vm._v(" "), _c("div", {
     staticClass: "col-9 home-right m-3"
@@ -2866,7 +2864,7 @@ var render = function render() {
             _vm.filterCategory = $$c;
           }
         }, function ($event) {
-          return _vm.check(_vm.filterCategory);
+          return _vm.updateCheckFilter();
         }]
       }
     }), _vm._v(" "), _c("label", {
