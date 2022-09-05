@@ -3,7 +3,7 @@
     <div class="col-3 home-left py-3">
       <OAsideMenu />
     </div>
-    <div class="col-9 home-right m-3">
+    <div class="col-9 home-right py-3">
       <MRestaurantCard class="col-1" v-for="restaurant in restaurants" :key="restaurant.slug" :slug="restaurant.slug" :restaurant="restaurant"/>
     </div>
   </main>
@@ -41,6 +41,7 @@ export default {
     display: flex;
     margin: auto;
     max-width: 1200px;
+    gap: 20px;
     .home-right{
       display: flex;
       flex-flow: row wrap;

@@ -2536,22 +2536,28 @@ var staticRenderFns = [function () {
 
   return _c("div", {
     staticClass: "header-bottom"
+  }, [_c("div", {
+    staticClass: "header-bottom-left"
   }, [_c("img", {
     attrs: {
       src: __webpack_require__(/*! ../imgs/sushi.png */ "./resources/js/components/imgs/sushi.png"),
       alt: ""
     }
-  }), _vm._v(" "), _c("img", {
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "header-bottom-center"
+  }, [_c("img", {
     attrs: {
       src: __webpack_require__(/*! ../imgs/hamburger.png */ "./resources/js/components/imgs/hamburger.png"),
       alt: ""
     }
-  }), _vm._v(" "), _c("img", {
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "header-bottom-right"
+  }, [_c("img", {
     attrs: {
       src: __webpack_require__(/*! ../imgs/pizza.png */ "./resources/js/components/imgs/pizza.png"),
       alt: ""
     }
-  })]);
+  })])]);
 }];
 render._withStripped = true;
 
@@ -2576,7 +2582,7 @@ var render = function render() {
   return _c("main", [_c("div", {
     staticClass: "col-3 home-left py-3"
   }, [_c("OAsideMenu")], 1), _vm._v(" "), _c("div", {
-    staticClass: "col-9 home-right m-3"
+    staticClass: "col-9 home-right py-3"
   }, _vm._l(_vm.restaurants, function (restaurant) {
     return _c("MRestaurantCard", {
       key: restaurant.slug,
@@ -3137,7 +3143,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "header[data-v-8a2cb668] {\n  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(150, 103, 224) 50%);\n  padding-bottom: 3.125rem;\n}\nheader .header-top[data-v-8a2cb668] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1.25rem;\n}\nheader .header-top .header-top-logo img[data-v-8a2cb668] {\n  width: 8rem;\n}\nheader .header-bottom[data-v-8a2cb668] {\n  display: flex;\n}\nheader .header-bottom img[data-v-8a2cb668] {\n  width: 40%;\n}\nheader a[data-v-8a2cb668] {\n  text-decoration: none;\n}", ""]);
+exports.push([module.i, "header[data-v-8a2cb668] {\n  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(150, 103, 224) 50%);\n  height: 20vh;\n}\nheader .header-top[data-v-8a2cb668] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1.25rem;\n}\nheader .header-top .header-top-logo img[data-v-8a2cb668] {\n  width: 8rem;\n}\nheader .header-bottom[data-v-8a2cb668] {\n  height: 100%;\n  display: flex;\n  justify-content: space-between;\n  transform: translateY(7%);\n}\nheader .header-bottom .header-bottom-center[data-v-8a2cb668], header .header-bottom .header-bottom-right[data-v-8a2cb668] {\n  transform: translateX(50%);\n}\nheader .header-bottom img[data-v-8a2cb668] {\n  height: 10vh;\n}\nheader a[data-v-8a2cb668] {\n  text-decoration: none;\n}", ""]);
 
 // exports
 
@@ -3156,7 +3162,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "main[data-v-cd0ca090] {\n  display: flex;\n  margin: auto;\n  max-width: 1200px;\n}\nmain .home-right[data-v-cd0ca090] {\n  display: flex;\n  flex-flow: row wrap;\n  gap: 10px;\n}", ""]);
+exports.push([module.i, "main[data-v-cd0ca090] {\n  display: flex;\n  margin: auto;\n  max-width: 1200px;\n  gap: 20px;\n}\nmain .home-right[data-v-cd0ca090] {\n  display: flex;\n  flex-flow: row wrap;\n  gap: 10px;\n}", ""]);
 
 // exports
 
@@ -3213,7 +3219,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "img[data-v-77c4db06] {\n  width: 300px;\n  height: 135px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.restaurant-card[data-v-77c4db06] {\n  border-radius: 20px;\n  min-width: 300px;\n  min-height: 130px;\n  height: 135px;\n  position: relative;\n  overflow: hidden;\n}\n.restaurant-card .overlay[data-v-77c4db06] {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  background-color: hsla(263deg, 66%, 64%, 0.6);\n  transform: skewX(-30deg) translateX(50%);\n}\n.restaurant-card .overlay-text[data-v-77c4db06] {\n  position: absolute;\n  right: 5%;\n  bottom: 10%;\n}\n.restaurant-card .overlay-text .restaurant-card-right-bottom[data-v-77c4db06] {\n  color: white;\n}\n.restaurant-card .overlay-text .restaurant-card-right-bottom .restaurant-card-right-bottom-description[data-v-77c4db06] {\n  font-size: 0.7rem;\n  color: red;\n}\n.restaurant-card .overlay-text .restaurant-card-right-bottom .restaurant-card-right-bottom-name[data-v-77c4db06] {\n  text-transform: uppercase;\n  font-weight: 700;\n}", ""]);
+exports.push([module.i, "img[data-v-77c4db06] {\n  width: 250px;\n  height: 135px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.restaurant-card[data-v-77c4db06] {\n  border-radius: 20px;\n  width: 250px;\n  height: 135px;\n  position: relative;\n  overflow: hidden;\n}\n.restaurant-card .overlay[data-v-77c4db06] {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  background-color: hsla(263deg, 66%, 64%, 0.6);\n  transform: skewX(-30deg) translateX(50%);\n}\n.restaurant-card .overlay-text[data-v-77c4db06] {\n  position: absolute;\n  right: 5%;\n  bottom: 10%;\n}\n.restaurant-card .overlay-text .restaurant-card-right-bottom[data-v-77c4db06] {\n  color: white;\n}\n.restaurant-card .overlay-text .restaurant-card-right-bottom .restaurant-card-right-bottom-description[data-v-77c4db06] {\n  font-size: 0.7rem;\n  color: red;\n}\n.restaurant-card .overlay-text .restaurant-card-right-bottom .restaurant-card-right-bottom-name[data-v-77c4db06] {\n  text-transform: uppercase;\n  font-weight: 700;\n}", ""]);
 
 // exports
 
@@ -21419,7 +21425,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\berto\Desktop\Classe#63\Esame\projectfinal-deliverboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\giaki\Desktop\Boolean\Project\FinalProject-Deliveboo\projectfinal-deliverboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

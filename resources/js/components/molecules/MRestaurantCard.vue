@@ -28,16 +28,13 @@ export default {
 
 <style lang="scss" scoped>
   img {
-    width: 300px;
+    width: 250px;
     height: 135px;
     object-fit: cover;
   }
   .restaurant-card{
-    // background-image: URL(https://salerno.occhionotizie.it/wp-content/uploads/sites/2/2020/10/mcdonalds-fast-food-shutterstock.jpg);
-    // background-size: cover;
     border-radius: 20px;
-    min-width: 300px;
-    min-height: 130px;
+    width: 250px;
     height: 135px;
     position: relative;
     overflow: hidden;
