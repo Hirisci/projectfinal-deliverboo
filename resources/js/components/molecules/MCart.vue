@@ -5,7 +5,7 @@
       <ACartItem
         v-for="plate in cart"
         :key="plate.id"
-        :quantity="1"
+        :quantity="plate.quantity"
         :name="plate.name"
         :price="plate.price"
       />
@@ -25,18 +25,8 @@ import ACartItem from "../atoms/ACartItem.vue";
 export default {
   name: "MCart",
   components: { ATitleCard, ACartItem },
-  methods: {
-    createCart() {
-      let order = localStorage.getItem("order");
-      order = JSON.parse(order);
-      console.log(order);
-      return order;
-    },
-  },
-  computed: {
-    cart() {
-      return this.createCart();
-    },
+  props: {
+    cart: Array,
   },
 };
 </script>

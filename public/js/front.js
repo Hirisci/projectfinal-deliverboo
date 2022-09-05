@@ -2135,18 +2135,8 @@ __webpack_require__.r(__webpack_exports__);
     ATitleCard: _atoms_ATitleCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     ACartItem: _atoms_ACartItem_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
-  methods: {
-    createCart: function createCart() {
-      var order = localStorage.getItem("order");
-      order = JSON.parse(order);
-      console.log(order);
-      return order;
-    }
-  },
-  computed: {
-    cart: function cart() {
-      return this.createCart();
-    }
+  props: {
+    cart: Array
   }
 });
 
@@ -2316,22 +2306,40 @@ __webpack_require__.r(__webpack_exports__);
   watch: {
     cart: function cart() {
       localStorage.setItem("order", JSON.stringify(this.cart));
-    },
-    restaurant: function restaurant() {
-      localStorage.setItem("restaurant", JSON.stringify(this.restaurant));
-    }
+    } // restaurant: function () {
+    //   localStorage.setItem("restaurant", JSON.stringify(this.restaurant));
+    // },
+
   },
   methods: {
     addPlate: function addPlate(arg) {
-      this.cart.push(arg);
+      var result = this.cart.find(function (Element) {
+        return Element.id === arg.id;
+      });
+
+      if (result === undefined) {
+        arg.quantity = 1;
+        this.cart.push(arg);
+      }
+
+      console.log(result);
+
+      if (result !== undefined) {
+        result.quantity++;
+      }
+
+      console.log(this.cart);
     },
-    checkRestaurant: function checkRestaurant() {},
-    createCart: function createCart() {
-      localStorage.setItem("order", this.cart);
+    refreshCart: function refreshCart() {
+      var listCart = JSON.parse(localStorage.getItem("order"));
+      console.log(listCart);
+
+      if (listCart === null) {
+        this.cart = [];
+      } else {
+        this.cart = listCart;
+      }
     }
-  },
-  mounted: function mounted() {
-    this.checkRestaurant();
   },
   created: function created() {
     var _this = this;
@@ -2346,7 +2354,9 @@ __webpack_require__.r(__webpack_exports__);
     })["catch"](function (e) {
       console.log(e);
     });
-    localStorage.clear();
+  },
+  mounted: function mounted() {
+    this.refreshCart();
   }
 });
 
@@ -2757,7 +2767,7 @@ var render = function render() {
     return _c("ACartItem", {
       key: plate.id,
       attrs: {
-        quantity: 1,
+        quantity: plate.quantity,
         name: plate.name,
         price: plate.price
       }
@@ -3106,7 +3116,11 @@ var render = function render() {
     });
   }), 1)], 1), _vm._v(" "), _c("div", {
     staticClass: "restaurant-section-shop-cart col-4"
-  }, [_c("MCart")], 1)])]);
+  }, [_c("MCart", {
+    attrs: {
+      cart: this.cart
+    }
+  })], 1)])]);
 };
 
 var staticRenderFns = [];

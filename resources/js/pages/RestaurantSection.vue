@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="restaurant-section-shop-cart col-4">
-        <MCart />
+        <MCart :cart="this.cart" />
       </div>
     </div>
   </div>
@@ -45,21 +45,32 @@ export default {
     cart: function () {
       localStorage.setItem("order", JSON.stringify(this.cart));
     },
-    restaurant: function () {
-      localStorage.setItem("restaurant", JSON.stringify(this.restaurant));
-    },
+    // restaurant: function () {
+    //   localStorage.setItem("restaurant", JSON.stringify(this.restaurant));
+    // },
   },
   methods: {
     addPlate(arg) {
-      this.cart.push(arg);
+      let result = this.cart.find((Element) => Element.id === arg.id);
+      if (result === undefined) {
+        arg.quantity = 1;
+        this.cart.push(arg);
+      }
+      console.log(result);
+      if (result !== undefined) {
+        result.quantity++;
+      }
+      console.log(this.cart);
     },
-    checkRestaurant() {},
-    createCart() {
-      localStorage.setItem("order", this.cart);
+    refreshCart() {
+      let listCart = JSON.parse(localStorage.getItem("order"));
+      console.log(listCart);
+      if (listCart === null) {
+        this.cart = [];
+      } else {
+        this.cart = listCart;
+      }
     },
-  },
-  mounted() {
-    this.checkRestaurant();
   },
   created() {
     axios
@@ -79,8 +90,9 @@ export default {
       .catch((e) => {
         console.log(e);
       });
-
-    localStorage.clear();
+  },
+  mounted() {
+    this.refreshCart();
   },
 };
 </script>
