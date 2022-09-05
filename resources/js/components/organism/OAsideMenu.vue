@@ -1,21 +1,28 @@
 <template>
   <div class="aside-menu">
     <div class="aside-menu-search">
-        <AAsideMenuTitle class="mb-3" :title="'Nome Ristorante'"/>
-        <div class="ps-3 aside-menu-search-container">
-            <input type="text">
-        </div>
+      <AAsideMenuTitle class="mb-3" :title="'Nome Ristorante'" />
+      <div class="ps-3 aside-menu-search-container">
+        <input type="text" v-model="filterName" />
+      </div>
     </div>
     <div class="aside-menu-categories">
-        <AAsideMenuTitle class="mb-3" :title="'Categorie'"/>
-        <ul class="ps-3 aside-menu-categories-list">
-            <li v-for="category in categories" :key="category.id">
-                <input type="checkbox" :id="category.name" :name="category.name" :value="category.name">
-                <label :for="category.name"> {{category.name}} </label>
-            </li>
-        </ul>
+      <AAsideMenuTitle class="mb-3" :title="'Categorie'" />
+      <ul class="ps-3 aside-menu-categories-list">
+        <li v-for="category in categories" :key="category.id">
+          <input
+            type="checkbox"
+            :id="category.name"
+            :name="category.name"
+            :value="category.name"
+            v-model="filterCategory"
+            @change="updateCheckFilter()"
+          />
+          <label :for="category.name"> {{ category.name }} </label>
+        </li>
+      </ul>
     </div>
-    <div class="aside-menu-filters">
+    <!-- <div class="aside-menu-filters">
         <AAsideMenuTitle class="mb-3" :title="'Filtri'"/>
         <div class="aside-menu-filters-container ">
             <div class="ps-3 aside-menu-filters-price">
@@ -33,53 +40,61 @@
                 </select>
             </div>
         </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import AAsideMenuTitle from '../atoms/AAsideMenuTitle.vue';
+import AAsideMenuTitle from "../atoms/AAsideMenuTitle.vue";
 export default {
-    name: "OAsideMenu",
-    components: { AAsideMenuTitle },
-    data() {
-        return {
-            categories: []
-        };
+  name: "OAsideMenu",
+  components: { AAsideMenuTitle },
+  data() {
+    return {
+      categories: [],
+      filterCategory: [],
+      filterName: [],
+    };
+  },
+  methods: {
+    updateCheckFilter: function () {
+      this.$emit("updateCheckFilter", this.filterCategory);
     },
-    created() {
-        axios.get("http://localhost:8000/api/category")
-            .then((response) => {
-            this.categories = response.data;
-        })
-            .catch((e) => {
-            console.log(e);
-        });
-    },
-}
+  },
+  created() {
+    axios
+      .get("http://localhost:8000/api/category")
+      .then((response) => {
+        this.categories = response.data;
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-.aside-menu{
-    background-color: var(--secondary-purple);
-    border-radius: 20px;
-    display: flex;
-    flex-flow: column;
-    gap: 10px;
-    padding: 20px 0px;
-    .aside-menu-categories{
-        .aside-menu-categories-list{
-            display: flex;
-            flex-flow: row wrap;
-            gap: 10px;
-        }
+.aside-menu {
+  background-color: var(--secondary-purple);
+  border-radius: 20px;
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+  padding: 20px 0px;
+  .aside-menu-categories {
+    .aside-menu-categories-list {
+      display: flex;
+      flex-flow: row wrap;
+      gap: 10px;
     }
-    .aside-menu-filters{
-        .aside-menu-filters-container{
-            display: flex;
-            flex-flow: column;
-            gap: 5px;
-        }
+  }
+  .aside-menu-filters {
+    .aside-menu-filters-container {
+      display: flex;
+      flex-flow: column;
+      gap: 5px;
     }
+  }
 }
 </style>

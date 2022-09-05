@@ -1,47 +1,54 @@
 <template>
-    <div class="restaurant-section">
-      <div class="restaurant-section-header">
-        <div class="restaurant-section-header-bottom-left">
-          <ARestaurantCard />
-        </div>
-      </div>
-      <div class="restaurant-section-shop">
-        <div class="restaurant-section-shop-menu col-8">
-          <ATitleCard :title="'Menù'" />
-          <div class="restaurant-section-shop-menu-plates">
-            <MPlateCard v-for="plate in plates" :key="plate.id" :img="plate.img" :name="plate.name" :description="plate.description"/>
-          </div>
-        </div>
-        <div class="restaurant-section-shop-cart col-4">
-          <MCart />
-        </div>
+  <div class="restaurant-section">
+    <div class="restaurant-section-header">
+      <div class="restaurant-section-header-bottom-left">
+        <ARestaurantCard />
       </div>
     </div>
+    <div class="restaurant-section-shop">
+      <div class="restaurant-section-shop-menu col-8">
+        <ATitleCard :title="'Menù'" />
+        <div class="restaurant-section-shop-menu-plates">
+          <MPlateCard
+            v-for="plate in plates"
+            :key="plate.id"
+            :img="plate.img"
+            :name="plate.name"
+            :description="plate.description"
+          />
+        </div>
+      </div>
+      <div class="restaurant-section-shop-cart col-4">
+        <MCart />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import ARestaurantCard from '../components/atoms/ARestaurantCard.vue';
-import ATitleCard from '../components/atoms/ATitleCard.vue';
-import MPlateCard from '../components/molecules/MPlateCard.vue';
-import MCart from '../components/molecules/MCart.vue';
+import ARestaurantCard from "../components/atoms/ARestaurantCard.vue";
+import ATitleCard from "../components/atoms/ATitleCard.vue";
+import MPlateCard from "../components/molecules/MPlateCard.vue";
+import MCart from "../components/molecules/MCart.vue";
 export default {
-    name: "RestaurantSection",
-    components: { ARestaurantCard, ATitleCard, MPlateCard, MCart },
-    data() {
-        return {
-            plates: []
-        };
-    },
-    created() {
-        axios.get("http://localhost:8000/api/plate")
-            .then((response) => {
-            this.plates = response.data;
-        })
-            .catch((e) => {
-            console.log(e);
-        });
-    },
-}
+  name: "RestaurantSection",
+  components: { ARestaurantCard, ATitleCard, MPlateCard, MCart },
+  data() {
+    return {
+      plates: [],
+    };
+  },
+  created() {
+    axios
+      .get(`http://localhost:8000/api/plate/${this.$route.params.slug}/menu`)
+      .then((response) => {
+        this.plates = response.data;
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  },
+};
 </script>
 
 <style lang="scss" scoped>
