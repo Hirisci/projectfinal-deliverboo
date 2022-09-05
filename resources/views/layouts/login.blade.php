@@ -14,7 +14,7 @@
     </head>
     <style>
         img{
-         width: 3rem;  
+         width: 4rem;  
         }
     </style>
     <body>
