@@ -9,15 +9,9 @@
       </div>
     </div>
     <div class="header-bottom">
-      <div class="header-bottom-left">
-        <img src="../imgs/sushi.png" alt="">
-      </div>
-      <div class="header-bottom-center">
-        <img src="../imgs/hamburger.png" alt="">
-      </div>
-      <div class="header-bottom-right">
-        <img src="../imgs/pizza.png" alt="">
-      </div>
+      <img class="sushi" src="../imgs/sushi.png" alt="">
+      <img class="hamburger" src="../imgs/hamburger.png" alt="">
+      <img class="pizza" src="../imgs/pizza.png" alt="">
     </div>
   </header>
 </template>
@@ -33,13 +27,13 @@ export default {
 <style lang="scss" scoped>
   header{
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(150,103,224,1) 50%);
-    height: 20vh;
-    
+    height: 25rem;
+    overflow: hidden;
     .header-top{
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 2vh;
+      padding: 20px;
       .header-top-logo{
         img{
           width: 128px;
@@ -49,12 +43,19 @@ export default {
     .header-bottom{
       display: flex;
       justify-content: space-between;
-      .header-bottom-center, .header-bottom-right{
+      align-items: center;
+      position: relative;
+      .hamburger{
+        top: 0;
+        transform: translateY(-50%);
+      }
+      .pizza{
         transform: translateX(50%);
       }
-      img{
-        height: 10vh;
-      }
+    }
+    img{
+      position: relative;
+      width: 20rem;
     }
     a {
       text-decoration: none;

@@ -2536,28 +2536,25 @@ var staticRenderFns = [function () {
 
   return _c("div", {
     staticClass: "header-bottom"
-  }, [_c("div", {
-    staticClass: "header-bottom-left"
   }, [_c("img", {
+    staticClass: "sushi",
     attrs: {
       src: __webpack_require__(/*! ../imgs/sushi.png */ "./resources/js/components/imgs/sushi.png"),
       alt: ""
     }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "header-bottom-center"
-  }, [_c("img", {
+  }), _vm._v(" "), _c("img", {
+    staticClass: "hamburger",
     attrs: {
       src: __webpack_require__(/*! ../imgs/hamburger.png */ "./resources/js/components/imgs/hamburger.png"),
       alt: ""
     }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "header-bottom-right"
-  }, [_c("img", {
+  }), _vm._v(" "), _c("img", {
+    staticClass: "pizza",
     attrs: {
       src: __webpack_require__(/*! ../imgs/pizza.png */ "./resources/js/components/imgs/pizza.png"),
       alt: ""
     }
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -3143,7 +3140,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "header[data-v-8a2cb668] {\n  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(150, 103, 224) 50%);\n  height: 20vh;\n}\nheader .header-top[data-v-8a2cb668] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 2vh;\n}\nheader .header-top .header-top-logo img[data-v-8a2cb668] {\n  width: 128px;\n}\nheader .header-bottom[data-v-8a2cb668] {\n  display: flex;\n  justify-content: space-between;\n}\nheader .header-bottom .header-bottom-center[data-v-8a2cb668], header .header-bottom .header-bottom-right[data-v-8a2cb668] {\n  transform: translateX(50%);\n}\nheader .header-bottom img[data-v-8a2cb668] {\n  height: 10vh;\n}\nheader a[data-v-8a2cb668] {\n  text-decoration: none;\n}", ""]);
+exports.push([module.i, "header[data-v-8a2cb668] {\n  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(150, 103, 224) 50%);\n  height: 25rem;\n  overflow: hidden;\n}\nheader .header-top[data-v-8a2cb668] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 20px;\n}\nheader .header-top .header-top-logo img[data-v-8a2cb668] {\n  width: 128px;\n}\nheader .header-bottom[data-v-8a2cb668] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  position: relative;\n}\nheader .header-bottom .hamburger[data-v-8a2cb668] {\n  top: 0;\n  transform: translateY(-50%);\n}\nheader .header-bottom .pizza[data-v-8a2cb668] {\n  transform: translateX(50%);\n}\nheader img[data-v-8a2cb668] {\n  position: relative;\n  width: 20rem;\n}\nheader a[data-v-8a2cb668] {\n  text-decoration: none;\n}", ""]);
 
 // exports
 
