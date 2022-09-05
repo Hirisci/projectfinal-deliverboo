@@ -2061,14 +2061,20 @@ __webpack_require__.r(__webpack_exports__);
       restaurants: []
     };
   },
-  created: function created() {
-    var _this = this;
+  computed: {
+    filterRestaurants: function filterRestaurants() {
+      // `this` points to the vm instance
+      return this.restaurants;
+    },
+    created: function created() {
+      var _this = this;
 
-    axios.get("http://localhost:8000/api/restaurant").then(function (response) {
-      _this.restaurants = response.data;
-    })["catch"](function (e) {
-      console.log(e);
-    });
+      axios.get("http://localhost:8000/api/restaurant").then(function (response) {
+        _this.restaurants = response.data;
+      })["catch"](function (e) {
+        console.log(e);
+      });
+    }
   }
 });
 
@@ -2154,7 +2160,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      categories: []
+      categories: [],
+      filterCategory: [],
+      filterName: []
     };
   },
   created: function created() {
@@ -2577,7 +2585,7 @@ var render = function render() {
     staticClass: "col-3 home-left py-3"
   }, [_c("OAsideMenu")], 1), _vm._v(" "), _c("div", {
     staticClass: "col-9 home-right m-3"
-  }, _vm._l(_vm.restaurants, function (restaurant) {
+  }, _vm._l(_vm.filterRestaurants, function (restaurant) {
     return _c("MRestaurantCard", {
       key: restaurant.slug,
       staticClass: "col-1",
@@ -2773,7 +2781,28 @@ var render = function render() {
     attrs: {
       title: "Nome Ristorante"
     }
-  }), _vm._v(" "), _vm._m(0)], 1), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", {
+    staticClass: "ps-3 aside-menu-search-container"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.filterName,
+      expression: "filterName"
+    }],
+    attrs: {
+      type: "text"
+    },
+    domProps: {
+      value: _vm.filterName
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.filterName = $event.target.value;
+      }
+    }
+  })])], 1), _vm._v(" "), _c("div", {
     staticClass: "aside-menu-categories"
   }, [_c("AAsideMenuTitle", {
     staticClass: "mb-3",
@@ -2786,86 +2815,50 @@ var render = function render() {
     return _c("li", {
       key: category.id
     }, [_c("input", {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: _vm.filterCategory,
+        expression: "filterCategory"
+      }],
       attrs: {
         type: "checkbox",
         id: category.name,
         name: category.name
       },
       domProps: {
-        value: category.name
+        value: category.name,
+        checked: Array.isArray(_vm.filterCategory) ? _vm._i(_vm.filterCategory, category.name) > -1 : _vm.filterCategory
+      },
+      on: {
+        change: function change($event) {
+          var $$a = _vm.filterCategory,
+              $$el = $event.target,
+              $$c = $$el.checked ? true : false;
+
+          if (Array.isArray($$a)) {
+            var $$v = category.name,
+                $$i = _vm._i($$a, $$v);
+
+            if ($$el.checked) {
+              $$i < 0 && (_vm.filterCategory = $$a.concat([$$v]));
+            } else {
+              $$i > -1 && (_vm.filterCategory = $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+            }
+          } else {
+            _vm.filterCategory = $$c;
+          }
+        }
       }
     }), _vm._v(" "), _c("label", {
       attrs: {
         "for": category.name
       }
     }, [_vm._v(" " + _vm._s(category.name) + " ")])]);
-  }), 0)], 1), _vm._v(" "), _c("div", {
-    staticClass: "aside-menu-filters"
-  }, [_c("AAsideMenuTitle", {
-    staticClass: "mb-3",
-    attrs: {
-      title: "Filtri"
-    }
-  }), _vm._v(" "), _vm._m(1)], 1)]);
+  }), 0)], 1)]);
 };
 
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "ps-3 aside-menu-search-container"
-  }, [_c("input", {
-    attrs: {
-      type: "text"
-    }
-  })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "aside-menu-filters-container"
-  }, [_c("div", {
-    staticClass: "ps-3 aside-menu-filters-price"
-  }, [_c("label", {
-    attrs: {
-      "for": "aside-menu-filters-price-filter"
-    }
-  }, [_vm._v("Prezzo")]), _vm._v(" "), _c("select", {
-    attrs: {
-      name: "aside-menu-filters-price-filter",
-      id: "aside-menu-filters-price-filter"
-    }
-  }, [_c("option", {
-    attrs: {
-      value: "increasing"
-    }
-  }, [_vm._v("Crescente")]), _vm._v(" "), _c("option", {
-    attrs: {
-      value: "decreasing"
-    }
-  }, [_vm._v("Decrescente")])])]), _vm._v(" "), _c("div", {
-    staticClass: "ps-3 aside-menu-filters-valutation"
-  }, [_c("label", {
-    attrs: {
-      "for": "aside-menu-filters-valutation-filter"
-    }
-  }, [_vm._v("Voto")]), _vm._v(" "), _c("select", {
-    attrs: {
-      name: "aside-menu-filters-valutation-filter",
-      id: "aside-menu-filters-valutation-filter"
-    }
-  }, [_c("option", {
-    attrs: {
-      value: "increasing"
-    }
-  }, [_vm._v("Crescente")]), _vm._v(" "), _c("option", {
-    attrs: {
-      value: "decreasing"
-    }
-  }, [_vm._v("Decrescente")])])])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 

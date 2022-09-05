@@ -15,7 +15,6 @@ class RestaurantController extends Controller
     public function index() {
 
         $restaurants = Restaurant::with('categories')->get();
-        dd($restaurants);
         // prendo tutti i ristoranti e li restituisco in json
         return response()->json($restaurants);
     }
