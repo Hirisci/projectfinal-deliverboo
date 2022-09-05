@@ -20,9 +20,6 @@
 <script>
 export default {
   name: 'ARestaurantCard',
-  props: {
-    // img: Image,
-  },
   data() {
     return {
       restaurant: []

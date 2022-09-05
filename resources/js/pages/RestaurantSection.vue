@@ -1,6 +1,7 @@
 <template>
   <div class="restaurant-section">
     <div class="restaurant-section-header">
+      <img :src="`/storage/${restaurant.img}`" alt="/">
       <div class="restaurant-section-header-bottom-left">
         <ARestaurantCard />
       </div>
@@ -31,12 +32,14 @@ import ARestaurantCard from "../components/atoms/ARestaurantCard.vue";
 import ATitleCard from "../components/atoms/ATitleCard.vue";
 import MPlateCard from "../components/molecules/MPlateCard.vue";
 import MCart from "../components/molecules/MCart.vue";
+
 export default {
   name: "RestaurantSection",
   components: { ARestaurantCard, ATitleCard, MPlateCard, MCart },
   data() {
     return {
       plates: [],
+      restaurant: []
     };
   },
   created() {
@@ -48,21 +51,26 @@ export default {
       .catch((e) => {
         console.log(e);
       });
+      
+      axios.get(`/api/restaurant/${this.$route.params.slug}`)
+            .then((response) => {
+            this.restaurant = response.data;
+      })
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .restaurant-section{
-  max-width: 1200px;
   margin: auto;
   .restaurant-section-header{
-    background-image: URL(https://salerno.occhionotizie.it/wp-content/uploads/sites/2/2020/10/mcdonalds-fast-food-shutterstock.jpg);
-    min-height: 20vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     position: relative;
+    img{
+      min-height: 30vh;
+      height: 30vh;
+      width: 100%;
+      object-fit: cover;
+    }
     .restaurant-section-header-bottom-left{
       position: absolute;
       left: 5%;
@@ -71,6 +79,8 @@ export default {
   }
   .restaurant-section-shop{
     display: flex;
+    max-width: 1200px;
+    margin: auto;
     .restaurant-section-shop-menu{
       display: flex;
       flex-flow: column nowrap;

@@ -1,22 +1,22 @@
 <template>
   <div class="app">
-    <BaseHeader/>
+    <AHeader />
     <router-view />
     <BaseFooter/>
   </div>
 </template>
 
 <script>
-import BaseHeader from '../components/macro/BaseHeader.vue';
 import BaseMain from '../components/macro/BaseMain.vue';
 import BaseFooter from '../components/macro/BaseFooter.vue';
+import AHeader from '../components/atoms/AHeader.vue';
 
 export default {
     name: "App",
     components: { 
-      BaseHeader, 
       BaseMain, 
-      BaseFooter 
+      BaseFooter,
+      AHeader
     },
 }
 </script>

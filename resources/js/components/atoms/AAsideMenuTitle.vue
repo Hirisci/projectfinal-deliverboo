@@ -21,7 +21,7 @@ export default {
     background-color: var(--primary-purple);
     color: white;
     padding: 0.3125rem;
-    width: 80%;
+    width: 85%;
     h6{
       text-transform: uppercase;
     }

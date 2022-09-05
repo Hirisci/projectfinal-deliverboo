@@ -4,15 +4,19 @@
     <div class="plate-card-left">
         <img :src="`/storage/${img}`" alt="Plate">
         <div class="plate-card-left-text">
-            <span class="plate-card-left-text-name"> {{name}} </span>
+            <div class="plate-card-left-text-nameAndPrice">
+                <AAsideMenuTitle :title="name" class="title"/>
+                <span class="plate-card-left-text-description-price"> {{price}} € </span>
+            </div>
             <span class="plate-card-left-text-description"> {{description}} </span>
-            <span> {{price}} € </span>
+            <button class="btn-main"> Add To Cart</button>
         </div>
     </div>
   </div>
 </template>
 
 <script>
+import AAsideMenuTitle from '../atoms/AAsideMenuTitle.vue';
 export default {
     name: "MPlateCard",
     props: {
@@ -20,7 +24,8 @@ export default {
         name: String,
         description: String,
         price: String,
-    }
+    },
+    components: { AAsideMenuTitle }
 }
 </script>
 
@@ -28,18 +33,43 @@ export default {
 .plate-card{
     background-color: var(--secondary-purple);
     border-radius: 20px;
-    padding: 10px;
     display: flex;
+    position: relative;
     &:hover{
         background-color: red;
     }
-    .plate-card-left{
+    &-left{
         display: flex;
-        gap: 10px;
-        .plate-card-left-text{
+        width: 100%;
+        img{
+            width: 200px;
+            aspect-ratio: 16/9;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+        &-text{
             display: flex;
             flex-flow: column;
-            gap: 10px;
+            width: 100%;
+            &-nameAndPrice{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .title{
+                    width: 100%;
+                }
+            }
+            &-description{
+                padding: 20px;
+            }
+            &-description-price{
+                align-self: center;
+                background-color: white;
+                color: var(--primary-purple);
+                font-weight: bolder;
+                width: 15%;
+            }
         }
     }
 }
