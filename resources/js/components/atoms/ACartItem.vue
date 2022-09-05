@@ -1,19 +1,21 @@
 <template>
   <div class="cart-item">
     <div class="cart-item-left">
-        <div class="cart-item-quantity">
-            <span class="cart-item-quantity-value">{{quantity}}</span>
+        <div class="cart-item-delete">
+            <button class="cart-item-delete-btn btn"> - </button>
         </div>
-        <div class="cart-item-name">
-            <span class="cart-item-name-value">{{name}}</span>
+        <div class="cart-item-left-info">
+            <div class="cart-item-quantity">
+                <span class="cart-item-quantity-value">{{quantity}}</span>
+            </div>
+            <div class="cart-item-name">
+                <span class="cart-item-name-value">{{name}}</span>
+            </div>
         </div>
     </div>
     <div class="cart-item-right">
         <div class="cart-item-price">
             <span class="cart-item-price-value">{{price}}€</span>
-        </div>
-        <div class="cart-item-delete">
-            <button class="cart-item-delete-btn btn"> - </button>
         </div>
     </div>
   </div>
@@ -34,7 +36,6 @@ export default {
 .cart-item{
     background-color: var(--secondary-purple);
     border-radius: 20px;
-    padding: 10px;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -46,6 +47,8 @@ export default {
             color: white;
             text-transform: uppercase;
             font-weight: 700;
+            font-size: .9375rem;
+            word-wrap: wrap;
         }
         .cart-item-quantity, .cart-item-price{
             display: flex;
@@ -58,11 +61,11 @@ export default {
             border-radius: 50%;
         }
         .cart-item-delete{
+            height: 100%;
             .cart-item-delete-btn{
-                border-radius: 20px;
-                border: 0px;
-                width: 40px;
-                height: 40px;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                height: 100%;
                 color: white;
                 background-color: hsl(0, 100%, 45%);
                 &:hover{
@@ -71,9 +74,21 @@ export default {
             }
         }
     }
+
+    .cart-item-left-info{
+        width: 100%;
+        height: 100%;
+        padding: .625rem;
+        display: flex;
+        gap: .625rem;
+        align-items: center;
+    }
     .cart-item-right{
         background-color: var(--primary-purple);
-        border-radius: 20px;
+        border-top-right-radius: 1.25rem;
+        border-bottom-right-radius: 1.25rem;
+        padding-left: .3125rem;
+        padding-right: .3125rem;
     }
 }
 </style>
