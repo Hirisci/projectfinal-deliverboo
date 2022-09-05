@@ -2078,9 +2078,6 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     updateFilterCheck: function updateFilterCheck(value) {
       this.filterCategory = value;
-    },
-    checkOrder: function checkOrder(arg) {
-      console.log(arg, "controlliamo ristornate");
     }
   },
   computed: {
@@ -2137,6 +2134,19 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     ATitleCard: _atoms_ATitleCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     ACartItem: _atoms_ACartItem_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  methods: {
+    createCart: function createCart() {
+      var order = localStorage.getItem("order");
+      order = JSON.parse(order);
+      console.log(order);
+      return order;
+    }
+  },
+  computed: {
+    cart: function cart() {
+      return this.createCart();
+    }
   }
 });
 
@@ -2187,11 +2197,6 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     restaurant: Object,
     slug: String
-  },
-  methods: {
-    send: function send() {
-      this.$emit("event-name", this.plate);
-    }
   }
 });
 
@@ -2713,9 +2718,6 @@ var render = function render() {
       attrs: {
         slug: restaurant.slug,
         restaurant: restaurant
-      },
-      on: {
-        "event-name": _vm.checkOrder
       }
     });
   }), 1)]);
@@ -2751,25 +2753,16 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("div", {
     staticClass: "cart-items"
-  }, [_c("ACartItem", {
-    attrs: {
-      quantity: 1,
-      name: "Big Mac Menu",
-      price: 5.5
-    }
-  }), _vm._v(" "), _c("ACartItem", {
-    attrs: {
-      quantity: 10,
-      name: "Gran Crispy McBacon Menu",
-      price: 6
-    }
-  }), _vm._v(" "), _c("ACartItem", {
-    attrs: {
-      quantity: 100,
-      name: "Le Ricche",
-      price: 100
-    }
-  })], 1), _vm._v(" "), _c("div", {
+  }, _vm._l(_vm.cart, function (plate) {
+    return _c("ACartItem", {
+      key: plate.id,
+      attrs: {
+        quantity: 1,
+        name: plate.name,
+        price: plate.price
+      }
+    });
+  }), 1), _vm._v(" "), _c("div", {
     staticClass: "cart-total"
   }, [_c("div", {
     staticClass: "cart-total-price"
@@ -2869,9 +2862,6 @@ var render = function render() {
     attrs: {
       src: "storage/".concat(_vm.restaurant.img),
       alt: ""
-    },
-    on: {
-      click: _vm.send
     }
   }), _vm._v(" "), _c("div", {
     staticClass: "overlay"

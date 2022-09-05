@@ -10,7 +10,6 @@
         :key="restaurant.slug"
         :slug="restaurant.slug"
         :restaurant="restaurant"
-        @event-name="checkOrder"
       />
     </div>
   </main>
@@ -35,9 +34,6 @@ export default {
   methods: {
     updateFilterCheck: function (value) {
       this.filterCategory = value;
-    },
-    checkOrder(arg) {
-      console.log(arg, "controlliamo ristornate");
     },
   },
   computed: {

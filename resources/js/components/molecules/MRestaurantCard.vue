@@ -1,7 +1,7 @@
 <template>
   <div class="restaurant-card">
     <router-link :to="{ name: 'restaurant', params: { slug: slug } }">
-      <img :src="`storage/${restaurant.img}`" alt="" @click="send" />
+      <img :src="`storage/${restaurant.img}`" alt="" />
       <div class="overlay"></div>
       <div class="overlay-text">
         <div class="restaurant-card-right">
@@ -26,11 +26,6 @@ export default {
   props: {
     restaurant: Object,
     slug: String,
-  },
-  methods: {
-    send() {
-      this.$emit("event-name", this.plate);
-    },
   },
 };
 </script>
