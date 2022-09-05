@@ -16,6 +16,7 @@
             :name="category.name"
             :value="category.name"
             v-model="filterCategory"
+            @change="check(filterCategory)"
           />
           <label :for="category.name"> {{ category.name }} </label>
         </li>
@@ -54,6 +55,12 @@ export default {
       filterCategory: [],
       filterName: [],
     };
+  },
+  methods: {
+    check: function (value) {
+      console.log(this.filterCategory, value);
+      this.$emit("$updateFilterCategory", value);
+    },
   },
   created() {
     axios

@@ -2058,8 +2058,15 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      restaurants: []
+      restaurants: [],
+      filterCategory: []
     };
+  },
+  methods: {
+    updateFilterCategory: function updateFilterCategory(value) {
+      console.log("entrato nel padre");
+      this.filterCategory = value;
+    }
   },
   computed: {
     filterRestaurants: function filterRestaurants() {
@@ -2164,6 +2171,12 @@ __webpack_require__.r(__webpack_exports__);
       filterCategory: [],
       filterName: []
     };
+  },
+  methods: {
+    check: function check(value) {
+      console.log(this.filterCategory, value);
+      this.$emit("$updateFilterCategory", value);
+    }
   },
   created: function created() {
     var _this = this;
@@ -2583,7 +2596,11 @@ var render = function render() {
 
   return _c("main", [_c("div", {
     staticClass: "col-3 home-left py-3"
-  }, [_c("OAsideMenu")], 1), _vm._v(" "), _c("div", {
+  }, [_c("OAsideMenu", {
+    on: {
+      change: _vm.updateFilterCategory
+    }
+  })], 1), _vm._v(" "), _c("div", {
     staticClass: "col-9 home-right m-3"
   }, _vm._l(_vm.filterRestaurants, function (restaurant) {
     return _c("MRestaurantCard", {
@@ -2831,7 +2848,7 @@ var render = function render() {
         checked: Array.isArray(_vm.filterCategory) ? _vm._i(_vm.filterCategory, category.name) > -1 : _vm.filterCategory
       },
       on: {
-        change: function change($event) {
+        change: [function ($event) {
           var $$a = _vm.filterCategory,
               $$el = $event.target,
               $$c = $$el.checked ? true : false;
@@ -2848,7 +2865,9 @@ var render = function render() {
           } else {
             _vm.filterCategory = $$c;
           }
-        }
+        }, function ($event) {
+          return _vm.check(_vm.filterCategory);
+        }]
       }
     }), _vm._v(" "), _c("label", {
       attrs: {
