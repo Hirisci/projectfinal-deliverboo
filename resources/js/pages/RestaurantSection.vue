@@ -16,7 +16,8 @@
             v-for="plate in plates"
             :key="plate.id"
             :plate="plate"
-            @event-name="addPlate"
+            @event-addPlate="addPlate"
+            @event-delPlate="delPlate"
           />
         </div>
       </div>

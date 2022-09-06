@@ -2171,8 +2171,11 @@ __webpack_require__.r(__webpack_exports__);
     AAsideMenuTitle: _atoms_AAsideMenuTitle_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   methods: {
-    send: function send() {
-      this.$emit("event-name", this.plate);
+    add: function add() {
+      this.$emit("event-addPlate", this.plate);
+    },
+    "delete": function _delete() {
+      this.$emit("event-addPlate", this.plate);
     } //function () {
     //console.log("hai premuto il bottone", this.plate);
     //   this.$emit("addPlate", this.plate);
@@ -2846,7 +2849,7 @@ var render = function render() {
   }, [_c("button", {
     staticClass: "btn-main btn-purple",
     on: {
-      click: _vm.send
+      click: _vm.add
     }
   }, [_vm._v("Add To Cart")])])])])]);
 };
@@ -3128,7 +3131,8 @@ var render = function render() {
         plate: plate
       },
       on: {
-        "event-name": _vm.addPlate
+        "event-addPlate": _vm.addPlate,
+        "event-delPlate": _vm.delPlate
       }
     });
   }), 1)], 1), _vm._v(" "), _c("div", {

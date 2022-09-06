@@ -16,7 +16,7 @@
           {{ plate.description }}
         </span>
         <div class="add-to-cart-container">
-          <button class="btn-main btn-purple" @click="send">Add To Cart</button>
+          <button class="btn-main btn-purple" @click="add">Add To Cart</button>
         </div>
       </div>
     </div>
@@ -32,8 +32,11 @@ export default {
   },
   components: { AAsideMenuTitle },
   methods: {
-    send() {
-      this.$emit("event-name", this.plate);
+    add() {
+      this.$emit("event-addPlate", this.plate);
+    },
+    delete() {
+      this.$emit("event-addPlate", this.plate);
     },
     //function () {
     //console.log("hai premuto il bottone", this.plate);
