@@ -20,3 +20,7 @@ Route::get('restaurant/{slug}', 'Api\RestaurantController@show');
 Route::get('category', 'Api\CategoryController@index');
 Route::get('plate', 'Api\PlateController@index');
 Route::get('plate/{slug}/menu', 'Api\PlateController@show' );
+
+//Braintree
+Route::get('orders/generate', 'Api\OrderController@generate');
+Route::post('orders/makePayment', 'Api\OrderController@makePayment');

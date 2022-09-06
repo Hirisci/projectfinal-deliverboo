@@ -2478,6 +2478,8 @@ var render = function render() {
     staticClass: "cart-item"
   }, [_c("div", {
     staticClass: "cart-item-left"
+  }, [_vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "cart-item-left-info"
   }, [_c("div", {
     staticClass: "cart-item-quantity"
   }, [_c("span", {
@@ -2486,13 +2488,13 @@ var render = function render() {
     staticClass: "cart-item-name"
   }, [_c("span", {
     staticClass: "cart-item-name-value"
-  }, [_vm._v(_vm._s(_vm.name))])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v(_vm._s(_vm.name))])])])]), _vm._v(" "), _c("div", {
     staticClass: "cart-item-right"
   }, [_c("div", {
     staticClass: "cart-item-price"
   }, [_c("span", {
     staticClass: "cart-item-price-value"
-  }, [_vm._v(_vm._s(_vm.price) + "€")])]), _vm._v(" "), _vm._m(0)])]);
+  }, [_vm._v(_vm._s(_vm.price) + "€")])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -2502,7 +2504,7 @@ var staticRenderFns = [function () {
   return _c("div", {
     staticClass: "cart-item-delete"
   }, [_c("button", {
-    staticClass: "cart-item-delete-btn btn"
+    staticClass: "cart-item-delete-btn"
   }, [_vm._v(" - ")])]);
 }];
 render._withStripped = true;
@@ -3198,7 +3200,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".cart-item[data-v-7da0b22c] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  padding: 10px;\n  display: flex;\n  width: 100%;\n  justify-content: space-between;\n}\n.cart-item .cart-item-left[data-v-7da0b22c], .cart-item .cart-item-right[data-v-7da0b22c] {\n  display: flex;\n  gap: 10px;\n  align-items: center;\n}\n.cart-item .cart-item-left .cart-item-name[data-v-7da0b22c], .cart-item .cart-item-right .cart-item-name[data-v-7da0b22c] {\n  color: white;\n  text-transform: uppercase;\n  font-weight: 700;\n}\n.cart-item .cart-item-left .cart-item-quantity[data-v-7da0b22c], .cart-item .cart-item-left .cart-item-price[data-v-7da0b22c], .cart-item .cart-item-right .cart-item-quantity[data-v-7da0b22c], .cart-item .cart-item-right .cart-item-price[data-v-7da0b22c] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: white;\n  width: 40px;\n  height: 40px;\n  position: relative;\n  border-radius: 50%;\n}\n.cart-item .cart-item-left .cart-item-delete .cart-item-delete-btn[data-v-7da0b22c], .cart-item .cart-item-right .cart-item-delete .cart-item-delete-btn[data-v-7da0b22c] {\n  border-radius: 20px;\n  border: 0px;\n  width: 40px;\n  height: 40px;\n  color: white;\n  background-color: hsl(0deg, 100%, 45%);\n}\n.cart-item .cart-item-left .cart-item-delete .cart-item-delete-btn[data-v-7da0b22c]:hover, .cart-item .cart-item-right .cart-item-delete .cart-item-delete-btn[data-v-7da0b22c]:hover {\n  background-color: hsl(0deg, 100%, 35%);\n}\n.cart-item .cart-item-right[data-v-7da0b22c] {\n  background-color: var(--primary-purple);\n  border-radius: 20px;\n}", ""]);
+exports.push([module.i, ".cart-item[data-v-7da0b22c] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  display: flex;\n  width: 100%;\n  justify-content: space-between;\n  overflow: hidden;\n}\n.cart-item .cart-item-left[data-v-7da0b22c] {\n  width: 100%;\n}\n.cart-item .cart-item-left[data-v-7da0b22c], .cart-item .cart-item-right[data-v-7da0b22c] {\n  display: flex;\n  gap: 10px;\n  align-items: center;\n}\n.cart-item .cart-item-left .cart-item-name[data-v-7da0b22c], .cart-item .cart-item-right .cart-item-name[data-v-7da0b22c] {\n  color: white;\n  text-transform: uppercase;\n  font-weight: 700;\n  font-size: 0.8125rem;\n  word-wrap: wrap;\n}\n.cart-item .cart-item-left .cart-item-quantity[data-v-7da0b22c], .cart-item .cart-item-right .cart-item-quantity[data-v-7da0b22c] {\n  width: 30%;\n}\n.cart-item .cart-item-left .card-item-name[data-v-7da0b22c], .cart-item .cart-item-right .card-item-name[data-v-7da0b22c] {\n  width: 60%;\n}\n.cart-item .cart-item-left .cart-item-quantity[data-v-7da0b22c], .cart-item .cart-item-left .cart-item-price[data-v-7da0b22c], .cart-item .cart-item-right .cart-item-quantity[data-v-7da0b22c], .cart-item .cart-item-right .cart-item-price[data-v-7da0b22c] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: white;\n  padding: 0.3125rem 1rem;\n  width: 4.375rem;\n  position: relative;\n  border-radius: 1rem;\n}\n.cart-item .cart-item-left .cart-item-delete[data-v-7da0b22c], .cart-item .cart-item-right .cart-item-delete[data-v-7da0b22c] {\n  margin-left: -2.125rem;\n  height: 100%;\n}\n.cart-item .cart-item-left .cart-item-delete .cart-item-delete-btn[data-v-7da0b22c], .cart-item .cart-item-right .cart-item-delete .cart-item-delete-btn[data-v-7da0b22c] {\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n  height: 100%;\n  width: 2rem;\n  color: white;\n  background-color: hsl(0deg, 100%, 45%);\n}\n.cart-item .cart-item-left .cart-item-delete .cart-item-delete-btn[data-v-7da0b22c]:hover, .cart-item .cart-item-right .cart-item-delete .cart-item-delete-btn[data-v-7da0b22c]:hover {\n  cursor: pointer;\n}\n.cart-item .cart-item-left-info[data-v-7da0b22c] {\n  width: 100%;\n  height: 100%;\n  padding: 0.625rem;\n  display: flex;\n  gap: 0.625rem;\n  align-items: center;\n}\n.cart-item .cart-item-right[data-v-7da0b22c] {\n  width: 30%;\n  background-color: var(--primary-purple);\n  padding-left: 0.3125rem;\n  padding-right: 0.3125rem;\n}\n.cart-item:hover .cart-item-delete[data-v-7da0b22c] {\n  margin-left: 0;\n}\n@media only screen and (max-width: 890px) {\n.cart-item[data-v-7da0b22c] {\n    flex-direction: column;\n}\n.cart-item .cart-item-right[data-v-7da0b22c] {\n    width: 100%;\n    padding: 0.625rem;\n    align-items: center;\n    justify-content: center;\n}\n}\n@media only screen and (max-width: 546px) {\n.cart-item-left-info[data-v-7da0b22c] {\n    flex-direction: column;\n}\n.cart-item-left-info .card-item-name[data-v-7da0b22c] {\n    text-align: center;\n}\n}", ""]);
 
 // exports
 
@@ -3331,7 +3333,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".cart[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 20px;\n  align-items: center;\n}\n.cart .cart-title[data-v-33631e30] {\n  width: 100%;\n}\n.cart .cart-items[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 20px;\n  width: 100%;\n}\n.cart .cart-total[data-v-33631e30] {\n  align-self: flex-end;\n  width: 50%;\n  background-color: var(--primary-purple);\n  border-radius: 20px;\n  font-weight: 700;\n  padding: 10px;\n}\n.cart .cart-total .cart-total-price[data-v-33631e30] {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  gap: 20px;\n}\n.cart .cart-total .cart-total-price .cart-total-price-title[data-v-33631e30] {\n  color: white;\n  text-transform: uppercase;\n}\n.cart .cart-total .cart-total-price .cart-total-price-value[data-v-33631e30] {\n  background-color: white;\n  border-radius: 20px;\n  padding: 5px 10px;\n}", ""]);
+exports.push([module.i, ".cart[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 20px;\n  align-items: center;\n}\n.cart .cart-title[data-v-33631e30] {\n  width: 100%;\n}\n.cart .cart-items[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 20px;\n  width: 100%;\n}\n.cart .cart-total[data-v-33631e30] {\n  align-self: flex-end;\n  width: 100%;\n  background-color: var(--primary-purple);\n  border-radius: 20px;\n  font-weight: 700;\n  padding: 10px;\n}\n.cart .cart-total .cart-total-price[data-v-33631e30] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 20px;\n}\n.cart .cart-total .cart-total-price .cart-total-price-title[data-v-33631e30] {\n  color: white;\n  text-transform: uppercase;\n}\n.cart .cart-total .cart-total-price .cart-total-price-value[data-v-33631e30] {\n  background-color: white;\n  border-radius: 20px;\n  padding: 5px 10px;\n}\n@media only screen and (max-width: 612px) {\n.cart-total-price[data-v-33631e30] {\n    flex-direction: column;\n}\n}", ""]);
 
 // exports
 
@@ -21692,7 +21694,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\berto\Desktop\Classe#63\Esame\projectfinal-deliverboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\giaki\Desktop\Boolean\Project\FinalProject-Deliveboo\projectfinal-deliverboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
