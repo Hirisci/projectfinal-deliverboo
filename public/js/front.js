@@ -2293,13 +2293,16 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_atoms_AJumbotron_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/atoms/AJumbotron.vue */ "./resources/js/components/atoms/AJumbotron.vue");
 /* harmony import */ var _components_molecules_MCart_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/molecules/MCart.vue */ "./resources/js/components/molecules/MCart.vue");
+/* harmony import */ var _components_atoms_AAsideMenuTitle_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/atoms/AAsideMenuTitle.vue */ "./resources/js/components/atoms/AAsideMenuTitle.vue");
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Checkout",
   components: {
     AJumbotron: _components_atoms_AJumbotron_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    MCart: _components_molecules_MCart_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    MCart: _components_molecules_MCart_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    AAsideMenuTitle: _components_atoms_AAsideMenuTitle_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
 });
 
@@ -3153,10 +3156,18 @@ var render = function render() {
   return _c("div", {
     staticClass: "container-fluid p-0"
   }, [_c("AJumbotron"), _vm._v(" "), _c("div", {
-    staticClass: "form container-lg"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
-    staticClass: "row d-flex"
-  }, [_vm._m(1), _vm._v(" "), _c("div", {
+    staticClass: "form container-lg p-3"
+  }, [_c("div", {
+    staticClass: "row d-flex justify-content-between"
+  }, [_c("div", {
+    staticClass: "user-form p-3 col-lg-6"
+  }, [_c("div", {
+    staticClass: "col-12 col-lg-4 p-0"
+  }, [_c("AAsideMenuTitle", {
+    attrs: {
+      title: "Checkout"
+    }
+  })], 1), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("div", {
     staticClass: "d-none d-lg-block col-lg-4 cart"
   }, [_c("MCart", {
     attrs: {
@@ -3169,18 +3180,7 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", {
-    staticClass: "row"
-  }, [_c("div", {
-    staticClass: "col-12"
-  }, [_c("h2", [_vm._v("CHECKOUT")])])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "col-12 col-lg-8"
-  }, [_c("form", [_c("div", {
+  return _c("form", [_c("div", {
     staticClass: "form-group"
   }, [_c("label", {
     attrs: {
@@ -3194,7 +3194,7 @@ var staticRenderFns = [function () {
       placeholder: "Città"
     }
   })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group col-md-4"
+    staticClass: "form-group col-md-6"
   }, [_c("label", {
     attrs: {
       "for": "client_state"
@@ -3260,7 +3260,7 @@ var staticRenderFns = [function () {
       id: "client_number",
       placeholder: "Cellulare"
     }
-  })])])]);
+  })])]);
 }];
 render._withStripped = true;
 
@@ -3666,7 +3666,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "*[data-v-19797662] {\n  background-color: rgba(0, 0, 255, 0.3);\n}\n.cart[data-v-19797662] {\n  background-color: red;\n}", ""]);
+exports.push([module.i, ".user-form[data-v-19797662] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  display: flex;\n  flex-flow: column;\n  gap: 10px;\n  padding: 20px 0px;\n}\n.cart[data-v-19797662] {\n  background-color: red;\n}\n.form-group[data-v-19797662] {\n  margin: 15px 0;\n}\nlabel[data-v-19797662] {\n  margin-bottom: 5px;\n}", ""]);
 
 // exports
 

@@ -1,20 +1,18 @@
 <template>
   <div class="container-fluid p-0">
     <AJumbotron />
-    <div class="form container-lg">
-      <div class="row">
-        <div class="col-12">
-          <h2>CHECKOUT</h2>
-        </div>
-      </div>
-      <div class="row d-flex">
-        <div class="col-12 col-lg-8">
+    <div class="form container-lg p-3">
+      <div class="row d-flex justify-content-between">
+        <div class="user-form p-3 col-lg-6">
+          <div class="col-12 col-lg-4 p-0">
+            <AAsideMenuTitle :title="'Checkout'"/>
+          </div>
           <form>
             <div class="form-group">
               <label for="client_city">Città</label>
               <input type="text" class="form-control" id="client_city" placeholder="Città">
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
             <label for="client_state">Stato</label>
             <select id="client_state" class="form-control">
               <option selected>Scegli</option>
@@ -51,19 +49,30 @@
 <script>
 import AJumbotron from '../components/atoms/AJumbotron.vue';
 import MCart from '../components/molecules/MCart.vue';
+import AAsideMenuTitle from '../components/atoms/AAsideMenuTitle.vue';
 
 export default {
     name: "Checkout",
-    components: { AJumbotron, MCart },
+    components: { AJumbotron, MCart, AAsideMenuTitle },
 }
 </script>
 
 <style lang="scss" scoped>
-  *{
-    background-color: rgba($color: blue, $alpha: .3);
-    // min-height: 200px;
-  }
-  .cart{
+.user-form {
+  background-color: var(--secondary-purple);
+  border-radius: 20px;
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+  padding: 20px 0px;
+}  
+.cart{
     background-color: red;
-  }
+}
+.form-group {
+  margin: 15px 0;
+}
+label {
+  margin-bottom: 5px;
+}
 </style>
