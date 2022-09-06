@@ -14,6 +14,7 @@
     height: 100vh;
     background-color: #fbfaff;
     position: relative;
+    overflow: hidden;
     // background-image: -webkit-linear-gradient(140deg, white 50%, var(--primary-purple)  50%);
     &::after{
         content: ' ';

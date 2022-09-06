@@ -12918,6 +12918,7 @@ small,
   height: 100vh;
   background-color: #fbfaff;
   position: relative;
+  overflow: hidden;
 }
 
 .background::after {
