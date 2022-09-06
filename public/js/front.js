@@ -2015,6 +2015,10 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get("/api/restaurant/".concat(this.$route.params.slug)).then(function (response) {
       _this.restaurant = response.data;
+    })["catch"](function (e) {
+      _this.$router.push({
+        name: 'page-404'
+      });
     });
   }
 });

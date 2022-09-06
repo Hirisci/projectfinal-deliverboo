@@ -30,6 +30,9 @@ export default {
             .then((response) => {
             this.restaurant = response.data;
         })
+        .catch((e) => {
+          this.$router.push({name: 'page-404'});
+        })
   },
 }
 </script>
