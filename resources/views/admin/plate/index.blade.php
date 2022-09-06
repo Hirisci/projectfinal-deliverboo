@@ -21,11 +21,13 @@
                                 <div class="cards-btn-list d-flex  align-self-end gap-1">
                                     <a href="{{route('admin.plate.show', $plate)}}" class="btn-circle btn-purple"> <img class="icon"src="{{asset('storage/'."default/icon/magnifying-glass-solid.svg")}}" alt="iconsa visualizza"></a>
                                     <a href="{{route('admin.plate.edit', $plate)}}" class="btn-circle btn-edit"><img class="icon" src="{{asset('storage/'."default/icon/pen-solid.svg")}}" alt="icona edita"></a>
-                                    <form action="{{route('admin.plate.destroy' , $plate )}}" method="POST">
+                                    <button type="submit" class="btn-circle btn-delete" onclick="return confirm('Vuoi davvero eliminare?')"><img class="icon" src="{{asset('storage/'."default/icon/trash-solid.svg")}}" alt="icona cancella"></button>
+                                    
+                                    {{-- <form action="{{route('admin.plate.destroy' , $plate )}}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn-circle btn-delete" onclick="return confirm('Vuoi davvero eliminare?')"><img class="icon" src="{{asset('storage/'."default/icon/trash-solid.svg")}}" alt="icona cancella"></button>
-                                    </form>
+                                    </form> --}}
                                 </div>
                                 <div class="cards-price d-flex flex-column align-self-end">
                                     <p>Prezzo</p>
