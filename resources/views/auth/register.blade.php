@@ -38,7 +38,7 @@
 <div class="container">
     <div class="row justify-content-center d-flex align-items-center">
         {{-- svg della schermata login  --}}
-        <div class="col-5">
+        <div class="col-5 col-svg">
             <svg width="476" height="346" viewBox="0 0 476 346" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M325.223 346H349.203C350.858 346 352.2 344.629 352.2 342.938C352.2 341.246 350.858 339.875 349.203 339.875H325.223C323.568 339.875 322.226 341.246 322.226 342.938C322.226 344.629 323.568 346 325.223 346Z" fill="#6E49CB"/>
                 <path d="M325.223 346H349.203C350.858 346 352.2 344.629 352.2 342.938C352.2 341.246 350.858 339.875 349.203 339.875H325.223C323.568 339.875 322.226 341.246 322.226 342.938C322.226 344.629 323.568 346 325.223 346Z" fill="white" fill-opacity="0.8"/>
@@ -85,7 +85,7 @@
         </div>
 
         {{-- form di registrazione --}}
-        <div class="col-md-7">
+        <div class="col-md-7 ">
             <div class="card register-card ">
 
                 <div class="card-body">
@@ -94,7 +94,7 @@
 
                         <div class="form-group  row align-items-center gap-3">
 
-                            <div class="d-flex">
+                            <div class="d-flex align-content-center">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }} *</label>
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
@@ -155,7 +155,7 @@
                             </div>
                             
                             <div class="d-flex align-content-center">
-                                <label for="img" class="formFile col-md-4 col-form-label text-md-right">{{ __('Immagine Ristorante') }}</label>
+                                <label for="img" class="formFile col-md-4 col-form-label text-md-right ">{{ __('Immagine Ristorante') }}</label>
                                 <input id="img" type="file" class="form-control  @error('img') is-invalid @enderror" name="img" value="{{ old('img') }}">
                                 
                                 @error('img')
@@ -165,19 +165,17 @@
                                 @enderror
                             </div>
 
-                            <div class="">
+                            <div >
                                 <h6 class="mb-2">Seleziona tra le seguenti categorie:</h6>
                                 
                                     @foreach ($categories as $category)
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="{{$category->slug}}" value="{{$category->id}}" name="categories_active[]" >
+                                        <div>
+                                            <input class="form-check-input" type="checkbox" id="{{$category->slug}}" value="{{$category->id}}" name="categories_active[]" >
+                                        </div>
                                         <label class="form-check-label pt-1" for="{{$category->slug}}">{{$category->name}}</label>
                                     </div>
-                                    @endforeach
-                                        
-                                       
-                                
-                                
+                                    @endforeach    
                             </div>
                      
                             <div class="col-md-12 d-flex flex-row-reverse">

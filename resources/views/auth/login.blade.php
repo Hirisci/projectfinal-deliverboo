@@ -38,9 +38,9 @@
 @section('form')
 <div>
     <div class="container">
-        <div class="row justify-content-center d-flex align-items-center">
+        <div class="row justify-content-center d-flex align-items-center svg-container">
             {{-- svg della schermata login  --}}
-            <div class="col-5">
+            <div class="col-5 col-svg">
                 <svg width="476" height="346" viewBox="0 0 476 346" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M325.223 346H349.203C350.858 346 352.2 344.629 352.2 342.938C352.2 341.246 350.858 339.875 349.203 339.875H325.223C323.568 339.875 322.226 341.246 322.226 342.938C322.226 344.629 323.568 346 325.223 346Z" fill="#6E49CB"/>
                     <path d="M325.223 346H349.203C350.858 346 352.2 344.629 352.2 342.938C352.2 341.246 350.858 339.875 349.203 339.875H325.223C323.568 339.875 322.226 341.246 322.226 342.938C322.226 344.629 323.568 346 325.223 346Z" fill="white" fill-opacity="0.8"/>
@@ -87,7 +87,7 @@
             </div>
 
             {{-- card di form  --}}
-            <div class="col-md-7">
+            <div class="col-md-7 col-sm-12">
                 <div class="card login-card align-items-center">  
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
@@ -95,7 +95,7 @@
                             {{-- campi input per il login --}}
                             <div class=" row mb-3 d-flex align-items-center">
                                 
-                                <label for="Email" class="col-4">{{ __('E-mail') }}</label>
+                                <label for="Email" class="col-4">{{ __('E-mail ') }}</label>
                                 
                                 <div class="col-8">
                                     <input id="email" type="email" class="form-control  @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus   >
