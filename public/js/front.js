@@ -3169,7 +3169,7 @@ var render = function render() {
     }
   })], 1), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("div", {
     staticClass: "d-none d-lg-block col-lg-4 cart"
-  }, [_c("MCart", {
+  }, [_vm._v("\n        carrellooo\n        dai cazzo Gianluca\n        "), _c("MCart", {
     attrs: {
       cart: this.cart
     }
@@ -3181,6 +3181,36 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("form", [_c("div", {
+    staticClass: "form-group col-sm-12 col-5"
+  }, [_c("div", {
+    staticClass: "username"
+  }, [_c("label", {
+    attrs: {
+      "for": "client_name"
+    }
+  }, [_vm._v("Nome")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "client_name",
+      placeholder: "Nome"
+    }
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "form-group col-sm-12 col-5"
+  }, [_c("div", {
+    staticClass: "userSurname"
+  }, [_c("label", {
+    attrs: {
+      "for": "client_surname"
+    }
+  }, [_vm._v("Cognome")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "client_surname",
+      placeholder: "Cognome"
+    }
+  })])]), _vm._v(" "), _c("div", {
     staticClass: "form-group"
   }, [_c("label", {
     attrs: {
