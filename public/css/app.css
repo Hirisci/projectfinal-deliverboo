@@ -13160,6 +13160,11 @@ a:hover {
   padding-top: 4rem;
 }
 
+.container.restaurant .cards-info .statics img {
+  width: 100%;
+  padding-top: 3.25rem;
+}
+
 .container.restaurant .cards .img-edit {
   -o-object-fit: cover;
      object-fit: cover;

@@ -31,6 +31,10 @@
         &-info {
             padding: var(--p-md);
             padding-top: 4rem;
+            .statics img{
+                width: 100%;
+                padding-top: 3.25rem;
+            }
         }
 
         .img-edit {

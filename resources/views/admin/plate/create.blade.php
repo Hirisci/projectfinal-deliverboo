@@ -1,12 +1,12 @@
 @extends('layouts.dashboard')
 
 @section('menu')
-<div class="container">
-    <div class="card">
-        <div class="card-header">
+<div class="container plate">
+    <div class="cards">
+        <div class="cards-header">
             <h1>Creazione Piatto</h1>
         </div>
-        <div class="card-body">
+        <div class="cards-body py-5 p-3">
             <form action="{{route('admin.plate.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
