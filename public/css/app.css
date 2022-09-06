@@ -13017,6 +13017,10 @@ body {
   margin-left: -16.8px;
 }
 
+.menu-top-mobile {
+  display: none;
+}
+
 .menu-dx {
   width: 25%;
   border-radius: var(--border-radius);
@@ -13044,6 +13048,31 @@ a {
 
 a:hover {
   color: var(--primary-purple);
+}
+
+/*--------------------
+    MEDIA QUERYS
+---------------------*/
+
+@media screen and (max-width: 768px) {
+  .container.menu {
+    flex-direction: column;
+  }
+
+  .menu-dx {
+    width: 100%;
+  }
+
+  .menu-hidden {
+    display: none;
+  }
+
+  .menu-top-mobile {
+    display: block;
+    width: 110%;
+    margin-left: -5%;
+    background-color: var(--secondary-purple);
+  }
 }
 
 .login-main {
