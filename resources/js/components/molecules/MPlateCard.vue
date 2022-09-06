@@ -1,6 +1,5 @@
 <template>
   <div class="plate-card">
-    <div class="overlay"></div>
     <div class="plate-card-left">
       <img :src="`/storage/${plate.img}`" alt="Plate" />
       <div class="plate-card-left-text">
@@ -16,7 +15,7 @@
           {{ plate.description }}
         </span>
         <div class="add-to-cart-container">
-          <input class="quantity" value="1" type="number" v-model="quantity" />
+          <input class="quantity" value="1" type="number" :v-model="quantity" min="0"/>
           <button class="btn-main btn-purple" @click="add">Add To Cart</button>
         </div>
       </div>
@@ -49,13 +48,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  *{
+    background-color: rgba($color: blue, $alpha: 0.3);
+  }
 .plate-card {
   background-color: var(--secondary-purple);
   border-radius: 20px;
   display: flex;
   position: relative;
-  min-height: 10.5rem;
-  min-width: 47.5rem;
   &:hover {
     background-color: #b285fa;
   }
