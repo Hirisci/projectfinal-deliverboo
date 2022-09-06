@@ -80,4 +80,7 @@ export default {
       transform: scale(1.05);
     }
   }
+  input{
+    border:1px solid var(--primary-purple);
+  }
 </style>
