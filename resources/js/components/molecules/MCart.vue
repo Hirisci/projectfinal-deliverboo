@@ -5,9 +5,8 @@
       <ACartItem
         v-for="plate in cart"
         :key="plate.id"
-        :quantity="plate.quantity"
-        :name="plate.name"
-        :price="plate.price.toFixed(2)"
+        :plate="plate"
+        @event-delPlate="delPlate()"
       />
     </div>
     <div class="cart-total">
@@ -37,6 +36,12 @@ export default {
         somma += element.price * element.quantity;
       });
       return somma;
+    },
+  },
+  methods: {
+    delPlate(arg) {
+      console.log(arg, "Componente padre");
+      this.$emit("event-delPlate", arg);
     },
   },
 };
@@ -83,9 +88,8 @@ export default {
 }
 
 @media only screen and (max-width: 612px) {
-    .cart-total-price{
-        flex-direction: column;
-    }
-
+  .cart-total-price {
+    flex-direction: column;
+  }
 }
 </style>

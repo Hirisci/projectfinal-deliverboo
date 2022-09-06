@@ -35,9 +35,6 @@ export default {
     add() {
       this.$emit("event-addPlate", this.plate);
     },
-    delete() {
-      this.$emit("event-addPlate", this.plate);
-    },
     //function () {
     //console.log("hai premuto il bottone", this.plate);
     //   this.$emit("addPlate", this.plate);

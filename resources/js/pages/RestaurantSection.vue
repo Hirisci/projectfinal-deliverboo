@@ -17,12 +17,11 @@
             :key="plate.id"
             :plate="plate"
             @event-addPlate="addPlate"
-            @event-delPlate="delPlate"
           />
         </div>
       </div>
       <div class="restaurant-section-shop-cart col-4">
-        <MCart :cart="this.cart" />
+        <MCart :cart="this.cart" @event-delPlate="delPlate(arg)" />
       </div>
     </div>
   </div>
@@ -53,6 +52,9 @@ export default {
     // },
   },
   methods: {
+    delPlate(arg) {
+      console.log(arg, "Bottone Elimina in carrello");
+    },
     addPlate(arg) {
       let result = this.cart.find((Element) => Element.id === arg.id);
       if (result === undefined) {
