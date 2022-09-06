@@ -1950,8 +1950,12 @@ __webpack_require__.r(__webpack_exports__);
     plate: Object
   },
   methods: {
-    del: function del() {
+    addQty: function addQty() {
       console.log(this.plate, "Primo bottone");
+      this.$parent.$emit("event-addQty", this.plate);
+    },
+    del: function del() {
+      console.log(this.plate, "Secondo bottone");
       this.$parent.$emit("event-delPlate", this.plate);
     }
   }
@@ -2152,6 +2156,11 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    addQty: function addQty(arg) {
+      console.log(this.plate);
+      console.log(arg, "Componente padre");
+      this.$emit("event-addQty", arg);
+    },
     delPlate: function delPlate(arg) {
       console.log(this.plate);
       console.log(arg, "Componente padre");
@@ -2361,6 +2370,21 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    addQty: function addQty(arg) {
+      var result = this.cart.find(function (Element) {
+        return Element.id === arg.id;
+      });
+      var isx = this.cart.findIndex(function (Element) {
+        return Element.id === arg.id;
+      });
+      result.quantity++;
+
+      if (result.quantity < 1) {
+        this.cart.splice(isx, 1);
+      } else {
+        this.$set(this.cart, isx, result);
+      }
+    },
     delPlate: function delPlate(arg) {
       var result = this.cart.find(function (Element) {
         return Element.id === arg.id;
@@ -2537,7 +2561,10 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "cart-item-delete"
   }, [_c("button", {
-    staticClass: "cart-item add-btn"
+    staticClass: "cart-item add-btn",
+    on: {
+      click: _vm.addQty
+    }
   }, [_vm._v("+")]), _vm._v(" "), _c("button", {
     staticClass: "cart-item delete-btn",
     on: {
@@ -2843,6 +2870,9 @@ var render = function render() {
       on: {
         "event-delPlate": function eventDelPlate($event) {
           return _vm.delPlate();
+        },
+        "event-addQty": function eventAddQty($event) {
+          return _vm.addQty();
         }
       }
     });
@@ -3317,7 +3347,8 @@ var render = function render() {
       cart: this.cart
     },
     on: {
-      "event-delPlate": _vm.delPlate
+      "event-delPlate": _vm.delPlate,
+      "event-addQty": _vm.addQty
     }
   })], 1)])])]);
 };

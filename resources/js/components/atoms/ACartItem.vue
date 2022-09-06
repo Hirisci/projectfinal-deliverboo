@@ -2,7 +2,7 @@
   <div class="cart-item">
     <div class="cart-item-left">
       <div class="cart-item-delete">
-        <button class="cart-item add-btn">+</button>
+        <button class="cart-item add-btn" @click="addQty">+</button>
         <button class="cart-item delete-btn" @click="del">-</button>
       </div>
       <div class="cart-item-left-info">
@@ -31,8 +31,12 @@ export default {
     plate: Object,
   },
   methods: {
-    del() {
+    addQty() {
       console.log(this.plate, "Primo bottone");
+      this.$parent.$emit("event-addQty", this.plate);
+    },
+    del() {
+      console.log(this.plate, "Secondo bottone");
       this.$parent.$emit("event-delPlate", this.plate);
     },
   },

@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="restaurant-section-shop-cart d-none d-lg-block col-lg-4">
-        <MCart :cart="this.cart" @event-delPlate="delPlate" />
+        <MCart :cart="this.cart" @event-delPlate="delPlate" @event-addQty="addQty"/>
       </div>
     </div>
   </div>
@@ -55,6 +55,16 @@ export default {
     },
   },
   methods: {
+    addQty(arg) {
+      let result = this.cart.find((Element) => Element.id === arg.id);
+      let isx = this.cart.findIndex((Element) => Element.id === arg.id);
+      result.quantity++;
+      if (result.quantity < 1) {
+        this.cart.splice(isx, 1);
+      } else {
+        this.$set(this.cart, isx, result);
+      }
+    },
     delPlate(arg) {
       let result = this.cart.find((Element) => Element.id === arg.id);
       let idx = this.cart.findIndex((Element) => Element.id === arg.id);
