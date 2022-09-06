@@ -1,5 +1,5 @@
 <template>
-    <footer>
+    <footer class="footer">
 
         <div class="footer-top">
 
@@ -7,10 +7,10 @@
                 <h4>CHI SIAMO</h4>
 
                 <ul class="footer-top-card-list">
-                    <li class="footer-top-card-list-element">Su di Noi</li>
-                    <li class="footer-top-card-list-element">Newsletter</li>
-                    <li class="footer-top-card-list-element">Diventa un rider</li>
-                    <li class="footer-top-card-list-element">Unisciti a noi</li>
+                    <li class="footer-top-card-list-element"><a href="#">Su di Noi</a></li>
+                    <li class="footer-top-card-list-element"><a href="#">Newsletter</a></li>
+                    <li class="footer-top-card-list-element"><a href="#">Diventa un rider</a></li>
+                    <li class="footer-top-card-list-element"><a href="#">Unisciti a noi</a></li>
                 </ul>
             </div>
 
@@ -18,9 +18,9 @@
                 <h4>LEGAL</h4>
 
                 <ul class="footer-top-card-list">
-                    <li class="footer-top-card-list-element">Termini e condizioni</li>
-                    <li class="footer-top-card-list-element">Privacy</li>
-                    <li class="footer-top-card-list-element">Cookies</li>
+                    <li class="footer-top-card-list-element"><a href="#">Termini e condizioni</a></li>
+                    <li class="footer-top-card-list-element"><a href="#">Privacy</a></li>
+                    <li class="footer-top-card-list-element"><a href="#">Cookies</a></li>
                 </ul>
 
             </div>
@@ -29,9 +29,9 @@
                 <h4>AIUTO</h4>
 
                 <ul class="footer-top-card-list">
-                    <li class="footer-top-card-list-element">Contatti</li>
-                    <li class="footer-top-card-list-element">FAQs</li>
-                    <li class="footer-top-card-list-element">I nostri partner</li>
+                    <li class="footer-top-card-list-element"><a href="#">Contatti</a></li>
+                    <li class="footer-top-card-list-element"><a href="#">FAQs</a></li>
+                    <li class="footer-top-card-list-element"><a href="#">I nostri partner</a></li>
                 </ul>
 
             </div>
@@ -40,9 +40,9 @@
                 <h4>APP DELIVEBOO</h4>
 
                 <ul class="footer-top-card-list">
-                    <li class="footer-top-card-list-element">Contatti</li>
-                    <li class="footer-top-card-list-element">FAQs</li>
-                    <li class="footer-top-card-list-element">I nostri partner</li>
+                    <li class="footer-top-card-list-element"><a href="#">Contatti</a></li>
+                    <li class="footer-top-card-list-element"><a href="#">FAQs</a></li>
+                    <li class="footer-top-card-list-element"><a href="#">I nostri partner</a></li>
                 </ul>
             </div>
 
@@ -63,54 +63,60 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-footer{
-    .footer-top{
-        padding: 1.25rem;
-        min-height: 20vh;
-        background-color: #d4bbfc;
 
-        display: flex;
-        flex-wrap: wrap;
-        gap: .625rem;
+@media screen and (min-width: 300px) {
+    .footer{
+        &-top{
+            padding: 1.25rem;
+            min-height: 20vh;
+            background-color: #d4bbfc;
 
-        .footer-top-card{
+            display: flex;
+            flex-wrap: wrap;
+            gap: .625rem;
 
-            padding: 20px;
-            background-color: var(--tertiary-purple);
-            width: 100%;
+            &-card{
 
-            h4{
-                color: var(--primary-purple);
-                margin-bottom: 1.25rem;
-            }
+                padding: 20px;
+                background-color: var(--tertiary-purple-opacity);
+                width: 100%;
+                border-radius: 1.25rem;
+                min-height: 15.625rem;
 
-            .footer-top-card-list{
-                display: flex;
-                flex-direction: column;
-                gap: .625rem;
-                color: var(--secondary-purple);
+                h4{
+                    color: var(--primary-purple);
+                    margin-bottom: 1.25rem;
+                }
+
+                &-list{
+                    display: flex;
+                    flex-direction: column;
+                    gap: .625rem;
+                    color: black;
+
+                    a{
+                        text-decoration: none;
+                    }
+                }
             }
         }
-
-
-
-    }
-    .footer-bottom{
-        text-align: center;
-        padding: 10px;
-        background-color: var(--primary-purple);
-        color: white;
+        &-bottom{
+            text-align: center;
+            padding: 10px;
+            background-color: var(--primary-purple);
+            color: white;
+        }
     }
 }
 
 @media screen and (min-width: 600px) {
-  .footer {
-        .footer-top{
-            .footer-top-card{
-                width: 50%;
+    .footer{
+        &-top{
+            &-card{
+                width: calc(50% - 5px);
             }
         }
-  }
+    }
 }
 
 </style>
