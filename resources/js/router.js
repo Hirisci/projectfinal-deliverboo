@@ -20,6 +20,11 @@ const router = new VueRouter({
             name: "restaurant",
             component: RestaurantSection
         },
+        {   // rotta checkout
+            path: "/restaurant/:slug/checkout",
+            name: "checkout",
+            component: Checkout
+        },
         {   // rotta 404 sempre per ultima
             path: "/*",
             name: "page-404",

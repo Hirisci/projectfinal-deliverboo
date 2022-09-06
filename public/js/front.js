@@ -2829,7 +2829,9 @@ var render = function render() {
     staticClass: "cart-total-price-title"
   }, [_vm._v("Totale")]), _vm._v(" "), _c("span", {
     staticClass: "cart-total-price-value"
-  }, [_vm._v(_vm._s(this.amountCart.toFixed(2)) + "€")])])])], 1);
+  }, [_vm._v(_vm._s(this.amountCart.toFixed(2)) + "€")])])]), _vm._v(" "), _c("button", {
+    staticClass: "btn-purple btn-main"
+  }, [_vm._v("CHECKOUT")])], 1);
 };
 
 var staticRenderFns = [];
@@ -21634,6 +21636,11 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     path: "/restaurant/:slug",
     name: "restaurant",
     component: _pages_RestaurantSection__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }, {
+    // rotta checkout
+    path: "/restaurant/:slug/checkout",
+    name: "checkout",
+    component: Checkout
   }, {
     // rotta 404 sempre per ultima
     path: "/*",

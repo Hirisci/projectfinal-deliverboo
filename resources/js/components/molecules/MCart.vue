@@ -17,6 +17,7 @@
         >
       </div>
     </div>
+    <button class="btn-purple btn-main">CHECKOUT</button>
   </div>
 </template>
 
