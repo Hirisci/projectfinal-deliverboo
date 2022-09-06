@@ -22,12 +22,12 @@
                 </div>
                 <div class="cards-info col-8 ">
                     <div>
-                        <p>Partita IVA</p>
-                        <p>{{$item->vat}}</p>
+                        <h4 class="mb-2">Partita IVA</h4>
+                        <h5 class="mx-2">{{$item->vat}}</h5>
                     </div>
                     <div class="mt-3">
-                        <p>Indirizzo</p>                        
-                        <p>{{$item->address}}</p>
+                        <h4 class="mb-2">Indirizzo</h4>                        
+                        <h5 class="mx-2">{{$item->address}}</h5>
                     </div>
                 </div>
                 
