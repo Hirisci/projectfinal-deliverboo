@@ -109,5 +109,27 @@ export default {
     margin-left: 0;
 }
 
+@media only screen and (max-width: 890px) {
+    .cart-item{
+        flex-direction: column;
+
+        .cart-item-right{
+            width: 100%;
+            padding: .625rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 546px) {
+    .cart-item-left-info{
+        flex-direction: column;
+
+        .card-item-name{
+            text-align: center;
+        }
+    }
+
+
+}
 
 </style>
