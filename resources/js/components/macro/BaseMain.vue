@@ -12,18 +12,21 @@
         :restaurant="restaurant"
       />
     </div>
+    <ProcessSection/>
   </main>
 </template>
 
 <script>
 import OAsideMenu from "../organism/OAsideMenu.vue";
 import MRestaurantCard from "../molecules/MRestaurantCard.vue";
+import ProcessSection from "../sections/ProcessSection.vue"
 
 export default {
   name: "BaseMain",
   components: {
     OAsideMenu,
     MRestaurantCard,
+    ProcessSection,
   },
   data() {
     return {
