@@ -87,10 +87,4 @@ export default {
     }
   }
 }
-
-@media only screen and (max-width: 612px) {
-  .cart-total-price {
-    flex-direction: column;
-  }
-}
 </style>
