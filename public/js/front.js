@@ -2015,6 +2015,10 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get("/api/restaurant/".concat(this.$route.params.slug)).then(function (response) {
       _this.restaurant = response.data;
+    })["catch"](function (e) {
+      _this.$router.push({
+        name: 'page-404'
+      });
     });
   }
 });
@@ -21739,7 +21743,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\giaki\Desktop\Boolean\Project\FinalProject-Deliveboo\projectfinal-deliverboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\berto\Desktop\Classe#63\Esame\projectfinal-deliverboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

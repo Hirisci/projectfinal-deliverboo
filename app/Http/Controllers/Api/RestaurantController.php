@@ -19,6 +19,12 @@ class RestaurantController extends Controller
 
     public function show($slug) {
         $restaurant = Restaurant::where('slug', $slug)->first();
+
+        // 404
+        if( empty($restaurant) ){
+            return response()->json(['message'=> "Restaurant doesn't exist"], 404);
+        }
+
         return response()->json($restaurant);
     }
 
