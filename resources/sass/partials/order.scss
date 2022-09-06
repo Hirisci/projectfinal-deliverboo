@@ -1,6 +1,7 @@
 .container.order{
     .cards {
         position: relative;
+        height: calc(85vh - 2rem);
         &-header {
             padding: var(--p-sm) var(--p-lg);
             position: relative;
@@ -12,11 +13,14 @@
             border-radius: var(--border-radius);
         }
         &-body {
+            position: relative;
+            top: -2.5rem;
             overflow: hidden;
             margin: 0 var(--m-lg);
             background-color: var(--tertiary-purple-opacity);
             border: 1px solid var(--primary-purple);
             border-radius: var(--border-radius);
+            max-height: 95%;
         }
     }
 }
