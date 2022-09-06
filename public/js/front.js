@@ -2884,8 +2884,11 @@ var render = function render() {
     staticClass: "cart-total-price-title"
   }, [_vm._v("Totale")]), _vm._v(" "), _c("span", {
     staticClass: "cart-total-price-value"
-  }, [_vm._v(_vm._s(this.amountCart.toFixed(2)) + "€")])])]), _vm._v(" "), _c("button", {
-    staticClass: "btn-purple btn-main"
+  }, [_vm._v(_vm._s(this.amountCart.toFixed(2)) + "€")])])]), _vm._v(" "), _c("a", {
+    staticClass: "btn-purple btn-main",
+    attrs: {
+      href: "/checkout"
+    }
   }, [_vm._v("CHECKOUT")])], 1);
 };
 

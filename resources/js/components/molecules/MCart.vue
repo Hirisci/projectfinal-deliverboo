@@ -18,7 +18,7 @@
         >
       </div>
     </div>
-    <button class="btn-purple btn-main">CHECKOUT</button>
+    <a href="/checkout" class="btn-purple btn-main">CHECKOUT</a>
   </div>
 </template>
 
