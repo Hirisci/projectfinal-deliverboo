@@ -13131,6 +13131,15 @@ a:hover {
   .login-card .card-body {
     width: 90%;
   }
+
+  .card.register-card {
+    width: 90%;
+    margin: auto;
+  }
+
+  .d-flex.align-content-center {
+    flex-wrap: wrap;
+  }
 }
 
 .container.restaurant .cards {
