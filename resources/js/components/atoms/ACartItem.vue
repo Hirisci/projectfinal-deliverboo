@@ -69,7 +69,7 @@ export default {
             align-items: center;
             background-color: white;
             padding: 0.3125rem 1rem;
-            width: 3.75rem;
+            width: 4.375rem;
             position: relative;
             border-radius: 1rem;
         }
