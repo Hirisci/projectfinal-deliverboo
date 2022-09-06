@@ -59,7 +59,7 @@ export default {
   }
   .cart-total {
     align-self: flex-end;
-    width: 50%;
+    width: 100%;
     background-color: var(--primary-purple);
     border-radius: 20px;
     font-weight: 700;
@@ -67,7 +67,7 @@ export default {
     .cart-total-price {
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-between;
       gap: 20px;
       .cart-total-price-title {
         color: white;
@@ -80,5 +80,12 @@ export default {
       }
     }
   }
+}
+
+@media only screen and (max-width: 612px) {
+    .cart-total-price{
+        flex-direction: column;
+    }
+
 }
 </style>
