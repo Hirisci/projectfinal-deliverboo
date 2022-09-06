@@ -59,3 +59,18 @@
     position: relative;
     z-index: 11;
 }
+
+
+/*--------------------
+    MEDIA QUERYS
+----------------------*/
+@media screen and (max-width: 768px ) {
+    .col-svg{
+        display: none;
+    }
+    .login-card{
+        .card-body{
+            width: 90%;
+        }
+    }
+}   
