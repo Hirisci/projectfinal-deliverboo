@@ -8,11 +8,11 @@
       </div>
     </div>
   </div>
-  <div class="restaurant-section-shop container-xl">
+  <div class="restaurant-section-shop container-xl p-3">
     <div class="row">
-      <div class="restaurant-section-shop-menu col col-lg-8 d-flex align-items-center flex-column">
+      <div class="restaurant-section-shop-menu col col-lg-8 d-flex align-items-center flex-column gap-4">
         <ATitleCard :title="'Menù'"/>
-        <div class="restaurant-section-shop-menu-plates">
+        <div class="restaurant-section-shop-menu-plates container-fluid d-flex flex-column gap-4">
           <MPlateCard
             v-for="plate in plates"
             :key="plate.id"
@@ -135,8 +135,4 @@ export default {
     }
   }
 
-*{
-  background-color: rgba($color: red, $alpha: .3);
-  // min-height: 300px;
-}
 </style>

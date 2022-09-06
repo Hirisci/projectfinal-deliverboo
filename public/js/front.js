@@ -2854,32 +2854,33 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "plate-card"
+    staticClass: "plate-card container-fluid"
   }, [_c("div", {
-    staticClass: "plate-card-left"
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "plate-card-img col-4 p-0"
   }, [_c("img", {
     attrs: {
       src: "/storage/".concat(_vm.plate.img),
       alt: "Plate"
     }
-  }), _vm._v(" "), _c("div", {
-    staticClass: "plate-card-left-text"
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "plate-card-info col-8 p-0"
   }, [_c("div", {
-    staticClass: "plate-card-left-text-nameAndPrice"
-  }, [_c("div", {
-    staticClass: "title"
+    staticClass: "row plate-card-info-top ms-0"
   }, [_c("AAsideMenuTitle", {
+    staticClass: "col-10 ps-0",
     attrs: {
       title: _vm.plate.name
     }
-  })], 1), _vm._v(" "), _c("div", {
-    staticClass: "plate-card-left-text-description-price"
-  }, [_c("p", {
-    staticClass: "price-value"
-  }, [_vm._v(_vm._s(_vm.plate.price.toFixed(2)) + " €")])])]), _vm._v(" "), _c("span", {
+  }), _vm._v(" "), _c("span", {
+    staticClass: "price-value col-2 d-flex align-items-center"
+  }, [_vm._v(_vm._s(_vm.plate.price.toFixed(2)) + " €")])], 1), _vm._v(" "), _c("div", {
+    staticClass: "row plate-card-info-bottom d-flex flex-column p-3"
+  }, [_c("span", {
     staticClass: "plate-card-left-text-description"
-  }, [_vm._v("\n        " + _vm._s(_vm.plate.description) + "\n      ")]), _vm._v(" "), _c("div", {
-    staticClass: "add-to-cart-container"
+  }, [_vm._v(_vm._s(_vm.plate.description))]), _vm._v(" "), _c("div", {
+    staticClass: "add-to-cart-container d-flex justify-content-end"
   }, [_c("input", {
     staticClass: "quantity",
     attrs: {
@@ -2893,7 +2894,7 @@ var render = function render() {
     on: {
       click: _vm.add
     }
-  }, [_vm._v("Add To Cart")])])])])]);
+  }, [_vm._v("Add To Cart")])])])])])]);
 };
 
 var staticRenderFns = [];
@@ -3129,17 +3130,17 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "restaurant-section-header-bottom col col-lg-4"
   }, [_c("ARestaurantCard")], 1)])]), _vm._v(" "), _c("div", {
-    staticClass: "restaurant-section-shop container-xl"
+    staticClass: "restaurant-section-shop container-xl p-3"
   }, [_c("div", {
     staticClass: "row"
   }, [_c("div", {
-    staticClass: "restaurant-section-shop-menu col col-lg-8 d-flex align-items-center flex-column"
+    staticClass: "restaurant-section-shop-menu col col-lg-8 d-flex align-items-center flex-column gap-4"
   }, [_c("ATitleCard", {
     attrs: {
       title: "Menù"
     }
   }), _vm._v(" "), _c("div", {
-    staticClass: "restaurant-section-shop-menu-plates"
+    staticClass: "restaurant-section-shop-menu-plates container-fluid d-flex flex-column gap-4"
   }, _vm._l(_vm.plates, function (plate) {
     return _c("MPlateCard", {
       key: plate.id,
@@ -3396,7 +3397,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "*[data-v-b2f80d34] {\n  background-color: rgba(0, 0, 255, 0.3);\n}\n.plate-card[data-v-b2f80d34] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  display: flex;\n  position: relative;\n}\n.plate-card[data-v-b2f80d34]:hover {\n  background-color: #b285fa;\n}\n.plate-card-left[data-v-b2f80d34] {\n  display: flex;\n  width: 100%;\n}\n.plate-card-left img[data-v-b2f80d34] {\n  width: 200px;\n  aspect-ratio: 16/9;\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n}\n.plate-card-left-text[data-v-b2f80d34] {\n  display: flex;\n  flex-flow: column;\n  width: 100%;\n}\n.plate-card-left-text-nameAndPrice[data-v-b2f80d34] {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.plate-card-left-text-nameAndPrice .title[data-v-b2f80d34] {\n  min-width: 88%;\n}\n.plate-card-left-text-description[data-v-b2f80d34] {\n  padding: 20px;\n}\n.plate-card-left-text-description-price[data-v-b2f80d34] {\n  align-self: center;\n  background-color: white;\n  color: var(--primary-purple);\n  font-weight: bolder;\n  height: 100%;\n  min-width: 10%;\n  padding: 5px;\n  border-radius: 0 15px 0 10px;\n}\n.plate-card-left-text-description-price .price-value[data-v-b2f80d34] {\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  margin: auto;\n}\n.plate-card-left-text .add-to-cart-container[data-v-b2f80d34] {\n  display: flex;\n  gap: 0.5rem;\n  margin-left: auto;\n  padding: 0.5rem;\n}\n.plate-card .quantity[data-v-b2f80d34] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: white;\n  padding: 0.3125rem 1rem;\n  width: 4.375rem;\n  position: relative;\n  border-radius: 1rem;\n}\n.plate-card[data-v-b2f80d34]:hover {\n  transform: scale(1.07);\n}\n.plate-card[data-v-b2f80d34]:hover {\n  transform: scale(1.07);\n}", ""]);
+exports.push([module.i, ".plate-card[data-v-b2f80d34] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  border: 2px solid var(--primary-purple);\n  overflow: hidden;\n  transition: transform 0.3s ease-in-out;\n}\n.plate-card img[data-v-b2f80d34] {\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n  height: 100%;\n  width: 100%;\n}\n.plate-card-info-top[data-v-b2f80d34] {\n  background-color: white;\n  color: var(--primary-purple);\n  font-weight: bolder;\n  border-top-right-radius: 20px;\n  border-bottom: 2px solid var(--primary-purple);\n}\n.plate-card-info-bottom .quantity[data-v-b2f80d34] {\n  background-color: white;\n  padding: 0.3125rem 1rem;\n  width: 4.375rem;\n  position: relative;\n  border-radius: 1rem;\n}\n.plate-card[data-v-b2f80d34]:hover {\n  transform: scale(1.05);\n}", ""]);
 
 // exports
 
@@ -3472,7 +3473,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".restaurant-section-header[data-v-5fd922af] {\n  position: relative;\n}\n.restaurant-section-header img[data-v-5fd922af] {\n  min-height: 30vh;\n  height: 30vh;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.restaurant-section-header-bottom[data-v-5fd922af] {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n}\n*[data-v-5fd922af] {\n  background-color: rgba(255, 0, 0, 0.3);\n}", ""]);
+exports.push([module.i, ".restaurant-section-header[data-v-5fd922af] {\n  position: relative;\n}\n.restaurant-section-header img[data-v-5fd922af] {\n  min-height: 30vh;\n  height: 30vh;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.restaurant-section-header-bottom[data-v-5fd922af] {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n}", ""]);
 
 // exports
 

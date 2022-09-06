@@ -1,22 +1,20 @@
 <template>
-  <div class="plate-card">
-    <div class="plate-card-left">
-      <img :src="`/storage/${plate.img}`" alt="Plate" />
-      <div class="plate-card-left-text">
-        <div class="plate-card-left-text-nameAndPrice">
-          <div class="title">
-            <AAsideMenuTitle :title="plate.name" />
-          </div>
-          <div class="plate-card-left-text-description-price">
-            <p class="price-value">{{ plate.price.toFixed(2) }} €</p>
-          </div>
+  <div class="plate-card container-fluid">
+    <div class="row">
+      <div class="plate-card-img col-4 p-0">
+        <img :src="`/storage/${plate.img}`" alt="Plate" />
+      </div>
+      <div class="plate-card-info col-8 p-0">
+        <div class="row plate-card-info-top ms-0">
+          <AAsideMenuTitle :title="plate.name" class="col-10 ps-0"/>
+            <span class="price-value col-2 d-flex align-items-center">{{ plate.price.toFixed(2) }} €</span>
         </div>
-        <span class="plate-card-left-text-description">
-          {{ plate.description }}
-        </span>
-        <div class="add-to-cart-container">
+        <div class="row plate-card-info-bottom d-flex flex-column p-3">
+          <span class="plate-card-left-text-description">{{ plate.description }}</span>
+          <div class="add-to-cart-container d-flex justify-content-end">
           <input class="quantity" value="1" type="number" :v-model="quantity" min="0"/>
           <button class="btn-main btn-purple" @click="add">Add To Cart</button>
+        </div>
         </div>
       </div>
     </div>
@@ -48,83 +46,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  *{
-    background-color: rgba($color: blue, $alpha: 0.3);
-  }
-.plate-card {
-  background-color: var(--secondary-purple);
-  border-radius: 20px;
-  display: flex;
-  position: relative;
-  &:hover {
-    background-color: #b285fa;
-  }
-  &-left {
-    display: flex;
-    width: 100%;
-    img {
-      width: 200px;
-      aspect-ratio: 16/9;
+  .plate-card{
+    background-color: var(--secondary-purple);
+    border-radius: 20px;
+    border: 2px solid var(--primary-purple);
+    overflow: hidden;
+    img{
       border-top-left-radius: 20px;
       border-bottom-left-radius: 20px;
-    }
-    &-text {
-      display: flex;
-      flex-flow: column;
+      height: 100%;
       width: 100%;
-      &-nameAndPrice {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        .title {
-          min-width: 88%;
-        }
-      }
-      &-description {
-        padding: 20px;
-      }
-      &-description-price {
-        align-self: center;
+    }
+    &-info-top{
+      background-color: white;
+      color: var(--primary-purple);
+      font-weight: bolder;
+      border-top-right-radius: 20px;
+      border-bottom: 2px solid var(--primary-purple);
+    }
+    &-info-bottom{
+      .quantity {
         background-color: white;
-        color: var(--primary-purple);
-        font-weight: bolder;
-        height: 100%;
-        min-width: 10%;
-        padding: 5px;
-        border-radius: 0 15px 0 10px;
-        .price-value {
-          width: fit-content;
-          margin: auto;
-        }
-      }
-      .add-to-cart-container {
-        display: flex;
-        gap: 0.5rem;
-        margin-left: auto;
-        padding: 0.5rem;
+        padding: 0.3125rem 1rem;
+        width: 4.375rem;
+        position: relative;
+        border-radius: 1rem;
       }
     }
+    transition: transform .3s ease-in-out;
+    
+    // Effetto hover della card
+    &:hover {
+      transform: scale(1.05);
+    }
   }
-  .quantity {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    padding: 0.3125rem 1rem;
-    width: 4.375rem;
-    position: relative;
-    border-radius: 1rem;
-  }
-}
-
-// Effetto hover della card
-.plate-card:hover {
-  transform: scale(1.07);
-}
-
-// Effetto hover della card
-.plate-card:hover {
-  transform: scale(1.07);
-}
 </style>
