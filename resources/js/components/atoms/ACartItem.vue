@@ -116,6 +116,8 @@ export default {
         .cart-item-right{
             width: 100%;
             padding: .625rem;
+            align-items: center;
+            justify-content: center;
         }
     }
 }
@@ -128,8 +130,6 @@ export default {
             text-align: center;
         }
     }
-
-
 }
 
 </style>
