@@ -2338,14 +2338,6 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    // forceRerender = async () => {
-    // // Remove MyComponent from the DOM
-    // renderComponent.value = false;
-    // // Wait for the change to get flushed to the DOM
-    // await nextTick();
-    // // Add the component back in
-    // renderComponent.value = true;
-    // },
     delPlate: function delPlate(arg) {
       var result = this.cart.find(function (Element) {
         return Element.id === arg.id;
