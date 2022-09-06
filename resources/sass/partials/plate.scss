@@ -31,6 +31,9 @@
             border: 1px solid var(--primary-purple);
             border-radius: var(--border-radius);
             height: 95%;
+            .show-img img{
+                width: 35%;
+            }
         }
 
         &-postcard {

@@ -13160,6 +13160,11 @@ a:hover {
   padding-top: 4rem;
 }
 
+.container.restaurant .cards-info .statics img {
+  width: 100%;
+  padding-top: 3.25rem;
+}
+
 .container.restaurant .cards .img-edit {
   -o-object-fit: cover;
      object-fit: cover;
@@ -13176,6 +13181,7 @@ a:hover {
 
 .container.order .cards {
   position: relative;
+  height: calc(85vh - 2rem);
 }
 
 .container.order .cards-header {
@@ -13190,11 +13196,14 @@ a:hover {
 }
 
 .container.order .cards-body {
+  position: relative;
+  top: -2.5rem;
   overflow: hidden;
   margin: 0 var(--m-lg);
   background-color: var(--tertiary-purple-opacity);
   border: 1px solid var(--primary-purple);
   border-radius: var(--border-radius);
+  max-height: 95%;
 }
 
 .container.plate .cards {
@@ -13232,6 +13241,10 @@ a:hover {
   border: 1px solid var(--primary-purple);
   border-radius: var(--border-radius);
   height: 95%;
+}
+
+.container.plate .cards-body .show-img img {
+  width: 35%;
 }
 
 .container.plate .cards-postcard {

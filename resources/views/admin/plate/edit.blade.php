@@ -21,7 +21,7 @@
 
                         <div class="mb-3">
                             <label class="form-label mb-1" for="description">Descrizione Piatto *</label>
-                            <input type="text" class="form-control" id="description" name="description" value="{{old('description', $plate->description)}}" required>
+                            <textarea class="form-control" id="description" name="description" cols="30" rows="5" value="{{old('description', $plate->description)}}" required>{{old('description', $plate->description)}} </textarea>
                             @error('description')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
