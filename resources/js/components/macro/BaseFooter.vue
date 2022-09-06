@@ -51,6 +51,9 @@
         </div>
 
         <div class="footer-bottom">
+
+            <p>Copyright &copy; 2022 Team2Boolean. All Rights Reserved</p>
+
         </div>
 
     </footer>
@@ -101,10 +104,12 @@ export default {
             }
         }
         &-bottom{
-            text-align: center;
-            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background-color: var(--primary-purple);
             color: white;
+            height: 6.25rem;
         }
     }
 }
