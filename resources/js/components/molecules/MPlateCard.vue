@@ -9,11 +9,11 @@
           <AAsideMenuTitle :title="plate.name" class="col-10 ps-0"/>
             <span class="price-value col-2 d-flex align-items-center">{{ plate.price.toFixed(2) }} €</span>
         </div>
-        <div class="row plate-card-info-bottom d-flex flex-column p-3">
+        <div class="row plate-card-info-bottom d-flex flex-column p-3 gap-5">
           <span class="plate-card-left-text-description">{{ plate.description }}</span>
-          <div class="add-to-cart-container d-flex justify-content-end">
-          <input class="quantity" value="1" type="number" :v-model="quantity" min="0"/>
-          <button class="btn-main btn-purple" @click="add">Add To Cart</button>
+          <div class="add-to-cart-container d-flex justify-content-end mt-auto">
+            <input class="quantity" value="1" type="number" :v-model="quantity" min="0"/>
+            <button class="btn-main btn-purple" @click="add">Add To Cart</button>
         </div>
         </div>
       </div>
