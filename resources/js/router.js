@@ -6,6 +6,7 @@ Vue.use(VueRouter);
 import Home from "./pages/Home";
 import RestaurantSection from "./pages/RestaurantSection";
 import Page404 from "./components/sections/Page404";
+import Checkout from "./pages/Checkout";
 
 const router = new VueRouter({
     mode: "history", //permette la navigazione all'indietro
@@ -19,6 +20,11 @@ const router = new VueRouter({
             path: "/restaurant/:slug",
             name: "restaurant",
             component: RestaurantSection
+        },
+        {   // rotta checkout
+            path: "/checkout",
+            name: "checkout",
+            component: Checkout
         },
         {   // rotta 404 sempre per ultima
             path: "/*",

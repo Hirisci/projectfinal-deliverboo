@@ -7,6 +7,7 @@
         :key="plate.id"
         :plate="plate"
         @event-delPlate="delPlate()"
+        @event-addQty="addQty()"
       />
     </div>
     <div class="cart-total">
@@ -17,6 +18,7 @@
         >
       </div>
     </div>
+    <a href="/checkout" class="btn-purple btn-main">CHECKOUT</a>
   </div>
 </template>
 
@@ -39,6 +41,11 @@ export default {
     },
   },
   methods: {
+    addQty(arg) {
+      console.log(this.plate);
+      console.log(arg, "Componente padre");
+      this.$emit("event-addQty", arg);
+    },
     delPlate(arg) {
       console.log(this.plate);
       console.log(arg, "Componente padre");

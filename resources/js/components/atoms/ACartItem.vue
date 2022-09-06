@@ -2,7 +2,8 @@
   <div class="cart-item">
     <div class="cart-item-left">
       <div class="cart-item-delete">
-        <button class="cart-item-delete-btn" @click="del">-</button>
+        <button class="cart-item add-btn" @click="addQty">+</button>
+        <button class="cart-item delete-btn" @click="del">-</button>
       </div>
       <div class="cart-item-left-info">
         <div class="cart-item-quantity">
@@ -30,8 +31,12 @@ export default {
     plate: Object,
   },
   methods: {
-    del() {
+    addQty() {
       console.log(this.plate, "Primo bottone");
+      this.$parent.$emit("event-addQty", this.plate);
+    },
+    del() {
+      console.log(this.plate, "Secondo bottone");
       this.$parent.$emit("event-delPlate", this.plate);
     },
   },
@@ -83,16 +88,34 @@ export default {
     .cart-item-delete {
       margin-left: -2.125rem;
       height: 100%;
-      .cart-item-delete-btn {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        height: 100%;
+      .cart-item {
+        height: 50%;
         width: 2rem;
         color: white;
-        background-color: hsl(0, 100%, 45%);
+        background-color: green;
         &:hover {
           cursor: pointer;
         }
+      }
+      .add-btn {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        background-color: green;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .delete-btn {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        background-color: hsl(0, 100%, 45%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }
