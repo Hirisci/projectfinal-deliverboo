@@ -1,11 +1,11 @@
 <template>
   <div class="aside-menu">
-    <div class="aside-menu-search">
+    <!-- <div class="aside-menu-search">
       <AAsideMenuTitle class="mb-3" :title="'Nome Ristorante'" />
       <div class="ps-3 aside-menu-search-container">
         <input type="text" v-model="filterName" />
-      </div>
-    </div>
+      </div> -->
+    <!-- </div> -->
     <div class="aside-menu-categories">
       <AAsideMenuTitle class="mb-3" :title="'Categorie'" />
       <ul class="ps-3 aside-menu-categories-list">
