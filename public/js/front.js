@@ -2880,11 +2880,11 @@ var render = function render() {
   }), _vm._v(" "), _c("span", {
     staticClass: "price-value col-2 d-flex align-items-center"
   }, [_vm._v(_vm._s(_vm.plate.price.toFixed(2)) + " €")])], 1), _vm._v(" "), _c("div", {
-    staticClass: "row plate-card-info-bottom d-flex flex-column p-3"
+    staticClass: "row plate-card-info-bottom d-flex flex-column p-3 gap-5"
   }, [_c("span", {
     staticClass: "plate-card-left-text-description"
   }, [_vm._v(_vm._s(_vm.plate.description))]), _vm._v(" "), _c("div", {
-    staticClass: "add-to-cart-container d-flex justify-content-end"
+    staticClass: "add-to-cart-container d-flex justify-content-end mt-auto"
   }, [_c("input", {
     staticClass: "quantity",
     attrs: {
