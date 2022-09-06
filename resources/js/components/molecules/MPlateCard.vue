@@ -16,6 +16,7 @@
           {{ plate.description }}
         </span>
         <div class="add-to-cart-container">
+          <input class="quantity" value="1" type="number" v-model="quantity" />
           <button class="btn-main btn-purple" @click="add">Add To Cart</button>
         </div>
       </div>
@@ -27,13 +28,18 @@
 import AAsideMenuTitle from "../atoms/AAsideMenuTitle.vue";
 export default {
   name: "MPlateCard",
+  data() {
+    return {
+      quantity: 1,
+    };
+  },
   props: {
     plate: Object,
   },
   components: { AAsideMenuTitle },
   methods: {
     add() {
-      this.$emit("event-addPlate", this.plate);
+      this.$emit("event-addPlate", this.plate, this.quantity);
     },
     //function () {
     //console.log("hai premuto il bottone", this.plate);
@@ -93,10 +99,22 @@ export default {
         }
       }
       .add-to-cart-container {
+        display: flex;
+        gap: 0.5rem;
         margin-left: auto;
-        padding: 5px;
+        padding: 0.5rem;
       }
     }
+  }
+  .quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 0.3125rem 1rem;
+    width: 4.375rem;
+    position: relative;
+    border-radius: 1rem;
   }
 }
 

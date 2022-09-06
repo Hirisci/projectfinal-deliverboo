@@ -40,6 +40,7 @@ export default {
   },
   methods: {
     delPlate(arg) {
+      console.log(this.plate);
       console.log(arg, "Componente padre");
       this.$emit("event-delPlate", arg);
     },

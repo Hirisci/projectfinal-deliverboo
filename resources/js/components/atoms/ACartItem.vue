@@ -15,7 +15,9 @@
     </div>
     <div class="cart-item-right">
       <div class="cart-item-price">
-        <span class="cart-item-price-value">{{ plate.price.toFixed(2) }}€</span>
+        <span class="cart-item-price-value"
+          >{{ (plate.quantity * plate.price).toFixed(2) }}€</span
+        >
       </div>
     </div>
   </div>
@@ -30,7 +32,7 @@ export default {
   methods: {
     del() {
       console.log(this.plate, "Primo bottone");
-      this.$emit("event-delPlate", this.plate);
+      this.$parent.$emit("event-delPlate", this.plate);
     },
   },
 };

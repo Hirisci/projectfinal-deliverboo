@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="restaurant-section-shop-cart col-4">
-        <MCart :cart="this.cart" @event-delPlate="delPlate(arg)" />
+        <MCart :cart="this.cart" @event-delPlate="delPlate" />
       </div>
     </div>
   </div>
@@ -44,36 +44,60 @@ export default {
     };
   },
   watch: {
-    cart: function () {
-      localStorage.setItem("order", JSON.stringify(this.cart));
+    cart: {
+      handler: function () {
+        localStorage.setItem("order", JSON.stringify(this.cart));
+        console.log("STO FUNZIONANDO");
+      },
+      deep: true,
     },
-    // restaurant: function () {
-    //   localStorage.setItem("restaurant", JSON.stringify(this.restaurant));
-    // },
   },
   methods: {
+    // forceRerender = async () => {
+    // // Remove MyComponent from the DOM
+    // renderComponent.value = false;
+
+    // // Wait for the change to get flushed to the DOM
+    // await nextTick();
+
+    // // Add the component back in
+    // renderComponent.value = true;
+    // },
+
     delPlate(arg) {
-      console.log(arg, "Bottone Elimina in carrello");
+      let result = this.cart.find((Element) => Element.id === arg.id);
+      let idx = this.cart.findIndex((Element) => Element.id === arg.id);
+      result.quantity--;
+      if (result.quantity < 1) {
+        this.cart.splice(idx, 1);
+      } else {
+        this.$set(this.cart, idx, result);
+      }
     },
-    addPlate(arg) {
+    addPlate(arg, number) {
       let result = this.cart.find((Element) => Element.id === arg.id);
       if (result === undefined) {
-        arg.quantity = 1;
+        arg.quantity = parseInt(number);
         this.cart.push(arg);
+        this.$nextTick(function () {
+          this.refreshCart();
+        });
       }
-      console.log(result);
+
       if (result !== undefined) {
-        result.quantity++;
+        let idx = this.cart.findIndex((Element) => Element.id === arg.id);
+        result.quantity += parseInt(number);
+        this.$set(this.cart, idx, result);
       }
-      console.log(this.cart);
     },
     refreshCart() {
       let listCart = JSON.parse(localStorage.getItem("order"));
-      console.log(listCart);
       if (listCart === null) {
         this.cart = [];
+        console.log("carrello vuoto");
       } else {
         this.cart = listCart;
+        console.log("carrello pieno");
       }
     },
   },

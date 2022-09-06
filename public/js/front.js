@@ -1952,7 +1952,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     del: function del() {
       console.log(this.plate, "Primo bottone");
-      this.$emit("event-delPlate", this.plate);
+      this.$parent.$emit("event-delPlate", this.plate);
     }
   }
 });
@@ -2153,6 +2153,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     delPlate: function delPlate(arg) {
+      console.log(this.plate);
       console.log(arg, "Componente padre");
       this.$emit("event-delPlate", arg);
     }
@@ -2174,6 +2175,11 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "MPlateCard",
+  data: function data() {
+    return {
+      quantity: 1
+    };
+  },
   props: {
     plate: Object
   },
@@ -2182,7 +2188,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     add: function add() {
-      this.$emit("event-addPlate", this.plate);
+      this.$emit("event-addPlate", this.plate, this.quantity);
     } //function () {
     //console.log("hai premuto il bottone", this.plate);
     //   this.$emit("addPlate", this.plate);
@@ -2323,43 +2329,68 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   watch: {
-    cart: function cart() {
-      localStorage.setItem("order", JSON.stringify(this.cart));
-    } // restaurant: function () {
-    //   localStorage.setItem("restaurant", JSON.stringify(this.restaurant));
-    // },
-
+    cart: {
+      handler: function handler() {
+        localStorage.setItem("order", JSON.stringify(this.cart));
+        console.log("STO FUNZIONANDO");
+      },
+      deep: true
+    }
   },
   methods: {
+    // forceRerender = async () => {
+    // // Remove MyComponent from the DOM
+    // renderComponent.value = false;
+    // // Wait for the change to get flushed to the DOM
+    // await nextTick();
+    // // Add the component back in
+    // renderComponent.value = true;
+    // },
     delPlate: function delPlate(arg) {
-      console.log(arg, "Bottone Elimina in carrello");
+      var result = this.cart.find(function (Element) {
+        return Element.id === arg.id;
+      });
+      var idx = this.cart.findIndex(function (Element) {
+        return Element.id === arg.id;
+      });
+      result.quantity--;
+
+      if (result.quantity < 1) {
+        this.cart.splice(idx, 1);
+      } else {
+        this.$set(this.cart, idx, result);
+      }
     },
-    addPlate: function addPlate(arg) {
+    addPlate: function addPlate(arg, number) {
       var result = this.cart.find(function (Element) {
         return Element.id === arg.id;
       });
 
       if (result === undefined) {
-        arg.quantity = 1;
+        arg.quantity = parseInt(number);
         this.cart.push(arg);
+        this.$nextTick(function () {
+          this.refreshCart();
+        });
       }
-
-      console.log(result);
 
       if (result !== undefined) {
-        result.quantity++;
+        var idx = this.cart.findIndex(function (Element) {
+          return Element.id === arg.id;
+        });
+        result.quantity += parseInt(number);
+        this.$set(this.cart, idx, result);
       }
-
-      console.log(this.cart);
     },
     refreshCart: function refreshCart() {
       var listCart = JSON.parse(localStorage.getItem("order"));
-      console.log(listCart);
 
       if (listCart === null) {
         this.cart = [];
+        console.log("carrello vuoto");
       } else {
         this.cart = listCart;
+        console.log("carrello pieno");
       }
     }
   },
@@ -2511,7 +2542,7 @@ var render = function render() {
     staticClass: "cart-item-price"
   }, [_c("span", {
     staticClass: "cart-item-price-value"
-  }, [_vm._v(_vm._s(_vm.plate.price.toFixed(2)) + "€")])])])]);
+  }, [_vm._v(_vm._s((_vm.plate.quantity * _vm.plate.price).toFixed(2)) + "€")])])])]);
 };
 
 var staticRenderFns = [];
@@ -2859,7 +2890,28 @@ var render = function render() {
     staticClass: "plate-card-left-text-description"
   }, [_vm._v("\n        " + _vm._s(_vm.plate.description) + "\n      ")]), _vm._v(" "), _c("div", {
     staticClass: "add-to-cart-container"
-  }, [_c("button", {
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.quantity,
+      expression: "quantity"
+    }],
+    staticClass: "quantity",
+    attrs: {
+      value: "1",
+      type: "number"
+    },
+    domProps: {
+      value: _vm.quantity
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.quantity = $event.target.value;
+      }
+    }
+  }), _vm._v(" "), _c("button", {
     staticClass: "btn-main btn-purple",
     on: {
       click: _vm.add
@@ -3126,9 +3178,7 @@ var render = function render() {
       cart: this.cart
     },
     on: {
-      "event-delPlate": function eventDelPlate($event) {
-        return _vm.delPlate(_vm.arg);
-      }
+      "event-delPlate": _vm.delPlate
     }
   })], 1)])]);
 };
@@ -3367,7 +3417,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".plate-card[data-v-b2f80d34] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  display: flex;\n  position: relative;\n  min-height: 10.5rem;\n  min-width: 47.5rem;\n}\n.plate-card[data-v-b2f80d34]:hover {\n  background-color: #b285fa;\n}\n.plate-card-left[data-v-b2f80d34] {\n  display: flex;\n  width: 100%;\n}\n.plate-card-left img[data-v-b2f80d34] {\n  width: 200px;\n  aspect-ratio: 16/9;\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n}\n.plate-card-left-text[data-v-b2f80d34] {\n  display: flex;\n  flex-flow: column;\n  width: 100%;\n}\n.plate-card-left-text-nameAndPrice[data-v-b2f80d34] {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.plate-card-left-text-nameAndPrice .title[data-v-b2f80d34] {\n  min-width: 88%;\n}\n.plate-card-left-text-description[data-v-b2f80d34] {\n  padding: 20px;\n}\n.plate-card-left-text-description-price[data-v-b2f80d34] {\n  align-self: center;\n  background-color: white;\n  color: var(--primary-purple);\n  font-weight: bolder;\n  height: 100%;\n  min-width: 10%;\n  padding: 5px;\n  border-radius: 0 15px 0 10px;\n}\n.plate-card-left-text-description-price .price-value[data-v-b2f80d34] {\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  margin: auto;\n}\n.plate-card-left-text .add-to-cart-container[data-v-b2f80d34] {\n  margin-left: auto;\n  padding: 5px;\n}\n.plate-card[data-v-b2f80d34]:hover {\n  transform: scale(1.07);\n}\n.plate-card[data-v-b2f80d34]:hover {\n  transform: scale(1.07);\n}", ""]);
+exports.push([module.i, ".plate-card[data-v-b2f80d34] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  display: flex;\n  position: relative;\n  min-height: 10.5rem;\n  min-width: 47.5rem;\n}\n.plate-card[data-v-b2f80d34]:hover {\n  background-color: #b285fa;\n}\n.plate-card-left[data-v-b2f80d34] {\n  display: flex;\n  width: 100%;\n}\n.plate-card-left img[data-v-b2f80d34] {\n  width: 200px;\n  aspect-ratio: 16/9;\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n}\n.plate-card-left-text[data-v-b2f80d34] {\n  display: flex;\n  flex-flow: column;\n  width: 100%;\n}\n.plate-card-left-text-nameAndPrice[data-v-b2f80d34] {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.plate-card-left-text-nameAndPrice .title[data-v-b2f80d34] {\n  min-width: 88%;\n}\n.plate-card-left-text-description[data-v-b2f80d34] {\n  padding: 20px;\n}\n.plate-card-left-text-description-price[data-v-b2f80d34] {\n  align-self: center;\n  background-color: white;\n  color: var(--primary-purple);\n  font-weight: bolder;\n  height: 100%;\n  min-width: 10%;\n  padding: 5px;\n  border-radius: 0 15px 0 10px;\n}\n.plate-card-left-text-description-price .price-value[data-v-b2f80d34] {\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  margin: auto;\n}\n.plate-card-left-text .add-to-cart-container[data-v-b2f80d34] {\n  display: flex;\n  gap: 0.5rem;\n  margin-left: auto;\n  padding: 0.5rem;\n}\n.plate-card .quantity[data-v-b2f80d34] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: white;\n  padding: 0.3125rem 1rem;\n  width: 4.375rem;\n  position: relative;\n  border-radius: 1rem;\n}\n.plate-card[data-v-b2f80d34]:hover {\n  transform: scale(1.07);\n}\n.plate-card[data-v-b2f80d34]:hover {\n  transform: scale(1.07);\n}", ""]);
 
 // exports
 
