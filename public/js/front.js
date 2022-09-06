@@ -2949,12 +2949,26 @@ var render = function render() {
   }, [_vm._v(_vm._s(_vm.plate.description))]), _vm._v(" "), _c("div", {
     staticClass: "add-to-cart-container d-flex justify-content-end mt-auto"
   }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.quantity,
+      expression: "quantity"
+    }],
     staticClass: "quantity",
     attrs: {
       value: "1",
       type: "number",
-      "v-model": _vm.quantity,
       min: "0"
+    },
+    domProps: {
+      value: _vm.quantity
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.quantity = $event.target.value;
+      }
     }
   }), _vm._v(" "), _c("button", {
     staticClass: "btn-main btn-purple",
