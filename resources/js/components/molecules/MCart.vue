@@ -1,6 +1,6 @@
 <template>
   <div class="cart">
-    <div class="cart-lg d-lg-block container-fluid" :class="{ menuOpen : isOpen, dnone : !isOpen}">
+    <div class="cart-lg d-lg-block container-fluid" :class="{ menuOpen : isOpen, dnone : !isOpen , dflex : isOpen}">
       <ATitleCard :title="'Carrello'" class="cart-title" />
       <div class="cart-items mt-3">
         <ACartItem
@@ -10,12 +10,13 @@
           @event-delPlate="delPlate()"
         />
       </div>
-      <div class="cart-total mt-3">
-        <div class="cart-total-price">
-          <span class="cart-total-price-title">Totale</span>
-          <span class="cart-total-price-value"
-            >{{ this.amountCart.toFixed(2) }}€</span
-          >
+      <div class="cart-total mt-3 d-flex">
+        <div class="cart-checkout col-5">
+          <button class="btn-main btn-purple">Checkout</button>
+        </div>
+        <div class="cart-total-price col-7">
+          <div class="cart-total-price-title">Totale</div>
+          <div class="cart-total-price-value">{{ this.amountCart.toFixed(2) }}€</div>
         </div>
       </div>
     </div>
@@ -104,13 +105,12 @@ export default {
     width: 100%;
   }
   .cart-total {
-    align-self: flex-end;
-    width: 100%;
-    background-color: var(--primary-purple);
-    border-radius: 1.25rem;
-    font-weight: 700;
-    padding: .625rem;
     .cart-total-price {
+      background-color: var(--primary-purple);
+      border-radius: 1.25rem;
+      font-weight: 700;
+      padding: .625rem;
+      margin-left: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -174,6 +174,10 @@ export default {
   }
   .dnone{
     display: none;
+  }
+  .dflex{
+    // display: flex;
+    flex-flow: column;
   }
 }
 </style>
