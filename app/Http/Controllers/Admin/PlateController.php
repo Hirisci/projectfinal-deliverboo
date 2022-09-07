@@ -152,7 +152,7 @@ class PlateController extends Controller
      */
     public function destroy(Plate $plate)
     {
-        // controllo per impedire modifica di piatti di altri ristoranti
+        
         if($plate->restaurant_id !== Auth::id()){
             abort(403);  //403 per mostrare un errore di permessi
         }
