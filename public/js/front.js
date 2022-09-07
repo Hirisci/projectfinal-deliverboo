@@ -4015,7 +4015,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "*[data-v-cd0ca090] {\n  background-color: rgba(255, 0, 0, 0.4);\n}\n.home-right[data-v-cd0ca090] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));\n  gap: 1rem;\n}", ""]);
+exports.push([module.i, "*[data-v-cd0ca090] {\n  background-color: rgba(255, 0, 0, 0.4);\n}\n.home-right[data-v-cd0ca090] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(15.625rem, 1fr));\n  gap: 1rem;\n}", ""]);
 
 // exports
 
@@ -4053,7 +4053,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".plate-card .plate-card-desktop[data-v-b2f80d34] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  border: 2px solid var(--primary-purple);\n  overflow: hidden;\n  transition: transform 0.3s ease-in-out;\n}\n.plate-card .plate-card-desktop img[data-v-b2f80d34] {\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n  height: 100%;\n  width: 100%;\n}\n.plate-card .plate-card-desktop-info-top[data-v-b2f80d34] {\n  background-color: white;\n  color: var(--primary-purple);\n  font-weight: bolder;\n  border-top-right-radius: 20px;\n  border-bottom: 2px solid var(--primary-purple);\n}\n.plate-card .plate-card-desktop-info-bottom .quantity[data-v-b2f80d34] {\n  background-color: white;\n  padding: 0.3125rem 1rem;\n  width: 4.375rem;\n  position: relative;\n  border-radius: 1rem;\n}\n.plate-card .plate-card-desktop[data-v-b2f80d34]:hover {\n  transform: scale(1.05);\n}\n.plate-card .plate-card-mobile[data-v-b2f80d34] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  border: 2px solid var(--primary-purple);\n  overflow: hidden;\n}\n.plate-card .plate-card-mobile-title[data-v-b2f80d34] {\n  background-color: white;\n  border-bottom: 2px solid var(--primary-purple);\n  color: var(--primary-purple);\n  font-weight: bolder;\n}\n.plate-card .plate-card-mobile .quantity[data-v-b2f80d34] {\n  background-color: white;\n  padding: 0.3125rem 1rem;\n  width: 4.375rem;\n  position: relative;\n  border-radius: 1rem;\n}\n.plate-card .plate-card-mobile .circle[data-v-b2f80d34] {\n  color: var(--tertiary-purple);\n  background-color: var(--primary-purple);\n  border-radius: 50%;\n  width: 2rem;\n  height: 2rem;\n}\n.plate-card input[data-v-b2f80d34] {\n  border: 1px solid var(--primary-purple);\n}", ""]);
+exports.push([module.i, ".plate-card .plate-card-desktop[data-v-b2f80d34] {\n  background-color: var(--secondary-purple);\n  border-radius: 1.25rem;\n  border: 0.125rem solid var(--primary-purple);\n  overflow: hidden;\n  transition: transform 0.3s ease-in-out;\n}\n.plate-card .plate-card-desktop img[data-v-b2f80d34] {\n  border-top-left-radius: 1.25rem;\n  border-bottom-left-radius: 1.25rem;\n  height: 100%;\n  width: 100%;\n}\n.plate-card .plate-card-desktop-info-top[data-v-b2f80d34] {\n  background-color: white;\n  color: var(--primary-purple);\n  font-weight: bolder;\n  border-top-right-radius: 1.25rem;\n  border-bottom: 0.125rem solid var(--primary-purple);\n}\n.plate-card .plate-card-desktop-info-bottom .quantity[data-v-b2f80d34] {\n  background-color: white;\n  padding: 0.3125rem 1rem;\n  width: 4.375rem;\n  position: relative;\n  border-radius: 1rem;\n}\n.plate-card .plate-card-desktop[data-v-b2f80d34]:hover {\n  transform: scale(1.05);\n}\n.plate-card .plate-card-mobile[data-v-b2f80d34] {\n  background-color: var(--secondary-purple);\n  border-radius: 1.25rem;\n  border: 0.125rem solid var(--primary-purple);\n  overflow: hidden;\n}\n.plate-card .plate-card-mobile-title[data-v-b2f80d34] {\n  background-color: white;\n  border-bottom: 0.125rem solid var(--primary-purple);\n  color: var(--primary-purple);\n  font-weight: bolder;\n}\n.plate-card .plate-card-mobile .quantity[data-v-b2f80d34] {\n  background-color: white;\n  padding: 0.3125rem 1rem;\n  width: 4.375rem;\n  position: relative;\n  border-radius: 1rem;\n}\n.plate-card .plate-card-mobile .circle[data-v-b2f80d34] {\n  color: var(--tertiary-purple);\n  background-color: var(--primary-purple);\n  border-radius: 50%;\n  width: 2rem;\n  height: 2rem;\n}\n.plate-card input[data-v-b2f80d34] {\n  border: 0.0625rem solid var(--primary-purple);\n}", ""]);
 
 // exports
 
@@ -4091,7 +4091,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".aside-menu[data-v-3fb89fec] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  display: flex;\n  flex-flow: column;\n  gap: 10px;\n  padding: 20px 0px;\n}\n.aside-menu .aside-menu-categories .aside-menu-categories-list[data-v-3fb89fec] {\n  display: flex;\n  flex-flow: row wrap;\n  gap: 10px;\n}\n.aside-menu .aside-menu-filters .aside-menu-filters-container[data-v-3fb89fec] {\n  display: flex;\n  flex-flow: column;\n  gap: 5px;\n}", ""]);
+exports.push([module.i, ".aside-menu[data-v-3fb89fec] {\n  background-color: var(--secondary-purple);\n  border-radius: 1.25rem;\n  display: flex;\n  flex-flow: column;\n  gap: 0.625rem;\n  padding: 1.25rem 0rem;\n}\n.aside-menu .aside-menu-categories .aside-menu-categories-list[data-v-3fb89fec] {\n  display: flex;\n  flex-flow: row wrap;\n  gap: 0.625rem;\n}\n.aside-menu .aside-menu-filters .aside-menu-filters-container[data-v-3fb89fec] {\n  display: flex;\n  flex-flow: column;\n  gap: 0.3125rem;\n}", ""]);
 
 // exports
 
@@ -4110,7 +4110,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".container[data-v-449070da] {\n  text-align: center;\n  padding: 50px;\n}\nimg[data-v-449070da] {\n  width: 500px;\n}", ""]);
+exports.push([module.i, ".container[data-v-449070da] {\n  text-align: center;\n  padding: 3.125rem;\n}\nimg[data-v-449070da] {\n  width: 31.25rem;\n}", ""]);
 
 // exports
 
@@ -4129,7 +4129,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".section-process[data-v-1a8dc0c8] {\n  background-color: var(--secondary-purple);\n}\n.section-process img[data-v-1a8dc0c8] {\n  border-radius: 20px;\n  border: 2px solid var(--primary-purple);\n  width: 70%;\n  min-width: 15rem;\n}\n.section-process .right-side[data-v-1a8dc0c8] {\n  display: flex;\n  align-items: center;\n}\n.section-process .right-side-dots[data-v-1a8dc0c8] {\n  padding-right: 0.625rem;\n  align-items: flex-end;\n  display: flex;\n  flex-direction: column;\n  gap: 0.3125rem;\n  width: 37%;\n}\n.section-process .right-side-dots .big-dot[data-v-1a8dc0c8] {\n  width: 1.875rem;\n  height: 1.875rem;\n  border-radius: 50%;\n  background-color: var(--tertiary-purple);\n  border: 1px solid var(--primary-purple);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.section-process .right-side-dots .big-dot-inside[data-v-1a8dc0c8] {\n  width: 0.9375rem;\n  height: 0.9375rem;\n  border-radius: 50%;\n  background-color: var(--primary-purple);\n}\n.section-process .right-side-dots .mini-dots-container[data-v-1a8dc0c8] {\n  width: 1.875rem;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 0.3125rem;\n}\n.section-process .right-side-dots .mini-dots-container .mini-dot[data-v-1a8dc0c8] {\n  width: 0.3125rem;\n  height: 0.3125rem;\n  border-radius: 50%;\n  background-color: var(--tertiary-purple);\n  border: 1px solid var(--primary-purple);\n}\n.section-process .right-side-words[data-v-1a8dc0c8] {\n  display: flex;\n  flex-direction: column;\n  gap: 2.5rem;\n  width: 50%;\n}", ""]);
+exports.push([module.i, ".section-process[data-v-1a8dc0c8] {\n  background-color: var(--secondary-purple);\n}\n.section-process img[data-v-1a8dc0c8] {\n  border-radius: 1.25rem;\n  border: 0.125rem solid var(--primary-purple);\n  width: 70%;\n  min-width: 15rem;\n}\n.section-process .right-side[data-v-1a8dc0c8] {\n  display: flex;\n  align-items: center;\n}\n.section-process .right-side-dots[data-v-1a8dc0c8] {\n  padding-right: 0.625rem;\n  align-items: flex-end;\n  display: flex;\n  flex-direction: column;\n  gap: 0.3125rem;\n  width: 37%;\n}\n.section-process .right-side-dots .big-dot[data-v-1a8dc0c8] {\n  width: 1.875rem;\n  height: 1.875rem;\n  border-radius: 50%;\n  background-color: var(--tertiary-purple);\n  border: 0.0625rem solid var(--primary-purple);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.section-process .right-side-dots .big-dot-inside[data-v-1a8dc0c8] {\n  width: 0.9375rem;\n  height: 0.9375rem;\n  border-radius: 50%;\n  background-color: var(--primary-purple);\n}\n.section-process .right-side-dots .mini-dots-container[data-v-1a8dc0c8] {\n  width: 1.875rem;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 0.3125rem;\n}\n.section-process .right-side-dots .mini-dots-container .mini-dot[data-v-1a8dc0c8] {\n  width: 0.3125rem;\n  height: 0.3125rem;\n  border-radius: 50%;\n  background-color: var(--tertiary-purple);\n  border: 0.0625rem solid var(--primary-purple);\n}\n.section-process .right-side-words[data-v-1a8dc0c8] {\n  display: flex;\n  flex-direction: column;\n  gap: 2.5rem;\n  width: 50%;\n}", ""]);
 
 // exports
 
@@ -4148,7 +4148,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".user-form[data-v-19797662] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  display: flex;\n  flex-flow: column;\n  gap: 10px;\n  padding: 20px 0px;\n}\n.form-group[data-v-19797662] {\n  margin: 15px 0;\n}\nlabel[data-v-19797662] {\n  margin-bottom: 5px;\n}", ""]);
+exports.push([module.i, ".user-form[data-v-19797662] {\n  background-color: var(--secondary-purple);\n  border-radius: 1.25rem;\n  display: flex;\n  flex-flow: column;\n  gap: 0.625rem;\n  padding: 1.25rem 0rem;\n}\n.form-group[data-v-19797662] {\n  margin: 0.9375rem 0;\n}\nlabel[data-v-19797662] {\n  margin-bottom: 0.3125rem;\n}", ""]);
 
 // exports
 
