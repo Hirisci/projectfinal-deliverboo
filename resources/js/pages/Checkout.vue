@@ -229,17 +229,17 @@ export default {
 <style lang="scss" scoped>
 .user-form {
   background-color: var(--secondary-purple);
-  border-radius: 20px;
+  border-radius: 1.25rem;
   display: flex;
   flex-flow: column;
-  gap: 10px;
-  padding: 20px 0px;
+  gap: .625rem;
+  padding: 1.25rem 0rem;
 }
 
 .form-group {
-  margin: 15px 0;
+  margin: .9375rem 0;
 }
 label {
-  margin-bottom: 5px;
+  margin-bottom: .3125rem;
 }
 </style>

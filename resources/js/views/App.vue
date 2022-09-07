@@ -7,14 +7,12 @@
 </template>
 
 <script>
-import BaseMain from '../components/macro/BaseMain.vue';
 import BaseFooter from '../components/macro/BaseFooter.vue';
 import AHeader from '../components/atoms/AHeader.vue';
 
 export default {
     name: "App",
-    components: { 
-      BaseMain, 
+    components: {
       BaseFooter,
       AHeader
     },

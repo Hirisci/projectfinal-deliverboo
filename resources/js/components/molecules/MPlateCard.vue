@@ -33,7 +33,7 @@
       </div>
       <div class="row plate-card-mobile-price d-flex justify-content-end gap-2 p-2">
         <input class="quantity col-3" value="1" type="number" :v-model="quantity" min="0"/>
-        <button class="btn-main btn-purple col-3" @click="add">Add To Cart</button>
+        <button class="circle col-3 p-0" @click="add">+</button>
       </div>
     </div>
   </div>
@@ -64,12 +64,12 @@ export default {
 .plate-card{
   .plate-card-desktop{
     background-color: var(--secondary-purple);
-    border-radius: 20px;
-    border: 2px solid var(--primary-purple);
+    border-radius: 1.25rem;
+    border: .125rem solid var(--primary-purple);
     overflow: hidden;
     img{
-      border-top-left-radius: 20px;
-      border-bottom-left-radius: 20px;
+      border-top-left-radius: 1.25rem;
+      border-bottom-left-radius: 1.25rem;
       height: 100%;
       width: 100%;
     }
@@ -77,13 +77,13 @@ export default {
       background-color: white;
       color: var(--primary-purple);
       font-weight: bolder;
-      border-top-right-radius: 20px;
-      border-bottom: 2px solid var(--primary-purple);
+      border-top-right-radius: 1.25rem;
+      border-bottom: .125rem solid var(--primary-purple);
     }
     &-info-bottom{
       .quantity {
         background-color: white;
-        padding: 0.3125rem 1rem;
+        padding: .3125rem 1rem;
         width: 4.375rem;
         position: relative;
         border-radius: 1rem;
@@ -98,25 +98,32 @@ export default {
   }
   .plate-card-mobile{
     background-color: var(--secondary-purple);
-    border-radius: 20px;
-    border: 2px solid var(--primary-purple);
+    border-radius: 1.25rem;
+    border: .125rem solid var(--primary-purple);
     overflow: hidden;
     &-title{
       background-color: white;
-      border-bottom: 2px solid var(--primary-purple);
+      border-bottom: .125rem solid var(--primary-purple);
       color: var(--primary-purple);
       font-weight: bolder;
     }
     .quantity{
       background-color: white;
-      padding: 0.3125rem 1rem;
+      padding: .3125rem 1rem;
       width: 4.375rem;
       position: relative;
       border-radius: 1rem;
     }
+    .circle{
+      color: var(--tertiary-purple);
+      background-color: var(--primary-purple);
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+    }
   }
   input{
-    border: 1px solid var(--primary-purple);
+    border: .0625rem solid var(--primary-purple);
   }
 }
 </style>
