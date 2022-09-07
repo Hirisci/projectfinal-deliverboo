@@ -3237,11 +3237,11 @@ var render = function render() {
       min: "0"
     }
   }), _vm._v(" "), _c("button", {
-    staticClass: "btn-main btn-purple col-3",
+    staticClass: "circle col-3 p-0",
     on: {
       click: _vm.add
     }
-  }, [_vm._v("Add To Cart")])])])]);
+  }, [_vm._v("+")])])])]);
 };
 
 var staticRenderFns = [];
@@ -4061,7 +4061,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".plate-card .plate-card-desktop[data-v-b2f80d34] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  border: 2px solid var(--primary-purple);\n  overflow: hidden;\n  transition: transform 0.3s ease-in-out;\n}\n.plate-card .plate-card-desktop img[data-v-b2f80d34] {\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n  height: 100%;\n  width: 100%;\n}\n.plate-card .plate-card-desktop-info-top[data-v-b2f80d34] {\n  background-color: white;\n  color: var(--primary-purple);\n  font-weight: bolder;\n  border-top-right-radius: 20px;\n  border-bottom: 2px solid var(--primary-purple);\n}\n.plate-card .plate-card-desktop-info-bottom .quantity[data-v-b2f80d34] {\n  background-color: white;\n  padding: 0.3125rem 1rem;\n  width: 4.375rem;\n  position: relative;\n  border-radius: 1rem;\n}\n.plate-card .plate-card-desktop[data-v-b2f80d34]:hover {\n  transform: scale(1.05);\n}\n.plate-card .plate-card-mobile[data-v-b2f80d34] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  border: 2px solid var(--primary-purple);\n  overflow: hidden;\n}\n.plate-card .plate-card-mobile-title[data-v-b2f80d34] {\n  background-color: white;\n  border-bottom: 2px solid var(--primary-purple);\n  color: var(--primary-purple);\n  font-weight: bolder;\n}\n.plate-card .plate-card-mobile .quantity[data-v-b2f80d34] {\n  background-color: white;\n  padding: 0.3125rem 1rem;\n  width: 4.375rem;\n  position: relative;\n  border-radius: 1rem;\n}\n.plate-card input[data-v-b2f80d34] {\n  border: 1px solid var(--primary-purple);\n}", ""]);
+exports.push([module.i, ".plate-card .plate-card-desktop[data-v-b2f80d34] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  border: 2px solid var(--primary-purple);\n  overflow: hidden;\n  transition: transform 0.3s ease-in-out;\n}\n.plate-card .plate-card-desktop img[data-v-b2f80d34] {\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n  height: 100%;\n  width: 100%;\n}\n.plate-card .plate-card-desktop-info-top[data-v-b2f80d34] {\n  background-color: white;\n  color: var(--primary-purple);\n  font-weight: bolder;\n  border-top-right-radius: 20px;\n  border-bottom: 2px solid var(--primary-purple);\n}\n.plate-card .plate-card-desktop-info-bottom .quantity[data-v-b2f80d34] {\n  background-color: white;\n  padding: 0.3125rem 1rem;\n  width: 4.375rem;\n  position: relative;\n  border-radius: 1rem;\n}\n.plate-card .plate-card-desktop[data-v-b2f80d34]:hover {\n  transform: scale(1.05);\n}\n.plate-card .plate-card-mobile[data-v-b2f80d34] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n  border: 2px solid var(--primary-purple);\n  overflow: hidden;\n}\n.plate-card .plate-card-mobile-title[data-v-b2f80d34] {\n  background-color: white;\n  border-bottom: 2px solid var(--primary-purple);\n  color: var(--primary-purple);\n  font-weight: bolder;\n}\n.plate-card .plate-card-mobile .quantity[data-v-b2f80d34] {\n  background-color: white;\n  padding: 0.3125rem 1rem;\n  width: 4.375rem;\n  position: relative;\n  border-radius: 1rem;\n}\n.plate-card .plate-card-mobile .circle[data-v-b2f80d34] {\n  color: var(--tertiary-purple);\n  background-color: var(--primary-purple);\n  border-radius: 50%;\n  width: 2rem;\n  height: 2rem;\n}\n.plate-card input[data-v-b2f80d34] {\n  border: 1px solid var(--primary-purple);\n}", ""]);
 
 // exports
 

@@ -33,7 +33,7 @@
       </div>
       <div class="row plate-card-mobile-price d-flex justify-content-end gap-2 p-2">
         <input class="quantity col-3" value="1" type="number" :v-model="quantity" min="0"/>
-        <button class="btn-main btn-purple col-3" @click="add">Add To Cart</button>
+        <button class="circle col-3 p-0" @click="add">+</button>
       </div>
     </div>
   </div>
@@ -113,6 +113,13 @@ export default {
       width: 4.375rem;
       position: relative;
       border-radius: 1rem;
+    }
+    .circle{
+      color: var(--tertiary-purple);
+      background-color: var(--primary-purple);
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
     }
   }
   input{
