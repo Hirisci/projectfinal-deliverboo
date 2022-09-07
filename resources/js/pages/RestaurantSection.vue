@@ -21,13 +21,8 @@
           />
         </div>
       </div>
-<<<<<<< HEAD
-      <div class="restaurant-section-shop-cart d-none d-lg-block col-lg-4">
-        <MCart :cart="this.cart" @event-delPlate="delPlate" @event-addQty="addQty"/>
-=======
       <div class="restaurant-section-shop-cart col-1 col-lg-4">
-        <MCart :cart="this.cart" @event-delPlate="delPlate" />
->>>>>>> modify-popup-confermation-elimination
+        <MCart :cart="this.cart" @event-delPlate="delPlate" @event-addQty="addQty"/>
       </div>
     </div>
   </div>
