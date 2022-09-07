@@ -75,8 +75,7 @@ class PlateController extends Controller
 
         $newPlate->save();
 
-        Alert::success('Piatto aggiunto correttamente', 'Abbiamo aggiunto un piatto'
-        );
+        Alert::success('Piatto aggiunto correttamente', 'Ora puoi vederlo nel tuo menù');
         //reindirizzo a un altra pagina
         return redirect()->route('admin.plate.index');
     }
@@ -162,6 +161,8 @@ class PlateController extends Controller
             abort(403);  //403 per mostrare un errore di permessi
         }
         
+
+
         $plate->delete();
         return redirect()->route('admin.plate.index');
     }
