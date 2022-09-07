@@ -25,7 +25,8 @@ a.btn-main:hover {
 }
 
 .btn-purple {
-    background-color: var(--primary-purple);
+    $color: var(--primary-purple);
+    background-color: $color;
 }
 
 .btn-edit {

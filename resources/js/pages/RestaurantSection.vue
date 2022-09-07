@@ -1,32 +1,47 @@
 <template>
-<div class="restaurant-section">
-  <div class="restaurant-section-header container-fluid p-0">
-    <img :src="`/storage/${restaurant.img}`" alt="/" />
-    <div class="row">
-      <div class="restaurant-section-header-bottom col col-lg-4">
-        <ARestaurantCard />
+  <div class="restaurant-section">
+    <div class="restaurant-section-header container-fluid p-0">
+      <img :src="`/storage/${restaurant.img}`" alt="/" />
+      <div class="row">
+        <div class="restaurant-section-header-bottom col col-lg-4">
+          <ARestaurantCard />
+        </div>
       </div>
     </div>
-  </div>
-  <div class="restaurant-section-shop container-xl p-3">
-    <div class="row">
-      <div class="restaurant-section-shop-menu col-11 col-lg-8 d-flex align-items-center flex-column gap-4">
-        <ATitleCard :title="'Menù'"/>
-        <div class="restaurant-section-shop-menu-plates d-flex flex-column gap-4">
-          <MPlateCard
-            v-for="plate in plates"
-            :key="plate.id"
-            :plate="plate"
-            @event-addPlate="addPlate"
+    <div class="restaurant-section-shop container-xl p-3">
+      <div class="row">
+        <div
+          class="
+            restaurant-section-shop-menu
+            col-11 col-lg-8
+            d-flex
+            align-items-center
+            flex-column
+            gap-4
+          "
+        >
+          <ATitleCard :title="'Menù'" />
+          <div
+            class="restaurant-section-shop-menu-plates d-flex flex-column gap-4"
+          >
+            <MPlateCard
+              v-for="plate in plates"
+              :key="plate.id"
+              :plate="plate"
+              @event-addPlate="addPlate"
+            />
+          </div>
+        </div>
+        <div class="restaurant-section-shop-cart col-1 col-lg-4">
+          <MCart
+            :cart="this.cart"
+            @event-delPlate="delPlate"
+            @event-addQty="addQty"
           />
         </div>
       </div>
-      <div class="restaurant-section-shop-cart col-1 col-lg-4">
-        <MCart :cart="this.cart" @event-delPlate="delPlate" @event-addQty="addQty"/>
-      </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -128,21 +143,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .restaurant-section{
-    &-header{
-      position: relative;
-      img{
-        min-height: 30vh;
-        height: 30vh;
-        width: 100%;
-        object-fit: cover;
-      }
-      &-bottom{
-        position: absolute;
-        left: 0;
-        bottom: 0;
-      }
+.restaurant-section {
+  &-header {
+    position: relative;
+    img {
+      min-height: 30vh;
+      height: 30vh;
+      width: 100%;
+      object-fit: cover;
+    }
+    &-bottom {
+      position: absolute;
+      left: 0;
+      bottom: 0;
     }
   }
-
+}
 </style>
