@@ -19,6 +19,11 @@
                 <ProcessSection/>
             </div>
         </div>
+        <div class="row">
+            <div class="">
+                <GetInspiredSection/>
+            </div>
+        </div>
   </main>
 </template>
 
@@ -26,6 +31,7 @@
 import OAsideMenu from "../organism/OAsideMenu.vue";
 import MRestaurantCard from "../molecules/MRestaurantCard.vue";
 import ProcessSection from "../sections/ProcessSection.vue"
+import GetInspiredSection from "../sections/GetInspiredSection.vue"
 
 export default {
   name: "BaseMain",
@@ -33,6 +39,7 @@ export default {
     OAsideMenu,
     MRestaurantCard,
     ProcessSection,
+    GetInspiredSection,
   },
   data() {
     return {
