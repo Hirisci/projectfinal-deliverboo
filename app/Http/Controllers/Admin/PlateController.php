@@ -12,6 +12,8 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
+use RealRashid\SweetAlert\Facades\Alert;
+
 class PlateController extends Controller
 {
     use ValidationDoubleName;
@@ -72,6 +74,9 @@ class PlateController extends Controller
         $newPlate->restaurant_id = Auth::id();
 
         $newPlate->save();
+
+        Alert::success('Piatto aggiunto correttamente', 'Abbiamo aggiunto un piatto'
+        );
         //reindirizzo a un altra pagina
         return redirect()->route('admin.plate.index');
     }
