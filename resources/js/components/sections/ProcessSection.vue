@@ -51,8 +51,8 @@ export default {
 .section-process{
     background-color: var(--secondary-purple);
     img{
-        border-radius: 20px;
-        border: 2px solid var(--primary-purple);
+        border-radius: 1.25rem;
+        border: .125rem solid var(--primary-purple);
         width: 70%;
         min-width: 15rem;
     }
@@ -71,7 +71,7 @@ export default {
                 height: 1.875rem;
                 border-radius: 50%;
                 background-color: var(--tertiary-purple);
-                border: 1px solid var(--primary-purple);
+                border: .0625rem solid var(--primary-purple);
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -93,7 +93,7 @@ export default {
                 height: .3125rem;
                 border-radius: 50%;
                 background-color: var(--tertiary-purple);
-                border: 1px solid var(--primary-purple);
+                border: .0625rem solid var(--primary-purple);
                 }
             }
         }

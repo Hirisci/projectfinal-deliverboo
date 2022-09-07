@@ -77,23 +77,23 @@ export default {
 <style lang="scss" scoped>
 .aside-menu {
   background-color: var(--secondary-purple);
-  border-radius: 20px;
+  border-radius: 1.25rem;
   display: flex;
   flex-flow: column;
-  gap: 10px;
-  padding: 20px 0px;
+  gap: .625rem;
+  padding: 1.25rem 0rem;
   .aside-menu-categories {
     .aside-menu-categories-list {
       display: flex;
       flex-flow: row wrap;
-      gap: 10px;
+      gap: .625rem;
     }
   }
   .aside-menu-filters {
     .aside-menu-filters-container {
       display: flex;
       flex-flow: column;
-      gap: 5px;
+      gap: .3125rem;
     }
   }
 }

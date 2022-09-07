@@ -17,9 +17,9 @@ export default {
 <style lang="scss" scoped>
 .container {
     text-align: center;
-    padding: 50px;
+    padding: 3.125rem;
 }
 img {
-    width: 500px;
+    width: 31.25rem;
 }
 </style>
