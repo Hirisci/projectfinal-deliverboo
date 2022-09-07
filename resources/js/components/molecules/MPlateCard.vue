@@ -109,7 +109,7 @@ export default {
     }
   }
   input{
-    border:1px solid var(--primary-purple);
+    border: 1px solid var(--primary-purple);
   }
 }
 </style>

@@ -176,7 +176,7 @@ export default {
     display: none;
   }
   .dflex{
-    display: flex;
+    // display: flex;
     flex-flow: column;
   }
 }

@@ -22,7 +22,6 @@ export default {
     color: white;
     padding: 5px;
     width: 85%;
-    z-index: 1;
     h6{
       text-transform: uppercase;
     }
@@ -31,7 +30,7 @@ export default {
     width: 70px;
     background-color: var(--primary-purple);
     transform: skewX(45deg);
-    margin-left: -40px;
+    margin-left: -25px;
   }
 }
 </style>
