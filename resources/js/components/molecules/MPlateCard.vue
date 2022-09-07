@@ -1,21 +1,39 @@
 <template>
-  <div class="plate-card container-fluid">
-    <div class="row">
-      <div class="plate-card-img col-4 p-0">
+  <div class="plate-card">
+    <div class="plate-card-desktop container-fluid d-none d-md-block">
+      <div class="row d-flex">
+        <div class="plate-card-desktop-img col-4 p-0">
+          <img :src="`/storage/${plate.img}`" alt="Plate" />
+        </div>
+        <div class="plate-card-desktop-info col-8 p-0">
+          <div class="row plate-card-desktop-info-top ms-0">
+            <AAsideMenuTitle :title="plate.name" class="col-10 ps-0"/>
+            <div class="price-value col-2 d-flex align-items-center">{{ plate.price.toFixed(2) }} €</div>
+          </div>
+          <div class="row plate-card-desktop-info-bottom d-flex flex-column p-1 gap-5">
+            <div class="plate-card-desktop-left-text-description">{{ plate.description }}</div>
+            <div class="add-to-cart-container d-flex justify-content-end">
+              <input class="quantity" value="1" type="number" :v-model="quantity" min="0"/>
+              <button class="btn-main btn-purple" @click="add">Add To Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="plate-card-mobile container-fluid d-md-none">
+      <div class="row plate-card-mobile-title">
+        <AAsideMenuTitle :title="plate.name" class="col-9 ps-0"/>
+        <div class="price-value col-3 d-flex align-items-center justify-content-center">{{ plate.price.toFixed(2) }} €</div>
+      </div>
+      <div class="row plate-card-mobile-img">
         <img :src="`/storage/${plate.img}`" alt="Plate" />
       </div>
-      <div class="plate-card-info col-8 p-0">
-        <div class="row plate-card-info-top ms-0">
-          <AAsideMenuTitle :title="plate.name" class="col-10 ps-0"/>
-            <span class="price-value col-2 d-flex align-items-center">{{ plate.price.toFixed(2) }} €</span>
-        </div>
-        <div class="row plate-card-info-bottom d-flex flex-column p-3 gap-5">
-          <span class="plate-card-left-text-description">{{ plate.description }}</span>
-          <div class="add-to-cart-container d-flex justify-content-end">
-          <input class="quantity" value="1" type="number" v-model="quantity" min="0"/>
-          <button class="btn-main btn-purple" @click="add">Add To Cart</button>
-        </div>
-        </div>
+      <div class="row plate-card-mobile-description mb-2">
+        <div class="plate-card-desktop-left-text-description">{{ plate.description }}</div>
+      </div>
+      <div class="row plate-card-mobile-price d-flex justify-content-end gap-2">
+        <input class="quantity col-3" value="1" type="number" :v-model="quantity" min="0"/>
+        <button class="btn-main btn-purple col-3" @click="add">Add To Cart</button>
       </div>
     </div>
   </div>
@@ -38,15 +56,13 @@ export default {
     add() {
       this.$emit("event-addPlate", this.plate, this.quantity);
     },
-    //function () {
-    //console.log("hai premuto il bottone", this.plate);
-    //   this.$emit("addPlate", this.plate);
   },
 };
 </script>
 
 <style lang="scss" scoped>
-  .plate-card{
+.plate-card{
+  .plate-card-desktop{
     background-color: var(--secondary-purple);
     border-radius: 20px;
     border: 2px solid var(--primary-purple);
@@ -80,7 +96,20 @@ export default {
       transform: scale(1.05);
     }
   }
+  .plate-card-mobile{
+    background-color: var(--secondary-purple);
+    border-radius: 20px;
+    border: 2px solid var(--primary-purple);
+    overflow: hidden;
+    &-title{
+      background-color: white;
+      border-bottom: 2px solid var(--primary-purple);
+      color: var(--primary-purple);
+      font-weight: bolder;
+    }
+  }
   input{
     border:1px solid var(--primary-purple);
   }
+}
 </style>

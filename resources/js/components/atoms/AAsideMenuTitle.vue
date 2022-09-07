@@ -20,17 +20,18 @@ export default {
   .section-title{
     background-color: var(--primary-purple);
     color: white;
-    padding: 0.3125rem;
+    padding: 5px;
     width: 85%;
+    z-index: 1;
     h6{
       text-transform: uppercase;
     }
   }
   .triangle-element{
-    width: 2.0656rem;
+    width: 70px;
     background-color: var(--primary-purple);
     transform: skewX(45deg);
-    margin-left: -16.8px;
+    margin-left: -40px;
   }
 }
 </style>

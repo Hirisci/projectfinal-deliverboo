@@ -21,7 +21,7 @@
           />
         </div>
       </div>
-      <div class="restaurant-section-shop-cart col-1 col-lg-4">
+      <div class="restaurant-section-shop-cart col-1 col-lg-4 d-flex justify-content-center">
         <MCart :cart="this.cart" @event-delPlate="delPlate" />
       </div>
     </div>
@@ -145,6 +145,10 @@ export default {
     }
     &-shop{
       position: relative;
+      &-cart{
+        position: fixed;
+        right: 10px;
+      }
     }
   }
 
