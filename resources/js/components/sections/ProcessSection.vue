@@ -112,6 +112,7 @@ export default {
                         height: 1.875rem;
                         border-radius: 50%;
                         background-color: var(--tertiary-purple);
+                        border: 1px solid var(--primary-purple);
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -139,6 +140,7 @@ export default {
                         height: .3125rem;
                         border-radius: 50%;
                         background-color: var(--tertiary-purple);
+                        border: 1px solid var(--primary-purple);
                         }
 
                     }
@@ -235,6 +237,7 @@ export default {
                         height: .3125rem;
                         border-radius: 50%;
                         background-color: var(--tertiary-purple);
+                        border: 1px solid var(--primary-purple);
                         }
 
                     }
