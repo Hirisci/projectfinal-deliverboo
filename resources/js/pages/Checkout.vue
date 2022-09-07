@@ -114,11 +114,19 @@
                 />
               </div>
             </div>
+            <div class="d-flex justify-content-end mt-3">
+              <button type="submit" class="btn-main btn-purple">
+                Procedi al pagamento
+              </button>
+            </div>
           </form>
         </div>
         <div class="d-none d-lg-block col-lg-4 cart">
-          carrellooo dai cazzo Gianluca
-          <MCart :cart="this.cart" />
+          <MCart
+            :cart="this.cart"
+            @event-delPlate="delPlate"
+            @event-addQty="addQty"
+          />
         </div>
       </div>
     </div>
@@ -127,12 +135,33 @@
 
 <script>
 import AJumbotron from "../components/atoms/AJumbotron.vue";
-import MCart from "../components/molecules/MCart.vue";
+
 import AAsideMenuTitle from "../components/atoms/AAsideMenuTitle.vue";
+import MCart from "../components/molecules/MCart.vue";
 
 export default {
   name: "Checkout",
-  components: { AJumbotron, MCart, AAsideMenuTitle },
+  components: { AJumbotron, AAsideMenuTitle, MCart },
+  data() {
+    return {
+      cart: [],
+    };
+  },
+  methods: {
+    refreshCart() {
+      let listCart = JSON.parse(localStorage.getItem("order"));
+      if (listCart === null) {
+        this.cart = [];
+        console.log("carrello vuoto");
+      } else {
+        this.cart = listCart;
+        console.log("carrello pieno");
+      }
+    },
+  },
+  mounted() {
+    this.refreshCart();
+  },
 };
 </script>
 
@@ -145,9 +174,7 @@ export default {
   gap: 10px;
   padding: 20px 0px;
 }
-.cart {
-  background-color: red;
-}
+
 .form-group {
   margin: 15px 0;
 }
