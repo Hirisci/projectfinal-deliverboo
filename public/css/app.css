@@ -12903,17 +12903,6 @@ small,
   ------------------------------*/
 }
 
-.container {
-  max-width: var(--wdt-container-xl);
-  margin: auto;
-  z-index: 1;
-}
-
-.container-nav {
-  max-width: var(--wdt-container-xxl);
-  margin: auto;
-}
-
 .background {
   width: 100vw;
   height: 100vh;

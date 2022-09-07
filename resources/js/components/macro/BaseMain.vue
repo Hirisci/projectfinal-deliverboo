@@ -1,6 +1,6 @@
 <template>
   <main>
-        <div class="row">
+        <div class="row container mx-auto">
             <div class="col-3 home-left p-3">
                 <OAsideMenu @updateCheckFilter="updateFilterCheck" />
                 </div>
@@ -14,11 +14,7 @@
                 />
             </div>
         </div>
-        <div class="row">
-            <div class="mb-3">
-                <ProcessSection/>
-            </div>
-        </div>
+        <ProcessSection class="mb-3" />
   </main>
 </template>
 
@@ -83,17 +79,11 @@ export default {
 <style lang="scss" scoped>
 main {
   margin: auto;
-  max-width: 1800px;
   gap: 20px;
   .home-right {
     display: flex;
     flex-flow: row wrap;
     gap: 10px;
-  }
-
-  .row{
-    width: 100%;
-    margin-right: 0;
   }
 }
 </style>
