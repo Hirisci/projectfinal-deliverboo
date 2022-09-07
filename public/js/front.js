@@ -3490,7 +3490,7 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "row"
   }, [_c("div", {
-    staticClass: "restaurant-section-shop-menu col-11 col-lg-8 d-flex align-items-center flex-column gap-4"
+    staticClass: "restaurant-section-shop-menu col-10 col-lg-8 d-flex align-items-center flex-column gap-4"
   }, [_c("ATitleCard", {
     attrs: {
       title: "Menù"
@@ -3508,7 +3508,7 @@ var render = function render() {
       }
     });
   }), 1)], 1), _vm._v(" "), _c("div", {
-    staticClass: "restaurant-section-shop-cart col-1 col-lg-4 d-flex justify-content-center"
+    staticClass: "restaurant-section-shop-cart col-2 col-lg-4 d-flex justify-content-center"
   }, [_c("MCart", {
     attrs: {
       cart: this.cart

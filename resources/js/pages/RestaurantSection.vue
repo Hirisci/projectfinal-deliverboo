@@ -10,7 +10,7 @@
   </div>
   <div class="restaurant-section-shop container-xl p-3">
     <div class="row">
-      <div class="restaurant-section-shop-menu col-11 col-lg-8 d-flex align-items-center flex-column gap-4">
+      <div class="restaurant-section-shop-menu col-10 col-lg-8 d-flex align-items-center flex-column gap-4">
         <ATitleCard :title="'Menù'"/>
         <div class="restaurant-section-shop-menu-plates d-flex flex-column gap-4">
           <MPlateCard
@@ -21,7 +21,7 @@
           />
         </div>
       </div>
-      <div class="restaurant-section-shop-cart col-1 col-lg-4 d-flex justify-content-center">
+      <div class="restaurant-section-shop-cart col-2 col-lg-4 d-flex justify-content-center">
         <MCart :cart="this.cart" @event-delPlate="delPlate" />
       </div>
     </div>
