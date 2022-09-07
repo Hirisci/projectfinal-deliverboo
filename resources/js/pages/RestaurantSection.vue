@@ -145,10 +145,6 @@ export default {
     }
     &-shop{
       position: relative;
-      &-cart{
-        position: fixed;
-        right: 10px;
-      }
     }
   }
 

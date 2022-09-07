@@ -1,6 +1,6 @@
 <template>
   <div class="cart">
-    <div class="cart-lg d-lg-block container-fluid d-flex column" :class="{ menuOpen : isOpen, dnone : !isOpen}">
+    <div class="cart-lg d-lg-block container-fluid" :class="{ menuOpen : isOpen, dnone : !isOpen , dflex : isOpen}">
       <ATitleCard :title="'Carrello'" class="cart-title" />
       <div class="cart-items mt-3">
         <ACartItem
@@ -174,6 +174,10 @@ export default {
   }
   .dnone{
     display: none;
+  }
+  .dflex{
+    display: flex;
+    flex-flow: column;
   }
 }
 </style>
