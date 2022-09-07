@@ -10,9 +10,9 @@
   </div>
   <div class="restaurant-section-shop container-xl p-3">
     <div class="row">
-      <div class="restaurant-section-shop-menu col col-lg-8 d-flex align-items-center flex-column gap-4">
+      <div class="restaurant-section-shop-menu col-11 col-lg-8 d-flex align-items-center flex-column gap-4">
         <ATitleCard :title="'Menù'"/>
-        <div class="restaurant-section-shop-menu-plates container-fluid d-flex flex-column gap-4">
+        <div class="restaurant-section-shop-menu-plates d-flex flex-column gap-4">
           <MPlateCard
             v-for="plate in plates"
             :key="plate.id"
@@ -21,8 +21,13 @@
           />
         </div>
       </div>
+<<<<<<< HEAD
       <div class="restaurant-section-shop-cart d-none d-lg-block col-lg-4">
         <MCart :cart="this.cart" @event-delPlate="delPlate" @event-addQty="addQty"/>
+=======
+      <div class="restaurant-section-shop-cart col-1 col-lg-4">
+        <MCart :cart="this.cart" @event-delPlate="delPlate" />
+>>>>>>> modify-popup-confermation-elimination
       </div>
     </div>
   </div>

@@ -21,56 +21,22 @@
                                 <div class="cards-btn-list d-flex  align-self-end gap-1">
                                     <a href="{{route('admin.plate.show', $plate)}}" class="btn-circle btn-purple"> <img class="icon"src="{{asset('storage/'."default/icon/magnifying-glass-solid.svg")}}" alt="iconsa visualizza"></a>
                                     <a href="{{route('admin.plate.edit', $plate)}}" class="btn-circle btn-edit"><img class="icon" src="{{asset('storage/'."default/icon/pen-solid.svg")}}" alt="icona edita"></a>
-                                    <form action="{{route('admin.plate.destroy' , $plate )}}" method="POST">
+                                    <button type="submit" class="btn-circle btn-delete" onclick="return confirm('Vuoi davvero eliminare?')"><img class="icon" src="{{asset('storage/'."default/icon/trash-solid.svg")}}" alt="icona cancella"></button>
+                                    
+                                    {{-- <form action="{{route('admin.plate.destroy' , $plate )}}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn-circle btn-delete" onclick="return confirm('Vuoi davvero eliminare?')"><img class="icon" src="{{asset('storage/'."default/icon/trash-solid.svg")}}" alt="icona cancella"></button>
-                                    </form>
+                                    </form> --}}
                                 </div>
                                 <div class="cards-price d-flex flex-column align-self-end">
                                     <p>Prezzo</p>
                                     <p>{{number_format($plate->price, 2)}} €</p>
                                 </div>
-
                             </div>
                         </div>
-                        <div>
-                        </div>
-                        
                     @endforeach
-                </div>
-                    {{-- <table class="table table-striped">
-                        <thead>
-                        <tr>
-                          
-                          
-                            <th scope="col">Prezzo</th>
-                            <th scope="col">Visibile?</th>
-                            <th scope="col">Azioni</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <div class="div mb-3">
-                        </div>
-                            <tr>
-                                <td>{{$plate->id}}</td>
-                                <td class="col-3">{{$plate->name}}</td>
-                                <td class="col-2"></td>
-                                <td class="col-1">{{$plate->is_visible ? 'Yes' : 'False'}}</td>
-                        
-                                <td class="col-5">
-                                    <a href="{{route('admin.plate.show', $plate)}}" class="btn btn-primary">Visualizza</a>
-                                    <a href="{{route('admin.plate.edit', $plate)}}" class="btn btn-warning">Modifica</a>
-                                    <form action="{{route('admin.plate.destroy' , $plate )}}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Vuoi davvero eliminare?')">Elimina</button>
-                                    </form>
-                                </td> 
-                            </tr>
-                        </tbody>
-                    </table> --}}
-            
+            </div>
         </div>
     </div>
 </div>
