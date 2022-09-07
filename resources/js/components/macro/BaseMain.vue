@@ -1,17 +1,16 @@
 <template>
   <main class="container">
-    <div class="row">
-        <div class="col-3 home-left p-3">
-            <OAsideMenu @updateCheckFilter="updateFilterCheck" />
-            </div>
-            <div class="col-9 home-right p-3">
-            <MRestaurantCard
-                class="col-1"
-                v-for="restaurant in filterRestaurants"
-                :key="restaurant.slug"
-                :slug="restaurant.slug"
-                :restaurant="restaurant"
-            />
+    <div class="row d-flex">
+        <div class="col-12 col-lg-3 home-left p-3">
+          <OAsideMenu @updateCheckFilter="updateFilterCheck" />
+        </div>
+        <div class="col-12 col-lg-9 home-right p-3">
+          <MRestaurantCard
+              v-for="restaurant in filterRestaurants"
+              :key="restaurant.slug"
+              :slug="restaurant.slug"
+              :restaurant="restaurant"
+          />
         </div>
     </div>
   </main>
@@ -77,14 +76,9 @@ export default {
 *{
   background-color: rgba($color: red, $alpha: .4);
 }
-
-main {
-  margin: auto;
-  gap: 20px;
-  .home-right {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 10px;
-  }
+.home-right{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
 }
 </style>

@@ -3018,19 +3018,18 @@ var render = function render() {
   return _c("main", {
     staticClass: "container"
   }, [_c("div", {
-    staticClass: "row"
+    staticClass: "row d-flex"
   }, [_c("div", {
-    staticClass: "col-3 home-left p-3"
+    staticClass: "col-12 col-lg-3 home-left p-3"
   }, [_c("OAsideMenu", {
     on: {
       updateCheckFilter: _vm.updateFilterCheck
     }
   })], 1), _vm._v(" "), _c("div", {
-    staticClass: "col-9 home-right p-3"
+    staticClass: "col-12 col-lg-9 home-right p-3"
   }, _vm._l(_vm.filterRestaurants, function (restaurant) {
     return _c("MRestaurantCard", {
       key: restaurant.slug,
-      staticClass: "col-1",
       attrs: {
         slug: restaurant.slug,
         restaurant: restaurant
@@ -3281,18 +3280,12 @@ var render = function render() {
   }), _vm._v(" "), _c("div", {
     staticClass: "overlay"
   }), _vm._v(" "), _c("div", {
-    staticClass: "overlay-text"
-  }, [_c("div", {
-    staticClass: "restaurant-card-right"
-  }, [_c("div", {
-    staticClass: "restaurant-card-right-top"
-  }), _vm._v(" "), _c("div", {
     staticClass: "restaurant-card-right-bottom"
-  }, [_c("span", {
+  }, [_c("div", {
     staticClass: "restaurant-card-right-bottom-description"
-  }, [_vm._v("\n            " + _vm._s(_vm.restaurant.description) + "\n          ")]), _vm._v(" "), _c("span", {
+  }, [_vm._v(_vm._s(_vm.restaurant.description))]), _vm._v(" "), _c("div", {
     staticClass: "restaurant-card-right-bottom-name"
-  }, [_vm._v("\n            " + _vm._s(_vm.restaurant.name) + "\n          ")])])])])])], 1);
+  }, [_vm._v(_vm._s(_vm.restaurant.name))])])])], 1);
 };
 
 var staticRenderFns = [];
@@ -4022,7 +4015,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "*[data-v-cd0ca090] {\n  background-color: rgba(255, 0, 0, 0.4);\n}\nmain[data-v-cd0ca090] {\n  margin: auto;\n  gap: 20px;\n}\nmain .home-right[data-v-cd0ca090] {\n  display: flex;\n  flex-flow: row wrap;\n  gap: 10px;\n}", ""]);
+exports.push([module.i, "*[data-v-cd0ca090] {\n  background-color: rgba(255, 0, 0, 0.4);\n}\n.home-right[data-v-cd0ca090] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));\n  gap: 1rem;\n}", ""]);
 
 // exports
 
@@ -4079,7 +4072,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "img[data-v-77c4db06] {\n  width: 250px;\n  height: 135px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.restaurant-card[data-v-77c4db06] {\n  border-radius: 20px;\n  width: 250px;\n  height: 135px;\n  position: relative;\n  overflow: hidden;\n}\n.restaurant-card .overlay[data-v-77c4db06] {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  background-color: hsla(263deg, 66%, 64%, 0.6);\n  transform: skewX(-30deg) translateX(50%);\n}\n.restaurant-card .overlay-text[data-v-77c4db06] {\n  position: absolute;\n  right: 5%;\n  bottom: 10%;\n}\n.restaurant-card .overlay-text .restaurant-card-right-bottom[data-v-77c4db06] {\n  color: white;\n}\n.restaurant-card .overlay-text .restaurant-card-right-bottom .restaurant-card-right-bottom-description[data-v-77c4db06] {\n  font-size: 0.7rem;\n  color: red;\n}\n.restaurant-card .overlay-text .restaurant-card-right-bottom .restaurant-card-right-bottom-name[data-v-77c4db06] {\n  text-transform: uppercase;\n  font-weight: 700;\n}", ""]);
+exports.push([module.i, ".restaurant-card[data-v-77c4db06] {\n  width: 100%;\n  height: 12.5rem;\n  position: relative;\n  overflow: hidden;\n  border-radius: 1.25rem;\n}\n.restaurant-card img[data-v-77c4db06] {\n  width: 100%;\n  height: 100%;\n}\n.restaurant-card .overlay[data-v-77c4db06] {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  background-color: hsla(263deg, 66%, 64%, 0.6);\n  transform: skewX(-30deg) translateX(40%);\n}\n.restaurant-card .restaurant-card-right-bottom[data-v-77c4db06] {\n  color: white;\n  position: absolute;\n  right: 5%;\n  bottom: 10%;\n}\n.restaurant-card .restaurant-card-right-bottom .restaurant-card-right-bottom-description[data-v-77c4db06] {\n  font-size: 0.7rem;\n  color: red;\n}\n.restaurant-card .restaurant-card-right-bottom .restaurant-card-right-bottom-name[data-v-77c4db06] {\n  text-transform: uppercase;\n  font-weight: 700;\n}", ""]);
 
 // exports
 
