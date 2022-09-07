@@ -2317,7 +2317,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      cart: []
+      cart: [],
+      form: {
+        name: ""
+      }
     };
   },
   watch: {
@@ -2329,6 +2332,21 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    submitForm: function submitForm() {
+      axios.post("api/order", this.form).then(function (res) {//Perform Success Action
+      })["catch"](function (error) {// error.response.status Check status code
+      })["finally"](function () {//Perform action in always
+      });
+    },
+    sendOrder: function sendOrder() {
+      axios.post("api/order", this.form).then(function (res) {//Perform Success Action
+      })["catch"](function (error) {// error.response.status Check status code
+      })["finally"](function () {//Perform action in always
+      });
+      axios(options).then(function (response) {
+        console.log(response.status);
+      });
+    },
     addQty: function addQty(arg) {
       var result = this.cart.find(function (Element) {
         return Element.id === arg.id;
@@ -3260,7 +3278,44 @@ var render = function render() {
     attrs: {
       title: "Checkout"
     }
-  })], 1), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("div", {
+  })], 1), _vm._v(" "), _c("form", {
+    staticClass: "px-3 mt-2",
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.submitForm.apply(null, arguments);
+      }
+    }
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("p", {
+    staticClass: "mb-1"
+  }, [_vm._v("Dettagli Ordine")]), _vm._v(" "), _c("div", {
+    staticClass: "col"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.name,
+      expression: "form.name"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      placeholder: "Nome",
+      "aria-label": "Nome"
+    },
+    domProps: {
+      value: _vm.form.name
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form, "name", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _vm._m(6), _vm._v(" "), _vm._m(7), _vm._v(" "), _vm._m(8)])]), _vm._v(" "), _c("div", {
     staticClass: "d-none d-lg-block col-lg-4 cart"
   }, [_c("MCart", {
     attrs: {
@@ -3277,22 +3332,7 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("form", {
-    staticClass: "px-3 mt-2"
-  }, [_c("div", {
-    staticClass: "row"
-  }, [_c("p", {
-    staticClass: "mb-1"
-  }, [_vm._v("Dettagli Ordine")]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      placeholder: "Nome",
-      "aria-label": "Nome"
-    }
-  })]), _vm._v(" "), _c("div", {
+  return _c("div", {
     staticClass: "col"
   }, [_c("input", {
     staticClass: "form-control",
@@ -3301,7 +3341,12 @@ var staticRenderFns = [function () {
       placeholder: "Cognome",
       "aria-label": "Cognome"
     }
-  })])]), _vm._v(" "), _c("div", {
+  })]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "form-group"
   }, [_c("input", {
     staticClass: "form-control",
@@ -3310,7 +3355,12 @@ var staticRenderFns = [function () {
       id: "client_address",
       placeholder: "Indirizzo"
     }
-  })]), _vm._v(" "), _c("div", {
+  })]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "form-group"
   }, [_c("input", {
     staticClass: "form-control",
@@ -3319,7 +3369,12 @@ var staticRenderFns = [function () {
       id: "client_city",
       placeholder: "Città"
     }
-  })]), _vm._v(" "), _c("div", {
+  })]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "row"
   }, [_c("div", {
     staticClass: "col"
@@ -3339,7 +3394,12 @@ var staticRenderFns = [function () {
       placeholder: "CAP",
       "aria-label": "CAP"
     }
-  })])]), _vm._v(" "), _c("div", {
+  })])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "form-group"
   }, [_c("input", {
     staticClass: "form-control",
@@ -3348,7 +3408,12 @@ var staticRenderFns = [function () {
       id: "client_name",
       placeholder: "Nome sul campanello"
     }
-  })]), _vm._v(" "), _c("div", {
+  })]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "form-group mb-4"
   }, [_c("input", {
     staticClass: "form-control",
@@ -3357,7 +3422,12 @@ var staticRenderFns = [function () {
       id: "client_number",
       placeholder: "Cellulare"
     }
-  })]), _vm._v(" "), _c("div", {
+  })]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "row mb-3"
   }, [_c("p", {
     staticClass: "mb-1"
@@ -3379,7 +3449,12 @@ var staticRenderFns = [function () {
       placeholder: "Cognome",
       "aria-label": "Cognome"
     }
-  })])]), _vm._v(" "), _c("div", {
+  })])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "row"
   }, [_c("div", {
     staticClass: "col-10"
@@ -3399,14 +3474,16 @@ var staticRenderFns = [function () {
       placeholder: "CVV",
       "aria-label": "cvv"
     }
-  })])]), _vm._v(" "), _c("div", {
+  })])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "d-flex justify-content-end mt-3"
   }, [_c("button", {
-    staticClass: "btn-main btn-purple",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("\n              Procedi al pagamento\n            ")])])]);
+    staticClass: "btn-main btn-purple"
+  }, [_vm._v("Procedi al pagamento")])]);
 }];
 render._withStripped = true;
 

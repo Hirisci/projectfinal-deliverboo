@@ -7,11 +7,12 @@
           <div class="col-12 col-lg-4 p-0">
             <AAsideMenuTitle :title="'Checkout'" />
           </div>
-          <form class="px-3 mt-2">
+          <form class="px-3 mt-2" v-on:submit.prevent="submitForm">
             <div class="row">
               <p class="mb-1">Dettagli Ordine</p>
               <div class="col">
                 <input
+                  v-model="form.name"
                   type="text"
                   class="form-control"
                   placeholder="Nome"
@@ -115,9 +116,7 @@
               </div>
             </div>
             <div class="d-flex justify-content-end mt-3">
-              <button type="submit" class="btn-main btn-purple">
-                Procedi al pagamento
-              </button>
+              <button class="btn-main btn-purple">Procedi al pagamento</button>
             </div>
           </form>
         </div>
@@ -145,6 +144,9 @@ export default {
   data() {
     return {
       cart: [],
+      form: {
+        name: "",
+      },
     };
   },
   watch: {
@@ -157,6 +159,36 @@ export default {
     },
   },
   methods: {
+    submitForm() {
+      axios
+        .post("api/order", this.form)
+        .then((res) => {
+          //Perform Success Action
+        })
+        .catch((error) => {
+          // error.response.status Check status code
+        })
+        .finally(() => {
+          //Perform action in always
+        });
+    },
+    sendOrder() {
+      axios
+        .post("api/order", this.form)
+        .then((res) => {
+          //Perform Success Action
+        })
+        .catch((error) => {
+          // error.response.status Check status code
+        })
+        .finally(() => {
+          //Perform action in always
+        });
+
+      axios(options).then((response) => {
+        console.log(response.status);
+      });
+    },
     addQty(arg) {
       let result = this.cart.find((Element) => Element.id === arg.id);
       let isx = this.cart.findIndex((Element) => Element.id === arg.id);
