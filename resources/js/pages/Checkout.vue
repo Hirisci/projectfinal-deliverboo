@@ -147,6 +147,15 @@ export default {
       cart: [],
     };
   },
+  watch: {
+    cart: {
+      handler: function () {
+        localStorage.setItem("order", JSON.stringify(this.cart));
+        //console.log("STO FUNZIONANDO");
+      },
+      deep: true,
+    },
+  },
   methods: {
     addQty(arg) {
       let result = this.cart.find((Element) => Element.id === arg.id);

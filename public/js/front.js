@@ -2320,6 +2320,14 @@ __webpack_require__.r(__webpack_exports__);
       cart: []
     };
   },
+  watch: {
+    cart: {
+      handler: function handler() {
+        localStorage.setItem("order", JSON.stringify(this.cart)); //console.log("STO FUNZIONANDO");
+      },
+      deep: true
+    }
+  },
   methods: {
     addQty: function addQty(arg) {
       var result = this.cart.find(function (Element) {
@@ -2428,8 +2436,7 @@ __webpack_require__.r(__webpack_exports__);
   watch: {
     cart: {
       handler: function handler() {
-        localStorage.setItem("order", JSON.stringify(this.cart));
-        console.log("STO FUNZIONANDO");
+        localStorage.setItem("order", JSON.stringify(this.cart)); //console.log("STO FUNZIONANDO");
       },
       deep: true
     }
@@ -2439,15 +2446,15 @@ __webpack_require__.r(__webpack_exports__);
       var result = this.cart.find(function (Element) {
         return Element.id === arg.id;
       });
-      var isx = this.cart.findIndex(function (Element) {
+      var idx = this.cart.findIndex(function (Element) {
         return Element.id === arg.id;
       });
       result.quantity++;
 
       if (result.quantity < 1) {
-        this.cart.splice(isx, 1);
+        this.cart.splice(idx, 1);
       } else {
-        this.$set(this.cart, isx, result);
+        this.$set(this.cart, idx, result);
       }
     },
     delPlate: function delPlate(arg) {
