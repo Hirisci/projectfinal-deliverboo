@@ -3054,7 +3054,7 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "plate-card-desktop-left-text-description"
   }, [_vm._v(_vm._s(_vm.plate.description))])]), _vm._v(" "), _c("div", {
-    staticClass: "row plate-card-mobile-price d-flex justify-content-end gap-2"
+    staticClass: "row plate-card-mobile-price d-flex justify-content-end gap-2 p-2"
   }, [_c("input", {
     staticClass: "quantity col-3",
     attrs: {

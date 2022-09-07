@@ -31,7 +31,7 @@
       <div class="row plate-card-mobile-description mb-2">
         <div class="plate-card-desktop-left-text-description">{{ plate.description }}</div>
       </div>
-      <div class="row plate-card-mobile-price d-flex justify-content-end gap-2">
+      <div class="row plate-card-mobile-price d-flex justify-content-end gap-2 p-2">
         <input class="quantity col-3" value="1" type="number" :v-model="quantity" min="0"/>
         <button class="btn-main btn-purple col-3" @click="add">Add To Cart</button>
       </div>
