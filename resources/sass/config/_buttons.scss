@@ -7,6 +7,7 @@
     color: white;
     font-weight: bold;
     text-decoration: none;
+    border: 1px solid transparent;
 }
 
 .btn-circle {
@@ -25,8 +26,11 @@ a.btn-main:hover {
 }
 
 .btn-purple {
-    $color: var(--primary-purple);
-    background-color: $color;
+    background-color: var(--primary-purple);
+    &:hover {
+        background-color: var(--primary-purple-opacity);
+        border: 1px solid var(--primary-purple);
+    }
 }
 
 .btn-edit {

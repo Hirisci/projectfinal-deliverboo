@@ -148,6 +148,26 @@ export default {
     };
   },
   methods: {
+    addQty(arg) {
+      let result = this.cart.find((Element) => Element.id === arg.id);
+      let isx = this.cart.findIndex((Element) => Element.id === arg.id);
+      result.quantity++;
+      if (result.quantity < 1) {
+        this.cart.splice(isx, 1);
+      } else {
+        this.$set(this.cart, isx, result);
+      }
+    },
+    delPlate(arg) {
+      let result = this.cart.find((Element) => Element.id === arg.id);
+      let idx = this.cart.findIndex((Element) => Element.id === arg.id);
+      result.quantity--;
+      if (result.quantity < 1) {
+        this.cart.splice(idx, 1);
+      } else {
+        this.$set(this.cart, idx, result);
+      }
+    },
     refreshCart() {
       let listCart = JSON.parse(localStorage.getItem("order"));
       if (listCart === null) {

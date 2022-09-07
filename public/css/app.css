@@ -12891,6 +12891,7 @@ small,
       LAYOUT COLORS
   ------------------------------*/
   --primary-purple: #9667e0;
+  --primary-purple-opacity: #9567e08a;
   --secondary-purple: #d4bbfc;
   --tertiary-purple: #fbfaff;
   --tertiary-purple-opacity: #fbfaff88;
@@ -12943,6 +12944,7 @@ small,
   color: white;
   font-weight: bold;
   text-decoration: none;
+  border: 1px solid transparent;
 }
 
 .btn-circle {
@@ -12962,6 +12964,11 @@ a.btn-main:hover {
 
 .btn-purple {
   background-color: var(--primary-purple);
+}
+
+.btn-purple:hover {
+  background-color: var(--primary-purple-opacity);
+  border: 1px solid var(--primary-purple);
 }
 
 .btn-edit {
