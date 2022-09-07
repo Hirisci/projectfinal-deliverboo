@@ -21,13 +21,12 @@
                                 <div class="cards-btn-list d-flex  align-self-end gap-1">
                                     <a href="{{route('admin.plate.show', $plate)}}" class="btn-circle btn-purple"> <img class="icon"src="{{asset('storage/'."default/icon/magnifying-glass-solid.svg")}}" alt="iconsa visualizza"></a>
                                     <a href="{{route('admin.plate.edit', $plate)}}" class="btn-circle btn-edit"><img class="icon" src="{{asset('storage/'."default/icon/pen-solid.svg")}}" alt="icona edita"></a>
-                                    <button type="submit" class="btn-circle btn-delete" onclick="return confirm('Vuoi davvero eliminare?')"><img class="icon" src="{{asset('storage/'."default/icon/trash-solid.svg")}}" alt="icona cancella"></button>
-                                    
-                                    {{-- <form action="{{route('admin.plate.destroy' , $plate )}}" method="POST">
+                                    <form action="{{route('admin.plate.destroy' , $plate )}}" method="POST" >
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn-circle btn-delete" onclick="return confirm('Vuoi davvero eliminare?')"><img class="icon" src="{{asset('storage/'."default/icon/trash-solid.svg")}}" alt="icona cancella"></button>
-                                    </form> --}}
+                                        {{-- <a href="{{route('admin.plate.destroy' , $plate )}}" class="btn-circle btn-delete"> <img class="icon" src="{{asset('storage/'."default/icon/trash-solid.svg")}}" alt="icona cancella"></a> --}}
+                                        <button type="submit" class="btn-circle btn-delete" onclick="confirmation(event)"><img class="icon" src="{{asset('storage/'."default/icon/trash-solid.svg")}}" alt="icona cancella"></button>
+                                    </form>
                                 </div>
                                 <div class="cards-price d-flex flex-column align-self-end">
                                     <p>Prezzo</p>
@@ -36,8 +35,62 @@
                             </div>
                         </div>
                     @endforeach
-            </div>
+
+                </div>     
         </div>
     </div>
 </div>
+<script>
+
+    // $('btn-delete').on('click', function (e){
+    //     e.preventDefault ();
+    //     var self = $(this);
+    //     console.log(self.data('title'));
+    //     Swal.fire({
+    //         title: 'Are you sure?',
+    //         text: "You won't be able to revert this!",
+    //         icon: 'warning',
+    //         showCancelButton: true,
+    //         confirmButtonColor: '#3085d6',
+    //         cancelButtonColor: '#d33',
+    //         confirmButtonText: 'Yes, delete it!'
+    //         }).then((result) => {
+    //         if (result.isConfirmed) {
+    //             Swal.fire(
+    //             'Deleted!',
+    //             'Your file has been deleted.',
+    //             'success'
+    //             )
+    //             location.href = self.attr('href');
+    //         }
+    //     })
+    // })
+
+    function confirmation(e){
+        e.preventDefault();
+        Swal.fire({
+            title: 'Sei sicuro?',
+            text: "Non sarà possibile recuperare i dati!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, cancella!'
+        }).then((result) => {
+            if (result) { 
+                Swal.fire(   
+                    'Cancellato!',
+                    'Il tuo file è stato cancellato correttamente.',
+                    'success'
+                    ) 
+                this.submit();
+             }  
+        });
+    }
+</script>
+
 @endsection
+
+
+
+
