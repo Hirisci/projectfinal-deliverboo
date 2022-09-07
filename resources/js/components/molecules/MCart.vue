@@ -1,6 +1,9 @@
 <template>
   <div class="cart">
-    <div class="cart-lg d-lg-block container-fluid" :class="{ menuOpen : isOpen, dnone : !isOpen , dflex : isOpen}">
+    <div
+      class="cart-lg d-lg-block container-fluid"
+      :class="{ menuOpen: isOpen, dnone: !isOpen, dflex: isOpen }"
+    >
       <ATitleCard :title="'Carrello'" class="cart-title" />
       <div class="cart-items mt-3">
         <ACartItem
@@ -8,25 +11,34 @@
           :key="plate.id"
           :plate="plate"
           @event-delPlate="delPlate()"
+          @event-addQty="addQty()"
         />
       </div>
       <div class="cart-total mt-3 d-flex">
         <div class="cart-checkout col-5">
-          <button class="btn-main btn-purple">Checkout</button>
+          <a href="/checkout" class="btn-main btn-purple">Checkout</a>
         </div>
         <div class="cart-total-price col-7">
           <div class="cart-total-price-title">Totale</div>
-          <div class="cart-total-price-value">{{ this.amountCart.toFixed(2) }}€</div>
+          <div class="cart-total-price-value">
+            {{ this.amountCart.toFixed(2) }}€
+          </div>
         </div>
       </div>
     </div>
     <div class="cart-overlay d-lg-none">
       <div class="cart-overlay"></div>
-      <button class="cart-overlay-button" @click="showCart()" >
-        <img src="../imgs/shopping-cart.png" alt="" :class="{ dnone : isOpen}">
-        <div class="cart-overlay-close" :class="{ dnone : !isOpen}">X</div>
+      <button class="cart-overlay-button" @click="showCart()">
+        <img
+          src="../imgs/shopping-cart.png"
+          alt=""
+          :class="{ dnone: isOpen }"
+        />
+        <div class="cart-overlay-close" :class="{ dnone: !isOpen }">X</div>
       </button>
-      <div class="cart-overlay-count" :class="{ dnone : isOpen}">{{amountItem}}</div>
+      <div class="cart-overlay-count" :class="{ dnone: isOpen }">
+        {{ amountItem }}
+      </div>
     </div>
   </div>
 </template>
@@ -43,7 +55,7 @@ export default {
   data() {
     return {
       isOpen: false,
-    }
+    };
   },
   computed: {
     amountCart() {
@@ -53,13 +65,13 @@ export default {
       });
       return somma;
     },
-    amountItem(){
+    amountItem() {
       let itemCount = 0;
       this.cart.forEach((element) => {
         itemCount += element.quantity;
       });
       return itemCount;
-    }
+    },
   },
   methods: {
     addQty(arg) {
@@ -70,9 +82,9 @@ export default {
     delPlate(arg) {
       this.$emit("event-delPlate", arg);
     },
-    showCart(){
-      this.isOpen = !this.isOpen; 
-    }
+    showCart() {
+      this.isOpen = !this.isOpen;
+    },
   },
 };
 </script>
@@ -83,14 +95,14 @@ export default {
   flex-flow: column wrap;
   gap: 1.25rem;
   align-items: center;
-  &-overlay-button{
+  &-overlay-button {
     background-color: var(--primary-purple);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    img{
-      padding: .9375rem;
+    img {
+      padding: 0.9375rem;
       aspect-ratio: 1/1;
       width: 100%;
     }
@@ -109,7 +121,7 @@ export default {
       background-color: var(--primary-purple);
       border-radius: 1.25rem;
       font-weight: 700;
-      padding: .625rem;
+      padding: 0.625rem;
       margin-left: auto;
       display: flex;
       align-items: center;
@@ -122,27 +134,27 @@ export default {
       .cart-total-price-value {
         background-color: white;
         border-radius: 1.25rem;
-        padding: .3125rem .625rem;
+        padding: 0.3125rem 0.625rem;
       }
     }
   }
-  &-overlay{
+  &-overlay {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    &-close{
+    &-close {
       font-weight: bolder;
       color: white;
     }
-    &-button{
+    &-button {
       width: 3.125rem;
       height: 3.125rem;
-      img{
+      img {
         width: 100%;
       }
     }
-    &-count{
+    &-count {
       position: absolute;
       top: 30%;
       left: 60%;
@@ -157,9 +169,9 @@ export default {
       color: white;
     }
   }
-  .menuOpen{
-    .cart{
-      &-title{
+  .menuOpen {
+    .cart {
+      &-title {
         width: 70%;
         margin: auto;
       }
@@ -172,10 +184,10 @@ export default {
     right: 0;
     background-color: var(--tertiary-purple);
   }
-  .dnone{
+  .dnone {
     display: none;
   }
-  .dflex{
+  .dflex {
     // display: flex;
     flex-flow: column;
   }

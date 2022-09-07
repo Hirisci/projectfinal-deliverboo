@@ -7,14 +7,35 @@
         </div>
         <div class="plate-card-desktop-info col-8 p-0">
           <div class="row plate-card-desktop-info-top ms-0">
-            <AAsideMenuTitle :title="plate.name" class="col-10 ps-2"/>
-            <div class="price-value col-2 d-flex align-items-center">{{ plate.price.toFixed(2) }} €</div>
+            <AAsideMenuTitle :title="plate.name" class="col-10 ps-2" />
+            <div class="price-value col-2 d-flex align-items-center">
+              {{ plate.price.toFixed(2) }} €
+            </div>
           </div>
-          <div class="row plate-card-desktop-info-bottom d-flex flex-column p-1 gap-5">
-            <div class="plate-card-desktop-left-text-description">{{ plate.description }}</div>
+          <div
+            class="
+              row
+              plate-card-desktop-info-bottom
+              d-flex
+              flex-column
+              p-1
+              gap-5
+            "
+          >
+            <div class="plate-card-desktop-left-text-description">
+              {{ plate.description }}
+            </div>
             <div class="add-to-cart-container d-flex justify-content-end">
-              <input class="quantity" value="1" type="number" :v-model="quantity" min="0"/>
-              <button class="btn-main btn-purple" @click="add">Add To Cart</button>
+              <input
+                class="quantity"
+                value="1"
+                type="number"
+                v-model="quantity"
+                min="0"
+              />
+              <button class="btn-main btn-purple" @click="add">
+                Add To Cart
+              </button>
             </div>
           </div>
         </div>
@@ -22,17 +43,37 @@
     </div>
     <div class="plate-card-mobile container-fluid d-md-none">
       <div class="row plate-card-mobile-title">
-        <AAsideMenuTitle :title="plate.name" class="col-9 ps-3"/>
-        <div class="price-value col-3 d-flex align-items-center justify-content-center">{{ plate.price.toFixed(2) }} €</div>
+        <AAsideMenuTitle :title="plate.name" class="col-9 ps-3" />
+        <div
+          class="
+            price-value
+            col-3
+            d-flex
+            align-items-center
+            justify-content-center
+          "
+        >
+          {{ plate.price.toFixed(2) }} €
+        </div>
       </div>
       <div class="row plate-card-mobile-img">
         <img :src="`/storage/${plate.img}`" alt="Plate" />
       </div>
       <div class="row plate-card-mobile-description mb-2">
-        <div class="plate-card-desktop-left-text-description">{{ plate.description }}</div>
+        <div class="plate-card-desktop-left-text-description">
+          {{ plate.description }}
+        </div>
       </div>
-      <div class="row plate-card-mobile-price d-flex justify-content-end gap-2 p-2">
-        <input class="quantity col-3" value="1" type="number" :v-model="quantity" min="0"/>
+      <div
+        class="row plate-card-mobile-price d-flex justify-content-end gap-2 p-2"
+      >
+        <input
+          class="quantity col-3"
+          value="1"
+          type="number"
+          v-model="quantity"
+          min="0"
+        />
         <button class="circle col-3 p-0" @click="add">+</button>
       </div>
     </div>
@@ -61,60 +102,60 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.plate-card{
-  .plate-card-desktop{
+.plate-card {
+  .plate-card-desktop {
     background-color: var(--secondary-purple);
     border-radius: 1.25rem;
-    border: .125rem solid var(--primary-purple);
+    border: 0.125rem solid var(--primary-purple);
     overflow: hidden;
-    img{
+    img {
       border-top-left-radius: 1.25rem;
       border-bottom-left-radius: 1.25rem;
       height: 100%;
       width: 100%;
     }
-    &-info-top{
+    &-info-top {
       background-color: white;
       color: var(--primary-purple);
       font-weight: bolder;
       border-top-right-radius: 1.25rem;
-      border-bottom: .125rem solid var(--primary-purple);
+      border-bottom: 0.125rem solid var(--primary-purple);
     }
-    &-info-bottom{
+    &-info-bottom {
       .quantity {
         background-color: white;
-        padding: .3125rem 1rem;
+        padding: 0.3125rem 1rem;
         width: 4.375rem;
         position: relative;
         border-radius: 1rem;
       }
     }
-    transition: transform .3s ease-in-out;
-    
+    transition: transform 0.3s ease-in-out;
+
     // Effetto hover della card
     &:hover {
       transform: scale(1.05);
     }
   }
-  .plate-card-mobile{
+  .plate-card-mobile {
     background-color: var(--secondary-purple);
     border-radius: 1.25rem;
-    border: .125rem solid var(--primary-purple);
+    border: 0.125rem solid var(--primary-purple);
     overflow: hidden;
-    &-title{
+    &-title {
       background-color: white;
-      border-bottom: .125rem solid var(--primary-purple);
+      border-bottom: 0.125rem solid var(--primary-purple);
       color: var(--primary-purple);
       font-weight: bolder;
     }
-    .quantity{
+    .quantity {
       background-color: white;
-      padding: .3125rem 1rem;
+      padding: 0.3125rem 1rem;
       width: 4.375rem;
       position: relative;
       border-radius: 1rem;
     }
-    .circle{
+    .circle {
       color: var(--tertiary-purple);
       background-color: var(--primary-purple);
       border-radius: 50%;
@@ -122,8 +163,8 @@ export default {
       height: 2rem;
     }
   }
-  input{
-    border: .0625rem solid var(--primary-purple);
+  input {
+    border: 0.0625rem solid var(--primary-purple);
   }
 }
 </style>
