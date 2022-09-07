@@ -24,6 +24,7 @@
                                     <form action="{{route('admin.plate.destroy' , $plate )}}" method="POST" >
                                         @csrf
                                         @method('DELETE')
+                                        {{-- <a href="{{route('admin.plate.destroy' , $plate )}}" class="btn-circle btn-delete"> <img class="icon" src="{{asset('storage/'."default/icon/trash-solid.svg")}}" alt="icona cancella"></a> --}}
                                         <button type="submit" class="btn-circle btn-delete" onclick="confirmation(event)"><img class="icon" src="{{asset('storage/'."default/icon/trash-solid.svg")}}" alt="icona cancella"></button>
                                     </form>
                                 </div>
@@ -45,26 +46,49 @@
 </div>
 <script>
 
+    // $('btn-delete').on('click', function (e){
+    //     e.preventDefault ();
+    //     var self = $(this);
+    //     console.log(self.data('title'));
+    //     Swal.fire({
+    //         title: 'Are you sure?',
+    //         text: "You won't be able to revert this!",
+    //         icon: 'warning',
+    //         showCancelButton: true,
+    //         confirmButtonColor: '#3085d6',
+    //         cancelButtonColor: '#d33',
+    //         confirmButtonText: 'Yes, delete it!'
+    //         }).then((result) => {
+    //         if (result.isConfirmed) {
+    //             Swal.fire(
+    //             'Deleted!',
+    //             'Your file has been deleted.',
+    //             'success'
+    //             )
+    //             location.href = self.attr('href');
+    //         }
+    //     })
+    // })
+
     function confirmation(e){
         e.preventDefault();
-    
         Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            title: 'Sei sicuro?',
+            text: "Non sarà possibile recuperare i dati!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-                )
-            }
-            this.submit();
+            confirmButtonText: 'Si, cancella!'
+        }).then((result) => {
+            if (result) { 
+                Swal.fire(   
+                    'Cancellato!',
+                    'Il tuo file è stato cancellato correttamente.',
+                    'success'
+                    ) 
+                this.submit();
+             }  
         });
     }
 </script>

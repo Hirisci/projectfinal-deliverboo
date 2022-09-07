@@ -161,9 +161,9 @@ class PlateController extends Controller
             abort(403);  //403 per mostrare un errore di permessi
         }
         
-
-
         $plate->delete();
+
+        // Alert::success('Piatto eliminato correttamente', 'Non sarà possibile reuperare i dati');
         return redirect()->route('admin.plate.index');
     }
 
