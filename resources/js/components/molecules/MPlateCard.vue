@@ -107,6 +107,13 @@ export default {
       color: var(--primary-purple);
       font-weight: bolder;
     }
+    .quantity{
+      background-color: white;
+      padding: 0.3125rem 1rem;
+      width: 4.375rem;
+      position: relative;
+      border-radius: 1rem;
+    }
   }
   input{
     border: 1px solid var(--primary-purple);
