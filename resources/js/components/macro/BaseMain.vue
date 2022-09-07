@@ -1,34 +1,31 @@
 <template>
-  <main>
-        <div class="row container mx-auto">
-            <div class="col-3 home-left p-3">
-                <OAsideMenu @updateCheckFilter="updateFilterCheck" />
-                </div>
-                <div class="col-9 home-right p-3">
-                <MRestaurantCard
-                    class="col-1"
-                    v-for="restaurant in filterRestaurants"
-                    :key="restaurant.slug"
-                    :slug="restaurant.slug"
-                    :restaurant="restaurant"
-                />
+  <main class="container">
+    <div class="row">
+        <div class="col-3 home-left p-3">
+            <OAsideMenu @updateCheckFilter="updateFilterCheck" />
             </div>
+            <div class="col-9 home-right p-3">
+            <MRestaurantCard
+                class="col-1"
+                v-for="restaurant in filterRestaurants"
+                :key="restaurant.slug"
+                :slug="restaurant.slug"
+                :restaurant="restaurant"
+            />
         </div>
-        <ProcessSection class="mb-3" />
+    </div>
   </main>
 </template>
 
 <script>
 import OAsideMenu from "../organism/OAsideMenu.vue";
 import MRestaurantCard from "../molecules/MRestaurantCard.vue";
-import ProcessSection from "../sections/ProcessSection.vue"
 
 export default {
   name: "BaseMain",
   components: {
     OAsideMenu,
     MRestaurantCard,
-    ProcessSection,
   },
   data() {
     return {
@@ -77,6 +74,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+*{
+  background-color: rgba($color: red, $alpha: .4);
+}
+
 main {
   margin: auto;
   gap: 20px;

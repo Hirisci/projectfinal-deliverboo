@@ -2073,16 +2073,13 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _organism_OAsideMenu_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../organism/OAsideMenu.vue */ "./resources/js/components/organism/OAsideMenu.vue");
 /* harmony import */ var _molecules_MRestaurantCard_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../molecules/MRestaurantCard.vue */ "./resources/js/components/molecules/MRestaurantCard.vue");
-/* harmony import */ var _sections_ProcessSection_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../sections/ProcessSection.vue */ "./resources/js/components/sections/ProcessSection.vue");
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "BaseMain",
   components: {
     OAsideMenu: _organism_OAsideMenu_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    MRestaurantCard: _molecules_MRestaurantCard_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    ProcessSection: _sections_ProcessSection_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    MRestaurantCard: _molecules_MRestaurantCard_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
@@ -2428,13 +2425,16 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_macro_BaseMain_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/macro/BaseMain.vue */ "./resources/js/components/macro/BaseMain.vue");
 /* harmony import */ var _components_atoms_AJumbotron_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/atoms/AJumbotron.vue */ "./resources/js/components/atoms/AJumbotron.vue");
+/* harmony import */ var _components_sections_ProcessSection_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/sections/ProcessSection.vue */ "./resources/js/components/sections/ProcessSection.vue");
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Home",
   components: {
     BaseMain: _components_macro_BaseMain_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    AJumbotron: _components_atoms_AJumbotron_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    AJumbotron: _components_atoms_AJumbotron_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    ProcessSection: _components_sections_ProcessSection_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
 });
 
@@ -2574,18 +2574,15 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_macro_BaseMain_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/macro/BaseMain.vue */ "./resources/js/components/macro/BaseMain.vue");
-/* harmony import */ var _components_macro_BaseFooter_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/macro/BaseFooter.vue */ "./resources/js/components/macro/BaseFooter.vue");
-/* harmony import */ var _components_atoms_AHeader_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/atoms/AHeader.vue */ "./resources/js/components/atoms/AHeader.vue");
-
+/* harmony import */ var _components_macro_BaseFooter_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/macro/BaseFooter.vue */ "./resources/js/components/macro/BaseFooter.vue");
+/* harmony import */ var _components_atoms_AHeader_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/atoms/AHeader.vue */ "./resources/js/components/atoms/AHeader.vue");
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
   components: {
-    BaseMain: _components_macro_BaseMain_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    BaseFooter: _components_macro_BaseFooter_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    AHeader: _components_atoms_AHeader_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    BaseFooter: _components_macro_BaseFooter_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    AHeader: _components_atoms_AHeader_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -3018,8 +3015,10 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("main", [_c("div", {
-    staticClass: "row container mx-auto"
+  return _c("main", {
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "row"
   }, [_c("div", {
     staticClass: "col-3 home-left p-3"
   }, [_c("OAsideMenu", {
@@ -3037,9 +3036,7 @@ var render = function render() {
         restaurant: restaurant
       }
     });
-  }), 1)]), _vm._v(" "), _c("ProcessSection", {
-    staticClass: "mb-3"
-  })], 1);
+  }), 1)])]);
 };
 
 var staticRenderFns = [];
@@ -3756,7 +3753,9 @@ var render = function render() {
 
   return _c("div", {
     staticClass: "home"
-  }, [_c("AJumbotron"), _vm._v(" "), _c("BaseMain")], 1);
+  }, [_c("AJumbotron"), _vm._v(" "), _c("BaseMain"), _vm._v(" "), _c("ProcessSection", {
+    staticClass: "mb-3"
+  })], 1);
 };
 
 var staticRenderFns = [];
@@ -4023,7 +4022,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "main[data-v-cd0ca090] {\n  margin: auto;\n  gap: 20px;\n}\nmain .home-right[data-v-cd0ca090] {\n  display: flex;\n  flex-flow: row wrap;\n  gap: 10px;\n}", ""]);
+exports.push([module.i, "*[data-v-cd0ca090] {\n  background-color: rgba(255, 0, 0, 0.4);\n}\nmain[data-v-cd0ca090] {\n  margin: auto;\n  gap: 20px;\n}\nmain .home-right[data-v-cd0ca090] {\n  display: flex;\n  flex-flow: row wrap;\n  gap: 10px;\n}", ""]);
 
 // exports
 
