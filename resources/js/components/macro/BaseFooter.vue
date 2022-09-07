@@ -39,11 +39,13 @@
             <div class="footer-top-card">
                 <h4>APP DELIVEBOO</h4>
 
-                <ul class="footer-top-card-list">
-                    <li class="footer-top-card-list-element"><a href="#">Contatti</a></li>
-                    <li class="footer-top-card-list-element"><a href="#">FAQs</a></li>
-                    <li class="footer-top-card-list-element"><a href="#">I nostri partner</a></li>
-                </ul>
+                <div class="app-container">
+
+                    <img class="app" src="../imgs/app-store.png" alt="Apple Store">
+                    <img class="app" src="../imgs/google-play.png" alt="Google Play">
+
+                </div>
+
             </div>
 
 
@@ -86,6 +88,14 @@ export default {
                 border-radius: 1.25rem;
                 min-height: 15.625rem;
 
+                .app-container{
+                    width: 70%;
+
+                    img{
+                        width: 100%;
+                    }
+                }
+
                 h4{
                     color: var(--primary-purple);
                     margin-bottom: 1.25rem;
@@ -112,6 +122,11 @@ export default {
             height: 6.25rem;
         }
     }
+
+    .app:hover{
+        cursor: pointer;
+        opacity: 0.8;
+    }
 }
 
 @media screen and (min-width: 600px) {
@@ -119,6 +134,34 @@ export default {
         &-top{
             &-card{
                 width: calc(50% - 5px);
+
+                .app-container{
+                    width: 70%;
+
+                    img{
+                        width: 60%;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .footer{
+        &-top{
+            &-card{
+                width: calc(25% - 10px);
+
+                .app-container{
+                    width: 70%;
+
+                    img{
+                        width: 80%;
+                    }
+                }
+
             }
         }
     }
