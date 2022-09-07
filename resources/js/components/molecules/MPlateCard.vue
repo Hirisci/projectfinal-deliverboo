@@ -7,7 +7,7 @@
         </div>
         <div class="plate-card-desktop-info col-8 p-0">
           <div class="row plate-card-desktop-info-top ms-0">
-            <AAsideMenuTitle :title="plate.name" class="col-10 ps-0"/>
+            <AAsideMenuTitle :title="plate.name" class="col-10 ps-2"/>
             <div class="price-value col-2 d-flex align-items-center">{{ plate.price.toFixed(2) }} €</div>
           </div>
           <div class="row plate-card-desktop-info-bottom d-flex flex-column p-1 gap-5">
@@ -22,7 +22,7 @@
     </div>
     <div class="plate-card-mobile container-fluid d-md-none">
       <div class="row plate-card-mobile-title">
-        <AAsideMenuTitle :title="plate.name" class="col-9 ps-0"/>
+        <AAsideMenuTitle :title="plate.name" class="col-9 ps-3"/>
         <div class="price-value col-3 d-flex align-items-center justify-content-center">{{ plate.price.toFixed(2) }} €</div>
       </div>
       <div class="row plate-card-mobile-img">

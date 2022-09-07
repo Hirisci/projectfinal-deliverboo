@@ -2534,12 +2534,10 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "aside-menu-title-container section-title-container"
+    staticClass: "section-title"
   }, [_c("div", {
-    staticClass: "section-title px-3"
-  }, [_c("h6", [_vm._v(_vm._s(_vm.title))])]), _vm._v(" "), _c("div", {
-    staticClass: "triangle-element"
-  })]);
+    staticClass: "section-title-container"
+  }, [_c("h6", [_vm._v(_vm._s(_vm.title))])])]);
 };
 
 var staticRenderFns = [];
@@ -3006,7 +3004,7 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "row plate-card-desktop-info-top ms-0"
   }, [_c("AAsideMenuTitle", {
-    staticClass: "col-10 ps-0",
+    staticClass: "col-10 ps-2",
     attrs: {
       title: _vm.plate.name
     }
@@ -3036,7 +3034,7 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "row plate-card-mobile-title"
   }, [_c("AAsideMenuTitle", {
-    staticClass: "col-9 ps-0",
+    staticClass: "col-9 ps-3",
     attrs: {
       title: _vm.plate.name
     }
@@ -3563,7 +3561,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".section-title-container[data-v-f696340c] {\n  display: flex;\n}\n.section-title-container .section-title[data-v-f696340c] {\n  background-color: var(--primary-purple);\n  color: white;\n  padding: 5px;\n  width: 85%;\n}\n.section-title-container .section-title h6[data-v-f696340c] {\n  text-transform: uppercase;\n}\n.section-title-container .triangle-element[data-v-f696340c] {\n  width: 70px;\n  background-color: var(--primary-purple);\n  transform: skewX(45deg);\n  margin-left: -25px;\n}", ""]);
+exports.push([module.i, ".section-title[data-v-f696340c] {\n  padding: 4px;\n  padding-left: 16px;\n  overflow: hidden;\n  position: relative;\n  color: var(--tertiary-purple);\n}\n.section-title-container[data-v-f696340c] {\n  max-width: 80%;\n}\n.section-title-container h6[data-v-f696340c] {\n  position: relative;\n}\n.section-title[data-v-f696340c]::before {\n  content: \"\";\n  display: block;\n  position: absolute;\n  top: 0;\n  left: -20px;\n  width: 100%;\n  height: 100%;\n  transform: skewX(45deg);\n  background-color: var(--primary-purple);\n}", ""]);
 
 // exports
 
