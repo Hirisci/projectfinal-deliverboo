@@ -2153,6 +2153,13 @@ __webpack_require__.r(__webpack_exports__);
         somma += element.price * element.quantity;
       });
       return somma;
+    },
+    amountItem: function amountItem() {
+      var itemCount = 0;
+      this.cart.forEach(function (element) {
+        itemCount += element.quantity;
+      });
+      return itemCount;
     }
   },
   methods: {
@@ -2806,13 +2813,15 @@ var render = function render() {
 
   return _c("div", {
     staticClass: "cart"
+  }, [_c("div", {
+    staticClass: "cart-lg d-none d-lg-block"
   }, [_c("ATitleCard", {
     staticClass: "cart-title",
     attrs: {
       title: "Carrello"
     }
   }), _vm._v(" "), _c("div", {
-    staticClass: "cart-items"
+    staticClass: "cart-items mt-3"
   }, _vm._l(_vm.cart, function (plate) {
     return _c("ACartItem", {
       key: plate.id,
@@ -2826,14 +2835,30 @@ var render = function render() {
       }
     });
   }), 1), _vm._v(" "), _c("div", {
-    staticClass: "cart-total"
+    staticClass: "cart-total mt-3"
   }, [_c("div", {
     staticClass: "cart-total-price"
   }, [_c("span", {
     staticClass: "cart-total-price-title"
   }, [_vm._v("Totale")]), _vm._v(" "), _c("span", {
     staticClass: "cart-total-price-value"
-  }, [_vm._v(_vm._s(this.amountCart.toFixed(2)) + "€")])])])], 1);
+  }, [_vm._v(_vm._s(this.amountCart.toFixed(2)) + "€")])])])], 1), _vm._v(" "), _c("div", {
+    staticClass: "cart-overlay d-lg-none"
+  }, [_c("button", {
+    staticClass: "cart-overlay-button",
+    on: {
+      click: function click($event) {
+        return _vm.showCart();
+      }
+    }
+  }, [_c("img", {
+    attrs: {
+      src: __webpack_require__(/*! ../imgs/shopping-cart.png */ "./resources/js/components/imgs/shopping-cart.png"),
+      alt: ""
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "cart-overlay-count"
+  }, [_vm._v(_vm._s(_vm.amountItem))])])]);
 };
 
 var staticRenderFns = [];
@@ -2886,12 +2911,26 @@ var render = function render() {
   }, [_vm._v(_vm._s(_vm.plate.description))]), _vm._v(" "), _c("div", {
     staticClass: "add-to-cart-container d-flex justify-content-end"
   }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.quantity,
+      expression: "quantity"
+    }],
     staticClass: "quantity",
     attrs: {
       value: "1",
       type: "number",
-      "v-model": _vm.quantity,
       min: "0"
+    },
+    domProps: {
+      value: _vm.quantity
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.quantity = $event.target.value;
+      }
     }
   }), _vm._v(" "), _c("button", {
     staticClass: "btn-main btn-purple",
@@ -3138,13 +3177,13 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "row"
   }, [_c("div", {
-    staticClass: "restaurant-section-shop-menu col col-lg-8 d-flex align-items-center flex-column gap-4"
+    staticClass: "restaurant-section-shop-menu col-11 col-lg-8 d-flex align-items-center flex-column gap-4"
   }, [_c("ATitleCard", {
     attrs: {
       title: "Menù"
     }
   }), _vm._v(" "), _c("div", {
-    staticClass: "restaurant-section-shop-menu-plates container-fluid d-flex flex-column gap-4"
+    staticClass: "restaurant-section-shop-menu-plates d-flex flex-column gap-4"
   }, _vm._l(_vm.plates, function (plate) {
     return _c("MPlateCard", {
       key: plate.id,
@@ -3156,7 +3195,7 @@ var render = function render() {
       }
     });
   }), 1)], 1), _vm._v(" "), _c("div", {
-    staticClass: "restaurant-section-shop-cart d-none d-lg-block col-lg-4"
+    staticClass: "restaurant-section-shop-cart col-1 col-lg-4"
   }, [_c("MCart", {
     attrs: {
       cart: this.cart
@@ -3382,7 +3421,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".cart[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 20px;\n  align-items: center;\n}\n.cart .cart-title[data-v-33631e30] {\n  width: 100%;\n}\n.cart .cart-items[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 20px;\n  width: 100%;\n}\n.cart .cart-total[data-v-33631e30] {\n  align-self: flex-end;\n  width: 100%;\n  background-color: var(--primary-purple);\n  border-radius: 20px;\n  font-weight: 700;\n  padding: 10px;\n}\n.cart .cart-total .cart-total-price[data-v-33631e30] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 20px;\n}\n.cart .cart-total .cart-total-price .cart-total-price-title[data-v-33631e30] {\n  color: white;\n  text-transform: uppercase;\n}\n.cart .cart-total .cart-total-price .cart-total-price-value[data-v-33631e30] {\n  background-color: white;\n  border-radius: 20px;\n  padding: 5px 10px;\n}", ""]);
+exports.push([module.i, ".cart[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 20px;\n  align-items: center;\n}\n.cart-overlay-button[data-v-33631e30] {\n  background-color: var(--primary-purple);\n  border-radius: 50%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.cart-overlay-button img[data-v-33631e30] {\n  padding: 15px;\n  aspect-ratio: 1/1;\n  width: 100%;\n}\n.cart .cart-title[data-v-33631e30] {\n  width: 100%;\n}\n.cart .cart-items[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 20px;\n  width: 100%;\n}\n.cart .cart-total[data-v-33631e30] {\n  align-self: flex-end;\n  width: 100%;\n  background-color: var(--primary-purple);\n  border-radius: 20px;\n  font-weight: 700;\n  padding: 10px;\n}\n.cart .cart-total .cart-total-price[data-v-33631e30] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 20px;\n}\n.cart .cart-total .cart-total-price .cart-total-price-title[data-v-33631e30] {\n  color: white;\n  text-transform: uppercase;\n}\n.cart .cart-total .cart-total-price .cart-total-price-value[data-v-33631e30] {\n  background-color: white;\n  border-radius: 20px;\n  padding: 5px 10px;\n}\n.cart-overlay[data-v-33631e30] {\n  position: relative;\n}\n.cart-overlay-button[data-v-33631e30] {\n  width: 100%;\n}\n.cart-overlay-button img[data-v-33631e30] {\n  width: 100%;\n}\n.cart-overlay-count[data-v-33631e30] {\n  position: absolute;\n  top: 30%;\n  left: 60%;\n  transform: translateY(-50%);\n  background-color: red;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  aspect-ratio: 1/1;\n  width: 25px;\n  color: white;\n}", ""]);
 
 // exports
 
@@ -20799,6 +20838,17 @@ module.exports = "/images/logo-white.png?16933b020697e02c2bcf3b6f3f9c7631";
 /***/ (function(module, exports) {
 
 module.exports = "/images/pizza.png?c0b6fd298e7dab70e39d81fba0847a20";
+
+/***/ }),
+
+/***/ "./resources/js/components/imgs/shopping-cart.png":
+/*!********************************************************!*\
+  !*** ./resources/js/components/imgs/shopping-cart.png ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/shopping-cart.png?272496267f1b0d63a19f1000f16bd512";
 
 /***/ }),
 
