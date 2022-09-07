@@ -2894,86 +2894,94 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("footer", {
-    staticClass: "footer"
+  return _c("footer", [_c("div", {
+    staticClass: "footer-top container p-0"
   }, [_c("div", {
-    staticClass: "footer-top"
+    staticClass: "row d-flex"
   }, [_c("div", {
-    staticClass: "footer-top-card"
+    staticClass: "col-12 col-md-6 col-lg-3 p-0 mb-3"
+  }, [_c("div", {
+    staticClass: "p-3 footer-top-card m-3"
   }, [_c("h4", [_vm._v("CHI SIAMO")]), _vm._v(" "), _c("ul", {
     staticClass: "footer-top-card-list"
   }, [_c("li", {
-    staticClass: "footer-top-card-list-element"
+    staticClass: "footer-top-card-item"
   }, [_c("a", {
     attrs: {
       href: "#"
     }
   }, [_vm._v("Su di Noi")])]), _vm._v(" "), _c("li", {
-    staticClass: "footer-top-card-list-element"
+    staticClass: "footer-top-card-item"
   }, [_c("a", {
     attrs: {
       href: "#"
     }
   }, [_vm._v("Newsletter")])]), _vm._v(" "), _c("li", {
-    staticClass: "footer-top-card-list-element"
+    staticClass: "footer-top-card-item"
   }, [_c("a", {
     attrs: {
       href: "#"
     }
   }, [_vm._v("Diventa un rider")])]), _vm._v(" "), _c("li", {
-    staticClass: "footer-top-card-list-element"
+    staticClass: "footer-top-card-item"
   }, [_c("a", {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("Unisciti a noi")])])])]), _vm._v(" "), _c("div", {
-    staticClass: "footer-top-card"
+  }, [_vm._v("Unisciti a noi")])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-12 col-md-6 col-lg-3 p-0 mb-3"
+  }, [_c("div", {
+    staticClass: "p-3 footer-top-card m-3"
   }, [_c("h4", [_vm._v("LEGAL")]), _vm._v(" "), _c("ul", {
     staticClass: "footer-top-card-list"
   }, [_c("li", {
-    staticClass: "footer-top-card-list-element"
+    staticClass: "footer-top-card-item"
   }, [_c("a", {
     attrs: {
       href: "#"
     }
   }, [_vm._v("Termini e condizioni")])]), _vm._v(" "), _c("li", {
-    staticClass: "footer-top-card-list-element"
+    staticClass: "footer-top-card-item"
   }, [_c("a", {
     attrs: {
       href: "#"
     }
   }, [_vm._v("Privacy")])]), _vm._v(" "), _c("li", {
-    staticClass: "footer-top-card-list-element"
+    staticClass: "footer-top-card-item"
   }, [_c("a", {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("Cookies")])])])]), _vm._v(" "), _c("div", {
-    staticClass: "footer-top-card"
+  }, [_vm._v("Cookies")])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-12 col-md-6 col-lg-3 p-0 mb-3"
+  }, [_c("div", {
+    staticClass: "p-3 footer-top-card m-3"
   }, [_c("h4", [_vm._v("AIUTO")]), _vm._v(" "), _c("ul", {
     staticClass: "footer-top-card-list"
   }, [_c("li", {
-    staticClass: "footer-top-card-list-element"
+    staticClass: "footer-top-card-item"
   }, [_c("a", {
     attrs: {
       href: "#"
     }
   }, [_vm._v("Contatti")])]), _vm._v(" "), _c("li", {
-    staticClass: "footer-top-card-list-element"
+    staticClass: "footer-top-card-item"
   }, [_c("a", {
     attrs: {
       href: "#"
     }
   }, [_vm._v("FAQs")])]), _vm._v(" "), _c("li", {
-    staticClass: "footer-top-card-list-element"
+    staticClass: "footer-top-card-item"
   }, [_c("a", {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("I nostri partner")])])])]), _vm._v(" "), _c("div", {
-    staticClass: "footer-top-card"
+  }, [_vm._v("I nostri partner")])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-12 col-md-6 col-lg-3 p-0 mb-3"
+  }, [_c("div", {
+    staticClass: "p-3 footer-top-card m-3"
   }, [_c("h4", [_vm._v("APP DELIVEBOO")]), _vm._v(" "), _c("div", {
-    staticClass: "app-container"
+    staticClass: "app-container d-flex flex-column justify-content-center gap-3"
   }, [_c("img", {
     staticClass: "app",
     attrs: {
@@ -2986,8 +2994,8 @@ var staticRenderFns = [function () {
       src: __webpack_require__(/*! ../imgs/google-play.png */ "./resources/js/components/imgs/google-play.png"),
       alt: "Google Play"
     }
-  })])])]), _vm._v(" "), _c("div", {
-    staticClass: "footer-bottom"
+  })])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "footer-bottom d-flex justify-content-center align-items-center mt-5 p-2"
   }, [_c("p", [_vm._v("Copyright © 2022 Team2Boolean. All Rights Reserved")])])]);
 }];
 render._withStripped = true;
@@ -3996,7 +4004,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "@media screen and (min-width: 300px) {\n.footer-top[data-v-cc917e4c] {\n    padding: 1.25rem;\n    min-height: 20vh;\n    background-color: #d4bbfc;\n    display: flex;\n    flex-wrap: wrap;\n    gap: 0.625rem;\n}\n.footer-top-card[data-v-cc917e4c] {\n    padding: 20px;\n    background-color: var(--tertiary-purple-opacity);\n    width: 100%;\n    border-radius: 1.25rem;\n    min-height: 15.625rem;\n}\n.footer-top-card .app-container[data-v-cc917e4c] {\n    width: 70%;\n}\n.footer-top-card .app-container img[data-v-cc917e4c] {\n    width: 100%;\n}\n.footer-top-card h4[data-v-cc917e4c] {\n    color: var(--primary-purple);\n    margin-bottom: 1.25rem;\n}\n.footer-top-card-list[data-v-cc917e4c] {\n    display: flex;\n    flex-direction: column;\n    gap: 0.625rem;\n    color: black;\n}\n.footer-top-card-list a[data-v-cc917e4c] {\n    text-decoration: none;\n}\n.footer-bottom[data-v-cc917e4c] {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: var(--primary-purple);\n    color: white;\n    height: 6.25rem;\n}\n.app[data-v-cc917e4c]:hover {\n    cursor: pointer;\n    opacity: 0.8;\n}\n}\n@media screen and (min-width: 600px) {\n.footer-top-card[data-v-cc917e4c] {\n    width: calc(50% - 5px);\n}\n.footer-top-card .app-container[data-v-cc917e4c] {\n    width: 70%;\n}\n.footer-top-card .app-container img[data-v-cc917e4c] {\n    width: 60%;\n}\n}\n@media screen and (min-width: 800px) {\n.footer-top-card[data-v-cc917e4c] {\n    width: calc(25% - 10px);\n}\n.footer-top-card .app-container[data-v-cc917e4c] {\n    width: 70%;\n}\n.footer-top-card .app-container img[data-v-cc917e4c] {\n    width: 80%;\n}\n}", ""]);
+exports.push([module.i, "footer[data-v-cc917e4c] {\n  background-color: var(--secondary-purple);\n}\nfooter .footer-top-card[data-v-cc917e4c] {\n  background-color: var(--tertiary-purple-opacity);\n  border-radius: 1.25rem;\n  height: 100%;\n}\nfooter .app[data-v-cc917e4c] {\n  height: 3rem;\n  width: 10rem;\n}\nfooter h4[data-v-cc917e4c] {\n  margin-bottom: 1rem;\n  color: var(--primary-purple);\n  font-weight: bold;\n}\nfooter a[data-v-cc917e4c] {\n  text-decoration: none;\n}\nfooter li[data-v-cc917e4c] {\n  margin-bottom: 0.3rem;\n}\nfooter .footer-bottom[data-v-cc917e4c] {\n  background-color: var(--primary-purple);\n  color: var(--tertiary-purple);\n}", ""]);
 
 // exports
 
