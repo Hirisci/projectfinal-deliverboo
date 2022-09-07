@@ -2146,6 +2146,11 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     cart: Array
   },
+  data: function data() {
+    return {
+      isOpen: false
+    };
+  },
   computed: {
     amountCart: function amountCart() {
       var somma = 0;
@@ -2164,9 +2169,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     delPlate: function delPlate(arg) {
-      console.log(this.plate);
-      console.log(arg, "Componente padre");
       this.$emit("event-delPlate", arg);
+    },
+    showCart: function showCart() {
+      this.isOpen = !this.isOpen;
     }
   }
 });
@@ -2814,7 +2820,11 @@ var render = function render() {
   return _c("div", {
     staticClass: "cart"
   }, [_c("div", {
-    staticClass: "cart-lg d-none d-lg-block"
+    staticClass: "cart-lg d-lg-block container-fluid",
+    "class": {
+      menuOpen: _vm.isOpen,
+      dnone: !_vm.isOpen
+    }
   }, [_c("ATitleCard", {
     staticClass: "cart-title",
     attrs: {
@@ -2844,7 +2854,9 @@ var render = function render() {
     staticClass: "cart-total-price-value"
   }, [_vm._v(_vm._s(this.amountCart.toFixed(2)) + "€")])])])], 1), _vm._v(" "), _c("div", {
     staticClass: "cart-overlay d-lg-none"
-  }, [_c("button", {
+  }, [_c("div", {
+    staticClass: "cart-overlay"
+  }), _vm._v(" "), _c("button", {
     staticClass: "cart-overlay-button",
     on: {
       click: function click($event) {
@@ -2852,12 +2864,23 @@ var render = function render() {
       }
     }
   }, [_c("img", {
+    "class": {
+      dnone: _vm.isOpen
+    },
     attrs: {
       src: __webpack_require__(/*! ../imgs/shopping-cart.png */ "./resources/js/components/imgs/shopping-cart.png"),
       alt: ""
     }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "cart-overlay-count"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "cart-overlay-close",
+    "class": {
+      dnone: !_vm.isOpen
+    }
+  }, [_vm._v("X")])]), _vm._v(" "), _c("div", {
+    staticClass: "cart-overlay-count",
+    "class": {
+      dnone: _vm.isOpen
+    }
   }, [_vm._v(_vm._s(_vm.amountItem))])])]);
 };
 
@@ -3171,7 +3194,7 @@ var render = function render() {
   }), _vm._v(" "), _c("div", {
     staticClass: "row"
   }, [_c("div", {
-    staticClass: "restaurant-section-header-bottom col col-lg-4"
+    staticClass: "restaurant-section-header-bottom col col-lg-4 mb-3"
   }, [_c("ARestaurantCard")], 1)])]), _vm._v(" "), _c("div", {
     staticClass: "restaurant-section-shop container-xl p-3"
   }, [_c("div", {
@@ -3421,7 +3444,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".cart[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 20px;\n  align-items: center;\n}\n.cart-overlay-button[data-v-33631e30] {\n  background-color: var(--primary-purple);\n  border-radius: 50%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.cart-overlay-button img[data-v-33631e30] {\n  padding: 15px;\n  aspect-ratio: 1/1;\n  width: 100%;\n}\n.cart .cart-title[data-v-33631e30] {\n  width: 100%;\n}\n.cart .cart-items[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 20px;\n  width: 100%;\n}\n.cart .cart-total[data-v-33631e30] {\n  align-self: flex-end;\n  width: 100%;\n  background-color: var(--primary-purple);\n  border-radius: 20px;\n  font-weight: 700;\n  padding: 10px;\n}\n.cart .cart-total .cart-total-price[data-v-33631e30] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 20px;\n}\n.cart .cart-total .cart-total-price .cart-total-price-title[data-v-33631e30] {\n  color: white;\n  text-transform: uppercase;\n}\n.cart .cart-total .cart-total-price .cart-total-price-value[data-v-33631e30] {\n  background-color: white;\n  border-radius: 20px;\n  padding: 5px 10px;\n}\n.cart-overlay[data-v-33631e30] {\n  position: relative;\n}\n.cart-overlay-button[data-v-33631e30] {\n  width: 100%;\n}\n.cart-overlay-button img[data-v-33631e30] {\n  width: 100%;\n}\n.cart-overlay-count[data-v-33631e30] {\n  position: absolute;\n  top: 30%;\n  left: 60%;\n  transform: translateY(-50%);\n  background-color: red;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  aspect-ratio: 1/1;\n  width: 25px;\n  color: white;\n}", ""]);
+exports.push([module.i, ".cart[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 1.25rem;\n  align-items: center;\n}\n.cart-overlay-button[data-v-33631e30] {\n  background-color: var(--primary-purple);\n  border-radius: 50%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.cart-overlay-button img[data-v-33631e30] {\n  padding: 0.9375rem;\n  aspect-ratio: 1/1;\n  width: 100%;\n}\n.cart .cart-title[data-v-33631e30] {\n  width: 100%;\n}\n.cart .cart-items[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 1.25rem;\n  width: 100%;\n}\n.cart .cart-total[data-v-33631e30] {\n  align-self: flex-end;\n  width: 100%;\n  background-color: var(--primary-purple);\n  border-radius: 1.25rem;\n  font-weight: 700;\n  padding: 0.625rem;\n}\n.cart .cart-total .cart-total-price[data-v-33631e30] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 1.25rem;\n}\n.cart .cart-total .cart-total-price .cart-total-price-title[data-v-33631e30] {\n  color: white;\n  text-transform: uppercase;\n}\n.cart .cart-total .cart-total-price .cart-total-price-value[data-v-33631e30] {\n  background-color: white;\n  border-radius: 1.25rem;\n  padding: 0.3125rem 0.625rem;\n}\n.cart-overlay[data-v-33631e30] {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.cart-overlay-close[data-v-33631e30] {\n  font-weight: bolder;\n  color: white;\n}\n.cart-overlay-button[data-v-33631e30] {\n  width: 3.125rem;\n  height: 3.125rem;\n}\n.cart-overlay-button img[data-v-33631e30] {\n  width: 100%;\n}\n.cart-overlay-count[data-v-33631e30] {\n  position: absolute;\n  top: 30%;\n  left: 60%;\n  transform: translateY(-50%);\n  background-color: red;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  aspect-ratio: 1/1;\n  width: 1.5625rem;\n  color: white;\n}\n.cart .menuOpen[data-v-33631e30] {\n  padding-top: 1.25rem;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  background-color: var(--tertiary-purple);\n}\n.cart .menuOpen .cart-title[data-v-33631e30] {\n  width: 70%;\n  margin: auto;\n}\n.cart .dnone[data-v-33631e30] {\n  display: none;\n}", ""]);
 
 // exports
 
@@ -3516,7 +3539,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".restaurant-section-header[data-v-5fd922af] {\n  position: relative;\n}\n.restaurant-section-header img[data-v-5fd922af] {\n  min-height: 30vh;\n  height: 30vh;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.restaurant-section-header-bottom[data-v-5fd922af] {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n}", ""]);
+exports.push([module.i, ".restaurant-section-header[data-v-5fd922af] {\n  position: relative;\n}\n.restaurant-section-header img[data-v-5fd922af] {\n  min-height: 40vh;\n  height: 40vh;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.restaurant-section-header-bottom[data-v-5fd922af] {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n}\n.restaurant-section-shop[data-v-5fd922af] {\n  position: relative;\n}", ""]);
 
 // exports
 

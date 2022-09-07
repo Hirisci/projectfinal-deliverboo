@@ -3,7 +3,7 @@
   <div class="restaurant-section-header container-fluid p-0">
     <img :src="`/storage/${restaurant.img}`" alt="/" />
     <div class="row">
-      <div class="restaurant-section-header-bottom col col-lg-4">
+      <div class="restaurant-section-header-bottom col col-lg-4 mb-3">
         <ARestaurantCard />
       </div>
     </div>
@@ -122,8 +122,8 @@ export default {
     &-header{
       position: relative;
       img{
-        min-height: 30vh;
-        height: 30vh;
+        min-height: 40vh;
+        height: 40vh;
         width: 100%;
         object-fit: cover;
       }
@@ -132,6 +132,9 @@ export default {
         left: 0;
         bottom: 0;
       }
+    }
+    &-shop{
+      position: relative;
     }
   }
 
