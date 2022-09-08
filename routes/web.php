@@ -39,12 +39,7 @@ Route::middleware('auth')
         Route::resource('order', 'OrderController');
 });
 
-// Front office
-Route::get("{any?}", function() {
-        return view('guest.home');
-})->where("any",".*");
-
-Route::get('/', function () {
+Route::get('/order', function () {
         $gateway = new Braintree\Gateway([
             'environment' => config('services.braintree.environment'),
             'merchantId' => config('services.braintree.merchantId'),
@@ -101,17 +96,22 @@ Route::post('/checkout', function (Request $request) {
         }
     });
     
-    Route::get('/hosted', function () {
-        $gateway = new Braintree\Gateway([
-            'environment' => config('services.braintree.environment'),
-            'merchantId' => config('services.braintree.merchantId'),
-            'publicKey' => config('services.braintree.publicKey'),
-            'privateKey' => config('services.braintree.privateKey')
-        ]);
-    
-        $token = $gateway->ClientToken()->generate();
-    
-        return view('hosted', [
-            'token' => $token
-        ]);
-    });
+Route::get('/hosted', function () {
+    $gateway = new Braintree\Gateway([
+        'environment' => config('services.braintree.environment'),
+        'merchantId' => config('services.braintree.merchantId'),
+        'publicKey' => config('services.braintree.publicKey'),
+        'privateKey' => config('services.braintree.privateKey')
+    ]);
+
+    $token = $gateway->ClientToken()->generate();
+
+    return view('hosted', [
+        'token' => $token
+    ]);
+});
+
+// Front office
+Route::get("{any?}", function() {
+    return view('guest.home');
+})->where("any",".*");

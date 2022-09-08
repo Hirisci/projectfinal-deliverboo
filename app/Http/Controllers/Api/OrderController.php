@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
 class OrderController extends Controller
 {
     public function store(Request $request)
@@ -32,7 +31,9 @@ class OrderController extends Controller
 
         $token = $gateway->ClientToken()->generate();
 
-        return response()->json($token);
+        return response()->json([
+            'token'=>$token
+        ],200);
         // return view('hosted', [
         //     'token' => $token
         // ]);
