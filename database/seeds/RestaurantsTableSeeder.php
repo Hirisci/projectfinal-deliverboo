@@ -70,7 +70,7 @@ class RestaurantsTableSeeder extends Seeder
             [
                 "name" => "MEIWEI Restaurant",
                 "address" => "Chinatown, 43, 20123 Milano MI",
-                "img" => "default/ImgRestaurant/cineseBanner.jpeg",
+                "img" => "default/ImgRestaurant/cineseBanner.jpg",
                 "logo" => "default/logoRestaurant/cinese.png",
                 "vat" => "12345678914",
                 "user_id" => "7",

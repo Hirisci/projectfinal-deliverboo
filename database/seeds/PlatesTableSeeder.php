@@ -228,7 +228,7 @@ class PlatesTableSeeder extends Seeder
             ],
             [
                 "name" => "Cheeseburger",
-                "image" => "default/ImgPlates/DOMINOS/cheeseburger.jpg",
+                "image" => "default/ImgPlates/DOMINOS/cheesburger.jpg",
                 "description" => "Una pizza con il nostro Classico impasto, Bacon, Mozzarella 100% italiana, Salsa burger, Cheddar, Cipolla e Pomodoro 100% italiano",
                 "price" => "9.55",
                 "is_visible" => "true",
@@ -244,7 +244,7 @@ class PlatesTableSeeder extends Seeder
             ],
             [
                 "name" => "Cheddar Melt",
-                "image" => "default/ImgPlates/DOMINOS/cheddatMelt.jpg",
+                "image" => "default/ImgPlates/DOMINOS/cheddarMelt.jpg",
                 "description" => "Una pizza con il nostro Classico impasto, Mozzarella 100% italiana, Bacon, Mais, Funghi Champignon e Pomodoro 100% italiano",
                 "price" => "9.95",
                 "is_visible" => "true",
@@ -309,7 +309,7 @@ class PlatesTableSeeder extends Seeder
             ],
             [
                 "name" => "Acajarè",
-                "image" => "default/ImgPlates/BRASILIANO/acajarès.jpg",
+                "image" => "default/ImgPlates/BRASILIANO/acajarè.jpg",
                 "description" => "Un tortino di fagioli, olio di palma e purea di cipolle, con un ripieno di gamberetti e una salsa di pane, anacardi e gamberetti detta vatapà. Il tutto cosparso di olio e fritto. ",
                 "price" => "9.80",
                 "is_visible" => "true",
