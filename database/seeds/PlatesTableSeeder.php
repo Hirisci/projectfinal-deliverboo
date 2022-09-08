@@ -414,6 +414,54 @@ class PlatesTableSeeder extends Seeder
                 "restaurant_id" => '8'
             ],
             //Burger King
+            [
+                "name" => "Roaster Burger",
+                "image" => "default/ImgPlates/BURGERKING/RoasterBurger.png",
+                "description" => "Panino sfizioso, caratterizzato dalla presenza della salsa Roasted Onion, cremosa e gustosa con un ricco sapore di cipolle arrosto,: fresca rucola, fette di pomodoro, cipole fritte, salsa BBQ, croccanti fette di bacon, cheddar e gustosa carne di manzo",
+                "price" => "6.80",
+                "is_visible" => "true",
+                "restaurant_id" => '9'
+            ],
+            [
+                "name" => "Whopper",
+                "image" => "default/ImgPlates/BURGERKING/whopper.png",
+                "description" => "Panino sfizioso, caratterizzato dalla presenza della salsa Roasted Onion, cremosa e gustosa con un ricco sapore di cipolle arrosto,: fresca rucola, fette di pomodoro, cipole fritte, salsa BBQ, croccanti fette di bacon, cheddar e gustosa carne di manzo",
+                "price" => "5.80",
+                "is_visible" => "true",
+                "restaurant_id" => '9'
+            ],
+            [
+                "name" => "Bacon King",
+                "image" => "default/ImgPlates/BURGERKING/baconking.png",
+                "description" => "Panino sfizioso, caratterizzato dalla presenza della salsa Roasted Onion, cremosa e gustosa con un ricco sapore di cipolle arrosto,: fresca rucola, fette di pomodoro, cipole fritte, salsa BBQ, croccanti fette di bacon, cheddar e gustosa carne di manzo",
+                "price" => "7.80",
+                "is_visible" => "true",
+                "restaurant_id" => '9'
+            ],
+            [
+                "name" => "Big King",
+                "image" => "default/ImgPlates/BURGERKING/bigking.png",
+                "description" => "Panino sfizioso, caratterizzato dalla presenza della salsa Roasted Onion, cremosa e gustosa con un ricco sapore di cipolle arrosto,: fresca rucola, fette di pomodoro, cipole fritte, salsa BBQ, croccanti fette di bacon, cheddar e gustosa carne di manzo",
+                "price" => "7.80",
+                "is_visible" => "true",
+                "restaurant_id" => '9'
+            ],
+            [
+                "name" => "Grilled Chicken Royale",
+                "image" => "default/ImgPlates/BURGERKING/grilledKitchen.png",
+                "description" => "Panino con petto di pollo grigliato Fileni 100% Italiano, il mix perfetto per chi vuole consumare cibo genuino senza rinunciare al gusto! I polli sono allevati a terra e vengono nutriti con alimenti 100% italiani.",
+                "price" => "6.80",
+                "is_visible" => "true",
+                "restaurant_id" => '9'
+            ],
+            [
+                "name" => "Roaster Chicken Burger",
+                "image" => "default/ImgPlates/BURGERKING/Roasterchicken.png",
+                "description" => "Panino con petto di pollo grigliato Fileni 100% Italiano, il mix perfetto per chi vuole consumare cibo genuino senza rinunciare al gusto! I polli sono allevati a terra e vengono nutriti con alimenti 100% italiani.",
+                "price" => "6.80",
+                "is_visible" => "true",
+                "restaurant_id" => '9'
+            ],
         ];
 
         foreach($plates as $plate){

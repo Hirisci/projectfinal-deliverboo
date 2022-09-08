@@ -91,8 +91,8 @@ class RestaurantsTableSeeder extends Seeder
                 "img" => "default/ImgRestaurant/burgerKingBanner.jpg",
                 "logo" => "default/logoRestaurant/burgerKing.png",
                 "vat" => "12345678914",
-                "user_id" => "8",
-                "category" => ['1', '4'],
+                "user_id" => "9",
+                "category" => ['5'],
             ],
 
         ];
