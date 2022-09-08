@@ -66,6 +66,7 @@ class RestaurantsTableSeeder extends Seeder
             $newRestaurants->name = $restaurant['name'];
             $newRestaurants->address = $restaurant['address'];
             $newRestaurants->img = $restaurant['img'];
+            $newRestaurants->logo = $restaurant['logo'];
             $newRestaurants->vat = $restaurant['vat'];
             $newRestaurants->user_id = $restaurant['user_id'];
             $newRestaurants->save();

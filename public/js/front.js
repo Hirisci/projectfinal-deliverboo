@@ -2337,7 +2337,24 @@ __webpack_require__.r(__webpack_exports__);
     return {
       cart: [],
       form: {
-        name: ""
+        client: {
+          name: "",
+          lastName: "",
+          phone: ""
+        },
+        address: {
+          street: "",
+          city: "",
+          state: "",
+          zip: "",
+          ring: ""
+        },
+        payment: {
+          name: "",
+          lastName: "",
+          cardNumber: "",
+          cvv: ""
+        }
       }
     };
   },
@@ -2351,19 +2368,25 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     submitForm: function submitForm() {
-      axios.post("api/order", this.form).then(function (res) {//Perform Success Action
-      })["catch"](function (error) {// error.response.status Check status code
-      })["finally"](function () {//Perform action in always
+      var path = "http://127.0.0.1:8000/api/order";
+      axios.post(path, {
+        form: this.sendClient,
+        cart: this.sendCart
+      }).then(function (res) {
+        console.log("successo", res); //Perform Success Action
+      })["catch"](function (error) {
+        console.log("successo", error); // error.response.status Check status code
+      })["finally"](function () {
+        //Perform action in always
+        console.log("dunque");
       });
     },
-    sendOrder: function sendOrder() {
-      axios.post("api/order", this.form).then(function (res) {//Perform Success Action
-      })["catch"](function (error) {// error.response.status Check status code
-      })["finally"](function () {//Perform action in always
+    amountCart: function amountCart() {
+      var somma = 0;
+      this.cart.forEach(function (element) {
+        somma += element.price * element.quantity;
       });
-      axios(options).then(function (response) {
-        console.log(response.status);
-      });
+      return somma;
     },
     addQty: function addQty(arg) {
       var result = this.cart.find(function (Element) {
@@ -2379,6 +2402,8 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         this.$set(this.cart, isx, result);
       }
+
+      console.log(this.sendCart);
     },
     delPlate: function delPlate(arg) {
       var result = this.cart.find(function (Element) {
@@ -2405,6 +2430,33 @@ __webpack_require__.r(__webpack_exports__);
         this.cart = listCart;
         console.log("carrello pieno");
       }
+    }
+  },
+  computed: {
+    sendCart: function sendCart() {
+      var order = {};
+      order.amount = this.amountCart();
+      order.list = [];
+      this.cart.forEach(function (el) {
+        var id = el.id,
+            quantity = el.quantity;
+        var item = {
+          id: id,
+          quantity: quantity
+        };
+        order.list.push(item);
+      });
+      return order;
+    },
+    sendClient: function sendClient() {
+      var order = {
+        name: "".concat(this.form.client.name, " ").concat(this.form.client.lastName),
+        number: this.form.client.phone,
+        address: "".concat(this.form.address.street, ", ").concat(this.form.address.city, ", ").concat(this.form.address.state, ", ").concat(this.form.address.zip),
+        ring: this.form.client.ring,
+        payment: this.form.payment
+      };
+      return order;
     }
   },
   mounted: function mounted() {
@@ -3569,8 +3621,8 @@ var render = function render() {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: _vm.form.name,
-      expression: "form.name"
+      value: _vm.form.client.name,
+      expression: "form.client.name"
     }],
     staticClass: "form-control",
     attrs: {
@@ -3579,16 +3631,299 @@ var render = function render() {
       "aria-label": "Nome"
     },
     domProps: {
-      value: _vm.form.name
+      value: _vm.form.client.name
     },
     on: {
       input: function input($event) {
         if ($event.target.composing) return;
 
-        _vm.$set(_vm.form, "name", $event.target.value);
+        _vm.$set(_vm.form.client, "name", $event.target.value);
       }
     }
-  })]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _vm._m(6), _vm._v(" "), _vm._m(7), _vm._v(" "), _vm._m(8)])]), _vm._v(" "), _c("div", {
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "col"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.client.lastName,
+      expression: "form.client.lastName"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      placeholder: "Cognome",
+      "aria-label": "Cognome"
+    },
+    domProps: {
+      value: _vm.form.client.lastName
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.client, "lastName", $event.target.value);
+      }
+    }
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.address.street,
+      expression: "form.address.street"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "client_address",
+      placeholder: "Indirizzo"
+    },
+    domProps: {
+      value: _vm.form.address.street
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.address, "street", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.address.city,
+      expression: "form.address.city"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "client_city",
+      placeholder: "Città"
+    },
+    domProps: {
+      value: _vm.form.address.city
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.address, "city", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.address.state,
+      expression: "form.address.state"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      placeholder: "Stato",
+      "aria-label": "Stato"
+    },
+    domProps: {
+      value: _vm.form.address.state
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.address, "state", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "col"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.address.zip,
+      expression: "form.address.zip"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      placeholder: "CAP",
+      "aria-label": "CAP"
+    },
+    domProps: {
+      value: _vm.form.address.zip
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.address, "zip", $event.target.value);
+      }
+    }
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.address.ring,
+      expression: "form.address.ring"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "client_name",
+      placeholder: "Nome sul campanello"
+    },
+    domProps: {
+      value: _vm.form.address.ring
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.address, "ring", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group mb-4"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.client.phone,
+      expression: "form.client.phone"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "client_number",
+      placeholder: "Cellulare"
+    },
+    domProps: {
+      value: _vm.form.client.phone
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.client, "phone", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "row mb-3"
+  }, [_c("p", {
+    staticClass: "mb-1"
+  }, [_vm._v("Dettagli Pagamento")]), _vm._v(" "), _c("div", {
+    staticClass: "col"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.payment.name,
+      expression: "form.payment.name"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      placeholder: "Nome",
+      "aria-label": "Nome"
+    },
+    domProps: {
+      value: _vm.form.payment.name
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.payment, "name", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "col"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.payment.lastName,
+      expression: "form.payment.lastName"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      placeholder: "Cognome",
+      "aria-label": "Cognome"
+    },
+    domProps: {
+      value: _vm.form.payment.lastName
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.payment, "lastName", $event.target.value);
+      }
+    }
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-10"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.payment.cardNumber,
+      expression: "form.payment.cardNumber"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      placeholder: "Numero Carta",
+      "aria-label": "numeroCarta"
+    },
+    domProps: {
+      value: _vm.form.payment.cardNumber
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.payment, "cardNumber", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "col"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.payment.cvv,
+      expression: "form.payment.cvv"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      placeholder: "CVV",
+      "aria-label": "cvv"
+    },
+    domProps: {
+      value: _vm.form.payment.cvv
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.payment, "cvv", $event.target.value);
+      }
+    }
+  })])]), _vm._v(" "), _vm._m(0)])]), _vm._v(" "), _c("div", {
     staticClass: "d-none d-lg-block col-lg-4 cart"
   }, [_c("MCart", {
     attrs: {
@@ -3602,153 +3937,6 @@ var render = function render() {
 };
 
 var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "col"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      placeholder: "Cognome",
-      "aria-label": "Cognome"
-    }
-  })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-group"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "client_address",
-      placeholder: "Indirizzo"
-    }
-  })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-group"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "client_city",
-      placeholder: "Città"
-    }
-  })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "row"
-  }, [_c("div", {
-    staticClass: "col"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      placeholder: "Stato",
-      "aria-label": "Stato"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      placeholder: "CAP",
-      "aria-label": "CAP"
-    }
-  })])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-group"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "client_name",
-      placeholder: "Nome sul campanello"
-    }
-  })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-group mb-4"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "client_number",
-      placeholder: "Cellulare"
-    }
-  })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "row mb-3"
-  }, [_c("p", {
-    staticClass: "mb-1"
-  }, [_vm._v("Dettagli Pagamento")]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      placeholder: "Nome",
-      "aria-label": "Nome"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      placeholder: "Cognome",
-      "aria-label": "Cognome"
-    }
-  })])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "row"
-  }, [_c("div", {
-    staticClass: "col-10"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      placeholder: "Numero Carta",
-      "aria-label": "numeroCarta"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      placeholder: "CVV",
-      "aria-label": "cvv"
-    }
-  })])]);
-}, function () {
   var _vm = this,
       _c = _vm._self._c;
 
@@ -5829,6 +6017,162 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (this && this.clearImmediate);
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./node_modules/vue-cookies/vue-cookies.js":
+/*!*************************************************!*\
+  !*** ./node_modules/vue-cookies/vue-cookies.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Vue Cookies v1.8.1
+ * https://github.com/cmp-cc/vue-cookies
+ *
+ * Copyright 2016, cmp-cc
+ * Released under the MIT license
+ */
+
+ (function () {
+
+  var defaultConfig = {
+    expires: '1d',
+    path: '; path=/',
+    domain: '',
+    secure: '',
+    sameSite: '; SameSite=Lax'
+  };
+
+  var VueCookies = {
+    // install of Vue
+    install: function (Vue, options) {
+      if (options) this.config(options.expires, options.path, options.domain, options.secure, options.sameSite);
+      if (Vue.prototype) Vue.prototype.$cookies = this;
+      if (Vue.config && Vue.config.globalProperties) {
+        Vue.config.globalProperties.$cookies = this;
+        Vue.provide('$cookies', this);
+      }
+      Vue.$cookies = this;
+    },
+    config: function (expires, path, domain, secure, sameSite) {
+      defaultConfig.expires = expires ? expires : '1d';
+      defaultConfig.path = path ? '; path=' + path : '; path=/';
+      defaultConfig.domain = domain ? '; domain=' + domain : '';
+      defaultConfig.secure = secure ? '; Secure' : '';
+      defaultConfig.sameSite = sameSite ? '; SameSite=' + sameSite : '; SameSite=Lax';
+    },
+    get: function (key) {
+      var value = decodeURIComponent(document.cookie.replace(new RegExp('(?:(?:^|.*;)\\s*' + encodeURIComponent(key).replace(/[\-\.\+\*]/g, '\\$&') + '\\s*\\=\\s*([^;]*).*$)|^.*$'), '$1')) || null;
+
+      if (value && value.substring(0, 1) === '{' && value.substring(value.length - 1, value.length) === '}') {
+        try {
+          value = JSON.parse(value);
+        } catch (e) {
+          return value;
+        }
+      }
+      return value;
+    },
+    set: function (key, value, expires, path, domain, secure, sameSite) {
+      if (!key) {
+        throw new Error('Cookie name is not found in the first argument.');
+      } else if (/^(?:expires|max\-age|path|domain|secure|SameSite)$/i.test(key)) {
+        throw new Error('Cookie name illegality. Cannot be set to ["expires","max-age","path","domain","secure","SameSite"]\t current key name: ' + key);
+      }
+      // support json object
+      if (value && value.constructor === Object) {
+        value = JSON.stringify(value);
+      }
+      var _expires = '';
+      expires = expires == undefined ? defaultConfig.expires : expires;
+      if (expires && expires != 0) {
+        switch (expires.constructor) {
+          case Number:
+            if (expires === Infinity || expires === -1) _expires = '; expires=Fri, 31 Dec 9999 23:59:59 GMT';
+            else _expires = '; max-age=' + expires;
+            break;
+          case String:
+            if (/^(?:\d+(y|m|d|h|min|s))$/i.test(expires)) {
+              // get capture number group
+              var _expireTime = expires.replace(/^(\d+)(?:y|m|d|h|min|s)$/i, '$1');
+              // get capture type group , to lower case
+              switch (expires.replace(/^(?:\d+)(y|m|d|h|min|s)$/i, '$1').toLowerCase()) {
+                  // Frequency sorting
+                case 'm':
+                  _expires = '; max-age=' + +_expireTime * 2592000;
+                  break; // 60 * 60 * 24 * 30
+                case 'd':
+                  _expires = '; max-age=' + +_expireTime * 86400;
+                  break; // 60 * 60 * 24
+                case 'h':
+                  _expires = '; max-age=' + +_expireTime * 3600;
+                  break; // 60 * 60
+                case 'min':
+                  _expires = '; max-age=' + +_expireTime * 60;
+                  break; // 60
+                case 's':
+                  _expires = '; max-age=' + _expireTime;
+                  break;
+                case 'y':
+                  _expires = '; max-age=' + +_expireTime * 31104000;
+                  break; // 60 * 60 * 24 * 30 * 12
+                default:
+                  new Error('unknown exception of "set operation"');
+              }
+            } else {
+              _expires = '; expires=' + expires;
+            }
+            break;
+          case Date:
+            _expires = '; expires=' + expires.toUTCString();
+            break;
+        }
+      }
+      document.cookie =
+          encodeURIComponent(key) + '=' + encodeURIComponent(value) +
+          _expires +
+          (domain ? '; domain=' + domain : defaultConfig.domain) +
+          (path ? '; path=' + path : defaultConfig.path) +
+          (secure == undefined ? defaultConfig.secure : secure ? '; Secure' : '') +
+          (sameSite == undefined ? defaultConfig.sameSite : (sameSite ? '; SameSite=' + sameSite : ''));
+      return this;
+    },
+    remove: function (key, path, domain) {
+      if (!key || !this.isKey(key)) {
+        return false;
+      }
+      document.cookie = encodeURIComponent(key) +
+          '=; expires=Thu, 01 Jan 1970 00:00:00 GMT' +
+          (domain ? '; domain=' + domain : defaultConfig.domain) +
+          (path ? '; path=' + path : defaultConfig.path) +
+          '; SameSite=Lax';
+      return true;
+    },
+    isKey: function (key) {
+      return (new RegExp('(?:^|;\\s*)' + encodeURIComponent(key).replace(/[\-\.\+\*]/g, '\\$&') + '\\s*\\=')).test(document.cookie);
+    },
+    keys: function () {
+      if (!document.cookie) return [];
+      var _keys = document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g, '').split(/\s*(?:\=[^;]*)?;\s*/);
+      for (var _index = 0; _index < _keys.length; _index++) {
+        _keys[_index] = decodeURIComponent(_keys[_index]);
+      }
+      return _keys;
+    }
+  };
+
+  if (true) {
+    module.exports = VueCookies;
+  } else {}
+  // vue-cookies can exist independently,no dependencies library
+  if (typeof window !== 'undefined') {
+    window.$cookies = VueCookies;
+  }
+
+})();
+
 
 /***/ }),
 
@@ -22347,21 +22691,25 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./router */ "./resources/js/router.js");
-/* harmony import */ var _views_App__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views/App */ "./resources/js/views/App.vue");
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); // axios importato come globale
+/* harmony import */ var vue_cookies__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-cookies */ "./node_modules/vue-cookies/vue-cookies.js");
+/* harmony import */ var vue_cookies__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_cookies__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./router */ "./resources/js/router.js");
+/* harmony import */ var _views_App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./views/App */ "./resources/js/views/App.vue");
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+
+Vue.use(vue_cookies__WEBPACK_IMPORTED_MODULE_0___default.a); // axios importato come globale
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'; // aggiungiamo l'import del file router.js
+window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest"; // aggiungiamo l'import del file router.js
 
 
 
 var app = new Vue({
-  el: '#App',
+  el: "#App",
   render: function render(h) {
-    return h(_views_App__WEBPACK_IMPORTED_MODULE_1__["default"]);
+    return h(_views_App__WEBPACK_IMPORTED_MODULE_2__["default"]);
   },
-  router: _router__WEBPACK_IMPORTED_MODULE_0__["default"]
+  router: _router__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 
 /***/ }),

@@ -12,7 +12,7 @@
               <p class="mb-1">Dettagli Ordine</p>
               <div class="col">
                 <input
-                  v-model="form.name"
+                  v-model="form.client.name"
                   type="text"
                   class="form-control"
                   placeholder="Nome"
@@ -21,6 +21,7 @@
               </div>
               <div class="col">
                 <input
+                  v-model="form.client.lastName"
                   type="text"
                   class="form-control"
                   placeholder="Cognome"
@@ -30,6 +31,7 @@
             </div>
             <div class="form-group">
               <input
+                v-model="form.address.street"
                 type="text"
                 class="form-control"
                 id="client_address"
@@ -38,6 +40,7 @@
             </div>
             <div class="form-group">
               <input
+                v-model="form.address.city"
                 type="text"
                 class="form-control"
                 id="client_city"
@@ -47,6 +50,7 @@
             <div class="row">
               <div class="col">
                 <input
+                  v-model="form.address.state"
                   type="text"
                   class="form-control"
                   placeholder="Stato"
@@ -55,6 +59,7 @@
               </div>
               <div class="col">
                 <input
+                  v-model="form.address.zip"
                   type="text"
                   class="form-control"
                   placeholder="CAP"
@@ -64,6 +69,7 @@
             </div>
             <div class="form-group">
               <input
+                v-model="form.address.ring"
                 type="text"
                 class="form-control"
                 id="client_name"
@@ -72,6 +78,7 @@
             </div>
             <div class="form-group mb-4">
               <input
+                v-model="form.client.phone"
                 type="text"
                 class="form-control"
                 id="client_number"
@@ -82,6 +89,7 @@
               <p class="mb-1">Dettagli Pagamento</p>
               <div class="col">
                 <input
+                  v-model="form.payment.name"
                   type="text"
                   class="form-control"
                   placeholder="Nome"
@@ -90,6 +98,7 @@
               </div>
               <div class="col">
                 <input
+                  v-model="form.payment.lastName"
                   type="text"
                   class="form-control"
                   placeholder="Cognome"
@@ -100,6 +109,7 @@
             <div class="row">
               <div class="col-10">
                 <input
+                  v-model="form.payment.cardNumber"
                   type="text"
                   class="form-control"
                   placeholder="Numero Carta"
@@ -108,6 +118,7 @@
               </div>
               <div class="col">
                 <input
+                  v-model="form.payment.cvv"
                   type="text"
                   class="form-control"
                   placeholder="CVV"
@@ -145,7 +156,24 @@ export default {
     return {
       cart: [],
       form: {
-        name: "",
+        client: {
+          name: "",
+          lastName: "",
+          phone: "",
+        },
+        address: {
+          street: "",
+          city: "",
+          state: "",
+          zip: "",
+          ring: "",
+        },
+        payment: {
+          name: "",
+          lastName: "",
+          cardNumber: "",
+          cvv: "",
+        },
       },
     };
   },
@@ -160,34 +188,28 @@ export default {
   },
   methods: {
     submitForm() {
+      const path = "http://127.0.0.1:8000/api/order";
       axios
-        .post("api/order", this.form)
+        .post(path, { form: this.sendClient, cart: this.sendCart })
         .then((res) => {
+          console.log("successo", res);
           //Perform Success Action
         })
         .catch((error) => {
+          console.log("successo", error);
           // error.response.status Check status code
         })
         .finally(() => {
           //Perform action in always
+          console.log("dunque");
         });
     },
-    sendOrder() {
-      axios
-        .post("api/order", this.form)
-        .then((res) => {
-          //Perform Success Action
-        })
-        .catch((error) => {
-          // error.response.status Check status code
-        })
-        .finally(() => {
-          //Perform action in always
-        });
-
-      axios(options).then((response) => {
-        console.log(response.status);
+    amountCart() {
+      let somma = 0;
+      this.cart.forEach((element) => {
+        somma += element.price * element.quantity;
       });
+      return somma;
     },
     addQty(arg) {
       let result = this.cart.find((Element) => Element.id === arg.id);
@@ -198,6 +220,7 @@ export default {
       } else {
         this.$set(this.cart, isx, result);
       }
+      console.log(this.sendCart);
     },
     delPlate(arg) {
       let result = this.cart.find((Element) => Element.id === arg.id);
@@ -220,6 +243,30 @@ export default {
       }
     },
   },
+  computed: {
+    sendCart() {
+      let order = {};
+      order.amount = this.amountCart();
+      order.list = [];
+
+      this.cart.forEach((el) => {
+        let { id, quantity } = el;
+        let item = { id: id, quantity: quantity };
+        order.list.push(item);
+      });
+      return order;
+    },
+    sendClient() {
+      let order = {
+        name: `${this.form.client.name} ${this.form.client.lastName}`,
+        number: this.form.client.phone,
+        address: `${this.form.address.street}, ${this.form.address.city}, ${this.form.address.state}, ${this.form.address.zip}`,
+        ring: this.form.client.ring,
+        payment: this.form.payment,
+      };
+      return order;
+    },
+  },
   mounted() {
     this.refreshCart();
   },
@@ -232,14 +279,14 @@ export default {
   border-radius: 1.25rem;
   display: flex;
   flex-flow: column;
-  gap: .625rem;
+  gap: 0.625rem;
   padding: 1.25rem 0rem;
 }
 
 .form-group {
-  margin: .9375rem 0;
+  margin: 0.9375rem 0;
 }
 label {
-  margin-bottom: .3125rem;
+  margin-bottom: 0.3125rem;
 }
 </style>
