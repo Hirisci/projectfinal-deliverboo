@@ -3591,7 +3591,7 @@ var render = function render() {
 
   return _c("div", {
     staticClass: "container-fluid p-0"
-  }, [_c("AJumbotron"), _vm._v(" "), _c("div", {
+  }, [_c("AJumbotron"), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "form container-lg p-3"
   }, [_c("div", {
     staticClass: "row d-flex justify-content-between"
@@ -3923,7 +3923,7 @@ var render = function render() {
         _vm.$set(_vm.form.payment, "cvv", $event.target.value);
       }
     }
-  })])]), _vm._v(" "), _vm._m(0)])]), _vm._v(" "), _c("div", {
+  })])]), _vm._v(" "), _vm._m(1)])]), _vm._v(" "), _c("div", {
     staticClass: "d-none d-lg-block col-lg-5 cart"
   }, [_c("MCart", {
     attrs: {
@@ -3938,6 +3938,18 @@ var render = function render() {
 };
 
 var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "row d-flex align-items-center justify-content-center p-3"
+  }, [_c("a", {
+    staticClass: "btn-main btn-purple goBack col-10 col-lg-2",
+    attrs: {
+      href: "javascript:history.back()"
+    }
+  }, [_vm._v("TORNA INDIETRO")])]);
+}, function () {
   var _vm = this,
       _c = _vm._self._c;
 
@@ -4372,7 +4384,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".user-form[data-v-19797662] {\n  background-color: var(--secondary-purple);\n  border-radius: 1.25rem;\n  display: flex;\n  flex-flow: column;\n  gap: 0.625rem;\n  padding: 1.25rem 0rem;\n}\n.form-group[data-v-19797662] {\n  margin: 0.9375rem 0;\n}\nlabel[data-v-19797662] {\n  margin-bottom: 0.3125rem;\n}", ""]);
+exports.push([module.i, ".user-form[data-v-19797662] {\n  background-color: var(--secondary-purple);\n  border-radius: 1.25rem;\n  display: flex;\n  flex-flow: column;\n  gap: 0.625rem;\n  padding: 1.25rem 0rem;\n}\n.goBack[data-v-19797662] {\n  text-align: center;\n}\n.goBack[data-v-19797662]:hover {\n  cursor: pointer;\n}\n.form-group[data-v-19797662] {\n  margin: 0.9375rem 0;\n}\nlabel[data-v-19797662] {\n  margin-bottom: 0.3125rem;\n}", ""]);
 
 // exports
 
