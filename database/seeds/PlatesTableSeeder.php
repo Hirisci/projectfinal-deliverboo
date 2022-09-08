@@ -448,7 +448,7 @@ class PlatesTableSeeder extends Seeder
             ],
             [
                 "name" => "Grilled Chicken Royale",
-                "image" => "default/ImgPlates/BURGERKING/grilledKitchen.png",
+                "image" => "default/ImgPlates/BURGERKING/grilledKichen.png",
                 "description" => "Panino con petto di pollo grigliato Fileni 100% Italiano, il mix perfetto per chi vuole consumare cibo genuino senza rinunciare al gusto! I polli sono allevati a terra e vengono nutriti con alimenti 100% italiani.",
                 "price" => "6.80",
                 "is_visible" => "true",
