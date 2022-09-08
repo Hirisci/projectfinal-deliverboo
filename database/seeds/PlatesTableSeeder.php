@@ -315,6 +315,55 @@ class PlatesTableSeeder extends Seeder
                 "is_visible" => "true",
                 "restaurant_id" => '6'
             ],
+            //Cinese
+            [
+                "name" => "HOT POT",
+                "image" => "default/ImgPlates/CINESE/hotPot.jpg",
+                "description" => "Pesce, carne e verdure una volta infilati in dei lunghi spiedini in legno dovrete immergerli nell’olio bollente, aspettare qualche minuto di cottura ed assaggiarli ",
+                "price" => "19.80",
+                "is_visible" => "true",
+                "restaurant_id" => '7'
+            ],
+            [
+                "name" => "Dumpling",
+                "image" => "default/ImgPlates/CINESE/dumpling.jpg",
+                "description" => "Tipici e tradizionali ravioli ripieni, sono cotti al vapore,  ripieni con diversi ingredienti, tra cui carne, pesce, formaggi e verdure. ",
+                "price" => "4.80",
+                "is_visible" => "true",
+                "restaurant_id" => '7'
+            ],
+            [
+                "name" => "Anatra Pechinese",
+                "image" => "default/ImgPlates/CINESE/anatra.jpg",
+                "description" => " L’anatra esternamente si presenta croccante e laccata, mentre all’interno resta morbida ed umida. Si mangia appoggiando una sottile fettina di anatra su una sfoglia di pane, guarnita ed insaporita dalla tipica salsa pechinese. ",
+                "price" => "15.80",
+                "is_visible" => "true",
+                "restaurant_id" => '7'
+            ],
+            [
+                "name" => "Spaghetti di Riso",
+                "image" => "default/ImgPlates/CINESE/noodless.jpg",
+                "description" => "Sottilissimi spaghetti realizzati con farina di riso, conditi con verdure, carne o pesce e uovo, immersi in una specie di brodo. Possono essere piccanti o piccantissimi, a te la scelta. ",
+                "price" => "7.50",
+                "is_visible" => "true",
+                "restaurant_id" => '7'
+            ],
+            [
+                "name" => "Involtini Primavera",
+                "image" => "default/ImgPlates/CINESE/involtiniPrimavera.jpg",
+                "description" => "Questo piatto è composto da una sfoglia sottile e croccante ed è farcita con un mix di verdure speziate dal sapore inconfondibile. Possono essere serviti sia fritti che al naturale accompagnati da una salsa agrodolce. ",
+                "price" => "3.50",
+                "is_visible" => "true",
+                "restaurant_id" => '7'
+            ],
+            [
+                "name" => "Riso alla cantonese",
+                "image" => "default/ImgPlates/CINESE/risoCantonese.jpg",
+                "description" => "Piselli, tocchetti di prosciutto cotto e uova, insaporiranno i bianchi chicchi di riso. Piatto leggero e divertente da sperimentare anche con l’ausilio della famosissime bacchette in legno. ",
+                "price" => "5.50",
+                "is_visible" => "true",
+                "restaurant_id" => '7'
+            ],
         ];
 
         foreach($plates as $plate){
