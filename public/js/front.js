@@ -2350,8 +2350,9 @@ __webpack_require__.r(__webpack_exports__);
           ring: ""
         },
         payment: {
-          name: "",
-          lastName: "",
+          fullName: "",
+          email: "",
+          expire: "",
           cardNumber: "",
           cvv: ""
         }
@@ -3827,23 +3828,23 @@ var render = function render() {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: _vm.form.payment.name,
-      expression: "form.payment.name"
+      value: _vm.form.payment.fullName,
+      expression: "form.payment.fullName"
     }],
     staticClass: "form-control",
     attrs: {
       type: "text",
-      placeholder: "Nome",
+      placeholder: "Nome Completo",
       "aria-label": "Nome"
     },
     domProps: {
-      value: _vm.form.payment.name
+      value: _vm.form.payment.fullName
     },
     on: {
       input: function input($event) {
         if ($event.target.composing) return;
 
-        _vm.$set(_vm.form.payment, "name", $event.target.value);
+        _vm.$set(_vm.form.payment, "fullName", $event.target.value);
       }
     }
   })]), _vm._v(" "), _c("div", {
@@ -3852,29 +3853,29 @@ var render = function render() {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: _vm.form.payment.lastName,
-      expression: "form.payment.lastName"
+      value: _vm.form.payment.email,
+      expression: "form.payment.email"
     }],
     staticClass: "form-control",
     attrs: {
-      type: "text",
-      placeholder: "Cognome",
-      "aria-label": "Cognome"
+      type: "email",
+      placeholder: "ex@test.com",
+      "aria-label": "email"
     },
     domProps: {
-      value: _vm.form.payment.lastName
+      value: _vm.form.payment.email
     },
     on: {
       input: function input($event) {
         if ($event.target.composing) return;
 
-        _vm.$set(_vm.form.payment, "lastName", $event.target.value);
+        _vm.$set(_vm.form.payment, "email", $event.target.value);
       }
     }
   })])]), _vm._v(" "), _c("div", {
     staticClass: "row"
   }, [_c("div", {
-    staticClass: "col-10"
+    staticClass: "col-6"
   }, [_c("input", {
     directives: [{
       name: "model",
@@ -3896,6 +3897,31 @@ var render = function render() {
         if ($event.target.composing) return;
 
         _vm.$set(_vm.form.payment, "cardNumber", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "col"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.payment.expire,
+      expression: "form.payment.expire"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      placeholder: "MM/YY",
+      "aria-label": "expire"
+    },
+    domProps: {
+      value: _vm.form.payment.expire
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.payment, "expire", $event.target.value);
       }
     }
   })]), _vm._v(" "), _c("div", {

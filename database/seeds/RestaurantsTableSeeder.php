@@ -17,6 +17,7 @@ class RestaurantsTableSeeder extends Seeder
                 "name" => "McDonald's",
                 "address" => "Passaggio Duomo, 2, 20123 Milano MI",
                 "img" => "default/ImgRestaurant/mc.webp",
+                "logo" => "default/logoRestaurant/mc.webp",
                 "logo" => "https://i.pinimg.com/originals/3e/cb/a8/3ecba88bff841698cef03d71220adaf6.jpg",
                 "vat" => "12345678910",
                 "user_id" => "1",
