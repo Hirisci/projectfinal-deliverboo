@@ -20,9 +20,5 @@ Route::post('order', 'Api\OrderController@getData');
 Route::get('restaurant/{slug}', 'Api\RestaurantController@show');
 Route::get('category', 'Api\CategoryController@index');
 Route::get('plate', 'Api\PlateController@index');
-<<<<<<< HEAD
 Route::get('plate/{slug}/menu', 'Api\PlateController@show' );
 
-=======
-Route::get('plate/{slug}/menu', 'Api\PlateController@show' );
->>>>>>> parent of 48f2726 (token for client)

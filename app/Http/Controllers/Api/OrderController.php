@@ -21,9 +21,6 @@ class OrderController extends Controller
         //reindirizzo a un altra pagina
         return response()->json($data);
     }
-<<<<<<< HEAD
 
        
-=======
->>>>>>> parent of 48f2726 (token for client)
 }
