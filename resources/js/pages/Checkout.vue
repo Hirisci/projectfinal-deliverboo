@@ -85,7 +85,7 @@
                 placeholder="Cellulare"
               />
             </div>
-            <div class="row mb-3">
+            <!-- <div class="row mb-3">
               <p class="mb-1">Dettagli Pagamento</p>
               <div class="col">
                 <input
@@ -134,7 +134,7 @@
                   aria-label="cvv"
                 />
               </div>
-            </div>
+            </div> -->
             <div class="d-flex justify-content-end mt-3">
               <button class="btn-main btn-purple">Procedi al pagamento</button>
             </div>
@@ -177,13 +177,13 @@ export default {
           zip: "",
           ring: "",
         },
-        payment: {
-          fullName: "",
-          email: "",
-          expire: "",
-          cardNumber: "",
-          cvv: "",
-        },
+        // payment: {
+        //   fullName: "",
+        //   email: "",
+        //   expire: "",
+        //   cardNumber: "",
+        //   cvv: "",
+        // },
       },
     };
   },

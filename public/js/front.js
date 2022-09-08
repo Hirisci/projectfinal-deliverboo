@@ -2348,14 +2348,14 @@ __webpack_require__.r(__webpack_exports__);
           state: "",
           zip: "",
           ring: ""
-        },
-        payment: {
-          fullName: "",
-          email: "",
-          expire: "",
-          cardNumber: "",
-          cvv: ""
-        }
+        } // payment: {
+        //   fullName: "",
+        //   email: "",
+        //   expire: "",
+        //   cardNumber: "",
+        //   cvv: "",
+        // },
+
       }
     };
   },
@@ -3818,138 +3818,7 @@ var render = function render() {
         _vm.$set(_vm.form.client, "phone", $event.target.value);
       }
     }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "row mb-3"
-  }, [_c("p", {
-    staticClass: "mb-1"
-  }, [_vm._v("Dettagli Pagamento")]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("input", {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.form.payment.fullName,
-      expression: "form.payment.fullName"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      placeholder: "Nome Completo",
-      "aria-label": "Nome"
-    },
-    domProps: {
-      value: _vm.form.payment.fullName
-    },
-    on: {
-      input: function input($event) {
-        if ($event.target.composing) return;
-
-        _vm.$set(_vm.form.payment, "fullName", $event.target.value);
-      }
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("input", {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.form.payment.email,
-      expression: "form.payment.email"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      type: "email",
-      placeholder: "ex@test.com",
-      "aria-label": "email"
-    },
-    domProps: {
-      value: _vm.form.payment.email
-    },
-    on: {
-      input: function input($event) {
-        if ($event.target.composing) return;
-
-        _vm.$set(_vm.form.payment, "email", $event.target.value);
-      }
-    }
-  })])]), _vm._v(" "), _c("div", {
-    staticClass: "row"
-  }, [_c("div", {
-    staticClass: "col-6"
-  }, [_c("input", {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.form.payment.cardNumber,
-      expression: "form.payment.cardNumber"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      placeholder: "Numero Carta",
-      "aria-label": "numeroCarta"
-    },
-    domProps: {
-      value: _vm.form.payment.cardNumber
-    },
-    on: {
-      input: function input($event) {
-        if ($event.target.composing) return;
-
-        _vm.$set(_vm.form.payment, "cardNumber", $event.target.value);
-      }
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("input", {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.form.payment.expire,
-      expression: "form.payment.expire"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      placeholder: "MM/YY",
-      "aria-label": "expire"
-    },
-    domProps: {
-      value: _vm.form.payment.expire
-    },
-    on: {
-      input: function input($event) {
-        if ($event.target.composing) return;
-
-        _vm.$set(_vm.form.payment, "expire", $event.target.value);
-      }
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("input", {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.form.payment.cvv,
-      expression: "form.payment.cvv"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      placeholder: "CVV",
-      "aria-label": "cvv"
-    },
-    domProps: {
-      value: _vm.form.payment.cvv
-    },
-    on: {
-      input: function input($event) {
-        if ($event.target.composing) return;
-
-        _vm.$set(_vm.form.payment, "cvv", $event.target.value);
-      }
-    }
-  })])]), _vm._v(" "), _vm._m(0)])]), _vm._v(" "), _c("div", {
+  })]), _vm._v(" "), _vm._m(0)])]), _vm._v(" "), _c("div", {
     staticClass: "d-none d-lg-block col-lg-4 cart"
   }, [_c("MCart", {
     attrs: {

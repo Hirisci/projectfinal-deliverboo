@@ -23,24 +23,5 @@ class OrderController extends Controller
         return response()->json($data);
     }
 
-    public function token()
-    {
-        $gateway = new \Braintree\Gateway(
-            [
-            'environment' => env('BTREE_ENVIRONMENT'),
-            'merchantId' => env('BTREE_MERCHANT_ID'),
-            'publicKey' => env('BTREE_PUBLIC_KEY'),
-            'privateKey' => env('BTREE_PRIVATE_KEY'),
-            ]
-        );
-
-        $token = $gateway->clientToken()->generate();
-
-        return response()->json($token);
-    }
-
-    public function sale(Request $request)
-    {
-        
-    }
+       
 }
