@@ -19,7 +19,7 @@
           <a href="/checkout" class="btn-main btn-purple" :class="{ dnone : inCheckoutPage}">Checkout</a>
           <a href="javascript:history.back()" class="btn-main btn-purple" :class="{ dnone : !inCheckoutPage}">Torna al menù</a>
         </div>
-        <div class="cart-total-price col-7 p-2">
+        <div class="cart-total-price d-flex justify-content-center col-7 px-4">
           <div class="cart-total-price-title">Totale</div>
           <div class="cart-total-price-value">
             {{ this.amountCart.toFixed(2) }}€

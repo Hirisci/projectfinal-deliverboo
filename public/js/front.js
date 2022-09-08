@@ -3159,7 +3159,7 @@ var render = function render() {
       href: "javascript:history.back()"
     }
   }, [_vm._v("Torna al menù")])]), _vm._v(" "), _c("div", {
-    staticClass: "cart-total-price col-7 p-2"
+    staticClass: "cart-total-price d-flex justify-content-center col-7 px-4"
   }, [_c("div", {
     staticClass: "cart-total-price-title"
   }, [_vm._v("Totale")]), _vm._v(" "), _c("div", {
