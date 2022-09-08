@@ -48,6 +48,14 @@ class UsersTableSeeder extends Seeder
                 "email" => "test5@mail.com",
                 "password" => "test1111",
             ],
+            [
+                "email" => "test6@mail.com",
+                "password" => "test1111",
+            ],
+            [
+                "email" => "test7@mail.com",
+                "password" => "test1111",
+            ],
         ];
 
         foreach($users as $user){

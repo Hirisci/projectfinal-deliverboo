@@ -58,6 +58,24 @@ class RestaurantsTableSeeder extends Seeder
                 "user_id" => "5",
                 "category" => ['5', '4'],
             ],
+            [
+                "name" => "Ponto Brasil",
+                "address" => "Via Benedettine, 78, 20123 Milano MI",
+                "img" => "default/ImgRestaurant/pontoBrasil.jpg",
+                "logo" => "default/logoRestaurant/pontoBrasil.webp",
+                "vat" => "12345678914",
+                "user_id" => "6",
+                "category" => ['6'],
+            ],
+            [
+                "name" => "MEIWEI Restaurant",
+                "address" => "Chinatown, 43, 20123 Milano MI",
+                "img" => "default/ImgRestaurant/cineseBanner.jpeg",
+                "logo" => "default/logoRestaurant/cinese.png",
+                "vat" => "12345678914",
+                "user_id" => "7",
+                "category" => ['7',],
+            ],
         ];
 
 
