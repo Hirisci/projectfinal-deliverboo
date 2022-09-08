@@ -33,17 +33,11 @@ export default {
     display: block;
     position: absolute;
     top: 0;
-    left: -20px;
+    left: -25px;
     width: 100%;
     height: 100%;
     transform: skewX(45deg);
     background-color: var(--primary-purple);
   }
-  // .triangle-element{
-  //   width: 70px;
-  //   background-color: var(--primary-purple);
-  //   transform: skewX(45deg);
-  //   margin-left: -25px;
-  // }
 }
 </style>
