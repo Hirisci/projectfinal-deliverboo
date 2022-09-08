@@ -21,3 +21,5 @@ Route::get('restaurant/{slug}', 'Api\RestaurantController@show');
 Route::get('category', 'Api\CategoryController@index');
 Route::get('plate', 'Api\PlateController@index');
 Route::get('plate/{slug}/menu', 'Api\PlateController@show' );
+
+Route::get('token', 'Api\OrderController@token');

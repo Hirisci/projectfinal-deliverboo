@@ -21,4 +21,20 @@ class OrderController extends Controller
         //reindirizzo a un altra pagina
         return response()->json($data);
     }
+
+    public function token(){
+        $gateway = new \Braintree\Gateway([
+            'environment' => config('services.braintree.environment'),
+            'merchantId' => config('services.braintree.merchantId'),
+            'publicKey' => config('services.braintree.publicKey'),
+            'privateKey' => config('services.braintree.privateKey')
+        ]);
+
+        $token = $gateway->ClientToken()->generate();
+
+        return response()->json($token);
+        // return view('hosted', [
+        //     'token' => $token
+        // ]);
+    }
 }
