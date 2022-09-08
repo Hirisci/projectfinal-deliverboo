@@ -218,6 +218,54 @@ class PlatesTableSeeder extends Seeder
                 "is_visible" => "true",
                 "restaurant_id" => '5'
             ],
+            [
+                "name" => "BBQ Chicken",
+                "image" => "default/ImgPlates/DOMINOS/BBQChicken.jpg",
+                "description" => "Una pizza con il nostro Classico impasto, Salsa BBQ, Mozzarella 100% italiana, Pollo 100% italiano, Cipolla e i nostri fantastici peperoni",
+                "price" => "9.55",
+                "is_visible" => "true",
+                "restaurant_id" => '5'
+            ],
+            [
+                "name" => "Cheeseburger",
+                "image" => "default/ImgPlates/DOMINOS/cheeseburger.jpg",
+                "description" => "Una pizza con il nostro Classico impasto, Bacon, Mozzarella 100% italiana, Salsa burger, Cheddar, Cipolla e Pomodoro 100% italiano",
+                "price" => "9.55",
+                "is_visible" => "true",
+                "restaurant_id" => '5'
+            ],
+            [
+                "name" => "Diavola",
+                "image" => "default/ImgPlates/DOMINOS/diavola.jpg",
+                "description" => "Una pizza con il nostro Classico impasto, Mozzarella 100% italiana, Original Pepperoni e Pomodoro 100% italiano",
+                "price" => "8.55",
+                "is_visible" => "true",
+                "restaurant_id" => '5'
+            ],
+            [
+                "name" => "Cheddar Melt",
+                "image" => "default/ImgPlates/DOMINOS/cheddatMelt.jpg",
+                "description" => "Una pizza con il nostro Classico impasto, Mozzarella 100% italiana, Bacon, Mais, Funghi Champignon e Pomodoro 100% italiano",
+                "price" => "9.95",
+                "is_visible" => "true",
+                "restaurant_id" => '5'
+            ],
+            [
+                "name" => "Mexican",
+                "image" => "default/ImgPlates/DOMINOS/mexican.jpg",
+                "description" => "Una pizza con il nostro Classico impasto, Mozzarella 100% italiana, Hamburger di manzo, Jalape  e Pomodoro 100% italiano",
+                "price" => "9.95",
+                "is_visible" => "true",
+                "restaurant_id" => '5'
+            ],
+            [
+                "name" => "Tonno & Cipolla",
+                "image" => "default/ImgPlates/DOMINOS/tonnoCipolla.jpg",
+                "description" => "Una pizza con il nostro Classico impasto, Mozzarella 100% italiana, Tonno, Cipolla  e Pomodoro 100% italiano",
+                "price" => "9.55",
+                "is_visible" => "true",
+                "restaurant_id" => '5'
+            ],
         ];
 
         foreach($plates as $plate){
