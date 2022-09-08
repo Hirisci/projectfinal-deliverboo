@@ -86,7 +86,6 @@ export default {
       border-radius: 1rem;
     }
     .cart-item-delete {
-      margin-left: -2.125rem;
       height: 100%;
       .cart-item {
         height: 50%;
@@ -140,26 +139,4 @@ export default {
   margin-left: 0;
 }
 
-@media only screen and (max-width: 890px) {
-  .cart-item {
-    flex-direction: column;
-
-    .cart-item-right {
-      width: 100%;
-      padding: 0.625rem;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-}
-
-@media only screen and (max-width: 546px) {
-  .cart-item-left-info {
-    flex-direction: column;
-
-    .card-item-name {
-      text-align: center;
-    }
-  }
-}
 </style>
