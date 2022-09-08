@@ -2337,7 +2337,24 @@ __webpack_require__.r(__webpack_exports__);
     return {
       cart: [],
       form: {
-        name: ""
+        client: {
+          name: "",
+          lastName: "",
+          phone: ""
+        },
+        address: {
+          street: "",
+          city: "",
+          state: "",
+          zip: "",
+          ring: ""
+        },
+        payment: {
+          name: "",
+          lastName: "",
+          cardNumber: "",
+          cvv: ""
+        }
       }
     };
   },
@@ -2351,30 +2368,17 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     submitForm: function submitForm() {
-      var path = "http://127.0.0.1:8000/api/order"; //const token = this.$cookies.get("XSRF-TOKEN");
-      // const headers = {
-      //   headers: {
-      //     Authorization: `true`,
-      //     Accept: "application/json",
-      //   },
-      // };
-
-      axios.post(path, this.form).then(function (res) {
+      var path = "http://127.0.0.1:8000/api/order";
+      axios.post(path, {
+        form: this.form,
+        cart: this.cart
+      }).then(function (res) {
         console.log("successo", res); //Perform Success Action
       })["catch"](function (error) {
         console.log("successo", error); // error.response.status Check status code
       })["finally"](function () {
         //Perform action in always
         console.log("dunque");
-      });
-    },
-    sendOrder: function sendOrder() {
-      axios.post("api/order", this.form).then(function (res) {//Perform Success Action
-      })["catch"](function (error) {// error.response.status Check status code
-      })["finally"](function () {//Perform action in always
-      });
-      axios(options).then(function (response) {
-        console.log(response.status);
       });
     },
     addQty: function addQty(arg) {
@@ -3581,8 +3585,8 @@ var render = function render() {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: _vm.form.name,
-      expression: "form.name"
+      value: _vm.form.client.name,
+      expression: "form.client.name"
     }],
     staticClass: "form-control",
     attrs: {
@@ -3591,16 +3595,299 @@ var render = function render() {
       "aria-label": "Nome"
     },
     domProps: {
-      value: _vm.form.name
+      value: _vm.form.client.name
     },
     on: {
       input: function input($event) {
         if ($event.target.composing) return;
 
-        _vm.$set(_vm.form, "name", $event.target.value);
+        _vm.$set(_vm.form.client, "name", $event.target.value);
       }
     }
-  })]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _vm._m(6), _vm._v(" "), _vm._m(7), _vm._v(" "), _vm._m(8)])]), _vm._v(" "), _c("div", {
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "col"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.client.lastName,
+      expression: "form.client.lastName"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      placeholder: "Cognome",
+      "aria-label": "Cognome"
+    },
+    domProps: {
+      value: _vm.form.client.lastName
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.client, "lastName", $event.target.value);
+      }
+    }
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.address.street,
+      expression: "form.address.street"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "client_address",
+      placeholder: "Indirizzo"
+    },
+    domProps: {
+      value: _vm.form.address.street
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.address, "street", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.address.city,
+      expression: "form.address.city"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "client_city",
+      placeholder: "Città"
+    },
+    domProps: {
+      value: _vm.form.address.city
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.address, "city", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.address.state,
+      expression: "form.address.state"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      placeholder: "Stato",
+      "aria-label": "Stato"
+    },
+    domProps: {
+      value: _vm.form.address.state
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.address, "state", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "col"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.address.zip,
+      expression: "form.address.zip"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      placeholder: "CAP",
+      "aria-label": "CAP"
+    },
+    domProps: {
+      value: _vm.form.address.zip
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.address, "zip", $event.target.value);
+      }
+    }
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.address.ring,
+      expression: "form.address.ring"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "client_name",
+      placeholder: "Nome sul campanello"
+    },
+    domProps: {
+      value: _vm.form.address.ring
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.address, "ring", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group mb-4"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.client.phone,
+      expression: "form.client.phone"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "client_number",
+      placeholder: "Cellulare"
+    },
+    domProps: {
+      value: _vm.form.client.phone
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.client, "phone", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "row mb-3"
+  }, [_c("p", {
+    staticClass: "mb-1"
+  }, [_vm._v("Dettagli Pagamento")]), _vm._v(" "), _c("div", {
+    staticClass: "col"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.payment.name,
+      expression: "form.payment.name"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      placeholder: "Nome",
+      "aria-label": "Nome"
+    },
+    domProps: {
+      value: _vm.form.payment.name
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.payment, "name", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "col"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.payment.lastName,
+      expression: "form.payment.lastName"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      placeholder: "Cognome",
+      "aria-label": "Cognome"
+    },
+    domProps: {
+      value: _vm.form.payment.lastName
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.payment, "lastName", $event.target.value);
+      }
+    }
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-10"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.payment.cardNumber,
+      expression: "form.payment.cardNumber"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      placeholder: "Numero Carta",
+      "aria-label": "numeroCarta"
+    },
+    domProps: {
+      value: _vm.form.payment.cardNumber
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.payment, "cardNumber", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "col"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.payment.cvv,
+      expression: "form.payment.cvv"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      placeholder: "CVV",
+      "aria-label": "cvv"
+    },
+    domProps: {
+      value: _vm.form.payment.cvv
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.form.payment, "cvv", $event.target.value);
+      }
+    }
+  })])]), _vm._v(" "), _vm._m(0)])]), _vm._v(" "), _c("div", {
     staticClass: "d-none d-lg-block col-lg-4 cart"
   }, [_c("MCart", {
     attrs: {
@@ -3614,153 +3901,6 @@ var render = function render() {
 };
 
 var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "col"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      placeholder: "Cognome",
-      "aria-label": "Cognome"
-    }
-  })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-group"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "client_address",
-      placeholder: "Indirizzo"
-    }
-  })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-group"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "client_city",
-      placeholder: "Città"
-    }
-  })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "row"
-  }, [_c("div", {
-    staticClass: "col"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      placeholder: "Stato",
-      "aria-label": "Stato"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      placeholder: "CAP",
-      "aria-label": "CAP"
-    }
-  })])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-group"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "client_name",
-      placeholder: "Nome sul campanello"
-    }
-  })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-group mb-4"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "client_number",
-      placeholder: "Cellulare"
-    }
-  })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "row mb-3"
-  }, [_c("p", {
-    staticClass: "mb-1"
-  }, [_vm._v("Dettagli Pagamento")]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      placeholder: "Nome",
-      "aria-label": "Nome"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      placeholder: "Cognome",
-      "aria-label": "Cognome"
-    }
-  })])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "row"
-  }, [_c("div", {
-    staticClass: "col-10"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      placeholder: "Numero Carta",
-      "aria-label": "numeroCarta"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      placeholder: "CVV",
-      "aria-label": "cvv"
-    }
-  })])]);
-}, function () {
   var _vm = this,
       _c = _vm._self._c;
 

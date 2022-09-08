@@ -12,7 +12,7 @@
               <p class="mb-1">Dettagli Ordine</p>
               <div class="col">
                 <input
-                  v-model="form.name"
+                  v-model="form.client.name"
                   type="text"
                   class="form-control"
                   placeholder="Nome"
@@ -21,6 +21,7 @@
               </div>
               <div class="col">
                 <input
+                  v-model="form.client.lastName"
                   type="text"
                   class="form-control"
                   placeholder="Cognome"
@@ -30,6 +31,7 @@
             </div>
             <div class="form-group">
               <input
+                v-model="form.address.street"
                 type="text"
                 class="form-control"
                 id="client_address"
@@ -38,6 +40,7 @@
             </div>
             <div class="form-group">
               <input
+                v-model="form.address.city"
                 type="text"
                 class="form-control"
                 id="client_city"
@@ -47,6 +50,7 @@
             <div class="row">
               <div class="col">
                 <input
+                  v-model="form.address.state"
                   type="text"
                   class="form-control"
                   placeholder="Stato"
@@ -55,6 +59,7 @@
               </div>
               <div class="col">
                 <input
+                  v-model="form.address.zip"
                   type="text"
                   class="form-control"
                   placeholder="CAP"
@@ -64,6 +69,7 @@
             </div>
             <div class="form-group">
               <input
+                v-model="form.address.ring"
                 type="text"
                 class="form-control"
                 id="client_name"
@@ -72,6 +78,7 @@
             </div>
             <div class="form-group mb-4">
               <input
+                v-model="form.client.phone"
                 type="text"
                 class="form-control"
                 id="client_number"
@@ -82,6 +89,7 @@
               <p class="mb-1">Dettagli Pagamento</p>
               <div class="col">
                 <input
+                  v-model="form.payment.name"
                   type="text"
                   class="form-control"
                   placeholder="Nome"
@@ -90,6 +98,7 @@
               </div>
               <div class="col">
                 <input
+                  v-model="form.payment.lastName"
                   type="text"
                   class="form-control"
                   placeholder="Cognome"
@@ -100,6 +109,7 @@
             <div class="row">
               <div class="col-10">
                 <input
+                  v-model="form.payment.cardNumber"
                   type="text"
                   class="form-control"
                   placeholder="Numero Carta"
@@ -108,6 +118,7 @@
               </div>
               <div class="col">
                 <input
+                  v-model="form.payment.cvv"
                   type="text"
                   class="form-control"
                   placeholder="CVV"
@@ -145,7 +156,24 @@ export default {
     return {
       cart: [],
       form: {
-        name: "",
+        client: {
+          name: "",
+          lastName: "",
+          phone: "",
+        },
+        address: {
+          street: "",
+          city: "",
+          state: "",
+          zip: "",
+          ring: "",
+        },
+        payment: {
+          name: "",
+          lastName: "",
+          cardNumber: "",
+          cvv: "",
+        },
       },
     };
   },
@@ -161,16 +189,8 @@ export default {
   methods: {
     submitForm() {
       const path = "http://127.0.0.1:8000/api/order";
-      //const token = this.$cookies.get("XSRF-TOKEN");
-      // const headers = {
-      //   headers: {
-      //     Authorization: `true`,
-      //     Accept: "application/json",
-      //   },
-      // };
-
       axios
-        .post(path, this.form)
+        .post(path, { form: this.form, cart: this.cart })
         .then((res) => {
           console.log("successo", res);
           //Perform Success Action
@@ -183,23 +203,6 @@ export default {
           //Perform action in always
           console.log("dunque");
         });
-    },
-    sendOrder() {
-      axios
-        .post("api/order", this.form)
-        .then((res) => {
-          //Perform Success Action
-        })
-        .catch((error) => {
-          // error.response.status Check status code
-        })
-        .finally(() => {
-          //Perform action in always
-        });
-
-      axios(options).then((response) => {
-        console.log(response.status);
-      });
     },
     addQty(arg) {
       let result = this.cart.find((Element) => Element.id === arg.id);
