@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Braintree\Gateway;
 
 class OrderController extends Controller
 {
@@ -22,6 +21,9 @@ class OrderController extends Controller
         //reindirizzo a un altra pagina
         return response()->json($data);
     }
+<<<<<<< HEAD
 
        
+=======
+>>>>>>> parent of 48f2726 (token for client)
 }

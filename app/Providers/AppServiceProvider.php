@@ -3,6 +3,10 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 48f2726 (token for client)
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -22,6 +26,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        
+        //
     }
 }

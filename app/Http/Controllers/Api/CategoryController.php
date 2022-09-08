@@ -17,6 +17,4 @@ class CategoryController extends Controller
         // prendo tutti i ristoranti e li restituisco in json
         return response()->json($categories);
     }
-
-    
 }
