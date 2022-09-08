@@ -49,6 +49,15 @@ class RestaurantsTableSeeder extends Seeder
                 "user_id" => "4",
                 "category" => ['3','2'],
             ],
+            [
+                "name" => "Domino's Pizza",
+                "address" => "Viale Dante, 4, 20123 Roma RM",
+                "img" => "default/ImgRestaurant/dominos.jpg",
+                "logo" => "https://www.kindpng.com/picc/m/177-1770306_dominos-pizza-logo-png-transparent-png.png",
+                "vat" => "12345678914",
+                "user_id" => "5",
+                "category" => ['5', '4'],
+            ],
         ];
 
 

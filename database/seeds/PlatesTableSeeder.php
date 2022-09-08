@@ -209,6 +209,15 @@ class PlatesTableSeeder extends Seeder
                 "is_visible" => "true",
                 "restaurant_id" => '4'
             ],
+            //Dominos
+            [
+                "name" => "Half & Half",
+                "image" => "default/ImgPlates/DOMINOS/half&half.jpg",
+                "description" => "Una pizza con il nostro Classico impasto nella quale potrai scegliere tra 2 gusti a tua scelta",
+                "price" => "9.95",
+                "is_visible" => "true",
+                "restaurant_id" => '5'
+            ],
         ];
 
         foreach($plates as $plate){
