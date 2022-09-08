@@ -101,7 +101,8 @@ export default {
         border-top-right-radius: 0;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
-        background-color: green;
+        background-color: var(--primary-purple);
+        border-bottom: 2px solid var(--secondary-purple);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -111,7 +112,7 @@ export default {
         border-top-right-radius: 0;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
-        background-color: hsl(0, 100%, 45%);
+        background-color: var(--primary-purple);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -134,9 +135,4 @@ export default {
     padding-right: 0.3125rem;
   }
 }
-
-.cart-item:hover .cart-item-delete {
-  margin-left: 0;
-}
-
 </style>
