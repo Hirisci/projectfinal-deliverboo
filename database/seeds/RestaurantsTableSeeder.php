@@ -76,6 +76,16 @@ class RestaurantsTableSeeder extends Seeder
                 "user_id" => "7",
                 "category" => ['7',],
             ],
+            [
+                "name" => "Pizza del Sole",
+                "address" => "Piazza Duomo, 3, 20123 Milano MI",
+                "img" => "default/ImgRestaurant/pizzadelsoleBanner.jpg",
+                "logo" => "default/logoRestaurant/pizzaDelSole.png",
+                "vat" => "12345678914",
+                "user_id" => "8",
+                "category" => ['1', '4'],
+            ],
+
         ];
 
 
