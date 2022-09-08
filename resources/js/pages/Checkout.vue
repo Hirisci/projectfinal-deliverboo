@@ -131,9 +131,10 @@
             </div>
           </form>
         </div>
-        <div class="d-none d-lg-block col-lg-4 cart">
+        <div class="d-none d-lg-block col-lg-5 cart">
           <MCart
             :cart="this.cart"
+            :inCheckoutPage="true"
             @event-delPlate="delPlate"
             @event-addQty="addQty"
           />
@@ -175,6 +176,7 @@ export default {
           cvv: "",
         },
       },
+      inCheckoutPage : true,
     };
   },
   watch: {

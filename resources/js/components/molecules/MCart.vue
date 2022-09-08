@@ -15,8 +15,8 @@
         />
       </div>
       <div class="cart-total mt-3 d-flex">
-        <div class="cart-checkout col-5">
-          <a href="/checkout" class="btn-main btn-purple">Checkout</a>
+        <div class="cart-checkout col-5 d-flex align-items-center justify-content-center">
+          <a href="/checkout" class="btn-main btn-purple" :class="{ dnone : inCheckoutPage}">Checkout</a>
         </div>
         <div class="cart-total-price col-7">
           <div class="cart-total-price-title">Totale</div>
@@ -51,6 +51,7 @@ export default {
   components: { ATitleCard, ACartItem },
   props: {
     cart: Array,
+    inCheckoutPage: Boolean,
   },
   data() {
     return {
