@@ -266,6 +266,55 @@ class PlatesTableSeeder extends Seeder
                 "is_visible" => "true",
                 "restaurant_id" => '5'
             ],
+            //Brasiliano
+            [
+                "name" => "Manioca fritta",
+                "image" => "default/ImgPlates/BRASILIANO/yucaFrita.jpeg",
+                "description" => "tipica tubero originario dalla Amazzonia, detto anche il Pane della terra che viene tagliato in piccoli pezzi, fritti nell'olio di oliva e servito con salse tipiche e un'insalata con il pomodoro e il cetriolo",
+                "price" => "7.55",
+                "is_visible" => "true",
+                "restaurant_id" => '6'
+            ],
+            [
+                "name" => "Chips di Platano",
+                "image" => "default/ImgPlates/BRASILIANO/PolloConTajadas.webp",
+                "description" => "Chips di platano, fritte e condite con insalata, salsa, pezzi di pollo e la nostra cipolla sottaceto fatta in casa con la nostra ricetta segreta",
+                "price" => "10.00",
+                "is_visible" => "true",
+                "restaurant_id" => '6'
+            ],
+            [
+                "name" => "Feijoada",
+                "image" => "default/ImgPlates/BRASILIANO/Feijoada.jpg",
+                "description" => "Stufato di fagioli preparato con diversi tipi di carne (salsiccia, pancetta affumicata e costine di maiale) e accompagnato da riso bianco, farofa un contorno tipico a base di farina di manioca  cavolo nero rosolato nel burro e qualche fettina di arancia ",
+                "price" => "12.30",
+                "is_visible" => "true",
+                "restaurant_id" => '6'
+            ],
+            [
+                "name" => "Churrasco",
+                "image" => "default/ImgPlates/BRASILIANO/churrasco.jpg",
+                "description" => "Picanha cotta alla griglia con il metodo tradizionale, una preparazione morbida, succosa e dal retrogusto piacevolmente affumicato, un Must della nostra cucina. ",
+                "price" => "20.50",
+                "is_visible" => "true",
+                "restaurant_id" => '6'
+            ],
+            [
+                "name" => "Moqueca",
+                "image" => "default/ImgPlates/BRASILIANO/moqueca.jpg",
+                "description" => "La moqueca non è una convenzionale zuppetta di pesce, è un vero e proprio capolavoro di sapori e odori servito in una pentola di argilla bollente in mezzo alla tavola da condividere con amici e familiari. ",
+                "price" => "15.80",
+                "is_visible" => "true",
+                "restaurant_id" => '6'
+            ],
+            [
+                "name" => "Acajarè",
+                "image" => "default/ImgPlates/BRASILIANO/acajarès.jpg",
+                "description" => "Un tortino di fagioli, olio di palma e purea di cipolle, con un ripieno di gamberetti e una salsa di pane, anacardi e gamberetti detta vatapà. Il tutto cosparso di olio e fritto. ",
+                "price" => "9.80",
+                "is_visible" => "true",
+                "restaurant_id" => '6'
+            ],
         ];
 
         foreach($plates as $plate){
