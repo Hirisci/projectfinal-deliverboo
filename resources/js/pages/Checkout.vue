@@ -2,7 +2,7 @@
   <div class="container-fluid p-0">
     <AJumbotron />
     <div class="form container-lg p-3">
-      <div class="row d-flex justify-content-between">
+      <div class="row d-flex justify-content-around">
         <div class="user-form col-lg-6">
           <div class="col-12 col-lg-4 p-0">
             <AAsideMenuTitle :title="'Checkout'" />
@@ -131,7 +131,7 @@
             </div>
           </form>
         </div>
-        <div class="d-none d-lg-block col-lg-5 cart">
+        <div class="d-lg-block col-lg-5 mt-2">
           <MCart
             :cart="this.cart"
             :inCheckoutPage="true"
@@ -146,7 +146,6 @@
 
 <script>
 import AJumbotron from "../components/atoms/AJumbotron.vue";
-
 import AAsideMenuTitle from "../components/atoms/AAsideMenuTitle.vue";
 import MCart from "../components/molecules/MCart.vue";
 
@@ -289,5 +288,8 @@ export default {
 }
 label {
   margin-bottom: 0.3125rem;
+}
+.form{
+  position: relative;
 }
 </style>
