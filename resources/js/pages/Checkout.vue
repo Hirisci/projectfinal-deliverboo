@@ -160,16 +160,28 @@ export default {
   },
   methods: {
     submitForm() {
+      const path = "http://127.0.0.1:8000/api/order";
+      //const token = this.$cookies.get("XSRF-TOKEN");
+      // const headers = {
+      //   headers: {
+      //     Authorization: `true`,
+      //     Accept: "application/json",
+      //   },
+      // };
+
       axios
-        .post("api/order", this.form)
+        .post(path, this.form)
         .then((res) => {
+          console.log("successo", res);
           //Perform Success Action
         })
         .catch((error) => {
+          console.log("successo", error);
           // error.response.status Check status code
         })
         .finally(() => {
           //Perform action in always
+          console.log("dunque");
         });
     },
     sendOrder() {
@@ -232,14 +244,14 @@ export default {
   border-radius: 1.25rem;
   display: flex;
   flex-flow: column;
-  gap: .625rem;
+  gap: 0.625rem;
   padding: 1.25rem 0rem;
 }
 
 .form-group {
-  margin: .9375rem 0;
+  margin: 0.9375rem 0;
 }
 label {
-  margin-bottom: .3125rem;
+  margin-bottom: 0.3125rem;
 }
 </style>

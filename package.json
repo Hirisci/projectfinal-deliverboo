@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "sweetalert2": "^11.4.32",
+        "vue-cookies": "^1.8.1",
         "vue-router": "^3.5.3"
     }
 }

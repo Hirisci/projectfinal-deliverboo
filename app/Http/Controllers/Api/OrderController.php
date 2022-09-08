@@ -18,9 +18,7 @@ class OrderController extends Controller
     public function getData(Request $request)
     {
         $data = $request->all();
-        
-        dd("sei qui dentro", $data);
         //reindirizzo a un altra pagina
-        return null;
+        return response()->json($data);
     }
 }
