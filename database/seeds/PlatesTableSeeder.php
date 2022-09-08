@@ -364,6 +364,55 @@ class PlatesTableSeeder extends Seeder
                 "is_visible" => "true",
                 "restaurant_id" => '7'
             ],
+            //pizzeria del sole
+            [
+                "name" => "Pizza margherita",
+                "image" => "default/ImgPlates/PIZZERIA-TOTO/margherita.jpg",
+                "description" => "Pizza Margherita",
+                "price" => "5.50",
+                "is_visible" => "true",
+                "restaurant_id" => '8'
+            ],
+            [
+                "name" => "Pizza patate e wurstel",
+                "image" => "default/ImgPlates/PIZZERIA-TOTO/patate-wurstel.jpg",
+                "description" => "Pizza Patate e Wurstel",
+                "price" => "7.50",
+                "is_visible" => "true",
+                "restaurant_id" => '8'
+            ],
+            [
+                "name" => "Pizza rucola e grana",
+                "image" => "default/ImgPlates/PIZZERIA-TOTO/rucola.jpg",
+                "description" => "Pizza Rucola e Grana",
+                "price" => "7.80",
+                "is_visible" => "true",
+                "restaurant_id" => '8'
+            ],
+            [
+                "name" => "Pizza ai 4 formaggi",
+                "image" => "default/ImgPlates/PIZZERIA-TOTO/4-formaggi.jpg",
+                "description" => "Pizza ai 4 formaggi",
+                "price" => "7.00",
+                "is_visible" => "true",
+                "restaurant_id" => '8'
+            ],
+            [
+                "name" => "Pizza radicchio e salsiccia",
+                "image" => "default/ImgPlates/PIZZERIA-TOTO/radicchio-salsiccia.jpg",
+                "description" => "Pizza radicchio e salsiccia",
+                "price" => "8.70",
+                "is_visible" => "true",
+                "restaurant_id" => '8'
+            ],
+            [
+                "name" => "Pizza tonno e cipolla",
+                "image" => "default/ImgPlates/PIZZERIA-TOTO/tonno-cipolla.jpg",
+                "description" => "Pizza tonno e cipolla",
+                "price" => "7.80",
+                "is_visible" => "true",
+                "restaurant_id" => '8'
+            ],
         ];
 
         foreach($plates as $plate){
