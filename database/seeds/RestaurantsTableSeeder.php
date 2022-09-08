@@ -16,7 +16,7 @@ class RestaurantsTableSeeder extends Seeder
             [
                 "name" => "McDonald's",
                 "address" => "Passaggio Duomo, 2, 20123 Milano MI",
-                "img" => "default/ImgRestaurant/McDonaldsBanner.jpeg",
+                "img" => "default/ImgRestaurant/McdonaldsBanner.avif",
                 "logo" => "default/logoRestaurant/McDonalds-logo.png",
                 "vat" => "12345678910",
                 "user_id" => "1",
@@ -58,6 +58,43 @@ class RestaurantsTableSeeder extends Seeder
                 "user_id" => "5",
                 "category" => ['5', '4'],
             ],
+            [
+                "name" => "Ponto Brasil",
+                "address" => "Via Benedettine, 78, 20123 Milano MI",
+                "img" => "default/ImgRestaurant/pontoBrasil.jpg",
+                "logo" => "default/logoRestaurant/pontoBrasil.webp",
+                "vat" => "12345678914",
+                "user_id" => "6",
+                "category" => ['6'],
+            ],
+            [
+                "name" => "MEIWEI Restaurant",
+                "address" => "Chinatown, 43, 20123 Milano MI",
+                "img" => "default/ImgRestaurant/cineseBanner.jpg",
+                "logo" => "default/logoRestaurant/cinese.png",
+                "vat" => "12345678914",
+                "user_id" => "7",
+                "category" => ['7',],
+            ],
+            [
+                "name" => "Pizza del Sole",
+                "address" => "Piazza Duomo, 3, 20123 Milano MI",
+                "img" => "default/ImgRestaurant/pizzadelsoleBanner.jpg",
+                "logo" => "default/logoRestaurant/pizzaDelSole.jpg",
+                "vat" => "12345678914",
+                "user_id" => "8",
+                "category" => ['1', '4'],
+            ],
+            [
+                "name" => "Burger King",
+                "address" => "Piazza Cavalli, 5, 20123 Milano MI",
+                "img" => "default/ImgRestaurant/burgerKingBanner.jpg",
+                "logo" => "default/logoRestaurant/burgerKing.png",
+                "vat" => "12345678914",
+                "user_id" => "9",
+                "category" => ['5'],
+            ],
+
         ];
 
 

@@ -1,7 +1,7 @@
 <template>
   <div class="restaurant-card">
     <div class="restaurant-card-img">
-      <img :src="`/storage/${restaurant.img}`" alt="Restaurant Image">
+      <img :src="`/storage/${restaurant.logo}`" alt="Restaurant Image">
     </div>
     <div class="restaurant-card-text">
       <div class="restaurant-card-text-name">
