@@ -413,6 +413,7 @@ class PlatesTableSeeder extends Seeder
                 "is_visible" => "true",
                 "restaurant_id" => '8'
             ],
+            //Burger King
         ];
 
         foreach($plates as $plate){

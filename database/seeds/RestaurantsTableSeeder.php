@@ -85,6 +85,15 @@ class RestaurantsTableSeeder extends Seeder
                 "user_id" => "8",
                 "category" => ['1', '4'],
             ],
+            [
+                "name" => "Burger King",
+                "address" => "Piazza Cavalli, 5, 20123 Milano MI",
+                "img" => "default/ImgRestaurant/burgerKingBanner.jpg",
+                "logo" => "default/logoRestaurant/burgerKing.png",
+                "vat" => "12345678914",
+                "user_id" => "8",
+                "category" => ['1', '4'],
+            ],
 
         ];
 
