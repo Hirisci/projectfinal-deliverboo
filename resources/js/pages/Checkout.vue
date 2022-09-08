@@ -209,7 +209,7 @@ export default {
       this.cart.forEach((element) => {
         somma += element.price * element.quantity;
       });
-      return somma;
+      return somma.toFixed(2);
     },
     addQty(arg) {
       let result = this.cart.find((Element) => Element.id === arg.id);

@@ -2386,7 +2386,7 @@ __webpack_require__.r(__webpack_exports__);
       this.cart.forEach(function (element) {
         somma += element.price * element.quantity;
       });
-      return somma;
+      return somma.toFixed(2);
     },
     addQty: function addQty(arg) {
       var result = this.cart.find(function (Element) {
