@@ -1,11 +1,8 @@
 <template>
   <div class="container-fluid p-0">
     <AJumbotron />
-    <div class="row d-flex align-items-center justify-content-center p-3">
-      <a href="javascript:history.back()" class="btn-main btn-purple goBack col-10 col-lg-2">TORNA INDIETRO</a>
-    </div>
     <div class="form container-lg p-3">
-      <div class="row d-flex justify-content-between">
+      <div class="row d-flex justify-content-around">
         <div class="user-form col-lg-6">
           <div class="col-12 col-lg-4 p-0">
             <AAsideMenuTitle :title="'Checkout'" />
@@ -134,7 +131,7 @@
             </div>
           </form>
         </div>
-        <div class="d-none d-lg-block col-lg-5 cart">
+        <div class="d-lg-block col-lg-5 mt-2">
           <MCart
             :cart="this.cart"
             :inCheckoutPage="true"
@@ -149,7 +146,6 @@
 
 <script>
 import AJumbotron from "../components/atoms/AJumbotron.vue";
-
 import AAsideMenuTitle from "../components/atoms/AAsideMenuTitle.vue";
 import MCart from "../components/molecules/MCart.vue";
 
@@ -287,16 +283,13 @@ export default {
   gap: 0.625rem;
   padding: 1.25rem 0rem;
 }
-.goBack{
-  text-align: center;
-  &:hover{
-    cursor: pointer;
-  }
-}
 .form-group {
   margin: 0.9375rem 0;
 }
 label {
   margin-bottom: 0.3125rem;
+}
+.form{
+  position: relative;
 }
 </style>

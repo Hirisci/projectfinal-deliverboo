@@ -17,8 +17,9 @@
       <div class="cart-total mt-3 d-flex">
         <div class="cart-checkout col-5 d-flex align-items-center justify-content-center">
           <a href="/checkout" class="btn-main btn-purple" :class="{ dnone : inCheckoutPage}">Checkout</a>
+          <a href="javascript:history.back()" class="btn-main btn-purple" :class="{ dnone : !inCheckoutPage}">Torna al menù</a>
         </div>
-        <div class="cart-total-price col-7">
+        <div class="cart-total-price d-flex justify-content-center col-7 px-4">
           <div class="cart-total-price-title">Totale</div>
           <div class="cart-total-price-value">
             {{ this.amountCart.toFixed(2) }}€
@@ -135,7 +136,7 @@ export default {
       .cart-total-price-value {
         background-color: white;
         border-radius: 1.25rem;
-        padding: 0.3125rem 0.625rem;
+        padding: .3125rem .625rem;
       }
     }
   }

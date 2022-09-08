@@ -10,41 +10,14 @@
     </div>
     <div class="restaurant-section-shop container-xl p-3">
       <div class="row">
-        <div
-          class="
-            restaurant-section-shop-menu
-            col-10 col-lg-8
-            d-flex
-            align-items-center
-            flex-column
-            gap-4
-          "
-        >
+        <div class="restaurant-section-shop-menu col-10 col-lg-8 d-flex  align-items-center flex-column gap-4">
           <ATitleCard :title="'Menù'" />
-          <div
-            class="restaurant-section-shop-menu-plates d-flex flex-column gap-4"
-          >
-            <MPlateCard
-              v-for="plate in plates"
-              :key="plate.id"
-              :plate="plate"
-              @event-addPlate="addPlate"
-            />
+          <div class="restaurant-section-shop-menu-plates d-flex flex-column gap-4">
+            <MPlateCard v-for="plate in plates" :key="plate.id" :plate="plate" @event-addPlate="addPlate"/>
           </div>
         </div>
-        <div
-          class="
-            restaurant-section-shop-cart
-            col-2 col-lg-4
-            d-flex
-            justify-content-center
-          "
-        >
-          <MCart
-            :cart="this.cart"
-            @event-delPlate="delPlate"
-            @event-addQty="addQty"
-          />
+        <div class="restaurant-section-shop-cart col-2 col-lg-4 d-flex justify-content-center">
+          <MCart :cart="this.cart" @event-delPlate="delPlate" @event-addQty="addQty" />
         </div>
       </div>
     </div>
