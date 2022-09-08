@@ -2370,8 +2370,8 @@ __webpack_require__.r(__webpack_exports__);
     submitForm: function submitForm() {
       var path = "http://127.0.0.1:8000/api/order";
       axios.post(path, {
-        form: this.form,
-        cart: this.cart
+        form: this.sendClient,
+        cart: this.sendCart
       }).then(function (res) {
         console.log("successo", res); //Perform Success Action
       })["catch"](function (error) {
@@ -2380,6 +2380,13 @@ __webpack_require__.r(__webpack_exports__);
         //Perform action in always
         console.log("dunque");
       });
+    },
+    amountCart: function amountCart() {
+      var somma = 0;
+      this.cart.forEach(function (element) {
+        somma += element.price * element.quantity;
+      });
+      return somma;
     },
     addQty: function addQty(arg) {
       var result = this.cart.find(function (Element) {
@@ -2395,6 +2402,8 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         this.$set(this.cart, isx, result);
       }
+
+      console.log(this.sendCart);
     },
     delPlate: function delPlate(arg) {
       var result = this.cart.find(function (Element) {
@@ -2421,6 +2430,33 @@ __webpack_require__.r(__webpack_exports__);
         this.cart = listCart;
         console.log("carrello pieno");
       }
+    }
+  },
+  computed: {
+    sendCart: function sendCart() {
+      var order = {};
+      order.amount = this.amountCart();
+      order.list = [];
+      this.cart.forEach(function (el) {
+        var id = el.id,
+            quantity = el.quantity;
+        var item = {
+          id: id,
+          quantity: quantity
+        };
+        order.list.push(item);
+      });
+      return order;
+    },
+    sendClient: function sendClient() {
+      var order = {
+        name: "".concat(this.form.client.name, " ").concat(this.form.client.lastName),
+        number: this.form.client.phone,
+        address: "".concat(this.form.address.street, ", ").concat(this.form.address.city, ", ").concat(this.form.address.state, ", ").concat(this.form.address.zip),
+        ring: this.form.client.ring,
+        payment: this.form.payment
+      };
+      return order;
     }
   },
   mounted: function mounted() {

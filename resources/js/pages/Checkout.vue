@@ -190,7 +190,7 @@ export default {
     submitForm() {
       const path = "http://127.0.0.1:8000/api/order";
       axios
-        .post(path, { form: this.form, cart: this.cart })
+        .post(path, { form: this.sendClient, cart: this.sendCart })
         .then((res) => {
           console.log("successo", res);
           //Perform Success Action
@@ -204,6 +204,13 @@ export default {
           console.log("dunque");
         });
     },
+    amountCart() {
+      let somma = 0;
+      this.cart.forEach((element) => {
+        somma += element.price * element.quantity;
+      });
+      return somma;
+    },
     addQty(arg) {
       let result = this.cart.find((Element) => Element.id === arg.id);
       let isx = this.cart.findIndex((Element) => Element.id === arg.id);
@@ -213,6 +220,7 @@ export default {
       } else {
         this.$set(this.cart, isx, result);
       }
+      console.log(this.sendCart);
     },
     delPlate(arg) {
       let result = this.cart.find((Element) => Element.id === arg.id);
@@ -233,6 +241,30 @@ export default {
         this.cart = listCart;
         console.log("carrello pieno");
       }
+    },
+  },
+  computed: {
+    sendCart() {
+      let order = {};
+      order.amount = this.amountCart();
+      order.list = [];
+
+      this.cart.forEach((el) => {
+        let { id, quantity } = el;
+        let item = { id: id, quantity: quantity };
+        order.list.push(item);
+      });
+      return order;
+    },
+    sendClient() {
+      let order = {
+        name: `${this.form.client.name} ${this.form.client.lastName}`,
+        number: this.form.client.phone,
+        address: `${this.form.address.street}, ${this.form.address.city}, ${this.form.address.state}, ${this.form.address.zip}`,
+        ring: this.form.client.ring,
+        payment: this.form.payment,
+      };
+      return order;
     },
   },
   mounted() {
