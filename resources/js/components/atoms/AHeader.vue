@@ -1,13 +1,20 @@
 <template>
   <header>
-    <div class="header-logo">
-      <a href="/" class="px-3">
-        <img src="../imgs/logo-white.png" alt="logo fighissimo" />
-      </a>
+    <div class="row d-flex justify-content-beetween">
+      <div class="col-6">
+        <div class="header-logo-desktop">
+          <a href="/" class="px-3">
+            <img class="hide" src="../imgs/logo-white.png" alt="logo fighissimo" />
+          </a>
+        </div>
+      </div>
+      <div class="col-4d-flex justify-content-end pt-3">
+        <div class="header-login-button p-3">
+          <a href="/admin/home" class="btn-main btn-purple">LOGIN</a>
+        </div>
+      </div>
     </div>
-    <div class="header-login-button px-3">
-      <a href="/admin/home" class="btn-main btn-purple">LOGIN</a>
-    </div>
+    
   </header>
 </template>
 
@@ -21,6 +28,9 @@ export default {
 
 <style lang="scss" scoped>
 header {
+  .row{
+    width: 100%;
+  }
   position: absolute;
   top: 0;
   left: 0;
@@ -29,10 +39,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 999;
+  z-index: 10;
   img {
     height: var(--hgt-item-lg);
     padding: var(--p-md);
+  }
+  .show{
+    display: none;
   }
 }
 </style>

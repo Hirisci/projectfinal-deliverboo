@@ -2772,25 +2772,32 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("header", [_c("div", {
-    staticClass: "header-logo"
+    staticClass: "row d-flex justify-content-beetween"
+  }, [_c("div", {
+    staticClass: "col-6"
+  }, [_c("div", {
+    staticClass: "header-logo-desktop"
   }, [_c("a", {
     staticClass: "px-3",
     attrs: {
       href: "/"
     }
   }, [_c("img", {
+    staticClass: "hide",
     attrs: {
       src: __webpack_require__(/*! ../imgs/logo-white.png */ "./resources/js/components/imgs/logo-white.png"),
       alt: "logo fighissimo"
     }
-  })])]), _vm._v(" "), _c("div", {
-    staticClass: "header-login-button px-3"
+  })])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-4d-flex justify-content-end pt-3"
+  }, [_c("div", {
+    staticClass: "header-login-button p-3"
   }, [_c("a", {
     staticClass: "btn-main btn-purple",
     attrs: {
       href: "/admin/home"
     }
-  }, [_vm._v("LOGIN")])])]);
+  }, [_vm._v("LOGIN")])])])])]);
 }];
 render._withStripped = true;
 
@@ -4155,7 +4162,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "header[data-v-3728c9a6] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: var(--hgt-item-lg);\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  z-index: 999;\n}\nheader img[data-v-3728c9a6] {\n  height: var(--hgt-item-lg);\n  padding: var(--p-md);\n}", ""]);
+exports.push([module.i, "header[data-v-3728c9a6] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: var(--hgt-item-lg);\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  z-index: 10;\n}\nheader .row[data-v-3728c9a6] {\n  width: 100%;\n}\nheader img[data-v-3728c9a6] {\n  height: var(--hgt-item-lg);\n  padding: var(--p-md);\n}\nheader .show[data-v-3728c9a6] {\n  display: none;\n}", ""]);
 
 // exports
 
