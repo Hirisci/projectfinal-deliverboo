@@ -2,7 +2,7 @@
   <header>
     <div class="header-logo">
       <a href="/" class="px-3">
-        <img src="../imgs/logo-white.png" alt="" />
+        <img src="../imgs/logo-white.png" alt="logo fighissimo" />
       </a>
     </div>
     <div class="header-login-button px-3">
