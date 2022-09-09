@@ -1,6 +1,6 @@
 <template>
   <div class="payment">
-    <div ref="dropin">asd</div>
+    <div id="#dropin-container" ref="dropin">asd</div>
     <slot name="button" v-bind:submit="submit">
       <button @click="submit" :class="btnClass">{{ btnText }}</button>
     </slot>
@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import dropIn from "braintree-web-drop-in";
 export default {
   props: {
     authorization: {
@@ -92,19 +91,14 @@ export default {
       card: this.card,
       threeDSecure: this.threeDSecure,
     };
-    //Create dropin
-    dropIn.create(config, (createErr, instance) => {
-      if (createErr) {
-        // An error in the create call is likely due to
-        // incorrect configuration values or network issues.
-        // An appropriate error will be shown in the UI.
-        this.$emit("loadFail", createErr);
-        return;
-      }
-      this.instance = instance;
-      // Load event
-      this.$emit("load", this.instance);
-    });
+
+    setTimeout(
+      () => {
+        console.log("fine time");
+      },
+
+      5000
+    );
   },
   methods: {
     submit(event) {

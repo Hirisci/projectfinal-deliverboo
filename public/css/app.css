@@ -12974,6 +12974,10 @@ a.btn-main:hover {
   background-color: var(--delete-color);
 }
 
+.btn-disabled {
+  filter: grayscale(0.8);
+}
+
 body {
   background-color: var(--tertiary-purple);
   overflow: overlay;

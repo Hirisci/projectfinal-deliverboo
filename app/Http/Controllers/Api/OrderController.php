@@ -14,32 +14,33 @@ class OrderController extends Controller
         //reindirizzo a un altra pagina
         return null;
     }
-    public function getData(Request $request)
+    public function payment(Request $request)
     {   
-        $gateway = new Braintree\Gateway([
+        $gateway = new \Braintree\Gateway([
             'environment' => config('services.braintree.environment'),
             'merchantId' => config('services.braintree.merchantId'),
             'publicKey' => config('services.braintree.publicKey'),
             'privateKey' => config('services.braintree.privateKey')
         ]);
-    
-        $amount = $request->data()->order->amount;
-        $nonce = $request->payment_method_nonce;
-    
+
+
+        $data = $request->all();
+
+
         $result = $gateway->transaction()->sale([
-            'amount' => $amount,
-            'paymentMethodNonce' => $nonce,
+            'amount' => '10.00',
+            'paymentMethodNonce' => $request->token,
             'customer' => [
-                'firstName' => 'franco',
-                'lastName' => 'angelo',
+                'firstName' => 'Tony',
+                'lastName' => 'Stark',
                 'email' => 'tony@avengers.com',
             ],
             'options' => [
-                'submitForSettlement' => true
+              'submitForSettlement' => True
             ]
-        ]);
-    
-        if ($result->success) {
+          ]);
+       
+          if ($result->success) {
             $transaction = $result->transaction;
             // header("Location: transaction.php?id=" . $transaction->id);
     

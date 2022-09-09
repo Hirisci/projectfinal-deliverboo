@@ -7,7 +7,12 @@
           <div class="col-12 col-lg-4 p-0">
             <AAsideMenuTitle :title="'Checkout'" />
           </div>
-          <form class="px-3 mt-2" v-on:submit.prevent="submitForm">
+          <form
+            id="paymentForm"
+            class="px-3 mt-2"
+            method="POST"
+            action="http://127.0.0.1:8000/api/payment"
+          >
             <div class="row">
               <p class="mb-1">Dettagli Ordine</p>
               <div class="col">
@@ -76,7 +81,7 @@
                 placeholder="Nome sul campanello"
               />
             </div>
-            <div class="form-group mb-4">
+            <div class="form-group">
               <input
                 v-model="form.client.phone"
                 type="text"
@@ -85,78 +90,27 @@
                 placeholder="Cellulare"
               />
             </div>
-            <!-- <div class="row mb-3">
-              <p class="mb-1">Dettagli Pagamento</p>
-              <div class="col">
-                <input
-                  v-model="form.payment.fullName"
-                  type="text"
-                  class="form-control"
-                  placeholder="Nome Completo"
-                  aria-label="Nome"
-                />
-              </div>
-              <div class="col">
-                <input
-                  v-model="form.payment.email"
-                  type="email"
-                  class="form-control"
-                  placeholder="ex@test.com"
-                  aria-label="email"
-                />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-6">
-                <input
-                  v-model="form.payment.cardNumber"
-                  type="text"
-                  class="form-control"
-                  placeholder="Numero Carta"
-                  aria-label="numeroCarta"
-                />
-              </div>
-              <div class="col">
-                <input
-                  v-model="form.payment.expire"
-                  type="text"
-                  class="form-control"
-                  placeholder="MM/YY"
-                  aria-label="expire"
-                />
-              </div>
-              <div class="col">
-                <input
-                  v-model="form.payment.cvv"
-                  type="text"
-                  class="form-control"
-                  placeholder="CVV"
-                  aria-label="cvv"
-                />
-              </div>
-            </div> -->
-            <BtnPayment
-              :authorization="token"
-              :three-d-secure="true"
-              :three-d-secure-parameters="{
-                amount: 100,
-                email: 'francois@witify.io',
-                billingAddress: {
-                  givenName: 'John',
-                  surname: 'Doe',
-                  phoneNumber: '515 515 1234',
-                  streetAddress: '485 boul. dagenais E',
-                  extendedAddress: '1',
-                  locality: 'Laval',
-                  region: 'QC',
-                  postalCode: 'h7m5z5',
-                  countryCodeAlpha2: 'CA',
-                },
-              }"
-            />
 
+            <div id="dropin-container"></div>
+            <input type="hidden" id="nonce" name="payment_method_nonce" />
             <div class="d-flex justify-content-end mt-3">
-              <button class="btn-main btn-purple">Procedi al pagamento</button>
+              <button
+                id="btnToken"
+                type="submit"
+                class="btn-main btn-purple btn-disabled"
+                disabled
+              >
+                Verifica Pagamento
+              </button>
+
+              <button
+                id="btnSubmit"
+                type="submit"
+                class="btn-main btn-purple d-none"
+                @click="submitForm"
+              >
+                Conferma Ordine
+              </button>
             </div>
           </form>
         </div>
@@ -178,14 +132,13 @@ import AJumbotron from "../components/atoms/AJumbotron.vue";
 import AAsideMenuTitle from "../components/atoms/AAsideMenuTitle.vue";
 import MCart from "../components/molecules/MCart.vue";
 import BtnPayment from "../components/atoms/BtnPayment.vue";
+import ABasicButton from "../components/atoms/ABasicButton.vue";
 
 export default {
   name: "Checkout",
-  components: { AJumbotron, AAsideMenuTitle, MCart, BtnPayment },
+  components: { AJumbotron, AAsideMenuTitle, MCart, BtnPayment, ABasicButton },
   data() {
     return {
-      instance: null,
-      token: "",
       cart: [],
       form: {
         client: {
@@ -221,16 +174,19 @@ export default {
     },
   },
   methods: {
-    device() {
-      return window.navigator.userAgent;
-    },
     submitForm() {
+      //Submit payload.nonce to your server
       const path = "http://127.0.0.1:8000/api/payment";
+      const data = {
+        cart: this.cart,
+        form: this.form,
+        token: document.querySelector("#nonce").value,
+      };
+      console.log(data);
       axios
-        .post(path, { form: this.sendClient, cart: this.sendCart })
+        .post(path, JSON.stringify(data))
         .then((res) => {
           console.log("invio form riuscito", res);
-          //Perform Success Action
         })
         .catch((error) => {
           console.log("errore", error);
@@ -240,6 +196,21 @@ export default {
           //Perform action in always
           console.log("in fine");
         });
+
+      // const path = "http://127.0.0.1:8000/api/payment";
+      // axios
+      //   .post(path, { form: this.sendClient, cart: this.sendCart })
+      //   .then((res) => {
+      //     console.log("invio form riuscito", res);
+      //   })
+      //   .catch((error) => {
+      //     console.log("errore", error);
+      //     // error.response.status Check status code
+      //   })
+      //   .finally(() => {
+      //     //Perform action in always
+      //     console.log("in fine");
+      //   });
     },
     amountCart() {
       let somma = 0;
@@ -329,6 +300,47 @@ export default {
         console.log("successo", res);
         //Perform Success Action
         this.token = res.data.token;
+        const BTNtoken = document.querySelector("#btnToken");
+
+        console.log("creo dropIn");
+        let form = document.querySelector("#paymentForm");
+
+        const dropIn = require("braintree-web-drop-in");
+        dropIn.create(
+          {
+            authorization: this.token,
+            selector: "#dropin-container",
+            locale: "it_IT",
+          },
+          (createErr, instance) => {
+            if (createErr) {
+              // An error in the create call is likely due to
+              // incorrect configuration values or network issues.
+              // An appropriate error will be shown in the UI.
+
+              return;
+            }
+            BTNtoken.removeAttribute("disabled");
+            const BTNSubmit = document.querySelector("#btnSubmit");
+            BTNtoken.classList.remove("btn-disabled");
+
+            form.addEventListener("submit", (event) => {
+              event.preventDefault();
+
+              instance.requestPaymentMethod(function (err, payload) {
+                if (err) {
+                  console.log("Request Payment Method Error", err);
+                  return;
+                }
+
+                // Add the nonce to the form and submit
+                document.querySelector("#nonce").value = payload.nonce;
+                BTNtoken.classList.add("d-none");
+                BTNSubmit.classList.remove("d-none");
+              });
+            });
+          }
+        );
       })
       .catch((error) => {
         console.log("successo", error);
@@ -350,10 +362,18 @@ export default {
   flex-flow: column;
   gap: 0.625rem;
   padding: 1.25rem 0rem;
+  .form-group:last-child {
+    padding-bottom: 0;
+  }
 }
 .form-group {
   margin: 0.9375rem 0;
 }
+
+// #dropin-container {
+//   margin-top: -1rem;
+// }
+
 label {
   margin-bottom: 0.3125rem;
 }
@@ -361,3 +381,6 @@ label {
   position: relative;
 }
 </style>
+
+
+
