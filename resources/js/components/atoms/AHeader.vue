@@ -8,7 +8,7 @@
           </a>
         </div>
       </div>
-      <div class="col-4d-flex justify-content-end pt-3">
+      <div class="col-6 d-flex justify-content-end pt-3">
         <div class="header-login-button p-3">
           <a href="/admin/home" class="btn-main btn-purple">LOGIN</a>
         </div>

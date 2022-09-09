@@ -2789,7 +2789,7 @@ var staticRenderFns = [function () {
       alt: "logo fighissimo"
     }
   })])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-4d-flex justify-content-end pt-3"
+    staticClass: "col-6 d-flex justify-content-end pt-3"
   }, [_c("div", {
     staticClass: "header-login-button p-3"
   }, [_c("a", {
