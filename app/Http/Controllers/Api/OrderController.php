@@ -15,10 +15,46 @@ class OrderController extends Controller
         return null;
     }
     public function getData(Request $request)
-    {
-        $data = $request->all();
-        //reindirizzo a un altra pagina
-        return response()->json($data);
+    {   
+        $gateway = new Braintree\Gateway([
+            'environment' => config('services.braintree.environment'),
+            'merchantId' => config('services.braintree.merchantId'),
+            'publicKey' => config('services.braintree.publicKey'),
+            'privateKey' => config('services.braintree.privateKey')
+        ]);
+    
+        $amount = $request->data()->order->amount;
+        $nonce = $request->payment_method_nonce;
+    
+        $result = $gateway->transaction()->sale([
+            'amount' => $amount,
+            'paymentMethodNonce' => $nonce,
+            'customer' => [
+                'firstName' => 'franco',
+                'lastName' => 'angelo',
+                'email' => 'tony@avengers.com',
+            ],
+            'options' => [
+                'submitForSettlement' => true
+            ]
+        ]);
+    
+        if ($result->success) {
+            $transaction = $result->transaction;
+            // header("Location: transaction.php?id=" . $transaction->id);
+    
+            return back()->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
+        } else {
+            $errorString = "";
+    
+            foreach ($result->errors->deepAll() as $error) {
+                $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
+            }
+    
+            // $_SESSION["errors"] = $errorString;
+            // header("Location: index.php");
+            return back()->withErrors('An error occurred with the message: '.$result->message);
+        }
     }
 
     public function token(){
@@ -34,8 +70,5 @@ class OrderController extends Controller
         return response()->json([
             'token'=>$token
         ],200);
-        // return view('hosted', [
-        //     'token' => $token
-        // ]);
     }
 }

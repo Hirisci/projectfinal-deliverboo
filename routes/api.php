@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('restaurant', 'Api\RestaurantController@index');
 Route::get('token', 'Api\OrderController@token');
-Route::post('order', 'Api\OrderController@getData');
+Route::post('payment', 'Api\OrderController@getData');
 Route::get('restaurant/{slug}', 'Api\RestaurantController@show');
 Route::get('category', 'Api\CategoryController@index');
 Route::get('plate', 'Api\PlateController@index');

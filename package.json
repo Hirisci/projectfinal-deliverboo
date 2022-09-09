@@ -24,7 +24,9 @@
         "vue-template-compiler": "^2.7.10"
     },
     "dependencies": {
+        "braintree-web-drop-in": "^1.33.4",
         "sweetalert2": "^11.4.32",
+        "vue-braintree": "^2.1.0",
         "vue-cookies": "^1.8.1",
         "vue-router": "^3.5.3"
     }

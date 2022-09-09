@@ -85,7 +85,7 @@
                 placeholder="Cellulare"
               />
             </div>
-            <div class="row mb-3">
+            <!-- <div class="row mb-3">
               <p class="mb-1">Dettagli Pagamento</p>
               <div class="col">
                 <input
@@ -134,7 +134,27 @@
                   aria-label="cvv"
                 />
               </div>
-            </div>
+            </div> -->
+            <BtnPayment
+              :authorization="token"
+              :three-d-secure="true"
+              :three-d-secure-parameters="{
+                amount: 100,
+                email: 'francois@witify.io',
+                billingAddress: {
+                  givenName: 'John',
+                  surname: 'Doe',
+                  phoneNumber: '515 515 1234',
+                  streetAddress: '485 boul. dagenais E',
+                  extendedAddress: '1',
+                  locality: 'Laval',
+                  region: 'QC',
+                  postalCode: 'h7m5z5',
+                  countryCodeAlpha2: 'CA',
+                },
+              }"
+            />
+
             <div class="d-flex justify-content-end mt-3">
               <button class="btn-main btn-purple">Procedi al pagamento</button>
             </div>
@@ -157,35 +177,38 @@
 import AJumbotron from "../components/atoms/AJumbotron.vue";
 import AAsideMenuTitle from "../components/atoms/AAsideMenuTitle.vue";
 import MCart from "../components/molecules/MCart.vue";
+import BtnPayment from "../components/atoms/BtnPayment.vue";
 
 export default {
   name: "Checkout",
-  components: { AJumbotron, AAsideMenuTitle, MCart },
+  components: { AJumbotron, AAsideMenuTitle, MCart, BtnPayment },
   data() {
     return {
+      instance: null,
+      token: "",
       cart: [],
       form: {
         client: {
-          name: "",
-          lastName: "",
-          phone: "",
+          name: "Alan",
+          lastName: "Bruno",
+          phone: "123 4564456",
         },
         address: {
-          street: "",
-          city: "",
-          state: "",
-          zip: "",
-          ring: "",
+          street: "Via Po 123",
+          city: "Milano",
+          state: "Italia",
+          zip: "20030",
+          ring: "Bruno",
         },
         payment: {
-          fullName: "",
-          email: "",
-          expire: "",
-          cardNumber: "",
-          cvv: "",
+          fullName: "Alan Bruno",
+          email: "email@mail.com",
+          expire: "11/25",
+          cardNumber: "4111111111111111",
+          cvv: "111",
         },
       },
-      inCheckoutPage : true,
+      // inCheckoutPage: true,
     };
   },
   watch: {
@@ -198,21 +221,24 @@ export default {
     },
   },
   methods: {
+    device() {
+      return window.navigator.userAgent;
+    },
     submitForm() {
-      const path = "http://127.0.0.1:8000/api/order";
+      const path = "http://127.0.0.1:8000/api/payment";
       axios
         .post(path, { form: this.sendClient, cart: this.sendCart })
         .then((res) => {
-          console.log("successo", res);
+          console.log("invio form riuscito", res);
           //Perform Success Action
         })
         .catch((error) => {
-          console.log("successo", error);
+          console.log("errore", error);
           // error.response.status Check status code
         })
         .finally(() => {
           //Perform action in always
-          console.log("dunque");
+          console.log("in fine");
         });
     },
     amountCart() {
@@ -253,6 +279,18 @@ export default {
         console.log("carrello pieno");
       }
     },
+    //* EVENTI COMPONENTE V-DROP
+    onSuccess(payload) {
+      let nonce = payload.nonce;
+      // Do something great with the nonce...
+    },
+    onError(error) {
+      let message = error.message;
+      // Whoops, an error has occured while trying to get the nonce
+    },
+    onLoad() {
+      console.log(instance);
+    },
   },
   computed: {
     sendCart() {
@@ -274,12 +312,32 @@ export default {
         address: `${this.form.address.street}, ${this.form.address.city}, ${this.form.address.state}, ${this.form.address.zip}`,
         ring: this.form.client.ring,
         payment: this.form.payment,
+        device: this.device(),
       };
       return order;
     },
   },
   mounted() {
     this.refreshCart();
+  },
+  created() {
+    const path = "http://127.0.0.1:8000/api/token";
+
+    axios
+      .get(path)
+      .then((res) => {
+        console.log("successo", res);
+        //Perform Success Action
+        this.token = res.data.token;
+      })
+      .catch((error) => {
+        console.log("successo", error);
+        // error.response.status Check status code
+      })
+      .finally(() => {
+        //Perform action in always
+        console.log("dunque");
+      });
   },
 };
 </script>
@@ -299,7 +357,7 @@ export default {
 label {
   margin-bottom: 0.3125rem;
 }
-.form{
+.form {
   position: relative;
 }
 </style>
