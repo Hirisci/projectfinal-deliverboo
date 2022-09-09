@@ -67,6 +67,7 @@ class RegisterController extends Controller
             'address' => ['nullable', 'string'],
             'vat' => ['nullable', 'string', 'min:11', 'max:11', 'regex:/^[0-9]+$/'],
             'img' => ['nullable', 'file', 'max:500', 'mimes:png,jpg,jpeg,svg,webp'],
+            'logo' => ['nullable', 'file', 'max:500', 'mimes:png,jpg,jpeg,svg,webp'],
         ]);
     }
 
@@ -89,12 +90,17 @@ class RegisterController extends Controller
     {
         // creo record nel DB ristorante legato al account
         $user= Auth::user();
-        $newRestaurant = request()->only('name','address','img','vat');
+        $newRestaurant = request()->only('name','address','img','logo','vat');
         $newRestaurant['user_id'] = $user->id;
 
         //modifica path immagine
         if(isset($newRestaurant['img'])){
             $newRestaurant['img'] = Storage::put('upload/ImgRestaurant', $newRestaurant['img']);
+        };
+
+        //modifica path logo
+        if(isset($newRestaurant['logo'])){
+            $newRestaurant['logo'] = Storage::put('upload/logoRestaurant', $newRestaurant['logo']);
         };
 
         Restaurant::create($newRestaurant);

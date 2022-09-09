@@ -37,6 +37,20 @@
                                 @enderror
                             </div>
                         </div>      
+                        <div class="my-3 mb-3  row">
+                            <div class="col-3">
+                                <img src="{{ asset('storage/' . $restaurant->logo) }}" class="logo-edit">
+                            </div>
+                            <div class="col-9">
+                                <label for="logo" class="formFile mb-1" >Scegli Immagine da Modificare</label>
+                                <input id="logo" type="file" class="form-control" @error('logo') is-invalid @enderror" name="logo" value="{{ asset('storage/' . $restaurant->logo) }}">
+                                @error('logo')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>      
                     </div>   
                     <div class="my-3">
                         <div >Seleziona Categorie</div>

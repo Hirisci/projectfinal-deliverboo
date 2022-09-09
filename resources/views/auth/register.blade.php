@@ -165,6 +165,17 @@
                                 @enderror
                             </div>
 
+                            <div class="d-flex align-content-center">
+                                <label for="logo" class="formFile col-md-4 col-form-label text-md-right ">{{ __('Logo Ristorante') }}</label>
+                                <input id="logo" type="file" class="form-control  @error('logo') is-invalid @enderror" name="logo" value="{{ old('logo') }}">
+                                
+                                @error('logo')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+
                             <div >
                                 <h6 class="mb-2">Seleziona tra le seguenti categorie:</h6>
                                 

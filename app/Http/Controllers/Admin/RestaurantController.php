@@ -16,6 +16,7 @@ class RestaurantController extends Controller
     private $validation = [
         'name' => 'nullable|string|max:255',
         'img' => 'nullable|file|mimes:png,jpg,jpeg,svg,webp',
+        'logo' => 'nullable|file|mimes:png,jpg,jpeg,svg,webp',
         'vat' => 'nullable|string|max:11|min:11|regex:/^[0-9]+$/',
         'address' => 'nullable|string|max:255',
         'categories_active' => 'nullable|exists:categories,id',
@@ -97,6 +98,11 @@ class RestaurantController extends Controller
         //modifica path immagine
         if(isset($newRestaurant['img'])){
             $newRestaurant['img'] = Storage::put('upload/ImgRestaurant', $newRestaurant['img']);
+        };
+        
+        //modifica path immagine
+        if(isset($newRestaurant['logo'])){
+            $newRestaurant['logo'] = Storage::put('upload/logoRestaurant', $newRestaurant['logo']);
         };
 
         $restaurant->update($newRestaurant);
