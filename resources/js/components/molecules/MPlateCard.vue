@@ -59,7 +59,7 @@
       <div class="row plate-card-mobile-img">
         <img :src="`/storage/${plate.img}`" alt="Plate" />
       </div>
-      <div class="row plate-card-mobile-description mb-2">
+      <div class="row plate-card-mobile-description my-2">
         <div class="plate-card-desktop-left-text-description">
           {{ plate.description }}
         </div>

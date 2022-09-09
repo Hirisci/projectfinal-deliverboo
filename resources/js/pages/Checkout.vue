@@ -1,9 +1,9 @@
 <template>
-  <div class="container-fluid p-0">
+  <div class="container-fluid p-0  position-relative">
     <AJumbotron />
     <div class="form container-lg p-3">
       <div class="row d-flex justify-content-around">
-        <div class="user-form col-lg-6">
+        <div class="user-form col-lg-6 mb-4">
           <div class="col-12 col-lg-4 p-0">
             <AAsideMenuTitle :title="'Checkout'" />
           </div>
@@ -131,7 +131,7 @@
             </div>
           </form>
         </div>
-        <div class="d-lg-block col-lg-5 mt-2">
+        <div class="d-lg-block col-lg-5 pb-5">
           <MCart
             :cart="this.cart"
             :inCheckoutPage="true"

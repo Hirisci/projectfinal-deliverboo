@@ -5,7 +5,7 @@
       :class="{ menuOpen: isOpen, dnone: !isOpen, dflex: isOpen }"
     >
       <ATitleCard :title="'Carrello'" class="cart-title" />
-      <div class="cart-items mt-3">
+      <div class="cart-items mt-3 px-3">
         <ACartItem
           v-for="plate in cart"
           :key="plate.id"
@@ -27,15 +27,14 @@
         </div>
       </div>
     </div>
-    <div class="cart-overlay d-lg-none">
-      <div class="cart-overlay"></div>
+    <div class="cart-overlay" :class="{ 'd-lg-none' : !isOpen, overlayOpen : isOpen }">
       <button class="cart-overlay-button" @click="showCart()">
         <img
           src="../imgs/shopping-cart.png"
           alt=""
           :class="{ dnone: isOpen }"
         />
-        <div class="cart-overlay-close" :class="{ dnone: !isOpen }">X</div>
+        <div class="cart-overlay-close" :class="{ dnone: !isOpen, dblock : isOpen }" >X</div>
       </button>
       <div class="cart-overlay-count" :class="{ dnone: isOpen }">
         {{ amountItem }}
@@ -189,9 +188,15 @@ export default {
   .dnone {
     display: none;
   }
+  .dblock {
+    display: block;
+  }
   .dflex {
-    // display: flex;
     flex-flow: column;
+  }
+  .overlayOpen{
+    position: absolute;
+    right: 5%;
   }
 }
 </style>
