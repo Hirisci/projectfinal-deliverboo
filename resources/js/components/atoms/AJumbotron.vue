@@ -1,8 +1,10 @@
 <template>
   <div class="jumbotron">
-      <img class="sushi" src="../imgs/sushi.png" alt="">
-      <img class="hamburger" src="../imgs/hamburger.png" alt="">
-      <img class="pizza" src="../imgs/pizza.png" alt="">
+        <div class="row">
+            <div class="col-md-4 col-sm-0 pt-4"><img class="sushi" src="../imgs/sushi.png"   alt="immagine sushi del jumbotron"></div>
+            <div class="col-md-4 col-sm-6 d-flex justify-content-center"><img class="hamburger" src="../imgs/hamburger.png" alt="immagine hamburger del jumbotron"></div>
+            <div class="col-md-4 col-sm-6 d-flex align-items-center"><img class="pizza" src="../imgs/pizza.png" alt="immagine pizza del jumbotron"></div>
+        </div> 
   </div>
 </template>
 
@@ -15,22 +17,38 @@ export default {
 <style lang="scss" scoped>
 .jumbotron{
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(150,103,224,1) 50%);
-    height: 25rem;
+    height: 35rem;
     overflow: hidden;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     .hamburger{
-    top: 0;
-    transform: translateY(-50%);
+    transform: translateY(-30%);
     }
     .pizza{
-    transform: translateX(50%);
+    transform: translateX(20%);
+    width: 100%;
+    }
+    .hamburger, .sushi{
+        width: 80%;
     }
     img{
         position: relative;
-        width: 20rem;
+    }
+
+    @media screen and (max-width: 768px) {
+        .sushi{
+            display: none;
+        }
+        .hamburger{
+            transform: rotate(30deg);
+            margin-left: -80%;
+        }
+        .pizza{
+            transform: rotate(-30deg);
+            margin-left: 40%;
+        }
     }
 }
 </style>

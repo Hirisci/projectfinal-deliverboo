@@ -101,8 +101,10 @@ export default {
             display: flex;
             flex-direction: column;
             gap: 2.5rem;
-            width: 50%;
+            width: 60%;
+            margin-bottom: -0.9375rem;
         }
     }
+    
 }
 </style>

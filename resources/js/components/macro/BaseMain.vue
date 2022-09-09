@@ -4,6 +4,7 @@
       <div class="col-12 col-lg-3 home-left p-3">
         <OAsideMenu @updateCheckFilter="updateFilterCheck" />
       </div>
+      
       <div class="col-12 col-lg-9 home-right p-3">
         <MRestaurantCard
           v-for="restaurant in filterRestaurants"
@@ -73,9 +74,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home-right {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15.625rem, 1fr));
-  gap: 1rem;
-}
+  .home-right {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15.625rem, 1fr));
+    gap: 1rem;
+  }
 </style>

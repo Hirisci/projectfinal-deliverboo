@@ -26,6 +26,9 @@ export default {
 
 <style lang="scss" scoped>
 header {
+  .row{
+    width: 100%;
+  }
   position: absolute;
   top: 0;
   left: 0;
@@ -34,10 +37,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 999;
+  z-index: 10;
   img {
     height: var(--hgt-item-lg);
     padding: var(--p-md);
+  }
+  .show{
+    display: none;
   }
 }
 </style>
