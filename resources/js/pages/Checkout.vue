@@ -89,31 +89,40 @@
               <p class="mb-1">Dettagli Pagamento</p>
               <div class="col">
                 <input
-                  v-model="form.payment.name"
+                  v-model="form.payment.fullName"
                   type="text"
                   class="form-control"
-                  placeholder="Nome"
+                  placeholder="Nome Completo"
                   aria-label="Nome"
                 />
               </div>
               <div class="col">
                 <input
-                  v-model="form.payment.lastName"
-                  type="text"
+                  v-model="form.payment.email"
+                  type="email"
                   class="form-control"
-                  placeholder="Cognome"
-                  aria-label="Cognome"
+                  placeholder="ex@test.com"
+                  aria-label="email"
                 />
               </div>
             </div>
             <div class="row">
-              <div class="col-10">
+              <div class="col-6">
                 <input
                   v-model="form.payment.cardNumber"
                   type="text"
                   class="form-control"
                   placeholder="Numero Carta"
                   aria-label="numeroCarta"
+                />
+              </div>
+              <div class="col">
+                <input
+                  v-model="form.payment.expire"
+                  type="text"
+                  class="form-control"
+                  placeholder="MM/YY"
+                  aria-label="expire"
                 />
               </div>
               <div class="col">
@@ -169,8 +178,9 @@ export default {
           ring: "",
         },
         payment: {
-          name: "",
-          lastName: "",
+          fullName: "",
+          email: "",
+          expire: "",
           cardNumber: "",
           cvv: "",
         },
@@ -210,7 +220,7 @@ export default {
       this.cart.forEach((element) => {
         somma += element.price * element.quantity;
       });
-      return somma;
+      return somma.toFixed(2);
     },
     addQty(arg) {
       let result = this.cart.find((Element) => Element.id === arg.id);
