@@ -1,8 +1,13 @@
 <template>
   <header>
-    <div class="header-logo">
+    <div class="header-logo d-none d-lg-block">
       <a href="/" class="px-3">
         <img src="../imgs/logo-white.png" alt="" />
+      </a>
+    </div>
+    <div class="header-logo-mobile d-lg-none">
+      <a href="/" class="px-3">
+        <img src="../imgs/only-logo-white.png" alt="" />
       </a>
     </div>
     <div class="header-login-button px-3">

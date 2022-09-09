@@ -2772,7 +2772,7 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("header", [_c("div", {
-    staticClass: "header-logo"
+    staticClass: "header-logo d-none d-lg-block"
   }, [_c("a", {
     staticClass: "px-3",
     attrs: {
@@ -2781,6 +2781,18 @@ var staticRenderFns = [function () {
   }, [_c("img", {
     attrs: {
       src: __webpack_require__(/*! ../imgs/logo-white.png */ "./resources/js/components/imgs/logo-white.png"),
+      alt: ""
+    }
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "header-logo-mobile d-lg-none"
+  }, [_c("a", {
+    staticClass: "px-3",
+    attrs: {
+      href: "/"
+    }
+  }, [_c("img", {
+    attrs: {
+      src: __webpack_require__(/*! ../imgs/only-logo-white.png */ "./resources/js/components/imgs/only-logo-white.png"),
       alt: ""
     }
   })])]), _vm._v(" "), _c("div", {
@@ -21956,6 +21968,17 @@ module.exports = "/images/hamburger.png?8df3d89112d77bf236de3709c958c7a2";
 /***/ (function(module, exports) {
 
 module.exports = "/images/logo-white.png?16933b020697e02c2bcf3b6f3f9c7631";
+
+/***/ }),
+
+/***/ "./resources/js/components/imgs/only-logo-white.png":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/imgs/only-logo-white.png ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/only-logo-white.png?d0187dc3765683bf393bde48ba367670";
 
 /***/ }),
 
