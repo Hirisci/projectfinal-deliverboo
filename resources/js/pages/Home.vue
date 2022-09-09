@@ -3,6 +3,7 @@
     <AJumbotron />
     <BaseMain />
     <ProcessSection class="mb-3" />
+    <WorkWithUsSection class="" />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import BaseMain from '../components/macro/BaseMain.vue';
 import AJumbotron from '../components/atoms/AJumbotron.vue';
 import ProcessSection from "../components/sections/ProcessSection.vue"
+import WorkWithUsSection from "../components/sections/WorkWithUsSection.vue"
 
 export default {
     name: "Home",
@@ -17,6 +19,7 @@ export default {
     BaseMain,
     AJumbotron,
     ProcessSection,
+    WorkWithUsSection
 },
 }
 </script>
