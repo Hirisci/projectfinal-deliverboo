@@ -31,9 +31,9 @@
                         </div>
                     </div>
                     <div class="right-side-words">
-                        <h3>ORDINA</h3>
-                        <h3>PAGA</h3>
-                        <h3>ATTENDI SUL TUO DIVANO</h3>
+                        <h3 class="ordina">ORDINA</h3>
+                        <h3 class="paga">PAGA</h3>
+                        <h3 class="wait">ATTENDI SUL TUO DIVANO</h3>
                     </div>
                 </div>
             </div>
@@ -102,7 +102,18 @@ export default {
             flex-direction: column;
             gap: 2.5rem;
             width: 50%;
+            margin-bottom: -0.9375rem;
         }
+    }
+    @media screen and (max-width: 768px) {
+       .right-side.words{
+        .wait{
+            margin-bottom: -2.1875rem;
+        }
+        .paga{
+            margin-bottom: -1.5625rem;
+        }
+       }
     }
 }
 </style>
