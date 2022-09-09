@@ -3585,13 +3585,7 @@ var staticRenderFns = [function () {
     staticClass: "big-dot-inside"
   })])]), _vm._v(" "), _c("div", {
     staticClass: "right-side-words"
-  }, [_c("h3", {
-    staticClass: "ordina"
-  }, [_vm._v("ORDINA")]), _vm._v(" "), _c("h3", {
-    staticClass: "paga"
-  }, [_vm._v("PAGA")]), _vm._v(" "), _c("h3", {
-    staticClass: "wait"
-  }, [_vm._v("ATTENDI SUL TUO DIVANO")])])])])])]);
+  }, [_c("h3", [_vm._v("ORDINA")]), _vm._v(" "), _c("h3", [_vm._v("PAGA")]), _vm._v(" "), _c("h3", [_vm._v("ATTENDI SUL TUO DIVANO")])])])])])]);
 }];
 render._withStripped = true;
 
@@ -4377,7 +4371,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".section-process[data-v-1a8dc0c8] {\n  background-color: var(--secondary-purple);\n}\n.section-process img[data-v-1a8dc0c8] {\n  border-radius: 1.25rem;\n  border: 0.125rem solid var(--primary-purple);\n  width: 70%;\n  min-width: 15rem;\n}\n.section-process .right-side[data-v-1a8dc0c8] {\n  display: flex;\n  align-items: center;\n}\n.section-process .right-side-dots[data-v-1a8dc0c8] {\n  padding-right: 0.625rem;\n  align-items: flex-end;\n  display: flex;\n  flex-direction: column;\n  gap: 0.3125rem;\n  width: 37%;\n}\n.section-process .right-side-dots .big-dot[data-v-1a8dc0c8] {\n  width: 1.875rem;\n  height: 1.875rem;\n  border-radius: 50%;\n  background-color: var(--tertiary-purple);\n  border: 0.0625rem solid var(--primary-purple);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.section-process .right-side-dots .big-dot-inside[data-v-1a8dc0c8] {\n  width: 0.9375rem;\n  height: 0.9375rem;\n  border-radius: 50%;\n  background-color: var(--primary-purple);\n}\n.section-process .right-side-dots .mini-dots-container[data-v-1a8dc0c8] {\n  width: 1.875rem;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 0.3125rem;\n}\n.section-process .right-side-dots .mini-dots-container .mini-dot[data-v-1a8dc0c8] {\n  width: 0.3125rem;\n  height: 0.3125rem;\n  border-radius: 50%;\n  background-color: var(--tertiary-purple);\n  border: 0.0625rem solid var(--primary-purple);\n}\n.section-process .right-side-words[data-v-1a8dc0c8] {\n  display: flex;\n  flex-direction: column;\n  gap: 2.5rem;\n  width: 50%;\n  margin-bottom: -0.9375rem;\n}\n@media screen and (max-width: 768px) {\n.section-process .right-side.words .wait[data-v-1a8dc0c8] {\n    margin-bottom: -2.1875rem;\n}\n.section-process .right-side.words .paga[data-v-1a8dc0c8] {\n    margin-bottom: -1.5625rem;\n}\n}", ""]);
+exports.push([module.i, ".section-process[data-v-1a8dc0c8] {\n  background-color: var(--secondary-purple);\n}\n.section-process img[data-v-1a8dc0c8] {\n  border-radius: 1.25rem;\n  border: 0.125rem solid var(--primary-purple);\n  width: 70%;\n  min-width: 15rem;\n}\n.section-process .right-side[data-v-1a8dc0c8] {\n  display: flex;\n  align-items: center;\n}\n.section-process .right-side-dots[data-v-1a8dc0c8] {\n  padding-right: 0.625rem;\n  align-items: flex-end;\n  display: flex;\n  flex-direction: column;\n  gap: 0.3125rem;\n  width: 37%;\n}\n.section-process .right-side-dots .big-dot[data-v-1a8dc0c8] {\n  width: 1.875rem;\n  height: 1.875rem;\n  border-radius: 50%;\n  background-color: var(--tertiary-purple);\n  border: 0.0625rem solid var(--primary-purple);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.section-process .right-side-dots .big-dot-inside[data-v-1a8dc0c8] {\n  width: 0.9375rem;\n  height: 0.9375rem;\n  border-radius: 50%;\n  background-color: var(--primary-purple);\n}\n.section-process .right-side-dots .mini-dots-container[data-v-1a8dc0c8] {\n  width: 1.875rem;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 0.3125rem;\n}\n.section-process .right-side-dots .mini-dots-container .mini-dot[data-v-1a8dc0c8] {\n  width: 0.3125rem;\n  height: 0.3125rem;\n  border-radius: 50%;\n  background-color: var(--tertiary-purple);\n  border: 0.0625rem solid var(--primary-purple);\n}\n.section-process .right-side-words[data-v-1a8dc0c8] {\n  display: flex;\n  flex-direction: column;\n  gap: 2.5rem;\n  width: 60%;\n  margin-bottom: -0.9375rem;\n}", ""]);
 
 // exports
 
