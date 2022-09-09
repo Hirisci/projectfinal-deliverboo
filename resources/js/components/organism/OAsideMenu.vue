@@ -8,19 +8,19 @@
     <!-- </div> -->
     <div class="aside-menu-categories">
       <AAsideMenuTitle class="mb-3" :title="'Categorie'" />
-      <ul class="ps-3 aside-menu-categories-list">
-        <li v-for="category in categories" :key="category.id">
-          <input
-            type="checkbox"
-            :id="category.name"
-            :name="category.name"
-            :value="category.name"
-            v-model="filterCategory"
-            @change="updateCheckFilter()"
-          />
-          <label :for="category.name"> {{ category.name }} </label>
-        </li>
-      </ul>
+      <div class="ps-3 aside-menu-categories-list">
+          <div class="list-item" v-for="category in categories" :key="category.id">
+                <input
+                  type="checkbox"
+                  :id="category.name"
+                  :name="category.name"
+                  :value="category.name"
+                  v-model="filterCategory"
+                  @change="updateCheckFilter()"
+                />
+                <label :for="category.name"> {{ category.name }} </label>
+          </div>
+      </div>
     </div>
     <!-- <div class="aside-menu-filters">
         <AAsideMenuTitle class="mb-3" :title="'Filtri'"/>
@@ -87,6 +87,9 @@ export default {
       display: flex;
       flex-flow: row wrap;
       gap: .625rem;
+      .list-item{
+        width: 40%;
+      }
     }
   }
   .aside-menu-filters {

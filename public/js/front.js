@@ -3414,11 +3414,12 @@ var render = function render() {
     attrs: {
       title: "Categorie"
     }
-  }), _vm._v(" "), _c("ul", {
+  }), _vm._v(" "), _c("div", {
     staticClass: "ps-3 aside-menu-categories-list"
   }, _vm._l(_vm.categories, function (category) {
-    return _c("li", {
-      key: category.id
+    return _c("div", {
+      key: category.id,
+      staticClass: "list-item"
     }, [_c("input", {
       directives: [{
         name: "model",
@@ -4325,7 +4326,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".aside-menu[data-v-3fb89fec] {\n  background-color: var(--secondary-purple);\n  border-radius: 1.25rem;\n  display: flex;\n  flex-flow: column;\n  gap: 0.625rem;\n  padding: 1.25rem 0rem;\n}\n.aside-menu .aside-menu-categories .aside-menu-categories-list[data-v-3fb89fec] {\n  display: flex;\n  flex-flow: row wrap;\n  gap: 0.625rem;\n}\n.aside-menu .aside-menu-filters .aside-menu-filters-container[data-v-3fb89fec] {\n  display: flex;\n  flex-flow: column;\n  gap: 0.3125rem;\n}", ""]);
+exports.push([module.i, ".aside-menu[data-v-3fb89fec] {\n  background-color: var(--secondary-purple);\n  border-radius: 1.25rem;\n  display: flex;\n  flex-flow: column;\n  gap: 0.625rem;\n  padding: 1.25rem 0rem;\n}\n.aside-menu .aside-menu-categories .aside-menu-categories-list[data-v-3fb89fec] {\n  display: flex;\n  flex-flow: row wrap;\n  gap: 0.625rem;\n}\n.aside-menu .aside-menu-categories .aside-menu-categories-list .list-item[data-v-3fb89fec] {\n  width: 40%;\n}\n.aside-menu .aside-menu-filters .aside-menu-filters-container[data-v-3fb89fec] {\n  display: flex;\n  flex-flow: column;\n  gap: 0.3125rem;\n}", ""]);
 
 // exports
 
