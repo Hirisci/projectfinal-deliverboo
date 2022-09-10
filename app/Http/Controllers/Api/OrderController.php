@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Order;
 use Illuminate\Http\Request;
 use Braintree\Gateway;
 use Mockery\Undefined;
@@ -64,7 +65,18 @@ class OrderController extends Controller
         // return response()->json($amount);
           if ($result->success) {
             // See $result->transaction for details
-            
+            $username = $form->client->name . " " . $form->client->lastName;
+            $address = $form->address->street .", ". $form->address->city . ", ". $form->address->zip;
+
+            $newOrder = new Order();
+            $newOrder->price = $amount;
+            $newOrder->costumer_name = $username;
+            $newOrder->costumer_number = $form->client->phone;
+            $newOrder->costumer_address = $address;
+            $newOrder->costumer_ring = $form->address->ring;
+            $newOrder->save();
+
+            $newOrder
 
 
 
