@@ -1,21 +1,21 @@
 <template>
   <div class="jumbotron">
     <div class="row">
-      <div class="col-md-4 col-sm-0 pt-4">
+      <div class="img-box">
         <img
           class="sushi"
           src="../imgs/sushi.png"
           alt="immagine sushi del jumbotron"
         />
       </div>
-      <div class="col d-flex justify-content-center">
+      <div class="img-box">
         <img
           class="hamburger"
           src="../imgs/hamburger.png"
           alt="immagine hamburger del jumbotron"
         />
       </div>
-      <div class="col d-flex align-items-center">
+      <div class="img-box">
         <img
           class="pizza"
           src="../imgs/pizza.png"
@@ -40,92 +40,57 @@ export default {
     rgba(150, 103, 224, 1) 50%
   );
   height: 35rem;
+  width: 100%;
   overflow: hidden;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
+  .row {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  .img-box {
+    display: grid;
+    place-items: center;
+  }
+
+  .sushi {
+    width: 350px;
+    aspect-ratio: 3/2;
+  }
   .hamburger {
-    transform: translateY(-30%);
+    width: 350px;
+    aspect-ratio: 4/3;
+    //transform: translate(-40%, 15%) rotate(30deg) scale(0.9);
   }
   .pizza {
-    transform: translateX(20%);
-    width: 100%;
-  }
-  .hamburger,
-  .sushi {
-    width: 80%;
-  }
-  img {
-    position: relative;
+    width: 350px;
+    aspect-ratio: 2/1;
+    transform: translate(50%, 25%) rotate(-15deg) scale(2.2);
   }
 
-  @media screen and (max-width: 576px) {
-    .sushi {
-      display: none;
-    }
-    .hamburger {
-      transform: rotate(30deg) scale(1.5) translate(-30%, 0);
-    }
-    .pizza {
-      transform: rotate(-30deg) scale(2.7) translate(-20%, 70%);
-    }
+  @media screen and (min-width: 768px) {
+    // .sushi {
+    //   transform: rotate(30deg) scale(1.7) translate(12%, 29%);
+    // }
+    // .hamburger {
+    //   transform: rotate(30deg) scale(1) translate(-65%, 75%);
+    // }
+    // .pizza {
+    //   transform: rotate(-30deg) scale(2.9) translate(0%, 25%);
+    // }
   }
-
-  @media screen and (max-width: 768px) {
-    .sushi {
-      display: none;
-    }
-    .hamburger {
-      transform: rotate(30deg) scale(1.2) translate(-30%, 0);
-    }
-    .pizza {
-      transform: rotate(-30deg) scale(2.5) translate(20%, 40%);
-    }
-  }
-  @media screen and (max-width: 992px) {
-    .sushi {
-      transform: rotate(30deg) scale(1.7) translate(12%, 29%);
-    }
-    .hamburger {
-      transform: rotate(30deg) scale(1.2) translate(-25%, -20%);
-    }
-    .pizza {
-      transform: rotate(-30deg) scale(2.9) translate(0%, 25%);
-    }
-  }
-  @media screen and (max-width: 1400px) {
-    .sushi {
-      transform: rotate(30deg) scale(1.7) translate(12%, 29%);
-    }
-    .hamburger {
-      transform: rotate(30deg) scale(1.2) translate(-25%, -20%);
-    }
-    .pizza {
-      transform: rotate(-30deg) scale(2.9) translate(0%, 25%);
-    }
-  }
-  @media screen and (max-width: 2400px) {
-    .sushi {
-      transform: rotate(30deg) scale(1.2) translate(2%, 7%);
-    }
-    .hamburger {
-      transform: rotate(30deg) scale(0.8) translate(-12%, -14%);
-    }
-    .pizza {
-      transform: rotate(-30deg) scale(1.9) translate(0%, 25%);
-    }
-  }
-  @media screen and (max-width: 6000px) {
-    .sushi {
-      transform: rotate(30deg) scale(1.2) translate(2%, 7%);
-    }
-    .hamburger {
-      transform: rotate(30deg) scale(0.8) translate(-12%, -14%);
-    }
-    .pizza {
-      transform: rotate(-30deg) scale(1.9) translate(0%, 25%);
-    }
+  @media screen and (min-width: 1024px) {
+    // .sushi {
+    //   display: block;
+    //   transform: rotate(30deg) scale(1.7) translate(12%, 29%);
+    // }
+    // .hamburger {
+    //   transform: rotate(30deg) scale(1) translate(0%, 0%);
+    // }
+    // .pizza {
+    //   transform: rotate(-15deg) scale(2.9) translate(50%, 25%);
+    // }
   }
 }
 </style>
