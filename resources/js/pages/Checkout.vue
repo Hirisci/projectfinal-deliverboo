@@ -93,6 +93,7 @@
 
             <div id="dropin-container"></div>
             <input type="hidden" id="nonce" name="payment_method_nonce" />
+            <input type="hidden" id="device" name="deviceDataFromTheClient" />
             <div class="d-flex justify-content-end mt-3">
               <button
                 id="btnToken"
@@ -180,13 +181,17 @@ export default {
       const data = {
         cart: this.cart,
         form: this.form,
+        // token: "fake-valid-nonce",
         token: document.querySelector("#nonce").value,
       };
+
       console.log(data);
       axios
-        .post(path, JSON.stringify(data))
+        .post(path, data)
         .then((res) => {
           console.log("invio form riuscito", res);
+          // svuoto carello
+          // pagina conferma ordine -> carello e somma pagata
         })
         .catch((error) => {
           console.log("errore", error);
@@ -196,21 +201,6 @@ export default {
           //Perform action in always
           console.log("in fine");
         });
-
-      // const path = "http://127.0.0.1:8000/api/payment";
-      // axios
-      //   .post(path, { form: this.sendClient, cart: this.sendCart })
-      //   .then((res) => {
-      //     console.log("invio form riuscito", res);
-      //   })
-      //   .catch((error) => {
-      //     console.log("errore", error);
-      //     // error.response.status Check status code
-      //   })
-      //   .finally(() => {
-      //     //Perform action in always
-      //     console.log("in fine");
-      //   });
     },
     amountCart() {
       let somma = 0;
@@ -321,8 +311,9 @@ export default {
               return;
             }
             BTNtoken.removeAttribute("disabled");
-            const BTNSubmit = document.querySelector("#btnSubmit");
             BTNtoken.classList.remove("btn-disabled");
+
+            const BTNSubmit = document.querySelector("#btnSubmit");
 
             form.addEventListener("submit", (event) => {
               event.preventDefault();

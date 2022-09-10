@@ -2518,30 +2518,19 @@ __webpack_require__.r(__webpack_exports__);
       var data = {
         cart: this.cart,
         form: this.form,
+        // token: "fake-valid-nonce",
         token: document.querySelector("#nonce").value
       };
       console.log(data);
-      axios.post(path, JSON.stringify(data)).then(function (res) {
-        console.log("invio form riuscito", res);
+      axios.post(path, data).then(function (res) {
+        console.log("invio form riuscito", res); // svuoto carello
+        // pagina conferma ordine -> carello e somma pagata
       })["catch"](function (error) {
         console.log("errore", error); // error.response.status Check status code
       })["finally"](function () {
         //Perform action in always
         console.log("in fine");
-      }); // const path = "http://127.0.0.1:8000/api/payment";
-      // axios
-      //   .post(path, { form: this.sendClient, cart: this.sendCart })
-      //   .then((res) => {
-      //     console.log("invio form riuscito", res);
-      //   })
-      //   .catch((error) => {
-      //     console.log("errore", error);
-      //     // error.response.status Check status code
-      //   })
-      //   .finally(() => {
-      //     //Perform action in always
-      //     console.log("in fine");
-      //   });
+      });
     },
     amountCart: function amountCart() {
       var somma = 0;
@@ -2662,8 +2651,8 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         BTNtoken.removeAttribute("disabled");
-        var BTNSubmit = document.querySelector("#btnSubmit");
         BTNtoken.classList.remove("btn-disabled");
+        var BTNSubmit = document.querySelector("#btnSubmit");
         form.addEventListener("submit", function (event) {
           event.preventDefault();
           instance.requestPaymentMethod(function (err, payload) {
@@ -4086,6 +4075,12 @@ var render = function render() {
       type: "hidden",
       id: "nonce",
       name: "payment_method_nonce"
+    }
+  }), _vm._v(" "), _c("input", {
+    attrs: {
+      type: "hidden",
+      id: "device",
+      name: "deviceDataFromTheClient"
     }
   }), _vm._v(" "), _c("div", {
     staticClass: "d-flex justify-content-end mt-3"

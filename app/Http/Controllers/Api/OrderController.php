@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Braintree\Gateway;
 class OrderController extends Controller
 {
     public function store(Request $request)
@@ -16,50 +17,52 @@ class OrderController extends Controller
     }
     public function payment(Request $request)
     {   
-        $gateway = new \Braintree\Gateway([
+
+        $gateway = new Gateway([
             'environment' => config('services.braintree.environment'),
             'merchantId' => config('services.braintree.merchantId'),
             'publicKey' => config('services.braintree.publicKey'),
             'privateKey' => config('services.braintree.privateKey')
         ]);
 
+          
 
         $data = $request->all();
+        // return response()->json($request->cart);
+        
+        // //calcolo il totale del carrello e preparo gli ordini da inserirei in pivo
+        $order_table = [];
+        $amount = 0;
+        foreach ($request->cart as $item) {
+            $amount += $item->q * $item->p;
+        }
+        //Tolgo possibili numeri dopo la virgola e rendo un stringa
 
+        return response()->json($amount);
+        $amount = strval(round($amount, 2));
 
         $result = $gateway->transaction()->sale([
-            'amount' => '10.00',
+            'amount' =>  "20.00",
             'paymentMethodNonce' => $request->token,
-            'customer' => [
-                'firstName' => 'Tony',
-                'lastName' => 'Stark',
-                'email' => 'tony@avengers.com',
-            ],
             'options' => [
               'submitForSettlement' => True
             ]
           ]);
-       
+          
           if ($result->success) {
-            $transaction = $result->transaction;
-            // header("Location: transaction.php?id=" . $transaction->id);
-    
-            return back()->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
-        } else {
-            $errorString = "";
-    
-            foreach ($result->errors->deepAll() as $error) {
-                $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
-            }
-    
-            // $_SESSION["errors"] = $errorString;
-            // header("Location: index.php");
-            return back()->withErrors('An error occurred with the message: '.$result->message);
-        }
+            // See $result->transaction for details
+            return response()->json($result);
+            
+          } else {
+           
+            return response()->json($result);
+          }
+        
+          
     }
 
     public function token(){
-        $gateway = new \Braintree\Gateway([
+        $gateway = new Gateway([
             'environment' => config('services.braintree.environment'),
             'merchantId' => config('services.braintree.merchantId'),
             'publicKey' => config('services.braintree.publicKey'),
