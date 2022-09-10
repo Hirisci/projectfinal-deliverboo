@@ -3073,7 +3073,7 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "row"
   }, [_c("div", {
-    staticClass: "col-md-4 col-sm-0 pt-4"
+    staticClass: "img-box"
   }, [_c("img", {
     staticClass: "sushi",
     attrs: {
@@ -3081,7 +3081,7 @@ var staticRenderFns = [function () {
       alt: "immagine sushi del jumbotron"
     }
   })]), _vm._v(" "), _c("div", {
-    staticClass: "col d-flex justify-content-center"
+    staticClass: "img-box"
   }, [_c("img", {
     staticClass: "hamburger",
     attrs: {
@@ -3089,7 +3089,7 @@ var staticRenderFns = [function () {
       alt: "immagine hamburger del jumbotron"
     }
   })]), _vm._v(" "), _c("div", {
-    staticClass: "col d-flex align-items-center"
+    staticClass: "img-box"
   }, [_c("img", {
     staticClass: "pizza",
     attrs: {
@@ -29483,7 +29483,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".jumbotron[data-v-0e1ad8ba] {\n  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(150, 103, 224) 50%);\n  height: 35rem;\n  overflow: hidden;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  position: relative;\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n  transform: translateY(-30%);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n  transform: translateX(20%);\n  width: 100%;\n}\n.jumbotron .hamburger[data-v-0e1ad8ba],\n.jumbotron .sushi[data-v-0e1ad8ba] {\n  width: 80%;\n}\n.jumbotron img[data-v-0e1ad8ba] {\n  position: relative;\n}\n@media screen and (max-width: 576px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    display: none;\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(1.5) translate(-30%, 0);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-30deg) scale(2.7) translate(-20%, 70%);\n}\n}\n@media screen and (max-width: 768px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    display: none;\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(1.2) translate(-30%, 0);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-30deg) scale(2.5) translate(20%, 40%);\n}\n}\n@media screen and (max-width: 992px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(1.7) translate(12%, 29%);\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(1.2) translate(-25%, -20%);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-30deg) scale(2.9) translate(0%, 25%);\n}\n}\n@media screen and (max-width: 1400px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(1.7) translate(12%, 29%);\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(1.2) translate(-25%, -20%);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-30deg) scale(2.9) translate(0%, 25%);\n}\n}\n@media screen and (max-width: 2400px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(1.2) translate(2%, 7%);\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(0.8) translate(-12%, -14%);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-30deg) scale(1.9) translate(0%, 25%);\n}\n}\n@media screen and (max-width: 6000px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(1.2) translate(2%, 7%);\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(0.8) translate(-12%, -14%);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-30deg) scale(1.9) translate(0%, 25%);\n}\n}", ""]);
+exports.push([module.i, ".jumbotron[data-v-0e1ad8ba] {\n  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(150, 103, 224) 50%);\n  height: 35rem;\n  width: 100%;\n  overflow: hidden;\n}\n.jumbotron .row[data-v-0e1ad8ba] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  height: 100%;\n}\n.jumbotron .img-box[data-v-0e1ad8ba] {\n  display: grid;\n  place-items: center;\n}\n.jumbotron .sushi[data-v-0e1ad8ba] {\n  width: 350px;\n  aspect-ratio: 3/2;\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n  width: 350px;\n  aspect-ratio: 4/3;\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n  width: 350px;\n  aspect-ratio: 2/1;\n  transform: translate(50%, 25%) rotate(-15deg) scale(2.2);\n}", ""]);
 
 // exports
 
