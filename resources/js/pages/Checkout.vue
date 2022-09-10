@@ -2,7 +2,7 @@
   <div class="container-fluid p-0 position-relative">
     <AJumbotron />
     <div class="form container-lg p-3">
-      <div class="row d-flex px-5 my-5 justify-content-around">
+      <div class="row d-flex px-5 mt-5 justify-content-around">
         <div class="user-form col-lg-6 mb-4">
           <div class="col-12 col-lg-4 p-0">
             <AAsideMenuTitle :title="'Checkout'" class="px-2" />

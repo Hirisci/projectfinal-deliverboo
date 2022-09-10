@@ -3081,7 +3081,7 @@ var staticRenderFns = [function () {
       alt: "immagine sushi del jumbotron"
     }
   })]), _vm._v(" "), _c("div", {
-    staticClass: "col-md-4 col-sm-6 d-flex justify-content-center"
+    staticClass: "col d-flex justify-content-center"
   }, [_c("img", {
     staticClass: "hamburger",
     attrs: {
@@ -3089,7 +3089,7 @@ var staticRenderFns = [function () {
       alt: "immagine hamburger del jumbotron"
     }
   })]), _vm._v(" "), _c("div", {
-    staticClass: "col-md-4 col-sm-6 d-flex align-items-center"
+    staticClass: "col d-flex align-items-center"
   }, [_c("img", {
     staticClass: "pizza",
     attrs: {
@@ -4086,7 +4086,7 @@ var render = function render() {
   }, [_c("AJumbotron"), _vm._v(" "), _c("div", {
     staticClass: "form container-lg p-3"
   }, [_c("div", {
-    staticClass: "row d-flex px-5 my-5 justify-content-around"
+    staticClass: "row d-flex px-5 mt-5 justify-content-around"
   }, [_c("div", {
     staticClass: "user-form col-lg-6 mb-4"
   }, [_c("div", {
@@ -29483,7 +29483,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".jumbotron[data-v-0e1ad8ba] {\n  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(150, 103, 224) 50%);\n  height: 35rem;\n  overflow: hidden;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  position: relative;\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n  transform: translateY(-30%);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n  transform: translateX(20%);\n  width: 100%;\n}\n.jumbotron .hamburger[data-v-0e1ad8ba], .jumbotron .sushi[data-v-0e1ad8ba] {\n  width: 80%;\n}\n.jumbotron img[data-v-0e1ad8ba] {\n  position: relative;\n}\n@media screen and (max-width: 768px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    display: none;\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    transform: rotate(30deg);\n    margin-left: -80%;\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-30deg);\n    margin-left: 40%;\n}\n}", ""]);
+exports.push([module.i, ".jumbotron[data-v-0e1ad8ba] {\n  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(150, 103, 224) 50%);\n  height: 35rem;\n  overflow: hidden;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  position: relative;\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n  transform: translateY(-30%);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n  transform: translateX(20%);\n  width: 100%;\n}\n.jumbotron .hamburger[data-v-0e1ad8ba],\n.jumbotron .sushi[data-v-0e1ad8ba] {\n  width: 80%;\n}\n.jumbotron img[data-v-0e1ad8ba] {\n  position: relative;\n}\n@media screen and (max-width: 576px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    display: none;\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(1.5) translate(-30%, 0);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-30deg) scale(2.7) translate(-20%, 70%);\n}\n}\n@media screen and (max-width: 768px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    display: none;\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(1.2) translate(-30%, 0);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-30deg) scale(2.5) translate(20%, 40%);\n}\n}\n@media screen and (max-width: 992px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(1.7) translate(12%, 29%);\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(1.2) translate(-25%, -20%);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-30deg) scale(2.9) translate(0%, 25%);\n}\n}\n@media screen and (max-width: 1400px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(1.7) translate(12%, 29%);\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(1.2) translate(-25%, -20%);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-30deg) scale(2.9) translate(0%, 25%);\n}\n}\n@media screen and (max-width: 2400px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(1.2) translate(2%, 7%);\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(0.8) translate(-12%, -14%);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-30deg) scale(1.9) translate(0%, 25%);\n}\n}\n@media screen and (max-width: 6000px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(1.2) translate(2%, 7%);\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    transform: rotate(30deg) scale(0.8) translate(-12%, -14%);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-30deg) scale(1.9) translate(0%, 25%);\n}\n}", ""]);
 
 // exports
 
