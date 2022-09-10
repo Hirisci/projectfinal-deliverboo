@@ -3036,7 +3036,7 @@ var staticRenderFns = [function () {
     attrs: {
       href: "/"
     }
-  }, [_vm._v("Torna alla Home")]), _vm._v(" "), _c("a", {
+  }, [_vm._v("Torna alla home")]), _vm._v(" "), _c("a", {
     staticClass: "d-lg-none btn-main btn-purple mt-3 mobile",
     attrs: {
       href: "/"
@@ -3723,9 +3723,9 @@ var render = function render() {
   }, [_vm._v("\n            " + _vm._s(_vm.plate.price.toFixed(2)) + " €\n          ")])], 1), _vm._v(" "), _c("div", {
     staticClass: "row plate-card-desktop-info-bottom d-flex flex-column p-1 gap-5"
   }, [_c("div", {
-    staticClass: "plate-card-desktop-left-text-description"
+    staticClass: "plate-card-desktop-left-text-description mb-5"
   }, [_vm._v("\n            " + _vm._s(_vm.plate.description) + "\n          ")]), _vm._v(" "), _c("div", {
-    staticClass: "add-to-cart-container d-flex justify-content-end"
+    staticClass: "add-to-cart-container d-flex justify-content-end mt-5"
   }, [_c("input", {
     directives: [{
       name: "model",

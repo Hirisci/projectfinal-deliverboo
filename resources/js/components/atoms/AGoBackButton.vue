@@ -1,6 +1,6 @@
 <template>
   <div class="GoBackButton d-flex justify-content-center align-items-center">
-    <a href="/" class="d-none d-lg-block btn-main btn-purple mt-3">Torna alla Home</a>
+    <a href="/" class="d-none d-lg-block btn-main btn-purple mt-3">Torna alla home</a>
     <a href="/" class="d-lg-none btn-main btn-purple mt-3 mobile"> <img src="../imgs/home-icon.png" alt="Home" class="HomeIcon"> </a>
   </div>
 </template>

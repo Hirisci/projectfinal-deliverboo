@@ -22,10 +22,10 @@
               gap-5
             "
           >
-            <div class="plate-card-desktop-left-text-description">
+            <div class="plate-card-desktop-left-text-description mb-5">
               {{ plate.description }}
             </div>
-            <div class="add-to-cart-container d-flex justify-content-end">
+            <div class="add-to-cart-container d-flex justify-content-end mt-5">
               <input
                 class="quantity"
                 value="1"
@@ -114,20 +114,22 @@ export default {
       height: 100%;
       width: 100%;
     }
-    &-info-top {
-      background-color: white;
-      color: var(--primary-purple);
-      font-weight: bolder;
-      border-top-right-radius: 1.25rem;
-      border-bottom: 0.125rem solid var(--primary-purple);
-    }
-    &-info-bottom {
-      .quantity {
+    &-info{
+      &-top {
         background-color: white;
-        padding: 0.3125rem 1rem;
-        width: 4.375rem;
-        position: relative;
-        border-radius: 1rem;
+        color: var(--primary-purple);
+        font-weight: bolder;
+        border-top-right-radius: 1.25rem;
+        border-bottom: 0.125rem solid var(--primary-purple);
+      }
+      &-bottom {
+        .quantity {
+          background-color: white;
+          padding: 0.3125rem 1rem;
+          width: 4.375rem;
+          position: relative;
+          border-radius: 1rem;
+        }
       }
     }
     transition: transform 0.3s ease-in-out;
