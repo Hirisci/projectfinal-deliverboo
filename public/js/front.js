@@ -3888,7 +3888,9 @@ var render = function render() {
     attrs: {
       type: "text",
       placeholder: "Nome",
-      "aria-label": "Nome"
+      "aria-label": "Nome",
+      required: "",
+      pattern: "[a-zA-Z]+"
     },
     domProps: {
       value: _vm.form.client.name
@@ -3913,7 +3915,9 @@ var render = function render() {
     attrs: {
       type: "text",
       placeholder: "Cognome",
-      "aria-label": "Cognome"
+      "aria-label": "Cognome",
+      required: "",
+      pattern: "[a-zA-Z]+"
     },
     domProps: {
       value: _vm.form.client.lastName
@@ -3938,7 +3942,9 @@ var render = function render() {
     attrs: {
       type: "text",
       id: "client_address",
-      placeholder: "Indirizzo"
+      placeholder: "Indirizzo",
+      required: "",
+      pattern: "[a-zA-Z0-9 ]+"
     },
     domProps: {
       value: _vm.form.address.street
@@ -3963,7 +3969,9 @@ var render = function render() {
     attrs: {
       type: "text",
       id: "client_city",
-      placeholder: "Città"
+      placeholder: "Città",
+      required: "",
+      pattern: "[a-zA-Z]+"
     },
     domProps: {
       value: _vm.form.address.city
@@ -3990,7 +3998,9 @@ var render = function render() {
     attrs: {
       type: "text",
       placeholder: "Stato",
-      "aria-label": "Stato"
+      "aria-label": "Stato",
+      required: "",
+      pattern: "[a-zA-Z]+"
     },
     domProps: {
       value: _vm.form.address.state
@@ -4015,7 +4025,9 @@ var render = function render() {
     attrs: {
       type: "text",
       placeholder: "CAP",
-      "aria-label": "CAP"
+      "aria-label": "CAP",
+      required: "",
+      pattern: "[0-9]+"
     },
     domProps: {
       value: _vm.form.address.zip
@@ -4040,7 +4052,9 @@ var render = function render() {
     attrs: {
       type: "text",
       id: "client_name",
-      placeholder: "Nome sul campanello"
+      placeholder: "Nome sul campanello",
+      required: "",
+      pattern: "[a-zA-Z]+"
     },
     domProps: {
       value: _vm.form.address.ring
@@ -4065,7 +4079,11 @@ var render = function render() {
     attrs: {
       type: "text",
       id: "client_number",
-      placeholder: "Cellulare"
+      placeholder: "Cellulare",
+      required: "",
+      pattern: "[0-9]+",
+      "min-length": "11",
+      "max-length": "11"
     },
     domProps: {
       value: _vm.form.client.phone
@@ -48487,7 +48505,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\User\Documents\Visual Studio Code\boolean\Progetto finale\projectfinal-deliverboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\giaki\Desktop\Boolean\Project\FinalProject-Deliveboo\projectfinal-deliverboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
