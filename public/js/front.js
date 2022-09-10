@@ -3229,11 +3229,7 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("footer", [_c("div", {
-    staticClass: "footer-top container p-0"
-  }, [_c("div", {
-    staticClass: "row d-flex"
-  }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c("div", {
+  return _c("footer", [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c("div", {
     staticClass: "row"
   }, [_c("div", {
     staticClass: "col d-flex justify-content-center align-items-center"
@@ -3325,7 +3321,7 @@ var render = function render() {
       height: "70",
       fill: "white"
     }
-  })])])])])])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4)])]), _vm._v(" "), _vm._m(5)]);
+  })])])])])])]), _vm._v(" "), _vm._m(2)]);
 };
 
 var staticRenderFns = [function () {
@@ -3333,6 +3329,10 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", {
+    staticClass: "footer-top container p-0"
+  }, [_c("div", {
+    staticClass: "row d-flex"
+  }, [_c("div", {
     staticClass: "col-12 col-md-6 col-lg-3 p-0 mb-3"
   }, [_c("div", {
     staticClass: "p-3 footer-top-card m-3"
@@ -3362,33 +3362,31 @@ var staticRenderFns = [function () {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("Unisciti a noi")])])])])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "row mt-4"
+  }, [_vm._v("Unisciti a noi")])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-12 col-md-6 col-lg-3 p-0 mb-3"
   }, [_c("div", {
-    staticClass: "col text-center"
-  }, [_c("h5", [_vm._v("Vieni a trovarci anche nei nostri social")])])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "footer-bottom d-flex justify-content-center align-items-center mt-5 p-2"
-  }, [_c("p", [_vm._v("Copyright © 2022 Team2Boolean. All Rights Reserved")]), _vm._v(" "), _c("img", {
+    staticClass: "p-3 footer-top-card m-3"
+  }, [_c("h4", [_vm._v("LEGAL")]), _vm._v(" "), _c("ul", {
+    staticClass: "footer-top-card-list"
+  }, [_c("li", {
+    staticClass: "footer-top-card-item"
+  }, [_c("a", {
     attrs: {
-      src: __webpack_require__(/*! ../imgs/logo-mobile-white.png */ "./resources/js/components/imgs/logo-mobile-white.png"),
-      alt: "loghetto carino"
+      href: "#"
     }
-  })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
+  }, [_vm._v("Termini e condizioni")])]), _vm._v(" "), _c("li", {
+    staticClass: "footer-top-card-item"
+  }, [_c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Privacy")])]), _vm._v(" "), _c("li", {
+    staticClass: "footer-top-card-item"
+  }, [_c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Cookies")])])])])]), _vm._v(" "), _c("div", {
     staticClass: "col-12 col-md-6 col-lg-3 p-0 mb-3"
   }, [_c("div", {
     staticClass: "p-3 footer-top-card m-3"
@@ -3412,12 +3410,7 @@ var staticRenderFns = [function () {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("I nostri partner")])])])])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
+  }, [_vm._v("I nostri partner")])])])])]), _vm._v(" "), _c("div", {
     staticClass: "col-12 col-md-6 col-lg-3 p-0 mb-3"
   }, [_c("div", {
     staticClass: "p-3 footer-top-card m-3"
@@ -3435,14 +3428,28 @@ var staticRenderFns = [function () {
       src: __webpack_require__(/*! ../imgs/google-play.png */ "./resources/js/components/imgs/google-play.png"),
       alt: "Google Play"
     }
-  })])])]);
+  })])])])])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "row mt-4"
+  }, [_c("div", {
+    staticClass: "col text-center"
+  }, [_c("h5", [_vm._v("Vieni a trovarci anche nei nostri social")])])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
 
   return _c("div", {
     staticClass: "footer-bottom d-flex justify-content-center align-items-center mt-5 p-2"
-  }, [_c("p", [_vm._v("Copyright © 2022 Team2Boolean. All Rights Reserved")])]);
+  }, [_c("p", [_vm._v("Copyright © 2022 Team2Boolean. All Rights Reserved")]), _vm._v(" "), _c("img", {
+    attrs: {
+      src: __webpack_require__(/*! ../imgs/logo-mobile-white.png */ "./resources/js/components/imgs/logo-mobile-white.png"),
+      alt: "loghetto carino"
+    }
+  })]);
 }];
 render._withStripped = true;
 
@@ -29525,9 +29532,17 @@ exports.push([module.i, ".titlecard[data-v-5f5e257f] {\n  background-color: var(
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/macro/BaseFooter.vue?vue&type=style&index=0&id=cc917e4c&lang=scss&scoped=true& ***!
   \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"{\".\n   ╷\n61 │ >>>>>>> brain-treee-2.0\r\n   │                        ^\n   ╵\n  C:\\Users\\User\\Documents\\Visual Studio Code\\boolean\\Progetto finale\\projectfinal-deliverboo\\resources\\js\\components\\macro\\BaseFooter.vue 61:24  root stylesheet");
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "footer[data-v-cc917e4c] {\n  background-color: var(--secondary-purple);\n}\nfooter .footer-top-card[data-v-cc917e4c] {\n  background-color: var(--tertiary-purple-opacity);\n  border-radius: 1.25rem;\n  height: 100%;\n}\nfooter .app[data-v-cc917e4c] {\n  height: 3rem;\n  width: 10rem;\n}\nfooter h4[data-v-cc917e4c], footer h5[data-v-cc917e4c] {\n  margin-bottom: 1rem;\n  color: var(--primary-purple);\n  font-weight: bold;\n}\nfooter a[data-v-cc917e4c] {\n  text-decoration: none;\n}\nfooter li[data-v-cc917e4c] {\n  margin-bottom: 0.3rem;\n}\nfooter .footer-bottom[data-v-cc917e4c] {\n  background-color: var(--primary-purple);\n  color: var(--tertiary-purple);\n}\nfooter .footer-bottom img[data-v-cc917e4c] {\n  height: 1rem;\n  margin-left: 0.3125rem;\n}", ""]);
+
+// exports
+
 
 /***/ }),
 
@@ -48921,7 +48936,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\User\Documents\Visual Studio Code\boolean\Progetto finale\projectfinal-deliverboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\giaki\Desktop\Boolean\Project\FinalProject-Deliveboo\projectfinal-deliverboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
