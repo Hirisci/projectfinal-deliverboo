@@ -4086,12 +4086,13 @@ var render = function render() {
   }, [_c("AJumbotron"), _vm._v(" "), _c("div", {
     staticClass: "form container-lg p-3"
   }, [_c("div", {
-    staticClass: "row d-flex justify-content-around"
+    staticClass: "row d-flex px-5 my-5 justify-content-around"
   }, [_c("div", {
     staticClass: "user-form col-lg-6 mb-4"
   }, [_c("div", {
     staticClass: "col-12 col-lg-4 p-0"
   }, [_c("AAsideMenuTitle", {
+    staticClass: "px-2",
     attrs: {
       title: "Checkout"
     }
