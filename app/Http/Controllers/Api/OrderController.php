@@ -64,10 +64,13 @@ class OrderController extends Controller
             
         // return response()->json($amount);
           if ($result->success) {
-            // See $result->transaction for details
+            // se va tutto bene
+
+            // Mi creo i dati con le variabili del form
             $username = $form->client->name . " " . $form->client->lastName;
             $address = $form->address->street .", ". $form->address->city . ", ". $form->address->zip;
 
+            // Creo il record della tabella ordini
             $newOrder = new Order();
             $newOrder->price = $amount;
             $newOrder->costumer_name = $username;
@@ -76,8 +79,10 @@ class OrderController extends Controller
             $newOrder->costumer_ring = $form->address->ring;
             $newOrder->save();
 
-            $newOrder
-
+            // aggiungo i piatti e la quantità nella tabella pivo
+            foreach($order_table as $plate){
+                $newOrder->plate()->attach($plate->id, ['quantity'=> $plate->quantity] );
+            }
 
 
             return response(200);
