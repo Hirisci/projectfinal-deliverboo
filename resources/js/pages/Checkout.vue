@@ -9,6 +9,7 @@
           </div>
           <form
             id="paymentForm"
+            v-if="this.cart.length !== 0"
             class="px-3 mt-2"
             method="POST"
             action="http://127.0.0.1:8000/api/payment"
@@ -114,6 +115,13 @@
               </button>
             </div>
           </form>
+          <div class="empty-menu" v-else>
+            <img src="../components/imgs/c404.png" alt="404" />
+            <p>
+              Per procedere al pagamento devi aver selezionato almeno un piatto
+              in un ristorante
+            </p>
+          </div>
         </div>
         <div class="d-lg-block col-lg-5 mt-2">
           <MCart
@@ -368,6 +376,18 @@ export default {
   padding: 1.25rem 0rem;
   .form-group:last-child {
     padding-bottom: 0;
+  }
+}
+.empty-menu {
+  padding: 0 1rem;
+  img {
+    width: 100%;
+    aspect-ratio: 1;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    text-align: center;
   }
 }
 .form-group {
