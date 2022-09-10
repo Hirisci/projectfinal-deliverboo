@@ -40,3 +40,7 @@ a.btn-main:hover {
 .btn-delete {
     background-color: var(--delete-color);
 }
+
+.btn-disabled {
+    filter: grayscale(0.8);
+}

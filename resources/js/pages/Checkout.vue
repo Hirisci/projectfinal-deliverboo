@@ -7,7 +7,13 @@
           <div class="col-12 col-lg-4 p-0">
             <AAsideMenuTitle :title="'Checkout'" />
           </div>
-          <form class="px-3 mt-2" v-on:submit.prevent="submitForm">
+          <form
+            id="paymentForm"
+            v-if="this.cart.length !== 0"
+            class="px-3 mt-2"
+            method="POST"
+            action="http://127.0.0.1:8000/api/payment"
+          >
             <div class="row">
               <p class="mb-1">Dettagli Ordine</p>
               <div class="col">
@@ -17,6 +23,8 @@
                   class="form-control"
                   placeholder="Nome"
                   aria-label="Nome"
+                  required
+                  pattern="[a-zA-Z]+"
                 />
               </div>
               <div class="col">
@@ -26,6 +34,8 @@
                   class="form-control"
                   placeholder="Cognome"
                   aria-label="Cognome"
+                  required
+                  pattern="[a-zA-Z]+"
                 />
               </div>
             </div>
@@ -36,6 +46,8 @@
                 class="form-control"
                 id="client_address"
                 placeholder="Indirizzo"
+                required
+                pattern="[a-zA-Z0-9 ]+"
               />
             </div>
             <div class="form-group">
@@ -45,6 +57,8 @@
                 class="form-control"
                 id="client_city"
                 placeholder="Città"
+                required
+                pattern="[a-zA-Z]+"
               />
             </div>
             <div class="row">
@@ -55,6 +69,8 @@
                   class="form-control"
                   placeholder="Stato"
                   aria-label="Stato"
+                  required
+                  pattern="[a-zA-Z]+"
                 />
               </div>
               <div class="col">
@@ -64,6 +80,8 @@
                   class="form-control"
                   placeholder="CAP"
                   aria-label="CAP"
+                  required
+                  pattern="[0-9]+"
                 />
               </div>
             </div>
@@ -74,62 +92,54 @@
                 class="form-control"
                 id="client_name"
                 placeholder="Nome sul campanello"
+                required
+                pattern="[a-zA-Z]+"
               />
             </div>
-            <div class="form-group mb-4">
+            <div class="form-group">
               <input
                 v-model="form.client.phone"
                 type="text"
                 class="form-control"
                 id="client_number"
                 placeholder="Cellulare"
+                required
+                pattern="[0-9]+"
+                min-length="11"
+                max-length="11"
               />
             </div>
-            <div class="row mb-3">
-              <p class="mb-1">Dettagli Pagamento</p>
-              <div class="col">
-                <input
-                  v-model="form.payment.name"
-                  type="text"
-                  class="form-control"
-                  placeholder="Nome"
-                  aria-label="Nome"
-                />
-              </div>
-              <div class="col">
-                <input
-                  v-model="form.payment.lastName"
-                  type="text"
-                  class="form-control"
-                  placeholder="Cognome"
-                  aria-label="Cognome"
-                />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-10">
-                <input
-                  v-model="form.payment.cardNumber"
-                  type="text"
-                  class="form-control"
-                  placeholder="Numero Carta"
-                  aria-label="numeroCarta"
-                />
-              </div>
-              <div class="col">
-                <input
-                  v-model="form.payment.cvv"
-                  type="text"
-                  class="form-control"
-                  placeholder="CVV"
-                  aria-label="cvv"
-                />
-              </div>
-            </div>
+
+            <div id="dropin-container"></div>
+            <input type="hidden" id="nonce" name="payment_method_nonce" />
+            <input type="hidden" id="device" name="deviceDataFromTheClient" />
             <div class="d-flex justify-content-end mt-3">
-              <button class="btn-main btn-purple">Procedi al pagamento</button>
+              <button
+                id="btnToken"
+                type="submit"
+                class="btn-main btn-purple btn-disabled"
+                disabled
+              >
+                Verifica Pagamento
+              </button>
+
+              <button
+                id="btnSubmit"
+                type="submit"
+                class="btn-main btn-purple d-none"
+                @click="submitForm"
+              >
+                Conferma Ordine
+              </button>
             </div>
           </form>
+          <div class="empty-menu" v-else>
+            <img src="../components/imgs/c404.png" alt="404" />
+            <p>
+              Per procedere al pagamento devi aver selezionato almeno un piatto
+              in un ristorante
+            </p>
+          </div>
         </div>
         <div class="d-lg-block col-lg-5 pb-5">
           <MCart
@@ -148,34 +158,30 @@
 import AJumbotron from "../components/atoms/AJumbotron.vue";
 import AAsideMenuTitle from "../components/atoms/AAsideMenuTitle.vue";
 import MCart from "../components/molecules/MCart.vue";
+import BtnPayment from "../components/atoms/BtnPayment.vue";
+import ABasicButton from "../components/atoms/ABasicButton.vue";
 
 export default {
   name: "Checkout",
-  components: { AJumbotron, AAsideMenuTitle, MCart },
+  components: { AJumbotron, AAsideMenuTitle, MCart, BtnPayment, ABasicButton },
   data() {
     return {
       cart: [],
       form: {
         client: {
-          name: "",
-          lastName: "",
-          phone: "",
+          name: "Alan",
+          lastName: "Bruno",
+          phone: "123 4564456",
         },
         address: {
-          street: "",
-          city: "",
-          state: "",
-          zip: "",
-          ring: "",
-        },
-        payment: {
-          name: "",
-          lastName: "",
-          cardNumber: "",
-          cvv: "",
+          street: "Via Po 123",
+          city: "Milano",
+          state: "Italia",
+          zip: "20030",
+          ring: "Bruno",
         },
       },
-      inCheckoutPage : true,
+      // inCheckoutPage: true,
     };
   },
   watch: {
@@ -189,20 +195,50 @@ export default {
   },
   methods: {
     submitForm() {
-      const path = "http://127.0.0.1:8000/api/order";
+      //Submit payload.nonce to your server
+      const path = "http://127.0.0.1:8000/api/payment";
+      // const data = {
+      //   cart: this.cart,
+      //   form: this.form,
+      //   token: document.querySelector("#nonce").value,
+      //   // token: "fake-valid-nonce",
+      // };
+      let cart = this.cart;
+      let form = this.form;
+      let token = document.querySelector("#nonce").value;
+
+      let data = new FormData();
+      data.append("token", token);
+
+      //Just stringify carts array
+      data.append("cart", JSON.stringify(cart));
+      data.append("form", JSON.stringify(form));
+
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      };
+      // console.log(data.cart[0]);
+      // console.log(data.cart[1]);
+      // console.log(data.form);
+      // console.log(data.token);
+      // console.log(data);
       axios
-        .post(path, { form: this.sendClient, cart: this.sendCart })
+        .post(path, data, config)
         .then((res) => {
-          console.log("successo", res);
-          //Perform Success Action
+          console.log("invio form riuscito", res);
+          // svuoto carello
+          // pagina conferma ordine -> carello e somma pagata
         })
         .catch((error) => {
-          console.log("successo", error);
+          console.log("errore", error);
           // error.response.status Check status code
         })
         .finally(() => {
           //Perform action in always
-          console.log("dunque");
+          console.log("in fine");
         });
     },
     amountCart() {
@@ -210,7 +246,7 @@ export default {
       this.cart.forEach((element) => {
         somma += element.price * element.quantity;
       });
-      return somma;
+      return somma.toFixed(2);
     },
     addQty(arg) {
       let result = this.cart.find((Element) => Element.id === arg.id);
@@ -243,6 +279,18 @@ export default {
         console.log("carrello pieno");
       }
     },
+    //* EVENTI COMPONENTE V-DROP
+    onSuccess(payload) {
+      let nonce = payload.nonce;
+      // Do something great with the nonce...
+    },
+    onError(error) {
+      let message = error.message;
+      // Whoops, an error has occured while trying to get the nonce
+    },
+    onLoad() {
+      console.log(instance);
+    },
   },
   computed: {
     sendCart() {
@@ -264,12 +312,74 @@ export default {
         address: `${this.form.address.street}, ${this.form.address.city}, ${this.form.address.state}, ${this.form.address.zip}`,
         ring: this.form.client.ring,
         payment: this.form.payment,
+        device: this.device(),
       };
       return order;
     },
   },
   mounted() {
     this.refreshCart();
+  },
+  created() {
+    const path = "http://127.0.0.1:8000/api/token";
+
+    axios
+      .get(path)
+      .then((res) => {
+        console.log("successo", res);
+        //Perform Success Action
+        this.token = res.data.token;
+        const BTNtoken = document.querySelector("#btnToken");
+
+        console.log("creo dropIn");
+        let form = document.querySelector("#paymentForm");
+
+        const dropIn = require("braintree-web-drop-in");
+        dropIn.create(
+          {
+            authorization: this.token,
+            selector: "#dropin-container",
+            locale: "it_IT",
+          },
+          (createErr, instance) => {
+            if (createErr) {
+              // An error in the create call is likely due to
+              // incorrect configuration values or network issues.
+              // An appropriate error will be shown in the UI.
+
+              return;
+            }
+            BTNtoken.removeAttribute("disabled");
+            BTNtoken.classList.remove("btn-disabled");
+
+            const BTNSubmit = document.querySelector("#btnSubmit");
+
+            form.addEventListener("submit", (event) => {
+              event.preventDefault();
+
+              instance.requestPaymentMethod(function (err, payload) {
+                if (err) {
+                  console.log("Request Payment Method Error", err);
+                  return;
+                }
+
+                // Add the nonce to the form and submit
+                document.querySelector("#nonce").value = payload.nonce;
+                BTNtoken.classList.add("d-none");
+                BTNSubmit.classList.remove("d-none");
+              });
+            });
+          }
+        );
+      })
+      .catch((error) => {
+        console.log("successo", error);
+        // error.response.status Check status code
+      })
+      .finally(() => {
+        //Perform action in always
+        console.log("dunque");
+      });
   },
 };
 </script>
@@ -282,14 +392,37 @@ export default {
   flex-flow: column;
   gap: 0.625rem;
   padding: 1.25rem 0rem;
+  .form-group:last-child {
+    padding-bottom: 0;
+  }
+}
+.empty-menu {
+  padding: 0 1rem;
+  img {
+    width: 100%;
+    aspect-ratio: 1;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    text-align: center;
+  }
 }
 .form-group {
   margin: 0.9375rem 0;
 }
+
+// #dropin-container {
+//   margin-top: -1rem;
+// }
+
 label {
   margin-bottom: 0.3125rem;
 }
-.form{
+.form {
   position: relative;
 }
 </style>
+
+
+
