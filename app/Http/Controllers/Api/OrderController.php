@@ -52,6 +52,10 @@ class OrderController extends Controller
         $result = $gateway->transaction()->sale([
             'amount' =>  $amount,
             'paymentMethodNonce' => $request->token,
+            'customer' => [
+                'firstName' => $form->client->name ,
+                'lastName' => $form->client->lastName, 
+            ],
             'options' => [
                 'submitForSettlement' => True
                 ]
@@ -60,11 +64,15 @@ class OrderController extends Controller
         // return response()->json($amount);
           if ($result->success) {
             // See $result->transaction for details
-            return response()->json($result);
+            
+
+
+
+            return response(200);
             
           } else {
            
-            return response()->json($result);
+            return response(500);
           }
         
           

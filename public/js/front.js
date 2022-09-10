@@ -2491,13 +2491,6 @@ __webpack_require__.r(__webpack_exports__);
           state: "Italia",
           zip: "20030",
           ring: "Bruno"
-        },
-        payment: {
-          fullName: "Alan Bruno",
-          email: "email@mail.com",
-          expire: "11/25",
-          cardNumber: "4111111111111111",
-          cvv: "111"
         }
       } // inCheckoutPage: true,
 
