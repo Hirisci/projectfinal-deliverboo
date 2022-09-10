@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Braintree\Gateway;
+use Mockery\Undefined;
+use stdClass;
+
 class OrderController extends Controller
 {
     public function store(Request $request)
@@ -26,29 +29,35 @@ class OrderController extends Controller
         ]);
 
           
-
         $data = $request->all();
-        // return response()->json($request->cart);
+        $cart = json_decode($data['cart']);
+        $form = json_decode($data['form']);
         
-        // //calcolo il totale del carrello e preparo gli ordini da inserirei in pivo
+        //calcolo il totale del carrello e preparo gli ordini da inserirei in pivo
         $order_table = [];
         $amount = 0;
-        foreach ($request->cart as $item) {
-            $amount += $item->q * $item->p;
+        foreach ($cart as $item) {
+             $amount += $item->quantity * $item->price;
+             $object = new stdClass();
+             $object->id = $item->id;
+             $object->quantity = $item->quantity;
+             $order_table[] = $object;
         }
         //Tolgo possibili numeri dopo la virgola e rendo un stringa
 
-        return response()->json($amount);
-        $amount = strval(round($amount, 2));
-
+        $amount = strval( number_format($amount, 2, '.',""));
+        
+        // return response()->json($amount);
+        
         $result = $gateway->transaction()->sale([
-            'amount' =>  "20.00",
+            'amount' =>  $amount,
             'paymentMethodNonce' => $request->token,
             'options' => [
-              'submitForSettlement' => True
-            ]
-          ]);
-          
+                'submitForSettlement' => True
+                ]
+            ]);
+            
+        // return response()->json($amount);
           if ($result->success) {
             // See $result->transaction for details
             return response()->json($result);

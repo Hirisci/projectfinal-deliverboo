@@ -2514,15 +2514,33 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     submitForm: function submitForm() {
       //Submit payload.nonce to your server
-      var path = "http://127.0.0.1:8000/api/payment";
-      var data = {
-        cart: this.cart,
-        form: this.form,
-        // token: "fake-valid-nonce",
-        token: document.querySelector("#nonce").value
-      };
-      console.log(data);
-      axios.post(path, data).then(function (res) {
+      var path = "http://127.0.0.1:8000/api/payment"; // const data = {
+      //   cart: this.cart,
+      //   form: this.form,
+      //   token: document.querySelector("#nonce").value,
+      //   // token: "fake-valid-nonce",
+      // };
+
+      var cart = this.cart;
+      var form = this.form;
+      var token = document.querySelector("#nonce").value;
+      var data = new FormData();
+      data.append("token", token); //Just stringify carts array
+
+      data.append("cart", JSON.stringify(cart));
+      data.append("form", JSON.stringify(form));
+      var config = {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        }
+      }; // console.log(data.cart[0]);
+      // console.log(data.cart[1]);
+      // console.log(data.form);
+      // console.log(data.token);
+      // console.log(data);
+
+      axios.post(path, data, config).then(function (res) {
         console.log("invio form riuscito", res); // svuoto carello
         // pagina conferma ordine -> carello e somma pagata
       })["catch"](function (error) {

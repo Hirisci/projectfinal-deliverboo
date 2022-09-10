@@ -178,16 +178,36 @@ export default {
     submitForm() {
       //Submit payload.nonce to your server
       const path = "http://127.0.0.1:8000/api/payment";
-      const data = {
-        cart: this.cart,
-        form: this.form,
-        // token: "fake-valid-nonce",
-        token: document.querySelector("#nonce").value,
-      };
+      // const data = {
+      //   cart: this.cart,
+      //   form: this.form,
+      //   token: document.querySelector("#nonce").value,
+      //   // token: "fake-valid-nonce",
+      // };
+      let cart = this.cart;
+      let form = this.form;
+      let token = document.querySelector("#nonce").value;
 
-      console.log(data);
+      let data = new FormData();
+      data.append("token", token);
+
+      //Just stringify carts array
+      data.append("cart", JSON.stringify(cart));
+      data.append("form", JSON.stringify(form));
+
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      };
+      // console.log(data.cart[0]);
+      // console.log(data.cart[1]);
+      // console.log(data.form);
+      // console.log(data.token);
+      // console.log(data);
       axios
-        .post(path, data)
+        .post(path, data, config)
         .then((res) => {
           console.log("invio form riuscito", res);
           // svuoto carello
