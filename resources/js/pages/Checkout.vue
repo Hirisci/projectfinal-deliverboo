@@ -23,6 +23,8 @@
                   class="form-control"
                   placeholder="Nome"
                   aria-label="Nome"
+                  required
+                  pattern="[a-zA-Z]+"
                 />
               </div>
               <div class="col">
@@ -32,6 +34,8 @@
                   class="form-control"
                   placeholder="Cognome"
                   aria-label="Cognome"
+                  required
+                  pattern="[a-zA-Z]+"
                 />
               </div>
             </div>
@@ -42,6 +46,8 @@
                 class="form-control"
                 id="client_address"
                 placeholder="Indirizzo"
+                required
+                pattern="[a-zA-Z0-9 ]+"
               />
             </div>
             <div class="form-group">
@@ -51,6 +57,8 @@
                 class="form-control"
                 id="client_city"
                 placeholder="Città"
+                required
+                pattern="[a-zA-Z]+"
               />
             </div>
             <div class="row">
@@ -61,6 +69,8 @@
                   class="form-control"
                   placeholder="Stato"
                   aria-label="Stato"
+                  required
+                  pattern="[a-zA-Z]+"
                 />
               </div>
               <div class="col">
@@ -70,6 +80,8 @@
                   class="form-control"
                   placeholder="CAP"
                   aria-label="CAP"
+                  required
+                  pattern="[0-9]+"
                 />
               </div>
             </div>
@@ -80,6 +92,8 @@
                 class="form-control"
                 id="client_name"
                 placeholder="Nome sul campanello"
+                required
+                pattern="[a-zA-Z]+"
               />
             </div>
             <div class="form-group">
@@ -89,6 +103,10 @@
                 class="form-control"
                 id="client_number"
                 placeholder="Cellulare"
+                required
+                pattern="[0-9]+"
+                min-length="11"
+                max-length="11"
               />
             </div>
 
