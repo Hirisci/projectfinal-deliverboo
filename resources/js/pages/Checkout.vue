@@ -148,6 +148,7 @@
             @event-delPlate="delPlate"
             @event-addQty="addQty"
           />
+          <AGoBackButton />
         </div>
       </div>
     </div>
@@ -160,10 +161,11 @@ import AAsideMenuTitle from "../components/atoms/AAsideMenuTitle.vue";
 import MCart from "../components/molecules/MCart.vue";
 import BtnPayment from "../components/atoms/BtnPayment.vue";
 import ABasicButton from "../components/atoms/ABasicButton.vue";
+import AGoBackButton from "../components/atoms/AGoBackButton.vue";
 
 export default {
   name: "Checkout",
-  components: { AJumbotron, AAsideMenuTitle, MCart, BtnPayment, ABasicButton },
+  components: { AJumbotron, AAsideMenuTitle, MCart, BtnPayment, ABasicButton, AGoBackButton },
   data() {
     return {
       cart: [],

@@ -16,8 +16,10 @@
             <MPlateCard v-for="plate in plates" :key="plate.id" :plate="plate" @event-addPlate="addPlate"/>
           </div>
         </div>
-        <div class="restaurant-section-shop-cart col-2 col-lg-4 d-flex justify-content-center">
+        <div class="restaurant-section-shop-cart col-2 col-lg-4 d-flex flex-column align-items-center">
           <MCart :cart="this.cart" @event-delPlate="delPlate" @event-addQty="addQty" />
+          <AGoBackButton/>
+          <a href="/checkout" class="checkout-button btn-main btn-purple d-lg-none mt-2" :class="{ dnone : inCheckoutPage}"><img src="../components/imgs/checkout-icon.png" alt="Checkout"></a>
         </div>
       </div>
     </div>
@@ -29,10 +31,11 @@ import ARestaurantCard from "../components/atoms/ARestaurantCard.vue";
 import ATitleCard from "../components/atoms/ATitleCard.vue";
 import MPlateCard from "../components/molecules/MPlateCard.vue";
 import MCart from "../components/molecules/MCart.vue";
+import AGoBackButton from "../components/atoms/AGoBackButton.vue";
 
 export default {
   name: "RestaurantSection",
-  components: { ARestaurantCard, ATitleCard, MPlateCard, MCart },
+  components: { ARestaurantCard, ATitleCard, MPlateCard, MCart, AGoBackButton },
   data() {
     return {
       plates: [],
@@ -140,6 +143,20 @@ export default {
   }
   &-shop {
     position: relative;
+  }
+  .homeIcon{
+    width: 100%;
+  }
+  .checkout-button{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    img{
+      width: 100%;
+    }
   }
 }
 </style>
