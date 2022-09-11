@@ -1,5 +1,6 @@
 @dump($orders)
 @dump($plates)
+@dump($restaurant)
 @extends('layouts.dashboard')
 
 @section('menu')

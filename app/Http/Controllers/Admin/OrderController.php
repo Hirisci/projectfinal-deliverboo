@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Order;
 use App\Plate;
+use App\Restaurant;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 
@@ -17,10 +19,14 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $plates = Plate::with('orders')->get();
+    {   
+       
+    
+        $restaurant = Restaurant::where('user_id',Auth::id())->get();
+        $plates = Plate::where('restaurant_id',$restaurant)->get();
+
         $orders = Order::with('plate')->get();
-        return view('admin.order.index', compact('orders', 'plates'));
+        return view('admin.order.index', compact('orders', 'plates','restaurant'));
         
     }
 
