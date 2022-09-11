@@ -3038,7 +3038,7 @@ var staticRenderFns = [function () {
       href: "/"
     }
   }, [_vm._v("Torna alla home")]), _vm._v(" "), _c("a", {
-    staticClass: "d-lg-none btn-main btn-purple mt-3 mobile",
+    staticClass: "d-lg-none btn-main btn-purple mt-3 mobile d-flex justify-content-center align-items-center",
     attrs: {
       href: "/"
     }
@@ -4518,7 +4518,20 @@ var render = function render() {
       "event-delPlate": _vm.delPlate,
       "event-addQty": _vm.addQty
     }
-  }), _vm._v(" "), _c("AGoBackButton")], 1)])])]);
+  }), _vm._v(" "), _c("AGoBackButton"), _vm._v(" "), _c("a", {
+    staticClass: "checkout-button btn-main btn-purple d-lg-none mt-2",
+    "class": {
+      dnone: _vm.inCheckoutPage
+    },
+    attrs: {
+      href: "/checkout"
+    }
+  }, [_c("img", {
+    attrs: {
+      src: __webpack_require__(/*! ../components/imgs/checkout-icon.png */ "./resources/js/components/imgs/checkout-icon.png"),
+      alt: "Checkout"
+    }
+  })])], 1)])])]);
 };
 
 var staticRenderFns = [];
@@ -29506,7 +29519,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".GoBackButton .mobile[data-v-c8d9034c] {\n  border-radius: 50%;\n  max-width: 50px;\n  max-height: 50px;\n}\n.GoBackButton .mobile img[data-v-c8d9034c] {\n  -o-object-fit: contain;\n     object-fit: contain;\n  max-width: 20px;\n  filter: invert(100%);\n}", ""]);
+exports.push([module.i, ".GoBackButton .mobile[data-v-c8d9034c] {\n  border-radius: 50%;\n  width: 50px;\n  height: 50px;\n}\n.GoBackButton .mobile img[data-v-c8d9034c] {\n  -o-object-fit: contain;\n     object-fit: contain;\n  width: 100%;\n  filter: invert(100%);\n}", ""]);
 
 // exports
 
@@ -29639,7 +29652,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".cart[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 1.25rem;\n  align-items: center;\n}\n.cart-overlay-button[data-v-33631e30] {\n  background-color: var(--primary-purple);\n  border-radius: 50%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.cart-overlay-button img[data-v-33631e30] {\n  padding: 0.9375rem;\n  aspect-ratio: 1/1;\n  width: 100%;\n}\n.cart .cart-title[data-v-33631e30] {\n  width: 100%;\n}\n.cart .cart-items[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 1.25rem;\n  width: 100%;\n}\n.cart .cart-total .cart-total-price[data-v-33631e30] {\n  background-color: var(--primary-purple);\n  border-radius: 1.25rem;\n  font-weight: 700;\n  padding: 0.625rem;\n  margin-left: auto;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 1.25rem;\n}\n.cart .cart-total .cart-total-price .cart-total-price-title[data-v-33631e30] {\n  color: white;\n  text-transform: uppercase;\n}\n.cart .cart-total .cart-total-price .cart-total-price-value[data-v-33631e30] {\n  background-color: white;\n  border-radius: 1.25rem;\n  padding: 0.3125rem 0.625rem;\n}\n.cart-overlay[data-v-33631e30] {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.cart-overlay-close[data-v-33631e30] {\n  font-weight: bolder;\n  color: white;\n}\n.cart-overlay-button[data-v-33631e30] {\n  width: 3.125rem;\n  height: 3.125rem;\n}\n.cart-overlay-button img[data-v-33631e30] {\n  width: 100%;\n}\n.cart-overlay-count[data-v-33631e30] {\n  position: absolute;\n  top: 30%;\n  left: 60%;\n  transform: translateY(-50%);\n  background-color: red;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  aspect-ratio: 1/1;\n  width: 1.5625rem;\n  color: white;\n}\n.cart .menuOpen[data-v-33631e30] {\n  padding-top: 1.25rem;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  background-color: var(--tertiary-purple);\n}\n.cart .menuOpen .cart-title[data-v-33631e30] {\n  width: 70%;\n  margin: auto;\n}\n.cart .dnone[data-v-33631e30] {\n  display: none;\n}\n.cart .dblock[data-v-33631e30] {\n  display: block;\n}\n.cart .dflex[data-v-33631e30] {\n  flex-flow: column;\n}\n.cart .overlayOpen[data-v-33631e30] {\n  position: absolute;\n  right: 5%;\n}", ""]);
+exports.push([module.i, ".cart[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 1.25rem;\n  align-items: center;\n}\n.cart-overlay-button[data-v-33631e30] {\n  background-color: var(--primary-purple);\n  border-radius: 50%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.cart-overlay-button img[data-v-33631e30] {\n  padding: 0.9375rem;\n  aspect-ratio: 1/1;\n  width: 100%;\n}\n.cart .cart-title[data-v-33631e30] {\n  width: 100%;\n}\n.cart .cart-items[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 1.25rem;\n  width: 100%;\n}\n.cart .cart-total .cart-total-price[data-v-33631e30] {\n  background-color: var(--primary-purple);\n  border-radius: 1.25rem;\n  font-weight: 700;\n  padding: 0.625rem;\n  margin-left: auto;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 1.25rem;\n}\n.cart .cart-total .cart-total-price .cart-total-price-title[data-v-33631e30] {\n  color: white;\n  text-transform: uppercase;\n}\n.cart .cart-total .cart-total-price .cart-total-price-value[data-v-33631e30] {\n  background-color: white;\n  border-radius: 1.25rem;\n  padding: 0.3125rem 0.625rem;\n}\n.cart-overlay[data-v-33631e30] {\n  z-index: 1;\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.cart-overlay-close[data-v-33631e30] {\n  font-weight: bolder;\n  color: white;\n}\n.cart-overlay-button[data-v-33631e30] {\n  width: 3.125rem;\n  height: 3.125rem;\n}\n.cart-overlay-button img[data-v-33631e30] {\n  width: 100%;\n}\n.cart-overlay-count[data-v-33631e30] {\n  position: absolute;\n  top: 30%;\n  left: 60%;\n  transform: translateY(-50%);\n  background-color: red;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  aspect-ratio: 1/1;\n  width: 1.5625rem;\n  color: white;\n}\n.cart .menuOpen[data-v-33631e30] {\n  padding-top: 1.25rem;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  background-color: var(--tertiary-purple);\n}\n.cart .menuOpen .cart-title[data-v-33631e30] {\n  width: 70%;\n  margin: auto;\n}\n.cart .dnone[data-v-33631e30] {\n  display: none;\n}\n.cart .dblock[data-v-33631e30] {\n  display: block;\n}\n.cart .dflex[data-v-33631e30] {\n  flex-flow: column;\n}\n.cart .overlayOpen[data-v-33631e30] {\n  position: absolute;\n  right: 5%;\n}", ""]);
 
 // exports
 
@@ -29791,7 +29804,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".restaurant-section-header[data-v-5fd922af] {\n  position: relative;\n}\n.restaurant-section-header img[data-v-5fd922af] {\n  min-height: 40vh;\n  height: 40vh;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.restaurant-section-header-bottom[data-v-5fd922af] {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n}\n.restaurant-section-shop[data-v-5fd922af] {\n  position: relative;\n}\n.restaurant-section .homeIcon[data-v-5fd922af] {\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".restaurant-section-header[data-v-5fd922af] {\n  position: relative;\n}\n.restaurant-section-header img[data-v-5fd922af] {\n  min-height: 40vh;\n  height: 40vh;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.restaurant-section-header-bottom[data-v-5fd922af] {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n}\n.restaurant-section-shop[data-v-5fd922af] {\n  position: relative;\n}\n.restaurant-section .homeIcon[data-v-5fd922af] {\n  width: 100%;\n}\n.restaurant-section .checkout-button[data-v-5fd922af] {\n  width: 50px;\n  height: 50px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n}\n.restaurant-section .checkout-button img[data-v-5fd922af] {\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -47778,6 +47791,17 @@ module.exports = "/images/c404.png?42ba27a7ec6efb581fba93ca137cd78d";
 
 /***/ }),
 
+/***/ "./resources/js/components/imgs/checkout-icon.png":
+/*!********************************************************!*\
+  !*** ./resources/js/components/imgs/checkout-icon.png ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/checkout-icon.png?462ce3073ff13642a2d8be67cb2e16a3";
+
+/***/ }),
+
 /***/ "./resources/js/components/imgs/chef.jpg":
 /*!***********************************************!*\
   !*** ./resources/js/components/imgs/chef.jpg ***!
@@ -47829,7 +47853,7 @@ module.exports = "/images/hamburger.png?8df3d89112d77bf236de3709c958c7a2";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/home-icon.png?463f29bd0c2c93eff62419a31ecf781b";
+module.exports = "/images/home-icon.png?99040a5d9d1eb702547522f19f109126";
 
 /***/ }),
 

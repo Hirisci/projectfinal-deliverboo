@@ -18,7 +18,8 @@
         </div>
         <div class="restaurant-section-shop-cart col-2 col-lg-4 d-flex flex-column align-items-center">
           <MCart :cart="this.cart" @event-delPlate="delPlate" @event-addQty="addQty" />
-          <AGoBackButton />
+          <AGoBackButton/>
+          <a href="/checkout" class="checkout-button btn-main btn-purple d-lg-none mt-2" :class="{ dnone : inCheckoutPage}"><img src="../components/imgs/checkout-icon.png" alt="Checkout"></a>
         </div>
       </div>
     </div>
@@ -145,6 +146,17 @@ export default {
   }
   .homeIcon{
     width: 100%;
+  }
+  .checkout-button{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    img{
+      width: 100%;
+    }
   }
 }
 </style>
