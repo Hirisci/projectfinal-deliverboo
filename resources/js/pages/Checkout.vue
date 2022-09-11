@@ -3,7 +3,7 @@
     <AJumbotron />
     <div class="form container-lg p-3" v-if="!orderSuccess">
       <div class="row d-flex px-5 mt-5 justify-content-around">
-        <div class="user-form col-lg-5 mb-4">
+        <div class="user-form col-lg-5 mb-4 order-1 order-lg-0">
           <div class="col-12 col-lg-4 p-0">
             <AAsideMenuTitle :title="'Checkout'" class="px-2" />
           </div>
@@ -154,7 +154,7 @@
             </div>
           </div>
         </div>
-        <div class="d-lg-block col-lg-7 pb-5" v-if="this.cart.length !== 0">
+        <div class="d-lg-block col-lg-7 pb-5 order-0 order-lg-1" v-if="this.cart.length !== 0">
           <MCart
             :cart="this.cart"
             :inCheckoutPage="true"

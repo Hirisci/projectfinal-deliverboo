@@ -4259,7 +4259,7 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "row d-flex px-5 mt-5 justify-content-around"
   }, [_c("div", {
-    staticClass: "user-form col-lg-5 mb-4"
+    staticClass: "user-form col-lg-5 mb-4 order-1 order-lg-0"
   }, [_c("div", {
     staticClass: "col-12 col-lg-4 p-0"
   }, [_c("AAsideMenuTitle", {
@@ -4536,7 +4536,7 @@ var render = function render() {
   }, [_vm._v("\n              Conferma Ordine\n            ")])])]) : _c("div", {
     staticClass: "empty-menu"
   }, [_vm._m(0)])]), _vm._v(" "), this.cart.length !== 0 ? _c("div", {
-    staticClass: "d-lg-block col-lg-7 pb-5"
+    staticClass: "d-lg-block col-lg-7 pb-5 order-0 order-lg-1"
   }, [_c("MCart", {
     attrs: {
       cart: this.cart,
@@ -49445,7 +49445,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\User\Documents\Visual Studio Code\boolean\Progetto finale\projectfinal-deliverboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\giaki\Desktop\Boolean\Project\FinalProject-Deliveboo\projectfinal-deliverboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
