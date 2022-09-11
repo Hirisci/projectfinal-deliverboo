@@ -11,7 +11,7 @@
       </a>
     </div>
     <div class="header-login-button px-3">
-      <a href="/admin/home" class="btn-main btn-purple">LOGIN</a>
+      <a href="/admin/home" class="btn-main btn-purple">AREA PRIVATA</a>
     </div>
   </header>
 </template>

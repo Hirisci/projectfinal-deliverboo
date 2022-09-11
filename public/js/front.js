@@ -3233,7 +3233,7 @@ var staticRenderFns = [function () {
     attrs: {
       href: "/admin/home"
     }
-  }, [_vm._v("LOGIN")])])]);
+  }, [_vm._v("AREA PRIVATA")])])]);
 }];
 render._withStripped = true;
 
