@@ -31,9 +31,10 @@
           </button>
           <a
             href="javascript:history.back()"
-            class="btn-main btn-purple"
+            class="btn-main btn-purple btn-return px-1"
             :class="{ dnone: !inCheckoutPage }"
-            >Torna al menù</a
+          >
+            ←</a
           >
         </div>
         <div class="cart-total-price d-flex justify-content-center col-7 px-4">
@@ -120,6 +121,8 @@ export default {
     },
     showCart() {
       this.isOpen = !this.isOpen;
+      this.$emit("isOpenCart");
+      console.log("entro nel evento");
     },
     refreshRestaurant() {
       return JSON.parse(localStorage.getItem("restaurant"));
@@ -215,7 +218,7 @@ export default {
   .menuOpen {
     .cart {
       &-title {
-        width: 70%;
+        width: 65%;
         margin: auto;
       }
     }
@@ -238,8 +241,22 @@ export default {
   }
   .overlayOpen {
     position: absolute;
-    right: 5%;
+    right: 0.4rem;
+    top: 0.7rem;
   }
+}
+
+.btn-return {
+  position: absolute;
+  left: 0.4rem;
+  top: 0.7rem;
+  height: 50px;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
 }
 
 .cart-empty {

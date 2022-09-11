@@ -110,7 +110,10 @@
               />
             </div>
 
-            <div id="dropin-container"></div>
+            <div
+              id="dropin-container"
+              :class="isOpenDrop ? 'd-none' : ''"
+            ></div>
             <input type="hidden" id="nonce" name="payment_method_nonce" />
             <input type="hidden" id="device" name="deviceDataFromTheClient" />
             <div class="d-flex justify-content-end mt-3">
@@ -157,6 +160,7 @@
             :inCheckoutPage="true"
             @event-delPlate="delPlate"
             @event-addQty="addQty"
+            @isOpenCart="isOpenCart"
           />
           <AGoBackButton />
         </div>
@@ -180,9 +184,17 @@ import AGoBackButton from "../components/atoms/AGoBackButton.vue";
 
 export default {
   name: "Checkout",
-  components: { AJumbotron, AAsideMenuTitle, MCart, BtnPayment, ABasicButton, AGoBackButton },
+  components: {
+    AJumbotron,
+    AAsideMenuTitle,
+    MCart,
+    BtnPayment,
+    ABasicButton,
+    AGoBackButton,
+  },
   data() {
     return {
+      isOpenDrop: false,
       orderSuccess: false,
       orderCompleted: null,
       cart: [],
@@ -314,6 +326,9 @@ export default {
     },
     onLoad() {
       console.log(instance);
+    },
+    isOpenCart() {
+      this.isOpenDrop = !this.isOpenDrop;
     },
   },
   computed: {
