@@ -48931,7 +48931,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\projectfinal-deliverboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Gustavo\Documents\Corso-Boolean\Esercizi\Mese-6\Settimana 1\projectfinal-deliverboo-1\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
