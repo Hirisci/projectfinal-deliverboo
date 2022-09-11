@@ -2513,7 +2513,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'WorkWithUsSection'
+  name: "WorkWithUsSection"
 });
 
 /***/ }),
@@ -4186,7 +4186,7 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "row d-flex p-0 container-lg py-5"
   }, [_c("div", {
-    staticClass: "col-12 col-md-4 d-flex flex-column justify-content-center align-items-center mb-3 text-center"
+    staticClass: "col-12 col-md-4 d-flex flex-column justify-content-between align-items-center mb-3 text-center"
   }, [_c("div", {
     staticClass: "img-container"
   }, [_c("img", {
@@ -4198,10 +4198,10 @@ var staticRenderFns = [function () {
     staticClass: "mt-3 mb-4"
   }, [_vm._v("DIVENTA UN RIDER")]), _vm._v(" "), _c("p", {
     staticClass: "mb-3"
-  }, [_vm._v("Diventa il capo di te stesso! Goditi flessibilità,\n            libertà e guadagni competitivi effettuando consegne con Deliveboo.")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("\n        Diventa il capo di te stesso! Goditi flessibilità, libertà e guadagni\n        competitivi effettuando consegne con Deliveboo.\n      ")]), _vm._v(" "), _c("button", {
     staticClass: "btn-join-us mb-3"
   }, [_vm._v("Unisciti a noi!")])]), _vm._v(" "), _c("div", {
-    staticClass: "col-12 col-md-4 d-flex flex-column justify-content-center align-items-center mb-3 text-center"
+    staticClass: "col-12 col-md-4 d-flex flex-column justify-content-between align-items-center mb-3 text-center"
   }, [_c("div", {
     staticClass: "img-container"
   }, [_c("img", {
@@ -4213,10 +4213,10 @@ var staticRenderFns = [function () {
     staticClass: "mt-3 mb-4"
   }, [_vm._v("DIVENTA UN PARTNER")]), _vm._v(" "), _c("p", {
     staticClass: "mb-3"
-  }, [_vm._v("\n                Cresci con Deliveboo! La nostra tecnologia e la nostra base di utenti\n                 possono aiutarti a incrementare le vendite e aprire nuove opportunità!\n            ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("\n        Cresci con Deliveboo! La nostra tecnologia e la nostra base di utenti\n        possono aiutarti a incrementare le vendite e aprire nuove opportunità!\n      ")]), _vm._v(" "), _c("button", {
     staticClass: "btn-join-us mb-3"
   }, [_vm._v("Unisciti a noi!")])]), _vm._v(" "), _c("div", {
-    staticClass: "col-12 col-md-4 d-flex flex-column justify-content-center align-items-center mb-3 text-center"
+    staticClass: "col-12 col-md-4 d-flex flex-column justify-content-between align-items-center mb-3 text-center"
   }, [_c("div", {
     staticClass: "img-container"
   }, [_c("img", {
@@ -4228,7 +4228,7 @@ var staticRenderFns = [function () {
     staticClass: "mt-3 mb-4"
   }, [_vm._v("COLLABORA CON NOI")]), _vm._v(" "), _c("p", {
     staticClass: "mb-3"
-  }, [_vm._v("Pronto per una nuova ed entusiasmante sfida? Se sei ambizioso,\n                umile e ami lavorare con gli altri, mettiti in contatto con noi!")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("\n        Pronto per una nuova ed entusiasmante sfida? Se sei ambizioso, umile e\n        ami lavorare con gli altri, mettiti in contatto con noi!\n      ")]), _vm._v(" "), _c("button", {
     staticClass: "btn-join-us mb-3"
   }, [_vm._v("Unisciti a noi!")])])])]);
 }];
