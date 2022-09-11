@@ -163,9 +163,7 @@
       </div>
     </div>
     <div class="row" v-else>
-      <div class="col">
-        <div class="order-success">Ordine completato</div>
-      </div>
+      <AOrderSuccess :nome="this.form.client.name" :address="this.form.address.street" :phoneNumber="this.form.client.phone" :ring="this.form.address.ring :cart="this.cart[]"/>
     </div>
   </div>
 </template>
@@ -178,13 +176,14 @@ import BtnPayment from "../components/atoms/BtnPayment.vue";
 import ABasicButton from "../components/atoms/ABasicButton.vue";
 import AGoBackButton from "../components/atoms/AGoBackButton.vue";
 import ACheckoutButton from "../components/atoms/ACheckoutButton.vue";
+import AOrderSuccess from "../components/atoms/AOrderSuccess.vue";
 
 export default {
   name: "Checkout",
-  components: { AJumbotron, AAsideMenuTitle, MCart, BtnPayment, ABasicButton, AGoBackButton, ACheckoutButton },
+  components: { AJumbotron, AAsideMenuTitle, MCart, BtnPayment, ABasicButton, AGoBackButton, ACheckoutButton, AOrderSuccess },
   data() {
     return {
-      orderSuccess: false,
+      orderSuccess: true,
       orderCompleted: null,
       cart: [],
       form: {
