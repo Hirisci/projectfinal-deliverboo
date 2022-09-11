@@ -3071,32 +3071,26 @@ var staticRenderFns = [function () {
   return _c("div", {
     staticClass: "jumbotron"
   }, [_c("div", {
-    staticClass: "row"
-  }, [_c("div", {
-    staticClass: "img-box"
+    staticClass: "rows"
   }, [_c("img", {
     staticClass: "sushi",
     attrs: {
       src: __webpack_require__(/*! ../imgs/sushi.png */ "./resources/js/components/imgs/sushi.png"),
       alt: "immagine sushi del jumbotron"
     }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "img-box"
-  }, [_c("img", {
+  }), _vm._v(" "), _c("img", {
     staticClass: "hamburger",
     attrs: {
       src: __webpack_require__(/*! ../imgs/hamburger.png */ "./resources/js/components/imgs/hamburger.png"),
       alt: "immagine hamburger del jumbotron"
     }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "img-box"
-  }, [_c("img", {
+  }), _vm._v(" "), _c("img", {
     staticClass: "pizza",
     attrs: {
       src: __webpack_require__(/*! ../imgs/pizza.png */ "./resources/js/components/imgs/pizza.png"),
       alt: "immagine pizza del jumbotron"
     }
-  })])])]);
+  })])]);
 }];
 render._withStripped = true;
 
@@ -29483,7 +29477,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".jumbotron[data-v-0e1ad8ba] {\n  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(150, 103, 224) 50%);\n  height: 35rem;\n  width: 100%;\n  overflow: hidden;\n}\n.jumbotron .row[data-v-0e1ad8ba] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  height: 100%;\n}\n.jumbotron .img-box[data-v-0e1ad8ba] {\n  display: grid;\n  place-items: center;\n}\n.jumbotron .sushi[data-v-0e1ad8ba] {\n  width: 350px;\n  aspect-ratio: 3/2;\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n  width: 350px;\n  aspect-ratio: 4/3;\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n  width: 350px;\n  aspect-ratio: 2/1;\n  transform: translate(50%, 25%) rotate(-15deg) scale(2.2);\n}", ""]);
+exports.push([module.i, ".jumbotron[data-v-0e1ad8ba] {\n  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(150, 103, 224) 50%);\n  height: 35rem;\n  width: 100%;\n  overflow: hidden;\n}\n.jumbotron .rows[data-v-0e1ad8ba] {\n  position: relative;\n  height: 100%;\n}\n.jumbotron img[data-v-0e1ad8ba] {\n  position: absolute;\n}\n.jumbotron .img-box[data-v-0e1ad8ba] {\n  display: grid;\n  place-items: center;\n}\n.jumbotron .sushi[data-v-0e1ad8ba] {\n  top: 60%;\n  width: 350px;\n  aspect-ratio: 3/2;\n  transform: translate(25rem, -10rem) rotate(15deg) scale(4);\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n  right: 50%;\n  width: 350px;\n  aspect-ratio: 4/3;\n  transform: translate(0%, -50%) rotate(30deg) scale(7);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n  bottom: 0;\n  right: 0;\n  width: 350px;\n  aspect-ratio: 2/1;\n  transform: rotate(-15deg) scale(9);\n}\n@media only screen and (max-width: 4800px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    transform: translate(15rem, -13rem) rotate(15deg) scale(3);\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    transform: translate(0%, -50%) rotate(30deg) scale(4);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-15deg) scale(6);\n}\n}\n@media only screen and (max-width: 3500px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    transform: translate(15rem, -13rem) rotate(15deg) scale(2.5);\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    transform: translate(0%, -50%) rotate(30deg) scale(3);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-15deg) scale(6);\n}\n}\n@media only screen and (max-width: 3250px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    transform: translate(0rem, -5rem) rotate(15deg) scale(2);\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    left: 35%;\n    top: 10rem;\n    transform: translate(0%, -50%) rotate(30deg) scale(2.5);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-15deg) scale(6);\n}\n}\n@media only screen and (max-width: 2560px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    transform: translate(0rem, -5rem) rotate(15deg) scale(1.5);\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    left: 35%;\n    top: 10rem;\n    transform: translate(0%, -50%) rotate(30deg) scale(2);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-15deg) scale(5);\n}\n}\n@media only screen and (max-width: 1980px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    transform: translate(0rem, 0rem) rotate(15deg) scale(1.5);\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    left: 25%;\n    top: 10rem;\n    transform: translate(0%, -50%) rotate(30deg) scale(1.5);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-15deg) scale(4.5);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    background-color: transparent;\n}\n}\n@media only screen and (max-width: 1440px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    transform: translate(0rem, 0rem) rotate(15deg) scale(1.5);\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    left: 25%;\n    top: 10rem;\n    transform: translate(0%, -50%) rotate(30deg) scale(1);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-15deg) scale(4);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    background-color: transparent;\n}\n}\n@media only screen and (max-width: 1200px) {\n.jumbotron[data-v-0e1ad8ba] {\n    /*Tablets [601px -> 1200px]*/\n}\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    transform: translate(-5rem, 0rem) rotate(15deg) scale(1);\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    left: 15%;\n    top: 10rem;\n    transform: translate(0%, -50%) rotate(30deg) scale(1);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-15deg) scale(4);\n}\n}\n@media only screen and (max-width: 1000px) {\n.jumbotron[data-v-0e1ad8ba] {\n    /*Tablets [601px -> 1200px]*/\n}\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    display: none;\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    left: -5rem;\n    top: 15rem;\n    transform: translate(0%, -50%) rotate(30deg) scale(1);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-15deg) scale(4);\n}\n}\n@media only screen and (max-width: 1000px) {\n.jumbotron[data-v-0e1ad8ba] {\n    /*Tablets [601px -> 1200px]*/\n}\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    display: none;\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    left: -5rem;\n    top: 15rem;\n    transform: translate(0%, -50%) rotate(30deg) scale(1);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-15deg) scale(3);\n}\n}\n@media only screen and (max-width: 750px) {\n.jumbotron .sushi[data-v-0e1ad8ba] {\n    display: none;\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    left: -8rem;\n    top: 15rem;\n    transform: translate(0%, -50%) rotate(30deg) scale(0.8);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: rotate(-15deg) scale(2.5);\n}\n}\n@media only screen and (max-width: 600px) {\n.jumbotron[data-v-0e1ad8ba] {\n    /*Big smartphones [426px -> 600px]*/\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    left: -8rem;\n    top: 12rem;\n    transform: translate(0%, -50%) rotate(30deg) scale(0.8);\n}\n}\n@media only screen and (max-width: 425px) {\n.jumbotron[data-v-0e1ad8ba] {\n    /*Small smartphones [325px -> 425px]*/\n}\n.jumbotron .hamburger[data-v-0e1ad8ba] {\n    left: -8rem;\n    top: 15rem;\n    transform: translate(0%, -50%) rotate(30deg) scale(0.6);\n}\n.jumbotron .pizza[data-v-0e1ad8ba] {\n    transform: translate(10rem, 0) rotate(-15deg) scale(1.5);\n}\n}", ""]);
 
 // exports
 
