@@ -2533,6 +2533,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_atoms_BtnPayment_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/atoms/BtnPayment.vue */ "./resources/js/components/atoms/BtnPayment.vue");
 /* harmony import */ var _components_atoms_ABasicButton_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/atoms/ABasicButton.vue */ "./resources/js/components/atoms/ABasicButton.vue");
 /* harmony import */ var _components_atoms_AGoBackButton_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/atoms/AGoBackButton.vue */ "./resources/js/components/atoms/AGoBackButton.vue");
+/* harmony import */ var _components_atoms_ACheckoutButton_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/atoms/ACheckoutButton.vue */ "./resources/js/components/atoms/ACheckoutButton.vue");
+
 
 
 
@@ -2547,7 +2549,8 @@ __webpack_require__.r(__webpack_exports__);
     MCart: _components_molecules_MCart_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     BtnPayment: _components_atoms_BtnPayment_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     ABasicButton: _components_atoms_ABasicButton_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    AGoBackButton: _components_atoms_AGoBackButton_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+    AGoBackButton: _components_atoms_AGoBackButton_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+    ACheckoutButton: _components_atoms_ACheckoutButton_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
   },
   data: function data() {
     return {
@@ -3737,7 +3740,7 @@ var render = function render() {
   })], 2), _vm._v(" "), _c("div", {
     staticClass: "cart-total mt-3 d-flex"
   }, [_c("div", {
-    staticClass: "cart-checkout d-flex align-items-center justify-content-center"
+    staticClass: "cart-checkout d-flex align-items-center justify-content-center p-2 gap-1"
   }, [_c("button", {
     staticClass: "btn-main btn-trash",
     on: {
@@ -3752,7 +3755,7 @@ var render = function render() {
       href: "javascript:history.back()"
     }
   }, [_vm._v("\n          ←")])]), _vm._v(" "), _c("div", {
-    staticClass: "cart-total-price d-flex justify-content-center col-7 px-4"
+    staticClass: "cart-total-price d-flex justify-content-center col-4 col-md-3 col-lg-6 px-4"
   }, [_c("div", {
     staticClass: "cart-total-price-title"
   }, [_vm._v("Totale")]), _vm._v(" "), _c("div", {
@@ -3822,12 +3825,12 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "col-12 d-flex align-items-center plate-card-title"
   }, [_c("AAsideMenuTitle", {
-    staticClass: "col-10 ps-2 d-md-none",
+    staticClass: "col-9 col-md-10 ps-2 d-md-none",
     attrs: {
       title: _vm.plate.name
     }
   }), _vm._v(" "), _c("div", {
-    staticClass: "price-value col-2 d-md-none"
+    staticClass: "price-value col-3 d-md-none"
   }, [_vm._v("\n          " + _vm._s(_vm.plate.price.toFixed(2)) + " €\n        ")])], 1)]), _vm._v(" "), _c("img", {
     attrs: {
       src: "/storage/".concat(_vm.plate.img),
@@ -3840,14 +3843,18 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "col-12 p-0 d-flex align-items-center plate-card-title"
   }, [_c("AAsideMenuTitle", {
-    staticClass: "col-10 ps-2 d-none d-md-block",
+    staticClass: "col-9 col-md-10 ps-2 d-none d-md-block",
     attrs: {
       title: _vm.plate.name
     }
   }), _vm._v(" "), _c("div", {
-    staticClass: "price-value col-2 d-none d-md-block"
+    staticClass: "price-value col-3 d-none d-md-block"
   }, [_vm._v("\n          " + _vm._s(_vm.plate.price.toFixed(2)) + " €\n        ")])], 1)]), _vm._v(" "), _c("div", {
-    staticClass: "plate-card-description row d-flex"
+    staticClass: "plate-card-description row d-flex py-3 d-none d-md-block"
+  }, [_c("div", {
+    staticClass: "col-12"
+  }, [_vm._v(_vm._s(_vm.plate.description))])]), _vm._v(" "), _c("div", {
+    staticClass: "plate-card-description-sm row d-flex py-3 d-md-none"
   }, [_c("div", {
     staticClass: "col-12"
   }, [_vm._v(_vm._s(_vm.plate.description))])]), _vm._v(" "), _c("div", {
@@ -4248,7 +4255,7 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "row d-flex px-5 mt-5 justify-content-around"
   }, [_c("div", {
-    staticClass: "user-form col-lg mb-4"
+    staticClass: "user-form col-lg-5 mb-4"
   }, [_c("div", {
     staticClass: "col-12 col-lg-4 p-0"
   }, [_c("AAsideMenuTitle", {
@@ -4525,7 +4532,7 @@ var render = function render() {
   }, [_vm._v("\n              Conferma Ordine\n            ")])])]) : _c("div", {
     staticClass: "empty-menu"
   }, [_vm._m(0)])]), _vm._v(" "), this.cart.length !== 0 ? _c("div", {
-    staticClass: "d-lg-block col-lg-5 pb-5"
+    staticClass: "d-lg-block col-lg-7 pb-5"
   }, [_c("MCart", {
     attrs: {
       cart: this.cart,
@@ -4574,7 +4581,7 @@ var staticRenderFns = [function () {
     staticClass: "col"
   }, [_c("div", {
     staticClass: "order-success"
-  }, [_vm._v("ordine completo")])]);
+  }, [_vm._v("Ordine completato")])]);
 }];
 render._withStripped = true;
 
@@ -4642,13 +4649,13 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "row"
   }, [_c("div", {
-    staticClass: "restaurant-section-shop-menu col-10 col-lg-8 d-flex align-items-center flex-column gap-4"
+    staticClass: "restaurant-section-shop-menu col-9 col-sm-10 col-lg-8 d-flex align-items-center flex-column gap-4"
   }, [_c("ATitleCard", {
     attrs: {
       title: "Menù",
       error: true,
       subTitle: !_vm.checkRestaurant,
-      subText: "Puoi ordinare da un solo ristorante"
+      subText: "Puoi ordinare da un solo ristorante alla volta!"
     }
   }), _vm._v(" "), _c("div", {
     staticClass: "restaurant-section-shop-menu-plates d-flex flex-column gap-4"
@@ -4664,7 +4671,7 @@ var render = function render() {
       }
     });
   }), 1)], 1), _vm._v(" "), _c("div", {
-    staticClass: "restaurant-section-shop-cart col-2 col-lg-4 d-flex flex-column align-items-center"
+    staticClass: "restaurant-section-shop-cart col-3 col-sm-2 col-lg-4 d-flex flex-column align-items-end"
   }, [_c("MCart", {
     attrs: {
       cart: this.cart
@@ -4674,7 +4681,11 @@ var render = function render() {
       "event-addQty": _vm.addQty,
       "event-emptyCart": _vm.emptyCart
     }
-  }), _vm._v(" "), _c("AGoBackButton")], 1)])])]);
+  }), _vm._v(" "), _c("ACheckoutButton", {
+    staticClass: "px-3"
+  }), _vm._v(" "), _c("AGoBackButton", {
+    staticClass: "px-3"
+  })], 1)])])]);
 };
 
 var staticRenderFns = [];
@@ -29833,7 +29844,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".plate-card[data-v-b2f80d34] {\n  border-radius: 20px;\n  border: 2px solid var(--primary-purple);\n  background-color: var(--secondary-purple);\n  transition: transform ease-in-out 0.3s;\n}\n.plate-card .overflow-hidden[data-v-b2f80d34] {\n  overflow: hidden;\n}\n.plate-card img[data-v-b2f80d34] {\n  width: 100%;\n  height: 100%;\n  aspect-ratio: 1/1;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.plate-card-title[data-v-b2f80d34] {\n  background-color: var(--tertiary-purple);\n  border-bottom: 2px solid var(--primary-purple);\n}\n.plate-card-description[data-v-b2f80d34] {\n  flex-grow: 1;\n}\n.plate-card .price-value[data-v-b2f80d34] {\n  color: var(--primary-purple);\n  font-weight: bolder;\n}\n.plate-card input[data-v-b2f80d34] {\n  border: 0.0625rem solid var(--primary-purple);\n}\n.plate-card[data-v-b2f80d34]:hover {\n  transform: scale(1.05);\n}\n.plate-card .quantity[data-v-b2f80d34] {\n  background-color: white;\n  padding: 0.3125rem 1rem;\n  width: 4.375rem;\n  position: relative;\n  border-radius: 1rem;\n}", ""]);
+exports.push([module.i, ".plate-card[data-v-b2f80d34] {\n  border-radius: 20px;\n  border: 2px solid var(--primary-purple);\n  background-color: var(--secondary-purple);\n  transition: transform ease-in-out 0.3s;\n}\n.plate-card .overflow-hidden[data-v-b2f80d34] {\n  overflow: hidden;\n}\n.plate-card img[data-v-b2f80d34] {\n  width: 100%;\n  height: 100%;\n  aspect-ratio: 1/1;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.plate-card-title[data-v-b2f80d34] {\n  background-color: var(--tertiary-purple);\n}\n.plate-card-description[data-v-b2f80d34] {\n  flex-grow: 1;\n  border-top: 2px solid var(--primary-purple);\n}\n.plate-card-description-sm[data-v-b2f80d34] {\n  flex-grow: 1;\n}\n.plate-card .price-value[data-v-b2f80d34] {\n  color: var(--primary-purple);\n  font-weight: bolder;\n}\n.plate-card input[data-v-b2f80d34] {\n  border: 0.0625rem solid var(--primary-purple);\n}\n.plate-card[data-v-b2f80d34]:hover {\n  transform: scale(1.05);\n}\n.plate-card .quantity[data-v-b2f80d34] {\n  background-color: white;\n  padding: 0.3125rem 1rem;\n  width: 4.375rem;\n  position: relative;\n  border-radius: 1rem;\n}", ""]);
 
 // exports
 
