@@ -12904,6 +12904,7 @@ small,
   --primary-gray: #bebdbd;
   --edit-color: #fd7e14;
   --delete-color: rgb(160, 4, 4);
+  --delete-color-opacity: rgb(212, 2, 2);
   /*------------------------------
       CATEGORY COLORS
   ------------------------------*/
@@ -12964,6 +12965,15 @@ a.btn-main:hover {
 .btn-purple:hover {
   background-color: var(--primary-purple-opacity);
   border: 1px solid var(--primary-purple);
+}
+
+.btn-trash {
+  background-color: var(--delete-color);
+}
+
+.btn-trash:hover {
+  background-color: var(--delete-color-opacity);
+  border: 1px solid var(--delete-color);
 }
 
 .btn-edit {
