@@ -16,7 +16,7 @@
             :title="'Menù'"
             :error="true"
             :subTitle="!checkRestaurant"
-            subText="Puoi ordinare da un solo ristorante"
+            subText="Puoi ordinare da un solo ristorante alla volta!"
           />
           <div
             class="restaurant-section-shop-menu-plates d-flex flex-column gap-4"
