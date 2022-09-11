@@ -26,6 +26,11 @@
           </div>
         </div>
       </div>
+      <div class="cart-total checkout mt-3 d-flex flex-row-reverse">
+        <div class="cart-checkout d-flex align-items-center justify-content-center">
+          <a href="/checkout" class="btn-main btn-purple" :class="{ dnone : inCheckoutPage}">Checkout</a>
+        </div>
+      </div>
     </div>
     <div class="cart-overlay" :class="{ 'd-lg-none' : !isOpen, overlayOpen : isOpen }">
       <button class="cart-overlay-button" @click="showCart()">
