@@ -163,7 +163,7 @@
       </div>
     </div>
     <div class="row" v-else>
-      <AOrderSuccess :nome="this.form.client.name" :address="this.form.address.street" :phoneNumber="this.form.client.phone" :ring="this.form.address.ring :cart="this.cart[]"/>
+      <AOrderSuccess :cart="this.orderCompleted[0]" />
     </div>
   </div>
 </template>
@@ -180,10 +180,19 @@ import AOrderSuccess from "../components/atoms/AOrderSuccess.vue";
 
 export default {
   name: "Checkout",
-  components: { AJumbotron, AAsideMenuTitle, MCart, BtnPayment, ABasicButton, AGoBackButton, ACheckoutButton, AOrderSuccess },
+  components: {
+    AJumbotron,
+    AAsideMenuTitle,
+    MCart,
+    BtnPayment,
+    ABasicButton,
+    AGoBackButton,
+    ACheckoutButton,
+    AOrderSuccess,
+  },
   data() {
     return {
-      orderSuccess: true,
+      orderSuccess: false,
       orderCompleted: null,
       cart: [],
       form: {
@@ -464,7 +473,7 @@ label {
 }
 
 .order-success {
-  background-color: var(--primary-purple);
+  padding: 5rem;
 }
 </style>
 

@@ -2048,11 +2048,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AOrderSuccess",
   props: {
-    nome: String,
-    total: String,
-    address: String,
-    phoneNumber: String,
-    ring: String,
     cart: Array
   },
   components: {
@@ -2583,7 +2578,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      orderSuccess: true,
+      orderSuccess: false,
       orderCompleted: null,
       cart: [],
       form: {
@@ -3328,28 +3323,72 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "thank-you container-lg px-5"
+    staticClass: "thank-you container-lg"
   }, [_c("div", {
-    staticClass: "thank-you-title row py-5"
+    staticClass: "thank-you-title row"
   }, [_c("div", {
-    staticClass: "d-flex justify-content-center align-items-center col-12 col-lg-12"
-  }, [_vm._v("\n          Grazie per il tuo ordine, " + _vm._s(_vm.nome) + "!\n      ")])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "d-flex justify-content-center align-items-center col-12 col-lg-12 fs-1 p-5"
+  }, [_vm._v("\n      Grazie per il tuo ordine, " + _vm._s(this.cart.costumer_name) + "!\n    ")])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "thank-you-summary row py-3 mb-3"
   }, [_c("div", {
-    staticClass: "d-flex justify-content-center col-lg-2"
-  }, [_vm._v("\n          Riepilogo Ordine:\n      ")]), _vm._v(" "), _c("div", {
-    staticClass: "d-flex col-12 col-lg-4 d-flex flex-column gap-3"
+    staticClass: "d-flex col-12 col-lg-6 p-5"
   }, [_c("div", {
-    staticClass: "thank-you-summary-total"
-  }, [_vm._v("Totale Ordine: " + _vm._s(_vm.total) + "€")]), _vm._v(" "), _c("div", {
-    staticClass: "thank-you-summary-address"
-  }, [_vm._v("Indirizzo di consegna: " + _vm._s(_vm.address))]), _vm._v(" "), _c("div", {
-    staticClass: "thank-you-summary-number"
-  }, [_vm._v("Numero di riferimento: " + _vm._s(_vm.phoneNumber))]), _vm._v(" "), _c("div", {
-    staticClass: "thank-you-summary-ring"
-  }, [_vm._v("Nome sul campanello: " + _vm._s(_vm.ring))]), _vm._v(" "), _c("div", {
-    staticClass: "thank-you-summary-plates"
-  }, [_vm._v("Lista piatti: " + _vm._s(_vm.plate))]), _vm._v(" "), _c("AGoBackButton")], 1), _vm._v(" "), _vm._m(1)])]);
+    staticClass: "d-flex flex-column w-100 p-3 content"
+  }, [_c("div", {
+    staticClass: "d-flex mb-5 content-tab"
+  }, [_vm._m(1), _vm._v(" "), _c("div", {
+    staticClass: "dx"
+  }, [_c("div", {
+    staticClass: "d-flex flex-column justify-content-between w100 py-1"
+  }, [_c("div", {
+    staticClass: "sx w-100 text-uppercase"
+  }, [_vm._v("ID ordine ")]), _vm._v(" "), _c("div", {
+    staticClass: "dx w-100 text-end"
+  }, [_vm._v(_vm._s(this.cart.id))])]), _vm._v(" "), _c("div", {
+    staticClass: "d-flex flex-column justify-content-between w100 py-1 dark"
+  }, [_c("div", {
+    staticClass: "sx w-100 text-uppercase"
+  }, [_vm._v("totale ")]), _vm._v(" "), _c("div", {
+    staticClass: "dx w-100 text-end"
+  }, [_vm._v(_vm._s(this.cart.price.toFixed(2)) + " € ")])]), _vm._v(" "), _c("div", {
+    staticClass: "d-flex flex-column justify-content-between w100 py-1"
+  }, [_c("div", {
+    staticClass: "sx w-100 text-uppercase"
+  }, [_vm._v("nome ")]), _vm._v(" "), _c("div", {
+    staticClass: "dx w-100 text-end"
+  }, [_vm._v(_vm._s(this.cart.costumer_name))])]), _vm._v(" "), _c("div", {
+    staticClass: "d-flex flex-column justify-content-between w100 py-1 dark"
+  }, [_c("div", {
+    staticClass: "sx w-100 text-uppercase"
+  }, [_vm._v("numero ")]), _vm._v(" "), _c("div", {
+    staticClass: "dx w-100 text-end"
+  }, [_vm._v("(+39) " + _vm._s(this.cart.costumer_number))])]), _vm._v(" "), _c("div", {
+    staticClass: "d-flex flex-column justify-content-between w100 py-1"
+  }, [_c("div", {
+    staticClass: "sx w-100 text-uppercase"
+  }, [_vm._v("indirizzo ")]), _vm._v(" "), _c("div", {
+    staticClass: "dx w-100 text-end"
+  }, [_vm._v(_vm._s(this.cart.costumer_address))])]), _vm._v(" "), _c("div", {
+    staticClass: "d-flex flex-column justify-content-between w100 py-1 dark"
+  }, [_c("div", {
+    staticClass: "sx w-100 text-uppercase"
+  }, [_vm._v("citofono ")]), _vm._v(" "), _c("div", {
+    staticClass: "dx w-100 text-end"
+  }, [_vm._v(_vm._s(this.cart.costumer_ring))])])])]), _vm._v(" "), _c("div", {
+    staticClass: "d-flex flex-grow-1 content-tab"
+  }, [_vm._m(2), _vm._v(" "), _c("div", {
+    staticClass: "dx"
+  }, _vm._l(this.cart.plate, function (plate, index) {
+    return _c("div", {
+      key: plate.id,
+      staticClass: "d-flex d-column flex-column justify-content-between w100 py-1",
+      "class": index % 2 == 0 ? "" : "dark"
+    }, [_c("div", {
+      staticClass: "sx w-100"
+    }, [_vm._v("Pezzi: " + _vm._s(plate.pivot.quantity) + " ")]), _vm._v(" "), _c("div", {
+      staticClass: "dx w-100 text-end"
+    }, [_vm._v(_vm._s(plate.name))])]);
+  }), 0)]), _vm._v(" "), _c("div", [_c("AGoBackButton")], 1)])]), _vm._v(" "), _vm._m(3)])]);
 };
 
 var staticRenderFns = [function () {
@@ -3359,8 +3398,26 @@ var staticRenderFns = [function () {
   return _c("div", {
     staticClass: "thank-you-subtitle row py-3"
   }, [_c("div", {
-    staticClass: "d-flex justify-content-center align-items-center col-12 col-lg-12"
-  }, [_vm._v("\n          Un nostro corriere è appena partito dalla tana per andare a ritirare il tuo ordine e portarlo alla tua porta!\n      ")])]);
+    staticClass: "d-flex justify-content-center align-items-center col-12 col-lg-12 mb-2"
+  }, [_vm._v("\n      Un nostro corriere è appena partito dalla tana per andare a ritirare il\n      tuo ordine e portarlo alla tua porta!\n    ")])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "sx content-color"
+  }, [_c("div", {
+    staticClass: "d-none d-xxl-block"
+  }, [_vm._v("dati:")])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "sx content-color"
+  }, [_c("div", {
+    staticClass: "d-none d-xxl-block"
+  }, [_vm._v("Piatti:")])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
@@ -4635,7 +4692,11 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("AGoBackButton")], 1) : _vm._e()])]) : _c("div", {
     staticClass: "row"
-  }, [_vm._v('"/>\n  ')])], 1);
+  }, [_c("AOrderSuccess", {
+    attrs: {
+      cart: this.orderCompleted[0]
+    }
+  })], 1)], 1);
 };
 
 var staticRenderFns = [function () {
@@ -29830,7 +29891,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".thank-you[data-v-32a79b2e] {\n  background-color: var(--primary-purple);\n  color: var(--tertiary-purple);\n  font-weight: 700;\n}\n.thank-you-title[data-v-32a79b2e] {\n  font-size: 3rem;\n}\n.thank-you-subtitle[data-v-32a79b2e] {\n  font-size: 1.2rem;\n}\n.thank-you-summary[data-v-32a79b2e] {\n  border: 2px solid var(--secondary-purple);\n  border-radius: 20px;\n}", ""]);
+exports.push([module.i, ".thank-you[data-v-32a79b2e] {\n  width: 80%;\n  font-size: 1.2rem;\n  font-weight: bold;\n  margin-bottom: 2rem;\n}\n.thank-you-summary[data-v-32a79b2e] {\n  background-color: var(--secondary-purple);\n  border-radius: 20px;\n}\n.thank-you .sx[data-v-32a79b2e] {\n  width: 20%;\n}\n.thank-you .dx[data-v-32a79b2e] {\n  width: 66%;\n}\n.thank-you .content[data-v-32a79b2e] {\n  font-weight: 500;\n  background-color: var(--tertiary-purple-opacity);\n  border-radius: 1rem;\n}\n.thank-you .content-color[data-v-32a79b2e] {\n  padding: 1rem;\n  font-weight: 700;\n  text-transform: uppercase;\n  background-color: var(--primary-purple);\n  color: white;\n}\n.thank-you .content-tab[data-v-32a79b2e] {\n  border-radius: 30px 0px 0 30px;\n  overflow: hidden;\n}\n.thank-you .content .dark[data-v-32a79b2e] {\n  background-color: var(--tertiary-purple-opacity);\n}", ""]);
 
 // exports
 
@@ -30058,7 +30119,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".user-form[data-v-19797662] {\n  background-color: var(--secondary-purple);\n  border-radius: 1.25rem;\n  display: flex;\n  flex-flow: column;\n  gap: 0.625rem;\n  padding: 1.25rem 0rem;\n}\n.user-form .form-group[data-v-19797662]:last-child {\n  padding-bottom: 0;\n}\n.empty-menu[data-v-19797662] {\n  padding: 0 1rem;\n}\n.empty-menu img[data-v-19797662] {\n  width: 100%;\n  aspect-ratio: 1;\n  margin-bottom: 1rem;\n}\n.empty-menu h4[data-v-19797662] {\n  color: var(--primary-purple);\n}\n.empty-menu a[data-v-19797662] {\n  cursor: pointer;\n}\n.empty-menu p[data-v-19797662] {\n  text-align: center;\n}\n.empty-menu-card[data-v-19797662] {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n  gap: 1;\n  border-radius: 1rem;\n  padding: 2rem;\n}\n.empty-menu-dx[data-v-19797662] {\n  border-radius: 1rem;\n  display: flex;\n  flex-direction: column;\n  background-color: var(--tertiary-purple-opacity);\n}\n.form-group[data-v-19797662] {\n  margin: 0.9375rem 0;\n}\nlabel[data-v-19797662] {\n  margin-bottom: 0.3125rem;\n}\n.form[data-v-19797662] {\n  position: relative;\n}\n.order-success[data-v-19797662] {\n  background-color: var(--primary-purple);\n}", ""]);
+exports.push([module.i, ".user-form[data-v-19797662] {\n  background-color: var(--secondary-purple);\n  border-radius: 1.25rem;\n  display: flex;\n  flex-flow: column;\n  gap: 0.625rem;\n  padding: 1.25rem 0rem;\n}\n.user-form .form-group[data-v-19797662]:last-child {\n  padding-bottom: 0;\n}\n.empty-menu[data-v-19797662] {\n  padding: 0 1rem;\n}\n.empty-menu img[data-v-19797662] {\n  width: 100%;\n  aspect-ratio: 1;\n  margin-bottom: 1rem;\n}\n.empty-menu h4[data-v-19797662] {\n  color: var(--primary-purple);\n}\n.empty-menu a[data-v-19797662] {\n  cursor: pointer;\n}\n.empty-menu p[data-v-19797662] {\n  text-align: center;\n}\n.empty-menu-card[data-v-19797662] {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n  gap: 1;\n  border-radius: 1rem;\n  padding: 2rem;\n}\n.empty-menu-dx[data-v-19797662] {\n  border-radius: 1rem;\n  display: flex;\n  flex-direction: column;\n  background-color: var(--tertiary-purple-opacity);\n}\n.form-group[data-v-19797662] {\n  margin: 0.9375rem 0;\n}\nlabel[data-v-19797662] {\n  margin-bottom: 0.3125rem;\n}\n.form[data-v-19797662] {\n  position: relative;\n}\n.order-success[data-v-19797662] {\n  padding: 5rem;\n}", ""]);
 
 // exports
 
