@@ -149,7 +149,7 @@ import AGoBackButton from "./AGoBackButton.vue";
 export default {
   name: "AOrderSuccess",
   props: {
-    cart: Array,
+    cart: Object,
   },
   components: { AGoBackButton },
 };
