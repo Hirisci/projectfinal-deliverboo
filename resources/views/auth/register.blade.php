@@ -191,7 +191,7 @@
                      
                             <div class="col-md-12 d-flex flex-row-reverse">
                                 <button type="submit" class="btn-main btn-purple">
-                                    {{ __('Register') }}
+                                    {{ __('Registrati') }}
                                 </button>
                             </div>
                         </div>
