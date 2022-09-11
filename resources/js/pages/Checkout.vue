@@ -1,9 +1,9 @@
 <template>
   <div class="container-fluid p-0 position-relative">
     <AJumbotron />
-    <div class="form container-lg p-3">
+    <div class="form container-lg p-3" v-if="!orderSuccess">
       <div class="row d-flex px-5 mt-5 justify-content-around">
-        <div class="user-form col-lg-6 mb-4">
+        <div class="user-form col-lg mb-4">
           <div class="col-12 col-lg-4 p-0">
             <AAsideMenuTitle :title="'Checkout'" class="px-2" />
           </div>
@@ -134,14 +134,24 @@
             </div>
           </form>
           <div class="empty-menu" v-else>
-            <img src="../components/imgs/c404.png" alt="404" />
-            <p>
-              Per procedere al pagamento devi aver selezionato almeno un piatto
-              in un ristorante
-            </p>
+            <div class="row empty-menu-card">
+              <div class="col-12 col-md">
+                <img src="../components/imgs/c404.png" alt="404" />
+              </div>
+              <div class="col-8 col-md-5 empty-menu-dx py-3">
+                <h4 class="mb-4">Ops, Errore con il pagamento</h4>
+                <p class="mb-2">
+                  Per procedere al pagamento devi aver selezionato almeno un
+                  piatto in un ristorante
+                </p>
+                <a href="/" class="btn-main btn-purple align-self-end">
+                  Torna alla home
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="d-lg-block col-lg-5 pb-5">
+        <div class="d-lg-block col-lg-5 pb-5" v-if="this.cart.length !== 0">
           <MCart
             :cart="this.cart"
             :inCheckoutPage="true"
@@ -150,6 +160,11 @@
           />
           <AGoBackButton />
         </div>
+      </div>
+    </div>
+    <div class="row" v-else>
+      <div class="col">
+        <div class="order-success">ordine completo</div>
       </div>
     </div>
   </div>
@@ -168,12 +183,14 @@ export default {
   components: { AJumbotron, AAsideMenuTitle, MCart, BtnPayment, ABasicButton, AGoBackButton },
   data() {
     return {
+      orderSuccess: false,
+      orderCompleted: null,
       cart: [],
       form: {
         client: {
           name: "Alan",
           lastName: "Bruno",
-          phone: "123 4564456",
+          phone: "1234564456",
         },
         address: {
           street: "Via Po 123",
@@ -197,6 +214,8 @@ export default {
   },
   methods: {
     submitForm() {
+      const BTNSubmit = document.querySelector("#btnSubmit");
+      BTNSubmit.disabled = true;
       //Submit payload.nonce to your server
       const path = "http://127.0.0.1:8000/api/payment";
       // const data = {
@@ -231,6 +250,9 @@ export default {
         .post(path, data, config)
         .then((res) => {
           console.log("invio form riuscito", res);
+          this.cart = [];
+          this.orderSuccess = true;
+          this.orderCompleted = res.data;
           // svuoto carello
           // pagina conferma ordine -> carello e somma pagata
         })
@@ -400,14 +422,34 @@ export default {
 }
 .empty-menu {
   padding: 0 1rem;
+
   img {
     width: 100%;
     aspect-ratio: 1;
     margin-bottom: 1rem;
   }
-
+  h4 {
+    color: var(--primary-purple);
+  }
+  a {
+    cursor: pointer;
+  }
   p {
     text-align: center;
+  }
+  &-card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1;
+    border-radius: 1rem;
+    padding: 2rem;
+  }
+  &-dx {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--tertiary-purple-opacity);
   }
 }
 .form-group {
@@ -419,6 +461,10 @@ label {
 }
 .form {
   position: relative;
+}
+
+.order-success {
+  background-color: var(--primary-purple);
 }
 </style>
 

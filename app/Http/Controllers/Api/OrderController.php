@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Order;
+use App\Plate;
 use Illuminate\Http\Request;
 use Braintree\Gateway;
 use Mockery\Undefined;
@@ -85,7 +86,11 @@ class OrderController extends Controller
             }
 
 
-            return response(200);
+            $orderSuccess = Order::where('id',$newOrder->id)->with('plate')->get();
+            
+
+            
+            return response()->Json($orderSuccess,200);
             
           } else {
            
