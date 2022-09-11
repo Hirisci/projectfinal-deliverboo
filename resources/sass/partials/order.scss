@@ -1,4 +1,4 @@
-.container.order{
+.container.order {
     .cards {
         position: relative;
         height: calc(85vh - 2rem);
@@ -21,6 +21,8 @@
             border: 1px solid var(--primary-purple);
             border-radius: var(--border-radius);
             max-height: 95%;
+        }
+        .pezzo {
         }
     }
 }
