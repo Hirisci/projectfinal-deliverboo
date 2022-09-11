@@ -188,7 +188,7 @@ export default {
         client: {
           name: "Alan",
           lastName: "Bruno",
-          phone: "123 4564456",
+          phone: "1234564456",
         },
         address: {
           street: "Via Po 123",
