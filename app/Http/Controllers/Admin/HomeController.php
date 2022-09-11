@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+
+use App\Order;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
+use App\Charts\OrdiniChart;
 
 class HomeController extends Controller
 {
@@ -14,7 +18,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.home');
+        $ordini = Order::orderBy('created_at')->pluck('price', 'created_at');
+
+        $chart = new OrdiniChart;
+
+        $chart->labels($ordini->keys());
+
+        $chart->dataset('Prezzo', 'bar', $ordini->values());
+
+        return view('admin.home', compact('chart'));
     }
 }
 
