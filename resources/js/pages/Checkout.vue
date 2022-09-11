@@ -154,7 +154,10 @@
             </div>
           </div>
         </div>
-        <div class="d-lg-block col-lg-7 pb-5 order-0 order-lg-1" v-if="this.cart.length !== 0">
+        <div
+          class="d-lg-block col-lg-7 pb-5 order-0 order-lg-1"
+          v-if="this.cart.length !== 0"
+        >
           <MCart
             :cart="this.cart"
             :inCheckoutPage="true"
@@ -167,9 +170,7 @@
       </div>
     </div>
     <div class="row" v-else>
-      <div class="col">
-        <div class="order-success">Ordine completato</div>
-      </div>
+      <AOrderSuccess :cart="this.orderCompleted[0]" />
     </div>
   </div>
 </template>
@@ -182,6 +183,7 @@ import BtnPayment from "../components/atoms/BtnPayment.vue";
 import ABasicButton from "../components/atoms/ABasicButton.vue";
 import AGoBackButton from "../components/atoms/AGoBackButton.vue";
 import ACheckoutButton from "../components/atoms/ACheckoutButton.vue";
+import AOrderSuccess from "../components/atoms/AOrderSuccess.vue";
 
 export default {
   name: "Checkout",
@@ -193,6 +195,7 @@ export default {
     ABasicButton,
     AGoBackButton,
     ACheckoutButton,
+    AOrderSuccess,
   },
   data() {
     return {
@@ -481,7 +484,7 @@ label {
 }
 
 .order-success {
-  background-color: var(--primary-purple);
+  padding: 5rem;
 }
 </style>
 
