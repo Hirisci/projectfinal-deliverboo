@@ -164,7 +164,7 @@
     </div>
     <div class="row" v-else>
       <div class="col">
-        <div class="order-success">ordine completo</div>
+        <div class="order-success">Ordine completato</div>
       </div>
     </div>
   </div>
@@ -177,10 +177,11 @@ import MCart from "../components/molecules/MCart.vue";
 import BtnPayment from "../components/atoms/BtnPayment.vue";
 import ABasicButton from "../components/atoms/ABasicButton.vue";
 import AGoBackButton from "../components/atoms/AGoBackButton.vue";
+import ACheckoutButton from "../components/atoms/ACheckoutButton.vue";
 
 export default {
   name: "Checkout",
-  components: { AJumbotron, AAsideMenuTitle, MCart, BtnPayment, ABasicButton, AGoBackButton },
+  components: { AJumbotron, AAsideMenuTitle, MCart, BtnPayment, ABasicButton, AGoBackButton, ACheckoutButton },
   data() {
     return {
       orderSuccess: false,

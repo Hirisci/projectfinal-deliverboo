@@ -38,8 +38,8 @@
             @event-addQty="addQty"
             @event-emptyCart="emptyCart"
           />
-          <AGoBackButton class="px-3"/>
           <ACheckoutButton class="px-3"/>
+          <AGoBackButton class="px-3"/>
         </div>
       </div>
     </div>
