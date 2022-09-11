@@ -2841,6 +2841,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      isVisibleHome: true,
       plates: [],
       restaurant: [],
       cart: []
@@ -2855,6 +2856,9 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    isOpenCart: function isOpenCart() {
+      this.isVisibleHome = !this.isVisibleHome;
+    },
     addQty: function addQty(arg) {
       var result = this.cart.find(function (Element) {
         return Element.id === arg.id;
@@ -3755,7 +3759,7 @@ var render = function render() {
       href: "javascript:history.back()"
     }
   }, [_vm._v("\n          ←")])]), _vm._v(" "), _c("div", {
-    staticClass: "cart-total-price d-flex justify-content-center col-4 col-md-3 col-lg-6 px-4"
+    staticClass: "cart-total-price d-flex justify-content-center col-5 col-md-5 col-lg-6 px-4"
   }, [_c("div", {
     staticClass: "cart-total-price-title"
   }, [_vm._v("Totale")]), _vm._v(" "), _c("div", {
@@ -4679,13 +4683,14 @@ var render = function render() {
     on: {
       "event-delPlate": _vm.delPlate,
       "event-addQty": _vm.addQty,
-      "event-emptyCart": _vm.emptyCart
+      "event-emptyCart": _vm.emptyCart,
+      isOpenCart: _vm.isOpenCart
     }
   }), _vm._v(" "), _c("ACheckoutButton", {
     staticClass: "px-3"
-  }), _vm._v(" "), _c("AGoBackButton", {
+  }), _vm._v(" "), (_vm.isVisibleHome ? "invisible" : "") ? _c("AGoBackButton", {
     staticClass: "px-3"
-  })], 1)])])]);
+  }) : _vm._e()], 1)])])]);
 };
 
 var staticRenderFns = [];
@@ -29768,7 +29773,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".titleCard[data-v-5f5e257f] {\n  width: 70%;\n  color: white;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  position: relative;\n}\n.titleCard-title[data-v-5f5e257f] {\n  width: 100%;\n  border-radius: 30px;\n  font-weight: 700;\n  text-transform: uppercase;\n  background-color: var(--primary-purple);\n}\n.titleCard-title p[data-v-5f5e257f] {\n  text-align: center;\n  padding: 0.5rem 0;\n}\n.titleCard-subTitle[data-v-5f5e257f] {\n  font-size: 0.8rem;\n  font-weight: 700;\n  background-color: var(--secondary-purple);\n  text-align: center;\n  padding: 0rem 0.9rem;\n  padding-top: 0.2rem;\n  padding-bottom: 0.5rem;\n  text-transform: uppercase;\n  color: black;\n  border-radius: 0 0 30px 30px;\n}\n.titleCard .error[data-v-5f5e257f] {\n  background-color: var(--delete-color);\n  color: white;\n}", ""]);
+exports.push([module.i, ".titleCard[data-v-5f5e257f] {\n  width: 70%;\n  color: white;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  position: relative;\n}\n.titleCard-title[data-v-5f5e257f] {\n  width: 100%;\n  border-radius: 30px;\n  font-weight: 700;\n  text-transform: uppercase;\n  background-color: var(--primary-purple);\n}\n.titleCard-title p[data-v-5f5e257f] {\n  text-align: center;\n  padding: 0.5rem 0;\n}\n.titleCard-subTitle[data-v-5f5e257f] {\n  width: 80%;\n  font-size: 0.8rem;\n  font-weight: 700;\n  background-color: var(--secondary-purple);\n  text-align: center;\n  padding: 0rem 0.9rem;\n  padding-top: 0.2rem;\n  padding-bottom: 0.5rem;\n  text-transform: uppercase;\n  color: black;\n  border-radius: 0 0 30px 30px;\n}\n.titleCard .error[data-v-5f5e257f] {\n  background-color: var(--delete-color);\n  color: white;\n}", ""]);
 
 // exports
 
@@ -29825,7 +29830,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".cart[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 1.25rem;\n  align-items: center;\n}\n.cart-overlay-button[data-v-33631e30] {\n  background-color: var(--primary-purple);\n  border-radius: 50%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.cart-overlay-button img[data-v-33631e30] {\n  padding: 0.9375rem;\n  aspect-ratio: 1/1;\n  width: 100%;\n}\n.cart .cart-title[data-v-33631e30] {\n  width: 100%;\n}\n.cart .cart-items[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 1.25rem;\n  width: 100%;\n}\n.cart .cart-total .cart-total-price[data-v-33631e30] {\n  background-color: var(--primary-purple);\n  border-radius: 1.25rem;\n  font-weight: 700;\n  padding: 0.625rem;\n  margin-left: auto;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 1.25rem;\n}\n.cart .cart-total .cart-total-price .cart-total-price-title[data-v-33631e30] {\n  color: white;\n  text-transform: uppercase;\n}\n.cart .cart-total .cart-total-price .cart-total-price-value[data-v-33631e30] {\n  background-color: white;\n  border-radius: 1.25rem;\n  padding: 0.3125rem 0.625rem;\n}\n.cart-overlay[data-v-33631e30] {\n  z-index: 1;\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.cart-overlay-close[data-v-33631e30] {\n  font-weight: bolder;\n  color: white;\n}\n.cart-overlay-button[data-v-33631e30] {\n  width: 3.125rem;\n  height: 3.125rem;\n}\n.cart-overlay-button img[data-v-33631e30] {\n  width: 100%;\n}\n.cart-overlay-count[data-v-33631e30] {\n  position: absolute;\n  top: 30%;\n  left: 60%;\n  transform: translateY(-50%);\n  background-color: red;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  aspect-ratio: 1/1;\n  width: 1.5625rem;\n  color: white;\n}\n.cart .menuOpen[data-v-33631e30] {\n  padding-top: 1.25rem;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  background-color: var(--tertiary-purple);\n}\n.cart .menuOpen .cart-title[data-v-33631e30] {\n  width: 65%;\n  margin: auto;\n}\n.cart .dnone[data-v-33631e30] {\n  display: none;\n}\n.cart .dblock[data-v-33631e30] {\n  display: block;\n}\n.cart .dflex[data-v-33631e30] {\n  flex-flow: column;\n}\n.cart .overlayOpen[data-v-33631e30] {\n  position: absolute;\n  right: 0.4rem;\n  top: 0.7rem;\n}\n.btn-return[data-v-33631e30] {\n  position: absolute;\n  left: 0.4rem;\n  top: 0.7rem;\n  height: 50px;\n  aspect-ratio: 1;\n  border-radius: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-left: 1rem;\n}\n.cart-empty[data-v-33631e30] {\n  background-color: var(--secondary-purple);\n  width: 100%;\n  border-radius: 30px;\n}", ""]);
+exports.push([module.i, ".cart[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 1.25rem;\n  align-items: center;\n}\n.cart-overlay-button[data-v-33631e30] {\n  background-color: var(--primary-purple);\n  border-radius: 50%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.cart-overlay-button img[data-v-33631e30] {\n  padding: 0.9375rem;\n  aspect-ratio: 1/1;\n  width: 100%;\n}\n.cart .cart-title[data-v-33631e30] {\n  width: 100%;\n}\n.cart .cart-items[data-v-33631e30] {\n  display: flex;\n  flex-flow: column wrap;\n  gap: 1.25rem;\n  width: 100%;\n}\n.cart .cart-total .cart-total-price[data-v-33631e30] {\n  background-color: var(--primary-purple);\n  border-radius: 1.25rem;\n  font-weight: 700;\n  padding: 0.625rem;\n  margin-left: auto;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 1.25rem;\n}\n.cart .cart-total .cart-total-price .cart-total-price-title[data-v-33631e30] {\n  color: white;\n  text-transform: uppercase;\n}\n.cart .cart-total .cart-total-price .cart-total-price-value[data-v-33631e30] {\n  background-color: white;\n  border-radius: 1.25rem;\n  padding: 0.3125rem 0.625rem;\n}\n.cart-overlay[data-v-33631e30] {\n  z-index: 1;\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.cart-overlay-close[data-v-33631e30] {\n  font-weight: bolder;\n  color: white;\n}\n.cart-overlay-button[data-v-33631e30] {\n  width: 3.125rem;\n  height: 3.125rem;\n}\n.cart-overlay-button img[data-v-33631e30] {\n  width: 100%;\n}\n.cart-overlay-count[data-v-33631e30] {\n  position: absolute;\n  top: 30%;\n  left: 60%;\n  transform: translateY(-50%);\n  background-color: red;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  aspect-ratio: 1/1;\n  width: 1.5625rem;\n  color: white;\n}\n.cart .menuOpen[data-v-33631e30] {\n  padding-top: 1.25rem;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  background-color: var(--tertiary-purple);\n}\n.cart .menuOpen .cart-title[data-v-33631e30] {\n  width: 65%;\n  margin: auto;\n}\n.cart .dnone[data-v-33631e30] {\n  display: none;\n}\n.cart .dblock[data-v-33631e30] {\n  display: block;\n}\n.cart .dflex[data-v-33631e30] {\n  flex-flow: column;\n}\n.cart .overlayOpen[data-v-33631e30] {\n  z-index: 1;\n  position: absolute;\n  right: 0.4rem;\n  top: 0.7rem;\n}\n.btn-return[data-v-33631e30] {\n  position: absolute;\n  left: 0.4rem;\n  top: 0.7rem;\n  height: 50px;\n  aspect-ratio: 1;\n  border-radius: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-left: 1rem;\n}\n.cart-empty[data-v-33631e30] {\n  background-color: var(--secondary-purple);\n  width: 100%;\n  border-radius: 30px;\n}", ""]);
 
 // exports
 

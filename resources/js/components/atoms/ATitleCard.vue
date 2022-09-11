@@ -45,6 +45,7 @@ export default {
     }
   }
   &-subTitle {
+    width: 80%;
     font-size: 0.8rem;
     font-weight: 700;
     background-color: var(--secondary-purple);

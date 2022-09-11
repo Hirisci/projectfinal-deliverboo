@@ -24,7 +24,14 @@
       </div>
       <div class="cart-total mt-3 d-flex">
         <div
-          class="cart-checkout d-flex align-items-center justify-content-center p-2 gap-1"
+          class="
+            cart-checkout
+            d-flex
+            align-items-center
+            justify-content-center
+            p-2
+            gap-1
+          "
         >
           <button class="btn-main btn-trash" @click="emptyCart">
             Svuota 🗑️
@@ -37,7 +44,15 @@
             ←</a
           >
         </div>
-        <div class="cart-total-price d-flex justify-content-center col-4 col-md-3 col-lg-6 px-4">
+        <div
+          class="
+            cart-total-price
+            d-flex
+            justify-content-center
+            col-5 col-md-5 col-lg-6
+            px-4
+          "
+        >
           <div class="cart-total-price-title">Totale</div>
           <div class="cart-total-price-value">
             {{ this.amountCart.toFixed(2) }}€
@@ -240,6 +255,7 @@ export default {
     flex-flow: column;
   }
   .overlayOpen {
+    z-index: 1;
     position: absolute;
     right: 0.4rem;
     top: 0.7rem;

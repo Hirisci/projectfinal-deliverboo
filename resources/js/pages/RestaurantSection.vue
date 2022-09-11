@@ -11,7 +11,15 @@
     <div class="restaurant-section-shop container-xl p-3">
       <div class="row">
         <div
-          class=" restaurant-section-shop-menu col-9 col-sm-10 col-lg-8 d-flex align-items-center flex-column gap-4">
+          class="
+            restaurant-section-shop-menu
+            col-9 col-sm-10 col-lg-8
+            d-flex
+            align-items-center
+            flex-column
+            gap-4
+          "
+        >
           <ATitleCard
             :title="'Menù'"
             :error="true"
@@ -31,15 +39,24 @@
           </div>
         </div>
         <div
-          class=" restaurant-section-shop-cart col-3 col-sm-2 col-lg-4 d-flex flex-column align-items-end">
+          class="
+            restaurant-section-shop-cart
+            col-3 col-sm-2 col-lg-4
+            d-flex
+            flex-column
+            align-items-end
+          "
+        >
           <MCart
             :cart="this.cart"
             @event-delPlate="delPlate"
             @event-addQty="addQty"
             @event-emptyCart="emptyCart"
+            @isOpenCart="isOpenCart"
           />
-          <ACheckoutButton class="px-3"/>
-          <AGoBackButton class="px-3"/>
+
+          <ACheckoutButton class="px-3" />
+          <AGoBackButton class="px-3" v-if="isVisibleHome ? 'invisible' : ''" />
         </div>
       </div>
     </div>
@@ -66,6 +83,7 @@ export default {
   },
   data() {
     return {
+      isVisibleHome: true,
       plates: [],
       restaurant: [],
       cart: [],
@@ -81,6 +99,9 @@ export default {
     },
   },
   methods: {
+    isOpenCart() {
+      this.isVisibleHome = !this.isVisibleHome;
+    },
     addQty(arg) {
       let result = this.cart.find((Element) => Element.id === arg.id);
       let idx = this.cart.findIndex((Element) => Element.id === arg.id);
