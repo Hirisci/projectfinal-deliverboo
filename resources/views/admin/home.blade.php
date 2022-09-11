@@ -12,15 +12,10 @@
                     <div class="row">
                         
                     </div>
-                    <div class="row">
-                        <div class="col-6 statics">
-                            
-                            <img src="https://i.ibb.co/Wz5jJYf/graphic-placeholder.png" alt="graphic-placeholder" >
-                        </div>
-                        <div class="col-6 statics">
-                            <img src="https://i.ibb.co/PcCjkmd/graphic-placeholder-2.png" alt="graphic-placeholder-2" >
-                        </div>
-                    </div> 
+            <div class="container">
+                <div class="row">
+                
+                    
                 </div>   
             </div>
         </div>
