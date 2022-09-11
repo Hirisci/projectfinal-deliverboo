@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="restaurant-section-shop-cart col-2 col-lg-4 d-flex justify-content-center">
-          <MCart :cart="this.cart" @event-delPlate="delPlate" @event-addQty="addQty" />
+          <MCart :cart="this.cart" @event-delPlate="delPlate" @event-addQty="addQty" @event-emptyCart="emptyCart"/>
         </div>
       </div>
     </div>
@@ -69,6 +69,9 @@ export default {
       } else {
         this.$set(this.cart, idx, result);
       }
+    },
+    emptyCart() {
+      this.cart = [];
     },
     addPlate(arg, number) {
       let result = this.cart.find((Element) => Element.id === arg.id);

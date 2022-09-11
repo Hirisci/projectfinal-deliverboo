@@ -15,8 +15,8 @@
         />
       </div>
       <div class="cart-total mt-3 d-flex">
-        <div class="cart-checkout col-5 d-flex align-items-center justify-content-center">
-          <a href="/checkout" class="btn-main btn-purple" :class="{ dnone : inCheckoutPage}">Checkout</a>
+        <div class="cart-checkout d-flex align-items-center justify-content-center">
+          <button class="btn-main btn-trash" @click="emptyCart">Svuota 🗑️</button>
           <a href="javascript:history.back()" class="btn-main btn-purple" :class="{ dnone : !inCheckoutPage}">Torna al menù</a>
         </div>
         <div class="cart-total-price d-flex justify-content-center col-7 px-4">
@@ -87,6 +87,10 @@ export default {
     },
     delPlate(arg) {
       this.$emit("event-delPlate", arg);
+    },
+    emptyCart() {
+            console.log(this.cart, "Svuota Carrello");
+            this.$emit("event-emptyCart");
     },
     showCart() {
       this.isOpen = !this.isOpen;
