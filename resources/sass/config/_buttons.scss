@@ -33,6 +33,14 @@ a.btn-main:hover {
     }
 }
 
+.btn-trash {
+    background-color: var(--delete-color);
+    &:hover {
+        background-color: var(--delete-color-opacity);
+        border: 1px solid var(--delete-color);
+    }
+}
+
 .btn-edit {
     background-color: var(--edit-color);
 }

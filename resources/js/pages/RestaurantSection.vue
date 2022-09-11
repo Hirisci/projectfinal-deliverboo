@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="restaurant-section-shop-cart col-2 col-lg-4 d-flex flex-column align-items-center">
-          <MCart :cart="this.cart" @event-delPlate="delPlate" @event-addQty="addQty" />
+          <MCart :cart="this.cart" @event-delPlate="delPlate" @event-addQty="addQty" @event-emptyCart="emptyCart"/>
           <AGoBackButton/>
           <a href="/checkout" class="checkout-button btn-main btn-purple d-lg-none mt-2" :class="{ dnone : inCheckoutPage}"><img src="../components/imgs/checkout-icon.png" alt="Checkout"></a>
         </div>
@@ -72,6 +72,9 @@ export default {
       } else {
         this.$set(this.cart, idx, result);
       }
+    },
+    emptyCart() {
+      this.cart = [];
     },
     addPlate(arg, number) {
       let result = this.cart.find((Element) => Element.id === arg.id);
