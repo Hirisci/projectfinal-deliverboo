@@ -3352,39 +3352,39 @@ var render = function render() {
     staticClass: "d-flex flex-column justify-content-between w100 py-1"
   }, [_c("div", {
     staticClass: "sx w-100 text-uppercase"
-  }, [_vm._v("ID ordine ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("ID ordine")]), _vm._v(" "), _c("div", {
     staticClass: "dx w-100 text-end"
   }, [_vm._v(_vm._s(this.cart.id))])]), _vm._v(" "), _c("div", {
     staticClass: "d-flex flex-column justify-content-between w100 py-1 dark"
   }, [_c("div", {
     staticClass: "sx w-100 text-uppercase"
-  }, [_vm._v("totale ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("totale")]), _vm._v(" "), _c("div", {
     staticClass: "dx w-100 text-end"
-  }, [_vm._v(_vm._s(this.cart.price.toFixed(2)) + " € ")])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                " + _vm._s(this.cart.price.toFixed(2)) + " €\n              ")])]), _vm._v(" "), _c("div", {
     staticClass: "d-flex flex-column justify-content-between w100 py-1"
   }, [_c("div", {
     staticClass: "sx w-100 text-uppercase"
-  }, [_vm._v("nome ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("nome")]), _vm._v(" "), _c("div", {
     staticClass: "dx w-100 text-end"
-  }, [_vm._v(_vm._s(this.cart.costumer_name))])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                " + _vm._s(this.cart.costumer_name) + "\n              ")])]), _vm._v(" "), _c("div", {
     staticClass: "d-flex flex-column justify-content-between w100 py-1 dark"
   }, [_c("div", {
     staticClass: "sx w-100 text-uppercase"
-  }, [_vm._v("numero ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("numero")]), _vm._v(" "), _c("div", {
     staticClass: "dx w-100 text-end"
-  }, [_vm._v("(+39) " + _vm._s(this.cart.costumer_number))])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                (+39) " + _vm._s(this.cart.costumer_number) + "\n              ")])]), _vm._v(" "), _c("div", {
     staticClass: "d-flex flex-column justify-content-between w100 py-1"
   }, [_c("div", {
     staticClass: "sx w-100 text-uppercase"
-  }, [_vm._v("indirizzo ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("indirizzo")]), _vm._v(" "), _c("div", {
     staticClass: "dx w-100 text-end"
-  }, [_vm._v(_vm._s(this.cart.costumer_address))])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                " + _vm._s(this.cart.costumer_address) + "\n              ")])]), _vm._v(" "), _c("div", {
     staticClass: "d-flex flex-column justify-content-between w100 py-1 dark"
   }, [_c("div", {
     staticClass: "sx w-100 text-uppercase"
-  }, [_vm._v("citofono ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("citofono")]), _vm._v(" "), _c("div", {
     staticClass: "dx w-100 text-end"
-  }, [_vm._v(_vm._s(this.cart.costumer_ring))])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                " + _vm._s(this.cart.costumer_ring) + "\n              ")])])])]), _vm._v(" "), _c("div", {
     staticClass: "d-flex flex-grow-1 content-tab"
   }, [_vm._m(2), _vm._v(" "), _c("div", {
     staticClass: "dx"
@@ -3395,7 +3395,7 @@ var render = function render() {
       "class": index % 2 == 0 ? "" : "dark"
     }, [_c("div", {
       staticClass: "sx w-100"
-    }, [_vm._v("Pezzi: " + _vm._s(plate.pivot.quantity) + " ")]), _vm._v(" "), _c("div", {
+    }, [_vm._v("Pezzi: " + _vm._s(plate.pivot.quantity))]), _vm._v(" "), _c("div", {
       staticClass: "dx w-100 text-end"
     }, [_vm._v(_vm._s(plate.name))])]);
   }), 0)]), _vm._v(" "), _c("div", [_c("AGoBackButton")], 1)])]), _vm._v(" "), _vm._m(3)])]);
