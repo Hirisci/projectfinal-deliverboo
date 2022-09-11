@@ -125,6 +125,9 @@ export default {
       return JSON.parse(localStorage.getItem("restaurant"));
     },
   },
+  mounted() {
+    this.restaurant = this.refreshRestaurant();
+  },
 };
 </script>
 

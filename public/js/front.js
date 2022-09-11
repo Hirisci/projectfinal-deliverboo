@@ -2366,6 +2366,9 @@ __webpack_require__.r(__webpack_exports__);
     refreshRestaurant: function refreshRestaurant() {
       return JSON.parse(localStorage.getItem("restaurant"));
     }
+  },
+  mounted: function mounted() {
+    this.restaurant = this.refreshRestaurant();
   }
 });
 
