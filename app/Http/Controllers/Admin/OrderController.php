@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Order;
 use App\Plate;
-use App\User;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 
@@ -19,10 +18,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $plate = Plate::all();
-        $user = User::all();
-        $order = Order::all();
-        return view('admin.order.index', compact('order', 'user', 'plate'));
+        $plates = Plate::with('orders')->get();
+        $orders = Order::with('plate')->get();
+        return view('admin.order.index', compact('orders', 'plates'));
         
     }
 

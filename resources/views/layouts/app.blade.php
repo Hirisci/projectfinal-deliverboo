@@ -23,6 +23,10 @@
 
 
 
+<<<<<<< HEAD
+=======
+    {{-- //POST --}}
+>>>>>>> origin/chart-larevel
     <script src="https://js.braintreegateway.com/web/3.87.0/js/client.min.js"></script>
     <script src="https://js.braintreegateway.com/web/3.87.0/js/hosted-fields.min.js"></script>
     {{-- <script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -98,5 +102,7 @@
             @yield('content')
         </main>      
     </div>
+    {{-- chart js  --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
 </body>
 </html>
