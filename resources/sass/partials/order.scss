@@ -15,7 +15,7 @@
         &-body {
             position: relative;
             top: -2.5rem;
-            overflow: hidden;
+            overflow: scroll;
             margin: 0 var(--m-lg);
             background-color: var(--tertiary-purple-opacity);
             border: 1px solid var(--primary-purple);
