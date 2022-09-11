@@ -2493,6 +2493,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      orderSuccess: false,
+      orderCompleted: null,
       cart: [],
       form: {
         client: {
@@ -2521,7 +2523,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     submitForm: function submitForm() {
-      //Submit payload.nonce to your server
+      var _this = this;
+
+      var BTNSubmit = document.querySelector("#btnSubmit");
+      BTNSubmit.disabled = true; //Submit payload.nonce to your server
+
       var path = "http://127.0.0.1:8000/api/payment"; // const data = {
       //   cart: this.cart,
       //   form: this.form,
@@ -2549,7 +2555,10 @@ __webpack_require__.r(__webpack_exports__);
       // console.log(data);
 
       axios.post(path, data, config).then(function (res) {
-        console.log("invio form riuscito", res); // svuoto carello
+        console.log("invio form riuscito", res);
+        _this.cart = [];
+        _this.orderSuccess = true;
+        _this.orderCompleted = res.data; // svuoto carello
         // pagina conferma ordine -> carello e somma pagata
       })["catch"](function (error) {
         console.log("errore", error); // error.response.status Check status code
@@ -2651,13 +2660,13 @@ __webpack_require__.r(__webpack_exports__);
     this.refreshCart();
   },
   created: function created() {
-    var _this = this;
+    var _this2 = this;
 
     var path = "http://127.0.0.1:8000/api/token";
     axios.get(path).then(function (res) {
       console.log("successo", res); //Perform Success Action
 
-      _this.token = res.data.token;
+      _this2.token = res.data.token;
       var BTNtoken = document.querySelector("#btnToken");
       console.log("creo dropIn");
       var form = document.querySelector("#paymentForm");
@@ -2665,7 +2674,7 @@ __webpack_require__.r(__webpack_exports__);
       var dropIn = __webpack_require__(/*! braintree-web-drop-in */ "./node_modules/braintree-web-drop-in/dist/browser/dropin.js");
 
       dropIn.create({
-        authorization: _this.token,
+        authorization: _this2.token,
         selector: "#dropin-container",
         locale: "it_IT"
       }, function (createErr, instance) {
@@ -4077,12 +4086,12 @@ var render = function render() {
 
   return _c("div", {
     staticClass: "container-fluid p-0 position-relative"
-  }, [_c("AJumbotron"), _vm._v(" "), _c("div", {
+  }, [_c("AJumbotron"), _vm._v(" "), !_vm.orderSuccess ? _c("div", {
     staticClass: "form container-lg p-3"
   }, [_c("div", {
     staticClass: "row d-flex px-5 mt-5 justify-content-around"
   }, [_c("div", {
-    staticClass: "user-form col-lg-6 mb-4"
+    staticClass: "user-form col-lg mb-4"
   }, [_c("div", {
     staticClass: "col-12 col-lg-4 p-0"
   }, [_c("AAsideMenuTitle", {
@@ -4357,12 +4366,7 @@ var render = function render() {
     }
   }, [_vm._v("\n              Conferma Ordine\n            ")])])]) : _c("div", {
     staticClass: "empty-menu"
-  }, [_c("img", {
-    attrs: {
-      src: __webpack_require__(/*! ../components/imgs/c404.png */ "./resources/js/components/imgs/c404.png"),
-      alt: "404"
-    }
-  }), _vm._v(" "), _c("p", [_vm._v("\n            Per procedere al pagamento devi aver selezionato almeno un piatto\n            in un ristorante\n          ")])])]), _vm._v(" "), _c("div", {
+  }, [_vm._m(0)])]), _vm._v(" "), this.cart.length !== 0 ? _c("div", {
     staticClass: "d-lg-block col-lg-5 pb-5"
   }, [_c("MCart", {
     attrs: {
@@ -4373,10 +4377,46 @@ var render = function render() {
       "event-delPlate": _vm.delPlate,
       "event-addQty": _vm.addQty
     }
-  })], 1)])])], 1);
+  })], 1) : _vm._e()])]) : _c("div", {
+    staticClass: "row"
+  }, [_vm._m(1)])], 1);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "row empty-menu-card"
+  }, [_c("div", {
+    staticClass: "col-12 col-md"
+  }, [_c("img", {
+    attrs: {
+      src: __webpack_require__(/*! ../components/imgs/c404.png */ "./resources/js/components/imgs/c404.png"),
+      alt: "404"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "col-8 col-md-5 empty-menu-dx py-3"
+  }, [_c("h4", {
+    staticClass: "mb-4"
+  }, [_vm._v("Ops, Errore con il pagamento")]), _vm._v(" "), _c("p", {
+    staticClass: "mb-2"
+  }, [_vm._v("\n                Per procedere al pagamento devi aver selezionato almeno un\n                piatto in un ristorante\n              ")]), _vm._v(" "), _c("a", {
+    staticClass: "btn-main btn-purple align-self-end",
+    attrs: {
+      href: "/"
+    }
+  }, [_vm._v("\n                Torna alla home\n              ")])])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "col"
+  }, [_c("div", {
+    staticClass: "order-success"
+  }, [_vm._v("ordine completo")])]);
+}];
 render._withStripped = true;
 
 
@@ -29705,7 +29745,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".user-form[data-v-19797662] {\n  background-color: var(--secondary-purple);\n  border-radius: 1.25rem;\n  display: flex;\n  flex-flow: column;\n  gap: 0.625rem;\n  padding: 1.25rem 0rem;\n}\n.user-form .form-group[data-v-19797662]:last-child {\n  padding-bottom: 0;\n}\n.empty-menu[data-v-19797662] {\n  padding: 0 1rem;\n}\n.empty-menu img[data-v-19797662] {\n  width: 100%;\n  aspect-ratio: 1;\n  margin-bottom: 1rem;\n}\n.empty-menu p[data-v-19797662] {\n  text-align: center;\n}\n.form-group[data-v-19797662] {\n  margin: 0.9375rem 0;\n}\nlabel[data-v-19797662] {\n  margin-bottom: 0.3125rem;\n}\n.form[data-v-19797662] {\n  position: relative;\n}", ""]);
+exports.push([module.i, ".user-form[data-v-19797662] {\n  background-color: var(--secondary-purple);\n  border-radius: 1.25rem;\n  display: flex;\n  flex-flow: column;\n  gap: 0.625rem;\n  padding: 1.25rem 0rem;\n}\n.user-form .form-group[data-v-19797662]:last-child {\n  padding-bottom: 0;\n}\n.empty-menu[data-v-19797662] {\n  padding: 0 1rem;\n}\n.empty-menu img[data-v-19797662] {\n  width: 100%;\n  aspect-ratio: 1;\n  margin-bottom: 1rem;\n}\n.empty-menu h4[data-v-19797662] {\n  color: var(--primary-purple);\n}\n.empty-menu a[data-v-19797662] {\n  cursor: pointer;\n}\n.empty-menu p[data-v-19797662] {\n  text-align: center;\n}\n.empty-menu-card[data-v-19797662] {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n  gap: 1;\n  border-radius: 1rem;\n  padding: 2rem;\n}\n.empty-menu-dx[data-v-19797662] {\n  border-radius: 1rem;\n  display: flex;\n  flex-direction: column;\n  background-color: var(--tertiary-purple-opacity);\n}\n.form-group[data-v-19797662] {\n  margin: 0.9375rem 0;\n}\nlabel[data-v-19797662] {\n  margin-bottom: 0.3125rem;\n}\n.form[data-v-19797662] {\n  position: relative;\n}\n.order-success[data-v-19797662] {\n  background-color: var(--primary-purple);\n}", ""]);
 
 // exports
 
