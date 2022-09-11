@@ -9,7 +9,7 @@ class Order extends Model
 
     public function plate()
     {
-        return $this->belongsToMany('App\Plate');
+        return $this->belongsToMany('App\Plate')->withPivot('quantity');
     }
 }
 
