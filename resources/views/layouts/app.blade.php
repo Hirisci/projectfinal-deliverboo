@@ -23,7 +23,7 @@
 
 
 
-    //POST
+    {{-- //POST --}}
     <script src="https://js.braintreegateway.com/web/3.87.0/js/client.min.js"></script>
     <script src="https://js.braintreegateway.com/web/3.87.0/js/hosted-fields.min.js"></script>
     {{-- <script src="https://unpkg.com/vue/dist/vue.js"></script>
