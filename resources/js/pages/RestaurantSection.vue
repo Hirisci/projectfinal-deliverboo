@@ -54,11 +54,11 @@
             @event-emptyCart="emptyCart"
           />
           <AGoBackButton />
-          <a
+          <!-- <a
             href="/checkout"
             class="checkout-button btn-main btn-purple d-lg-none mt-2"
             ><img src="../components/imgs/checkout-icon.png" alt="Checkout"
-          /></a>
+          /></a> -->
         </div>
       </div>
     </div>
