@@ -3,8 +3,8 @@
     <div class="col-12 col-md-4 p-0 overflow-hidden">
       <div class="row">
         <div class="col-12 d-flex align-items-center plate-card-title">
-          <AAsideMenuTitle :title="plate.name" class="col-10 ps-2 d-md-none" />
-          <div class="price-value col-2 d-md-none">
+          <AAsideMenuTitle :title="plate.name" class="col-9 col-md-10 ps-2 d-md-none" />
+          <div class="price-value col-3 d-md-none">
             {{ plate.price.toFixed(2) }} €
           </div>
         </div>
@@ -16,14 +16,17 @@
         <div class="col-12 p-0 d-flex align-items-center plate-card-title">
           <AAsideMenuTitle
             :title="plate.name"
-            class="col-10 ps-2 d-none d-md-block"
+            class="col-9 col-md-10 ps-2 d-none d-md-block"
           />
-          <div class="price-value col-2 d-none d-md-block">
+          <div class="price-value col-3 d-none d-md-block">
             {{ plate.price.toFixed(2) }} €
           </div>
         </div>
       </div>
-      <div class="plate-card-description row d-flex">
+      <div class="plate-card-description row d-flex py-3 d-none d-md-block">
+        <div class="col-12">{{ plate.description }}</div>
+      </div>
+      <div class="plate-card-description-sm row d-flex py-3 d-md-none">
         <div class="col-12">{{ plate.description }}</div>
       </div>
       <div class="row">
@@ -100,9 +103,12 @@ export default {
   }
   &-title {
     background-color: var(--tertiary-purple);
-    border-bottom: 2px solid var(--primary-purple);
   }
   &-description {
+    flex-grow: 1;
+    border-top: 2px solid var(--primary-purple);
+  }
+  &-description-sm {
     flex-grow: 1;
   }
   .price-value {

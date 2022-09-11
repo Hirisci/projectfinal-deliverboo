@@ -3,7 +3,7 @@
     <AJumbotron />
     <div class="form container-lg p-3" v-if="!orderSuccess">
       <div class="row d-flex px-5 mt-5 justify-content-around">
-        <div class="user-form col-lg mb-4">
+        <div class="user-form col-lg-5 mb-4">
           <div class="col-12 col-lg-4 p-0">
             <AAsideMenuTitle :title="'Checkout'" class="px-2" />
           </div>
@@ -154,7 +154,7 @@
             </div>
           </div>
         </div>
-        <div class="d-lg-block col-lg-5 pb-5" v-if="this.cart.length !== 0">
+        <div class="d-lg-block col-lg-7 pb-5" v-if="this.cart.length !== 0">
           <MCart
             :cart="this.cart"
             :inCheckoutPage="true"
@@ -168,7 +168,7 @@
     </div>
     <div class="row" v-else>
       <div class="col">
-        <div class="order-success">ordine completo</div>
+        <div class="order-success">Ordine completato</div>
       </div>
     </div>
   </div>
@@ -181,6 +181,7 @@ import MCart from "../components/molecules/MCart.vue";
 import BtnPayment from "../components/atoms/BtnPayment.vue";
 import ABasicButton from "../components/atoms/ABasicButton.vue";
 import AGoBackButton from "../components/atoms/AGoBackButton.vue";
+import ACheckoutButton from "../components/atoms/ACheckoutButton.vue";
 
 export default {
   name: "Checkout",
@@ -191,6 +192,7 @@ export default {
     BtnPayment,
     ABasicButton,
     AGoBackButton,
+    ACheckoutButton,
   },
   data() {
     return {

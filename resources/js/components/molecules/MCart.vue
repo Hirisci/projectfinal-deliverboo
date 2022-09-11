@@ -24,7 +24,7 @@
       </div>
       <div class="cart-total mt-3 d-flex">
         <div
-          class="cart-checkout d-flex align-items-center justify-content-center"
+          class="cart-checkout d-flex align-items-center justify-content-center p-2 gap-1"
         >
           <button class="btn-main btn-trash" @click="emptyCart">
             Svuota 🗑️
@@ -37,7 +37,7 @@
             ←</a
           >
         </div>
-        <div class="cart-total-price d-flex justify-content-center col-7 px-4">
+        <div class="cart-total-price d-flex justify-content-center col-4 col-md-3 col-lg-6 px-4">
           <div class="cart-total-price-title">Totale</div>
           <div class="cart-total-price-value">
             {{ this.amountCart.toFixed(2) }}€
