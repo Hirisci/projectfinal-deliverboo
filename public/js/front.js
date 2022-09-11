@@ -4635,14 +4635,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("AGoBackButton")], 1) : _vm._e()])]) : _c("div", {
     staticClass: "row"
-  }, [_c("AOrderSuccess", {
-    attrs: {
-      nome: this.form.client.name,
-      address: this.form.address.street,
-      phoneNumber: this.form.client.phone,
-      ring: this.form.address.ring
-    }
-  })], 1)], 1);
+  }, [_vm._v('"/>\n  ')])], 1);
 };
 
 var staticRenderFns = [function () {
@@ -49675,7 +49668,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\giaki\Desktop\Boolean\Project\FinalProject-Deliveboo\projectfinal-deliverboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\User\Documents\Visual Studio Code\boolean\Progetto finale\projectfinal-deliverboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
