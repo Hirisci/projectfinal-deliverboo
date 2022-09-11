@@ -23,11 +23,24 @@ class HomeController extends Controller
 
         $chart = new OrdiniChart;
         $chart->labels($ordini->keys());
-        $chart->dataset('Vendite', 'line', $ordini->values())->options([
-            'backgroundColor' => '#9667E0',
-        ]);
+        $chart->dataset('Vendite', 'line', $ordini->values())->backgroundColor('rgba(150,103,224,0.5)');
 
-        return view('admin.home', compact('chart'));
+
+        $totalOrder = Order::where('price', '209.35')->pluck('price');
+
+        $totalChart = new OrdiniChart;
+        $totalChart->labels($totalOrder->keys());
+        $totalChart->dataset('Scontrino mensile', 'bar', $totalOrder->values())->backgroundColor('green');
+
+        $avgOrder = Order::orderBy('price')->pluck('price');
+        $avgPlates = Plate::where('restaurant_id', '1')->pluck('name');
+
+        $avgChart = new OrdiniChart;
+        $avgChart->labels($avgPlates->keys());
+        $avgChart->dataset('Piatti popolari', 'polarArea', $avgOrder->values())->backgroundColor('fillPattern');
+        
+
+        return view('admin.home', compact('chart', 'totalChart', 'avgChart'));
     }
 }
 

@@ -7,15 +7,29 @@
                 <h1>La tua Dashboard</h1>
             </div>
             <div class="cards-body">
-                <div class="cards-info">    
-                    <h3 class="mb-3">Statistiche vendita:</h3>
-                    <div class="row">
-                        <div class="col-12">
-                            {!! $chart->container() !!}
-                            
-                            {!! $chart->script() !!}
-                        </div>
+            <div class="cards-info">    
+                <h3 class="mb-3">Statistiche vendita:</h3>
+                <div class="row">
+                    <div class="col-12">
+                        {!! $chart->container() !!}
+                        
+                        {!! $chart->script() !!}
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        {!! $totalChart->container() !!}
+
+                        {!! $totalChart->script() !!}
+                    </div>
+
+                    <div class="col-6">
+                        {!! $avgChart->container() !!}
+
+                        {!! $avgChart->script() !!}
+                    </div>
+                </div>
+                
         </div>
 
     </div>
