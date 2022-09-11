@@ -10,16 +10,55 @@
     </div>
     <div class="restaurant-section-shop container-xl p-3">
       <div class="row">
-        <div class="restaurant-section-shop-menu col-10 col-lg-8 d-flex  align-items-center flex-column gap-4">
-          <ATitleCard :title="'Menù'" />
-          <div class="restaurant-section-shop-menu-plates d-flex flex-column gap-4">
-            <MPlateCard v-for="plate in plates" :key="plate.id" :plate="plate" @event-addPlate="addPlate"/>
+        <div
+          class="
+            restaurant-section-shop-menu
+            col-10 col-lg-8
+            d-flex
+            align-items-center
+            flex-column
+            gap-4
+          "
+        >
+          <ATitleCard
+            :title="'Menù'"
+            :error="true"
+            :subTitle="!checkRestaurant"
+            subText="Puoi ordinare da un solo ristorante"
+          />
+          <div
+            class="restaurant-section-shop-menu-plates d-flex flex-column gap-4"
+          >
+            <MPlateCard
+              v-for="plate in plates"
+              :key="plate.id"
+              :plate="plate"
+              @event-addPlate="addPlate"
+              :is_currentRestaurant="!checkRestaurant"
+            />
           </div>
         </div>
-        <div class="restaurant-section-shop-cart col-2 col-lg-4 d-flex flex-column align-items-center">
-          <MCart :cart="this.cart" @event-delPlate="delPlate" @event-addQty="addQty" @event-emptyCart="emptyCart"/>
-          <AGoBackButton/>
-          <a href="/checkout" class="checkout-button btn-main btn-purple d-lg-none mt-2" :class="{ dnone : inCheckoutPage}"><img src="../components/imgs/checkout-icon.png" alt="Checkout"></a>
+        <div
+          class="
+            restaurant-section-shop-cart
+            col-2 col-lg-4
+            d-flex
+            flex-column
+            align-items-center
+          "
+        >
+          <MCart
+            :cart="this.cart"
+            @event-delPlate="delPlate"
+            @event-addQty="addQty"
+            @event-emptyCart="emptyCart"
+          />
+          <AGoBackButton />
+          <a
+            href="/checkout"
+            class="checkout-button btn-main btn-purple d-lg-none mt-2"
+            ><img src="../components/imgs/checkout-icon.png" alt="Checkout"
+          /></a>
         </div>
       </div>
     </div>
@@ -79,6 +118,7 @@ export default {
     addPlate(arg, number) {
       let result = this.cart.find((Element) => Element.id === arg.id);
       if (result === undefined) {
+        localStorage.setItem("restaurant", JSON.stringify(this.restaurant));
         arg.quantity = parseInt(number);
         this.cart.push(arg);
         this.$nextTick(function () {
@@ -125,6 +165,19 @@ export default {
   mounted() {
     this.refreshCart();
   },
+  computed: {
+    checkRestaurant() {
+      if (this.cart.length !== 0) {
+        if (this.cart[0].restaurant_id === this.restaurant.id) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      return true;
+    },
+  },
 };
 </script>
 
@@ -147,17 +200,17 @@ export default {
   &-shop {
     position: relative;
   }
-  .homeIcon{
+  .homeIcon {
     width: 100%;
   }
-  .checkout-button{
+  .checkout-button {
     width: 50px;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    img{
+    img {
       width: 100%;
     }
   }

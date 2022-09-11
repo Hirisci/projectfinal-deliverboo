@@ -4,8 +4,16 @@
       class="cart-lg d-lg-block container-fluid"
       :class="{ menuOpen: isOpen, dnone: !isOpen, dflex: isOpen }"
     >
-      <ATitleCard :title="'Carrello'" class="cart-title" />
+      <ATitleCard
+        :title="'Carrello'"
+        :subText="this.restaurant.name"
+        :subTitle="this.cart.length > 0"
+        class="cart-title"
+      />
       <div class="cart-items mt-3 px-3">
+        <div class="cart-empty p-3" v-if="this.cart.length == 0">
+          Carrello vuoto
+        </div>
         <ACartItem
           v-for="plate in cart"
           :key="plate.id"
@@ -15,9 +23,18 @@
         />
       </div>
       <div class="cart-total mt-3 d-flex">
-        <div class="cart-checkout d-flex align-items-center justify-content-center">
-          <button class="btn-main btn-trash" @click="emptyCart">Svuota 🗑️</button>
-          <a href="javascript:history.back()" class="btn-main btn-purple" :class="{ dnone : !inCheckoutPage}">Torna al menù</a>
+        <div
+          class="cart-checkout d-flex align-items-center justify-content-center"
+        >
+          <button class="btn-main btn-trash" @click="emptyCart">
+            Svuota 🗑️
+          </button>
+          <a
+            href="javascript:history.back()"
+            class="btn-main btn-purple"
+            :class="{ dnone: !inCheckoutPage }"
+            >Torna al menù</a
+          >
         </div>
         <div class="cart-total-price d-flex justify-content-center col-7 px-4">
           <div class="cart-total-price-title">Totale</div>
@@ -27,19 +44,34 @@
         </div>
       </div>
       <div class="cart-total checkout mt-3 d-flex flex-row-reverse">
-        <div class="cart-checkout d-flex align-items-center justify-content-center">
-          <a href="/checkout" class="btn-main btn-purple" :class="{ dnone : inCheckoutPage}">Checkout</a>
+        <div
+          class="cart-checkout d-flex align-items-center justify-content-center"
+        >
+          <a
+            href="/checkout"
+            class="btn-main btn-purple"
+            :class="{ dnone: inCheckoutPage }"
+            >Checkout</a
+          >
         </div>
       </div>
     </div>
-    <div class="cart-overlay" :class="{ 'd-lg-none' : !isOpen, overlayOpen : isOpen }">
+    <div
+      class="cart-overlay"
+      :class="{ 'd-lg-none': !isOpen, overlayOpen: isOpen }"
+    >
       <button class="cart-overlay-button" @click="showCart()">
         <img
           src="../imgs/shopping-cart.png"
           alt=""
           :class="{ dnone: isOpen }"
         />
-        <div class="cart-overlay-close" :class="{ dnone: !isOpen, dblock : isOpen }" >X</div>
+        <div
+          class="cart-overlay-close"
+          :class="{ dnone: !isOpen, dblock: isOpen }"
+        >
+          X
+        </div>
       </button>
       <div class="cart-overlay-count" :class="{ dnone: isOpen }">
         {{ amountItem }}
@@ -60,8 +92,14 @@ export default {
   },
   data() {
     return {
+      restaurant: {},
       isOpen: false,
     };
+  },
+  watch: {
+    cart: function () {
+      this.restaurant = this.refreshRestaurant();
+    },
   },
   computed: {
     amountCart() {
@@ -89,11 +127,14 @@ export default {
       this.$emit("event-delPlate", arg);
     },
     emptyCart() {
-            console.log(this.cart, "Svuota Carrello");
-            this.$emit("event-emptyCart");
+      console.log(this.cart, "Svuota Carrello");
+      this.$emit("event-emptyCart");
     },
     showCart() {
       this.isOpen = !this.isOpen;
+    },
+    refreshRestaurant() {
+      return JSON.parse(localStorage.getItem("restaurant"));
     },
   },
 };
@@ -144,7 +185,7 @@ export default {
       .cart-total-price-value {
         background-color: white;
         border-radius: 1.25rem;
-        padding: .3125rem .625rem;
+        padding: 0.3125rem 0.625rem;
       }
     }
   }
@@ -204,9 +245,15 @@ export default {
   .dflex {
     flex-flow: column;
   }
-  .overlayOpen{
+  .overlayOpen {
     position: absolute;
     right: 5%;
   }
+}
+
+.cart-empty {
+  background-color: var(--secondary-purple);
+  width: 100%;
+  border-radius: 30px;
 }
 </style>

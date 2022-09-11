@@ -3,8 +3,10 @@
     <div class="col-12 col-md-4 p-0 overflow-hidden">
       <div class="row">
         <div class="col-12 d-flex align-items-center plate-card-title">
-          <AAsideMenuTitle :title="plate.name" class="col-10 ps-2 d-md-none"/>
-          <div class="price-value col-2 d-md-none">{{ plate.price.toFixed(2) }} €</div>
+          <AAsideMenuTitle :title="plate.name" class="col-10 ps-2 d-md-none" />
+          <div class="price-value col-2 d-md-none">
+            {{ plate.price.toFixed(2) }} €
+          </div>
         </div>
       </div>
       <img :src="`/storage/${plate.img}`" alt="Plate" />
@@ -12,8 +14,13 @@
     <div class="col-12 col-md-8 d-flex flex-column">
       <div class="row">
         <div class="col-12 p-0 d-flex align-items-center plate-card-title">
-          <AAsideMenuTitle :title="plate.name" class="col-10 ps-2 d-none d-md-block"/>
-          <div class="price-value col-2 d-none d-md-block">{{ plate.price.toFixed(2) }} €</div>
+          <AAsideMenuTitle
+            :title="plate.name"
+            class="col-10 ps-2 d-none d-md-block"
+          />
+          <div class="price-value col-2 d-none d-md-block">
+            {{ plate.price.toFixed(2) }} €
+          </div>
         </div>
       </div>
       <div class="plate-card-description row d-flex">
@@ -21,10 +28,32 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <div class="add-to-cart-container d-flex justify-content-end py-2 gap-2">
-            <input class="quantity" value="1" type="number" v-model="quantity" min="0"/>
-            <button class="btn-main btn-purple d-none d-md-block" @click="add" :disabled="isActiveRestaurant == true">Add To Cart</button>
-            <button class="btn-main btn-purple d-md-none" @click="add" :disabled="isActiveRestaurant == true">+</button>
+          <div
+            class="add-to-cart-container d-flex justify-content-end py-2 gap-2"
+          >
+            <input
+              class="quantity"
+              value="1"
+              type="number"
+              v-model="quantity"
+              min="0"
+            />
+            <button
+              class="btn-main btn-purple d-none d-md-block"
+              :class="is_currentRestaurant ? 'btn-disabled' : ''"
+              @click="add"
+              :disabled="is_currentRestaurant"
+            >
+              Add To Cart
+            </button>
+            <button
+              class="btn-main btn-purple d-md-none"
+              :class="is_currentRestaurant ? 'btn-disabled' : ''"
+              @click="add"
+              :disabled="is_currentRestaurant"
+            >
+              +
+            </button>
           </div>
         </div>
       </div>
@@ -43,7 +72,7 @@ export default {
   },
   props: {
     plate: Object,
-    isActiveRestaurant: Boolean,
+    is_currentRestaurant: { type: Boolean, default: true },
   },
   components: { AAsideMenuTitle },
   methods: {
@@ -55,28 +84,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.plate-card{
-  .overflow-hidden{
+.plate-card {
+  .overflow-hidden {
     overflow: hidden;
   }
   border-radius: 20px;
   border: 2px solid var(--primary-purple);
   background-color: var(--secondary-purple);
-  transition: transform ease-in-out .3s;
-  img{
+  transition: transform ease-in-out 0.3s;
+  img {
     width: 100%;
     height: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
   }
-  &-title{
+  &-title {
     background-color: var(--tertiary-purple);
     border-bottom: 2px solid var(--primary-purple);
   }
-  &-description{
+  &-description {
     flex-grow: 1;
   }
-  .price-value{
+  .price-value {
     color: var(--primary-purple);
     font-weight: bolder;
   }
