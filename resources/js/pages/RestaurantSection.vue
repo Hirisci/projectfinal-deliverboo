@@ -11,15 +11,7 @@
     <div class="restaurant-section-shop container-xl p-3">
       <div class="row">
         <div
-          class="
-            restaurant-section-shop-menu
-            col-10 col-lg-8
-            d-flex
-            align-items-center
-            flex-column
-            gap-4
-          "
-        >
+          class=" restaurant-section-shop-menu col-9 col-sm-10 col-lg-8 d-flex align-items-center flex-column gap-4">
           <ATitleCard
             :title="'Menù'"
             :error="true"
@@ -39,26 +31,15 @@
           </div>
         </div>
         <div
-          class="
-            restaurant-section-shop-cart
-            col-2 col-lg-4
-            d-flex
-            flex-column
-            align-items-center
-          "
-        >
+          class=" restaurant-section-shop-cart col-3 col-sm-2 col-lg-4 d-flex flex-column align-items-end">
           <MCart
             :cart="this.cart"
             @event-delPlate="delPlate"
             @event-addQty="addQty"
             @event-emptyCart="emptyCart"
           />
-          <AGoBackButton />
-          <!-- <a
-            href="/checkout"
-            class="checkout-button btn-main btn-purple d-lg-none mt-2"
-            ><img src="../components/imgs/checkout-icon.png" alt="Checkout"
-          /></a> -->
+          <AGoBackButton class="px-3"/>
+          <ACheckoutButton class="px-3"/>
         </div>
       </div>
     </div>
