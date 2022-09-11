@@ -38,7 +38,14 @@
           </button>
           <a
             href="javascript:history.back()"
-            class="btn-main btn-purple btn-return px-1"
+            class="btn-main btn-purple btn-return-desktop d-none d-lg-block d-flex justify-content-center align-items-center"
+            :class="{ 'd-lg-none': !inCheckoutPage }"
+          >
+            Torna al menù</a
+          >
+          <a
+            href="javascript:history.back()"
+            class="btn-main btn-purple btn-return px-1 d-lg-none"
             :class="{ dnone: !inCheckoutPage }"
           >
             ←</a

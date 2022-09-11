@@ -53,6 +53,7 @@
             @event-addQty="addQty"
             @event-emptyCart="emptyCart"
             @isOpenCart="isOpenCart"
+            :in-checkout-page="false"
           />
 
           <ACheckoutButton class="px-3" />

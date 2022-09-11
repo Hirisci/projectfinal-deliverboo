@@ -3751,7 +3751,15 @@ var render = function render() {
       click: _vm.emptyCart
     }
   }, [_vm._v("\n          Svuota 🗑️\n        ")]), _vm._v(" "), _c("a", {
-    staticClass: "btn-main btn-purple btn-return px-1",
+    staticClass: "btn-main btn-purple btn-return-desktop d-none d-lg-block d-flex justify-content-center align-items-center",
+    "class": {
+      "d-lg-none": !_vm.inCheckoutPage
+    },
+    attrs: {
+      href: "javascript:history.back()"
+    }
+  }, [_vm._v("\n          Torna al menù")]), _vm._v(" "), _c("a", {
+    staticClass: "btn-main btn-purple btn-return px-1 d-lg-none",
     "class": {
       dnone: !_vm.inCheckoutPage
     },
@@ -4678,7 +4686,8 @@ var render = function render() {
     staticClass: "restaurant-section-shop-cart col-3 col-sm-2 col-lg-4 d-flex flex-column align-items-end"
   }, [_c("MCart", {
     attrs: {
-      cart: this.cart
+      cart: this.cart,
+      "in-checkout-page": false
     },
     on: {
       "event-delPlate": _vm.delPlate,
