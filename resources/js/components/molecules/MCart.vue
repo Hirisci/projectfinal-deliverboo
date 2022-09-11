@@ -238,6 +238,7 @@ export default {
       }
     }
     padding-top: 1.25rem;
+    z-index: 1;
     position: absolute;
     top: 0;
     left: 0;
