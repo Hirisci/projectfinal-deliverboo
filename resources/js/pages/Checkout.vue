@@ -272,14 +272,14 @@ export default {
           this.orderCompleted = res.data;
           // svuoto carello
           // pagina conferma ordine -> carello e somma pagata
-          this.form.name = "";
-          this.form.lastName = "";
-          this.form.phone = "";
-          this.address.street = "";
-          this.address.city = "";
-          this.address.state = "";
-          this.address.zip = "";
-          this.address.ring = "";
+          this.form.client.name = "";
+          this.form.client.lastName = "";
+          this.form.client.phone = "";
+          this.form.address.street = "";
+          this.form.address.city = "";
+          this.form.address.state = "";
+          this.form.address.zip = "";
+          this.form.address.ring = "";
         })
         .catch((error) => {
           console.log("errore", error);
