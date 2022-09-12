@@ -91,6 +91,15 @@ L'applicazione web è stata progettata in 2 macro aree:
 l'area amministrativa, dove è possibile registrarsi e gestire i propri dati, e l'area di navigazione/consultazione, dove chiunque può entrare, cercare i ristoranti e
 se convinto, ordinare uno o più piatti e procedere al pagamento.
 
+---
+
+Da Mostrare
+
+---
+
+-   HomePage
+-   Area Riservata
+
 > > > > > > > FEDE
 
 L'area amministrativa, accessibile dal link "Login/Register", presente nella home-page, contiene il form per il log-in, se già registrati,
@@ -98,6 +107,16 @@ oppure effettuare la registrazione.
 In fase di registrazione abbiamo indicato alcuni form, come obbligatori in quanto necessari per la creazione del proprio profilo e, dei campi facoltativi, per
 poter essere inseriti in un secondo momento: abbiamo reso questi campi facoltativi in quanto se, per errore, l'utente sbaglia una parola o lettera,o non ha possiede subito
 dei dati o immagini ha inserire o correggerli in un secondo momento.
+
+---
+
+Da Mostrare
+
+---
+
+-   Area Riservata
+    -Acesso
+    -Registrazione MOSTRARE VALIDAZIONE - RICORDARSI LA CATEGORIA!
 
 > > > > > >
 
