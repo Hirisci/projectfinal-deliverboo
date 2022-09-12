@@ -205,16 +205,16 @@ export default {
       cart: [],
       form: {
         client: {
-          name: "Alan",
-          lastName: "Bruno",
-          phone: "1234564456",
+          name: "",
+          lastName: "",
+          phone: "",
         },
         address: {
-          street: "Via Po 123",
-          city: "Milano",
-          state: "Italia",
-          zip: "20030",
-          ring: "Bruno",
+          street: "",
+          city: "",
+          state: "",
+          zip: "",
+          ring: "",
         },
       },
       // inCheckoutPage: true,
@@ -272,6 +272,14 @@ export default {
           this.orderCompleted = res.data;
           // svuoto carello
           // pagina conferma ordine -> carello e somma pagata
+          this.form.name = "";
+          this.form.lastName = "";
+          this.form.phone = "";
+          this.address.street = "";
+          this.address.city = "";
+          this.address.state = "";
+          this.address.zip = "";
+          this.address.ring = "";
         })
         .catch((error) => {
           console.log("errore", error);
