@@ -82,6 +82,8 @@
                   aria-label="CAP"
                   required
                   pattern="[0-9]+"
+                  minlength="5"
+                  maxlength="5"
                 />
               </div>
             </div>
@@ -105,8 +107,8 @@
                 placeholder="Cellulare"
                 required
                 pattern="[0-9]+"
-                min-length="11"
-                max-length="11"
+                minlength="11"
+                maxlength="11"
               />
             </div>
 
