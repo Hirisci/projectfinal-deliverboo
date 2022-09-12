@@ -35,7 +35,7 @@
                   placeholder="Cognome"
                   aria-label="Cognome"
                   required
-                  pattern="[a-zA-Z]+"
+                  pattern="[a-zA-Z ]+"
                 />
               </div>
             </div>
@@ -93,7 +93,7 @@
                 id="client_name"
                 placeholder="Nome sul campanello"
                 required
-                pattern="[a-zA-Z]+"
+                pattern="[a-zA-Z ]+"
               />
             </div>
             <div class="form-group">
