@@ -2586,16 +2586,16 @@ __webpack_require__.r(__webpack_exports__);
       cart: [],
       form: {
         client: {
-          name: "Alan",
-          lastName: "Bruno",
-          phone: "1234564456"
+          name: "",
+          lastName: "",
+          phone: ""
         },
         address: {
-          street: "Via Po 123",
-          city: "Milano",
-          state: "Italia",
-          zip: "20030",
-          ring: "Bruno"
+          street: "",
+          city: "",
+          state: "",
+          zip: "",
+          ring: ""
         }
       } // inCheckoutPage: true,
 
@@ -2648,6 +2648,15 @@ __webpack_require__.r(__webpack_exports__);
         _this.orderSuccess = true;
         _this.orderCompleted = res.data; // svuoto carello
         // pagina conferma ordine -> carello e somma pagata
+
+        _this.form.name = "";
+        _this.form.lastName = "";
+        _this.form.phone = "";
+        _this.address.street = "";
+        _this.address.city = "";
+        _this.address.state = "";
+        _this.address.zip = "";
+        _this.address.ring = "";
       })["catch"](function (error) {
         console.log("errore", error); // error.response.status Check status code
       })["finally"](function () {
