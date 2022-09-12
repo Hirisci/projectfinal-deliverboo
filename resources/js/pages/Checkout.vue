@@ -35,7 +35,7 @@
                   placeholder="Cognome"
                   aria-label="Cognome"
                   required
-                  pattern="[a-zA-Z]+"
+                  pattern="[a-zA-Z ]+"
                 />
               </div>
             </div>
@@ -82,6 +82,8 @@
                   aria-label="CAP"
                   required
                   pattern="[0-9]+"
+                  minlength="5"
+                  maxlength="5"
                 />
               </div>
             </div>
@@ -93,7 +95,7 @@
                 id="client_name"
                 placeholder="Nome sul campanello"
                 required
-                pattern="[a-zA-Z]+"
+                pattern="[a-zA-Z ]+"
               />
             </div>
             <div class="form-group">
@@ -105,8 +107,8 @@
                 placeholder="Cellulare"
                 required
                 pattern="[0-9]+"
-                min-length="11"
-                max-length="11"
+                minlength="11"
+                maxlength="11"
               />
             </div>
 
@@ -205,16 +207,16 @@ export default {
       cart: [],
       form: {
         client: {
-          name: "Alan",
-          lastName: "Bruno",
-          phone: "1234564456",
+          name: "",
+          lastName: "",
+          phone: "",
         },
         address: {
-          street: "Via Po 123",
-          city: "Milano",
-          state: "Italia",
-          zip: "20030",
-          ring: "Bruno",
+          street: "",
+          city: "",
+          state: "",
+          zip: "",
+          ring: "",
         },
       },
       // inCheckoutPage: true,
@@ -272,6 +274,14 @@ export default {
           this.orderCompleted = res.data;
           // svuoto carello
           // pagina conferma ordine -> carello e somma pagata
+          this.form.client.name = "";
+          this.form.client.lastName = "";
+          this.form.client.phone = "";
+          this.form.address.street = "";
+          this.form.address.city = "";
+          this.form.address.state = "";
+          this.form.address.zip = "";
+          this.form.address.ring = "";
         })
         .catch((error) => {
           console.log("errore", error);
